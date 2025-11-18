@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "created_at": "2025-11-18T22:56:45.852406",
+    "description": "Data inventory for Tadawul filings (2021-2024)",
+    "version": "1.0.0"
+  },
+  "companies": [],
+  "filings": [],
+  "market_data": {
+    "source": "yfinance",
+    "tickers": [],
+    "coverage_period": {
+      "start": "2021-01-01",
+      "end": "2024-12-31"
+    }
+  }
+}
