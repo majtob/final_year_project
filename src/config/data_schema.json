@@ -1,0 +1,199 @@
+{
+  "company_period_schema": {
+    "description": "Tidy schema: one record per company-period",
+    "fields": {
+      "company_name": {
+        "type": "string",
+        "required": true
+      },
+      "ticker": {
+        "type": "string",
+        "required": true,
+        "format": "XXXX.SR"
+      },
+      "fiscal_year": {
+        "type": "integer",
+        "required": true,
+        "range": [
+          2021,
+          2024
+        ]
+      },
+      "fiscal_period": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "FY"
+        ]
+      },
+      "reporting_date": {
+        "type": "date",
+        "required": true
+      },
+      "source_file_id": {
+        "type": "string",
+        "required": true
+      },
+      "source_url": {
+        "type": "string",
+        "required": true
+      },
+      "source_section": {
+        "type": "string"
+      },
+      "source_page": {
+        "type": "integer"
+      },
+      "language": {
+        "type": "string",
+        "enum": [
+          "en",
+          "ar",
+          "both"
+        ]
+      }
+    },
+    "financial_statements": {
+      "balance_sheet": {
+        "total_assets": {
+          "type": "float"
+        },
+        "total_liabilities": {
+          "type": "float"
+        },
+        "total_equity": {
+          "type": "float"
+        },
+        "current_assets": {
+          "type": "float"
+        },
+        "current_liabilities": {
+          "type": "float"
+        },
+        "long_term_debt": {
+          "type": "float"
+        }
+      },
+      "income_statement": {
+        "revenue": {
+          "type": "float"
+        },
+        "net_income": {
+          "type": "float"
+        },
+        "operating_income": {
+          "type": "float"
+        },
+        "interest_expense": {
+          "type": "float"
+        },
+        "ebitda": {
+          "type": "float"
+        }
+      },
+      "cash_flow": {
+        "operating_cash_flow": {
+          "type": "float"
+        },
+        "investing_cash_flow": {
+          "type": "float"
+        },
+        "financing_cash_flow": {
+          "type": "float"
+        }
+      }
+    },
+    "ratios": {
+      "current_ratio": {
+        "type": "float",
+        "description": "Current Assets / Current Liabilities"
+      },
+      "debt_to_equity": {
+        "type": "float",
+        "description": "Total Debt / Total Equity"
+      },
+      "interest_coverage": {
+        "type": "float",
+        "description": "EBIT / Interest Expense"
+      },
+      "return_on_assets": {
+        "type": "float",
+        "description": "Net Income / Total Assets"
+      },
+      "net_margin": {
+        "type": "float",
+        "description": "Net Income / Revenue"
+      }
+    },
+    "market_data": {
+      "price": {
+        "type": "float",
+        "description": "Stock price (SAR)"
+      },
+      "market_cap": {
+        "type": "float",
+        "description": "Market capitalization (SAR)"
+      },
+      "volume": {
+        "type": "float",
+        "description": "Trading volume"
+      },
+      "date": {
+        "type": "date"
+      }
+    }
+  },
+  "risk_schema": {
+    "description": "Credit risk outputs",
+    "fields": {
+      "company_name": {
+        "type": "string",
+        "required": true
+      },
+      "ticker": {
+        "type": "string",
+        "required": true
+      },
+      "fiscal_year": {
+        "type": "integer",
+        "required": true
+      },
+      "risk_score": {
+        "type": "float",
+        "range": [
+          0.0,
+          1.0
+        ],
+        "description": "Continuous risk probability"
+      },
+      "risk_flag": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ],
+        "description": "0=low risk, 1=elevated risk"
+      },
+      "extraction_metadata": {
+        "model_name": {
+          "type": "string"
+        },
+        "prompt_id": {
+          "type": "string"
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "extraction_timestamp": {
+          "type": "datetime"
+        }
+      }
+    }
+  }
+}
