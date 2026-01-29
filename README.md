@@ -1,60 +1,115 @@
-# Credit Risk Analysis on Saudi Exchange Financials
+# Credit Rating Prediction for Saudi Exchange Companies
 
-Final Year Project: Open-Source LLMs for Credit Risk on Saudi Exchange Financials (2021–2024)
+**Final Year Project**: Classical ML for Credit Rating Prediction + LLM Verdict Generation
+
+Predict Tassnief credit ratings for Saudi Tadawul-listed companies using public data (financials, KAMs, news), with open-source LLMs generating qualitative credit verdicts.
+
+## Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        DATA SOURCES                             │
+├─────────────┬─────────────┬─────────────┬─────────────────────┤
+│  Financials │    KAMs     │    News     │  Tassnief Ratings   │
+│  (Tadawul)  │  (Filings)  │ (NewsAPI)   │  (Ground Truth)     │
+└──────┬──────┴──────┬──────┴──────┬──────┴──────────┬──────────┘
+       │             │             │                 │
+       ▼             ▼             ▼                 │
+┌─────────────────────────────────────────────────────────────────┐
+│                    FEATURE EXTRACTION                           │
+│  • Financial ratios (liquidity, leverage, coverage, profit)    │
+│  • KAM features (categories, severity)                         │
+│  • News features (sentiment, events)                           │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    ML CLASSIFIER (XGBoost)                      │
+│  Input: Feature vector (~30-50 features)                       │
+│  Output: Predicted Tassnief rating + confidence                │
+│  Target: Tassnief ratings (ground truth)                       │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                 LLM VERDICT GENERATOR                           │
+│  Input: Features + ML prediction                               │
+│  Model: Mistral / Llama (open-source)                          │
+│  Output: Structured credit verdict (JSON)                      │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      EVALUATION                                 │
+│  • ML: Accuracy, F1, Spearman correlation vs Tassnief          │
+│  • Verdict: Factual accuracy, coherence, completeness          │
+└─────────────────────────────────────────────────────────────────┘
+```
 
 ## Quick Start
 
 ### 1. Setup Environment
 
 ```bash
-# Activate conda environment
-conda activate fyp
-
-# If environment doesn't exist, create it
+# Create conda environment
 conda env create -f environment.yml
 conda activate fyp
+
+# Or use pip
+pip install -r requirements.txt
 ```
 
-### 2. Initialize Data Structure
+### 2. Configure Environment
+
+```bash
+cp .env.example .env
+# Edit .env with your API keys (NewsAPI, etc.)
+```
+
+### 3. Initialize Data Structure
 
 ```bash
 python scripts/init_data.py
 ```
 
-This creates:
-- Directory structure (`data/raw`, `data/interim`, `data/processed`, `data/market`)
-- Data schema definitions
-- Data inventory template
-- Test fixtures
-
-### 3. Configure Environment
+### 4. Collect Data
 
 ```bash
-# Copy environment template
-cp .env.example .env
+# Collect market data
+python scripts/sync_market_data.py --tickers 2222.SR 1111.SR
 
-# Edit .env with your configuration
-```
-
-### 4. Collect Market Data
-
-```bash
-# Collect market data for specific tickers
-python scripts/sync_market_data.py --tickers 1111.SR 2222.SR 3333.SR
-
-# Or load from inventory
-python scripts/sync_market_data.py --inventory data/data_inventory.json
-
-# With custom date range
-python scripts/sync_market_data.py --tickers 1111.SR --start-date 2021-01-01 --end-date 2024-12-31
-```
-
-### 5. Collect Tadawul Filings
-
-```bash
-# First, populate data/data_inventory.json with filing URLs
-# Then run:
+# Collect filings (after populating inventory)
 python src/pipelines/ingest_filings.py --inventory data/data_inventory.json
+
+# Collect news
+python src/pipelines/collect_news.py --inventory data/data_inventory.json
+
+# Collect Tassnief ratings
+python src/pipelines/collect_ratings.py --inventory data/data_inventory.json
+```
+
+### 5. Extract Features
+
+```bash
+python src/pipelines/extract_features.py --input data/processed --output data/features
+```
+
+### 6. Train Model
+
+```bash
+python src/models/train_classifier.py --features data/features/features.parquet --output models/
+```
+
+### 7. Generate Verdicts
+
+```bash
+python src/models/generate_verdicts.py --model models/xgboost_model.pkl --output results/verdicts/
+```
+
+### 8. Evaluate
+
+```bash
+python src/evaluation/evaluate_model.py --predictions results/predictions.csv --verdicts results/verdicts/
 ```
 
 ## Project Structure
@@ -62,102 +117,120 @@ python src/pipelines/ingest_filings.py --inventory data/data_inventory.json
 ```
 mxa1438/
 ├── data/
-│   ├── raw/              # Original Tadawul filings (PDFs, HTML, XLS)
-│   ├── interim/           # OCR/text chunks, parsed tables
-│   ├── processed/         # Tidy company-period tables
-│   └── market/            # yfinance market data
+│   ├── raw/                    # Original filings (PDFs, HTML, XLS)
+│   ├── interim/                # Parsed text, extracted tables
+│   ├── processed/              # Clean company-period data
+│   ├── market/                 # yfinance market data
+│   ├── news/                   # News articles and sentiment
+│   ├── ratings/                # Tassnief ratings
+│   └── features/               # Extracted feature vectors
+│
 ├── src/
-│   ├── pipelines/         # Data ingestion and processing pipelines
-│   ├── retrieval/         # Vector store and retrieval
-│   ├── models/            # LLM models and prompts
-│   ├── evaluation/        # Evaluation metrics and baselines
-│   └── utils/             # Utilities (logging, validation, IO)
-├── scripts/               # Standalone scripts
-├── notebooks/             # Jupyter notebooks for exploration
-├── configs/               # Configuration files
-├── tests/                 # Unit tests
-└── docs/                  # Documentation
+│   ├── config/                 # Configuration and schemas
+│   ├── pipelines/              # Data collection and processing
+│   │   ├── ingest_filings.py   # Download Tadawul filings
+│   │   ├── collect_news.py     # Fetch news from APIs
+│   │   ├── collect_ratings.py  # Collect Tassnief ratings
+│   │   ├── extract_kams.py     # Extract Key Audit Matters
+│   │   └── extract_features.py # Feature engineering pipeline
+│   ├── models/
+│   │   ├── train_classifier.py # Train XGBoost model
+│   │   ├── generate_verdicts.py# LLM verdict generation
+│   │   └── prompts.py          # Prompt templates
+│   ├── evaluation/
+│   │   ├── evaluate_model.py   # ML model evaluation
+│   │   ├── evaluate_verdicts.py# Verdict quality assessment
+│   │   └── metrics.py          # Evaluation metrics
+│   └── utils/
+│       ├── io.py               # Data I/O helpers
+│       ├── logging.py          # Logging configuration
+│       └── validation.py       # Schema validation
+│
+├── models/                     # Trained model artifacts
+├── results/                    # Predictions and verdicts
+├── notebooks/                  # Exploration notebooks
+├── tests/                      # Unit tests
+├── docs/                       # Documentation
+└── logs/                       # Pipeline logs
 ```
 
-## Data Collection
+## Data Sources
 
-### Market Data Collection
+| Source | Description | Collection |
+|--------|-------------|------------|
+| **Tadawul Filings** | Annual reports, financial statements | Web scraping |
+| **Key Audit Matters** | Risk indicators from audit reports | Text extraction |
+| **News** | Company news and sentiment | NewsAPI / MarketAux |
+| **Market Data** | Price, volume, market cap | yfinance |
+| **Tassnief Ratings** | Credit ratings (ground truth) | tassnief.com |
 
-The `sync_market_data.py` script fetches stock market data from yfinance:
+## Feature Categories
 
-```bash
-python scripts/sync_market_data.py \
-    --tickers 1111.SR 2222.SR \
-    --start-date 2021-01-01 \
-    --end-date 2024-12-31 \
-    --interval 1d \
-    --format parquet \
-    --verify
-```
+### Financial Ratios
+- Liquidity: Current ratio, quick ratio
+- Leverage: Debt/equity, debt/assets
+- Coverage: Interest coverage, DSCR
+- Profitability: ROA, ROE, net margin
+- Efficiency: Asset turnover
+- Growth: Revenue growth
 
-**Options:**
-- `--tickers`: List of ticker symbols (space-separated)
-- `--inventory`: Path to data inventory JSON file
-- `--output-dir`: Output directory (default: `data/market`)
-- `--start-date`: Start date (YYYY-MM-DD)
-- `--end-date`: End date (YYYY-MM-DD)
-- `--interval`: Data interval (`1d`, `1wk`, `1mo`)
-- `--format`: Output format (`parquet` or `csv`)
-- `--verify`: Verify data coverage after collection
+### KAM Features
+- KAM count and categories
+- Going concern, impairment, revenue recognition flags
+- Severity score
 
-### Filing Collection
+### News Features
+- Article count, sentiment scores
+- Event flags (litigation, expansion, regulatory)
 
-The `ingest_filings.py` script downloads Tadawul company filings:
+## Evaluation Metrics
 
-```bash
-python src/pipelines/ingest_filings.py \
-    --inventory data/data_inventory.json \
-    --output-dir data/raw \
-    --rate-limit 1.0 \
-    --max-retries 3
-```
+### ML Model
+- Accuracy, Macro F1, Weighted F1
+- Spearman correlation (ordinal ranking)
+- Investment grade vs speculative F1
 
-**Options:**
-- `--inventory`: Path to data inventory JSON file
-- `--output-dir`: Output directory (default: `data/raw`)
-- `--rate-limit`: Delay between requests in seconds
-- `--max-retries`: Maximum retry attempts
+### LLM Verdicts
+- Factual accuracy (citations correct)
+- Completeness (covers key factors)
+- Coherence (logical reasoning)
 
-**Data Inventory Format:**
+## Configuration
+
+### Data Inventory (`data/data_inventory.json`)
 
 ```json
 {
   "companies": [
     {
-      "company_name": "Company Name",
-      "ticker": "1111.SR"
+      "company_name": "Saudi Aramco",
+      "ticker": "2222.SR",
+      "sector": "Energy",
+      "tassnief_rated": true
     }
   ],
-  "filings": [
+  "filings": [...],
+  "ratings": [
     {
-      "url": "https://www.tadawul.com.sa/...",
-      "company_name": "Company Name",
-      "ticker": "1111.SR",
-      "fiscal_year": 2023,
-      "filing_type": "annual_report",
-      "language": "en",
-      "publication_date": "2023-03-15"
+      "ticker": "2222.SR",
+      "rating_date": "2023-06-15",
+      "rating": "A+",
+      "outlook": "Stable"
     }
   ],
-  "market_data": {
-    "tickers": ["1111.SR", "2222.SR"]
+  "news_config": {
+    "sources": ["newsapi", "marketaux"],
+    "date_range": {"start": "2021-01-01", "end": "2024-12-31"}
   }
 }
 ```
 
-## Next Steps
+## Documentation
 
-1. **Populate Data Inventory**: Add company tickers and filing URLs to `data/data_inventory.json`
-2. **Collect Market Data**: Run `sync_market_data.py` for your target companies
-3. **Collect Filings**: Add filing URLs to inventory and run `ingest_filings.py`
-4. **Preprocessing**: Implement document preprocessing pipeline
-5. **RAG Setup**: Build vector store for retrieval-augmented generation
-6. **Extraction**: Implement LLM-based financial extraction
+- `FYP_layers.md` - Detailed project specification
+- `PROJECT_SKELETON.md` - Project structure and checkpoints
+- `docs/DATA_STORAGE_GUIDE.md` - Data storage conventions
+- `docs/data_initialization.md` - Data setup instructions
 
 ## Development
 
@@ -170,23 +243,14 @@ pytest tests/
 ### Code Quality
 
 ```bash
-# Format code
 black src/ scripts/
-
-# Lint code
 flake8 src/ scripts/
 ```
 
-## Documentation
-
-- `PROJECT_SKELETON.md`: Project structure and checkpoints
-- `FYP_layers.md`: Detailed project requirements
-- `docs/DATA_INITIALIZATION_OPTIONS.md`: Data initialization guide
-
 ## License
 
-[Add your license here]
+[Add license]
 
 ## Contact
 
-[Add your contact information]
+[Add contact info]

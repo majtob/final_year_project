@@ -1,149 +1,405 @@
-Open-Source LLMs for Credit Risk on Saudi Exchange Financials (2021–2024): Retrieval-Augmented Extraction and Calibration.
+# Credit Rating Prediction for Saudi Exchange Companies (2021–2024)
+## Classical ML + LLM Verdict Generation
 
+---
 
-Definition Layer
+## Definition Layer
 
-Aim: evaluate whether open-source LLMs can perform credit analysis for Saudi listed companies using only public filings.
-Scope: limited to main-market firms, English and Arabic financial materials, fiscal years 2021–2024. All non-public data sources (banks, terminals, rating agencies) are excluded. The study focuses on LLM-based extraction accuracy, hallucination control, and signal calibration, not on developing a proprietary credit rating model.
+### Aim
+Evaluate whether classical machine learning models can predict credit ratings for Saudi listed companies using multi-source public data (financials, KAMs, news), with open-source LLMs providing qualitative verdict explanations.
 
-Research Questions / Hypotheses
+### Scope
+- **Companies**: Saudi Exchange (Tadawul) main-market firms with Tassnief credit ratings
+- **Period**: Fiscal years 2021–2024
+- **Data**: Public filings (English), news, Key Audit Matters (KAMs), Tassnief ratings
+- **Exclusions**: Non-public data sources (banks, terminals, paid APIs)
 
-1.Can retrieval-augmented open LLMs extract key financial ratios and risk indicators from Tadawul filings with acceptable accuracy?
+### Research Questions
 
-2.Do hallucination-aware extraction and calibration methods reduce factual and numeric errors relative to unconstrained LLM outputs?
+1. **RQ1**: Can a classical ML model (XGBoost/Random Forest) predict Tassnief credit ratings from public financial ratios, KAM features, and news sentiment?
 
-3.Are the resulting credit risk signals consistent with basic financial ratio benchmarks?
+2. **RQ2**: Which feature categories (financials, KAMs, news) contribute most to rating prediction accuracy?
 
-Deliverables
-– Data pipeline: a reproducible ingestion and normalisation process converting Tadawul disclosures into structured datasets.
-– Extraction and evaluation framework: RAG + schema-constrained LLM system capable of producing JSON outputs with citation links, plus evaluation metrics.
-– Credit risk outputs: per-company, per-period ratio set and risk score.
-– Documentation: reproducible codebase, technical report, evaluation summary.
+3. **RQ3**: Can open-source LLMs generate coherent, factually accurate credit verdicts that explain the predicted ratings?
 
-Constraints
-– Public data only; no paid financial terminals or private credit data.
-– Use of open-source LLMs (e.g., Mistral, Llama, Falcon) only.
-– Fixed temporal coverage (2021–2024) to ensure comparability and manageable scope.
-– All outputs must be traceable to exact source text or table to verify factual grounding.
-– Ethical and compliance restrictions: no personal data, no scraping beyond allowed endpoints.
+4. **RQ4**: How does model prediction accuracy compare across rating categories (investment grade vs speculative)?
 
-Data and Infrastructure Layer
+### Deliverables
 
-Data Inventory
-Full catalogue of all inputs. Includes Saudi Exchange company filings (annual reports, financial statements, board reports, disclosures), fiscal years 2021–2024, URLs, file formats (PDF, HTML, XLS), and metadata (company name, ticker, language, publication date).
-Add external market data via yfinance for each ticker (e.g., 2222.SR). Use it to obtain open-source price, volume, and market-cap data for market ratio and calibration tasks. This creates two parallel data channels: filings data and market data.
+1. **Data Pipeline**: Automated collection and preprocessing of financials, KAMs, news, and Tassnief ratings
+2. **Feature Engineering Module**: Extraction of financial ratios, KAM features, and news sentiment features
+3. **ML Rating Predictor**: Trained classifier predicting Tassnief rating categories
+4. **LLM Verdict Generator**: Open-source LLM system producing structured credit verdicts
+5. **Evaluation Report**: Prediction accuracy metrics + verdict quality assessment
+6. **Reproducible Codebase**: Complete documentation and reproducible pipeline
 
-Collection
-Automated retrieval of Tadawul filings and related documents using scripted scraping (with requests, aiohttp, BeautifulSoup4, lxml). Download logs include URL, timestamp, and hash for reproducibility. Integrate a yfinance routine to pull daily or quarterly market data. Implement rate-limit controls, retries, and missing-file detection. Output: complete mirrored dataset stored by company and fiscal year.
+### Constraints
 
-Pre-Processing
-Convert all collected documents into machine-readable form.
-– OCR for scanned PDFs (pytesseract, docTR).
-– Table and text parsing (pdfplumber, pymupdf, BeautifulSoup4).
-– HTML cleanup and tag normalization.
-– Language detection (langdetect) and Unicode repair (ftfy, unidecode).
-– Numeric standardization (comma/decimal, percentage normalization).
-Output: structured text-table pairs with consistent formatting.
+- Public data only; no paid financial terminals or private credit data
+- Open-source LLMs only (Mistral, Llama, Falcon) for verdict generation
+- Fixed temporal coverage (2021–2024)
+- All verdicts must cite specific data points from input features
+- Ethical compliance: no personal data, respect robots.txt for scraping
 
-Schema Design
-Define a unified “tidy” schema: one record per company-period with standardised financial line items (balance sheet, income statement, cash flow, ratios). Include source metadata (file ID, URL, section, page reference). Market data columns (price, market cap, volume) are merged by ticker and date. Schema enforced with Pandera or Pydantic models.
+---
 
-Infrastructure
-– Storage: DuckDB or PostgreSQL for structured tables; filesystem hierarchy for raw filings.
-– Processing: Python-based ETL pipeline (Pandas, DVC for data versioning).
-– Pipeline Orchestration: Prefect or Airflow for scheduled data refresh and dependency tracking.
-– Environment: reproducible setup with Docker or Conda environments.
-– Logging: loguru or native logging for persistent run records.
+## Data and Infrastructure Layer
 
-Data Versioning and Lineage
-DVC or git-lfs to track data and model artefacts. Each transformation stage records lineage: which raw file produced which structured row. Enables rollback and reproducibility checks.
+### Data Sources
 
-Quality Checks
-Automated validation using Great Expectations or custom Pandera rules. Tests for schema integrity, missing values, OCR errors, numeric validity, and temporal consistency between filings and market data. Store quality reports as structured logs.
+| Source | Type | Purpose | Collection Method |
+|--------|------|---------|-------------------|
+| **Tadawul Filings** | PDFs, HTML, XLS | Financial statements, balance sheet, income statement | Web scraping (requests, BeautifulSoup) |
+| **Key Audit Matters** | Text (from audit reports) | Risk indicators from auditor's perspective | Extracted from annual reports |
+| **News** | Text | Sentiment, events, market perception | NewsAPI / MarketAux API |
+| **Market Data** | Numeric | Price, volume, market cap | yfinance |
+| **Tassnief Ratings** | Categorical | Ground truth labels | tassnief.com (manual/scraping) |
 
-Modeling and Evaluation Layer
+### Data Inventory Schema
 
-Baseline Calculation Module
-Implements deterministic financial ratio computation. Inputs: structured financial data from Layer 2. Outputs: liquidity, leverage, coverage, and profitability ratios for each company-period. Ratios follow standard definitions (current ratio, debt-to-equity, interest coverage, return on assets, net margin). This establishes a non-LLM baseline for all subsequent comparisons.
+```json
+{
+  "companies": [
+    {
+      "company_name": "Company Name",
+      "ticker": "XXXX.SR",
+      "sector": "Banking",
+      "tassnief_rated": true
+    }
+  ],
+  "filings": [...],
+  "ratings": [
+    {
+      "ticker": "XXXX.SR",
+      "rating_date": "2023-06-15",
+      "rating": "A+",
+      "outlook": "Stable",
+      "rating_type": "issuer",
+      "source_url": "https://tassnief.com/..."
+    }
+  ],
+  "news": [
+    {
+      "ticker": "XXXX.SR",
+      "headline": "...",
+      "source": "...",
+      "published_date": "2023-03-10",
+      "sentiment": null
+    }
+  ]
+}
+```
 
-Extraction Pipeline (RAG + Schema Enforcement)
-Retrieval-augmented generation system built on open-source LLMs (Mistral, Llama 3, Falcon).
-– Document retrieval uses vector search (FAISS, Chroma, or ElasticSearch) over preprocessed filings.
-– Prompt templates enforce JSON schema outputs corresponding to the defined data schema.
-– Each extracted value must include its citation (document ID, section, page, or line reference).
-– Post-processing validates JSON against schema constraints.
+### Collection Pipeline
 
-Risk Scoring Module
-Combines deterministic ratios and extracted features into binary and calibrated risk scores.
-– Binary flag: 0 = low credit risk, 1 = elevated credit risk.
-– Continuous score: probability estimate between 0 and 1, derived through logistic regression or isotonic calibration on validation data.
-– Optional integration with market signals (e.g., volatility, market-cap trend) from yfinance.
+1. **Financials**: Download Tadawul filings → parse tables → extract line items
+2. **KAMs**: Extract auditor's report section → identify KAM paragraphs → categorize
+3. **News**: Query NewsAPI/MarketAux by company name/ticker → store articles
+4. **Market Data**: yfinance API → daily/quarterly prices
+5. **Tassnief Ratings**: Collect from tassnief.com → map to company-period
 
-Data Assessment Framework and Expert Validation
-Defines evaluation rubric for model outputs.
-– Criteria: factual correctness, numeric accuracy, citation validity, completeness, interpretive consistency.
-– Expert independently rates a representative sample of extractions.
-– Ratings form the ground-truth dataset.
-– Ground truth used to compute quantitative metrics (precision, recall, numeric deviation, hallucination rate).
+### Preprocessing
 
-Evaluation Metrics
-– Numeric Hallucination Rate (NHR): proportion of extracted numbers without verifiable source match.
-– Citation Accuracy (CA): share of cited spans that correctly support extracted values.
-– Schema Compliance (SC): proportion of valid JSON outputs passing all field checks.
-– Calibration Error (CE): difference between predicted risk score and empirical frequency of risk events.
-– Overall Accuracy (OA): average of factual correctness across categories.
+| Data Type | Processing Steps |
+|-----------|------------------|
+| **Financials** | Table parsing (pdfplumber), numeric normalization, ratio calculation |
+| **KAMs** | Text extraction, categorization (going concern, impairment, revenue recognition, etc.) |
+| **News** | Sentiment analysis, keyword extraction, event tagging |
+| **Ratings** | Ordinal encoding, rating bucket mapping |
 
-Model Comparison and Iteration
-Evaluate multiple open-source models under identical prompts and retrieval setups. Compare performance on accuracy, hallucination control, and computation cost. Use the expert-validated ground truth for benchmarking. Document all experiments with configuration files and fixed random seeds.
+### Schema Design
 
-Output Validation and Logging
-All model outputs stored with full metadata: model name, prompt ID, data version, timestamp, and citation list. Evaluation reports automatically generated and versioned for reproducibility.
+**Company-Period Record** (one row per company per fiscal year):
+- Identifiers: company_name, ticker, fiscal_year
+- Financial ratios: current_ratio, debt_equity, interest_coverage, ROA, ROE, net_margin, etc.
+- KAM features: kam_count, kam_going_concern, kam_impairment, kam_revenue_recognition, etc.
+- News features: news_count, avg_sentiment, negative_event_count, positive_event_count
+- Market features: avg_price, volatility, market_cap
+- Target: tassnief_rating, rating_bucket (investment_grade / speculative)
 
-Project Management Layer
+### Infrastructure
 
-Timeline
-Structured six-month progression ensuring sequential dependency and measurable checkpoints.
-– Month 1: environment setup, data inventory completion, collection scripts tested.
-– Month 2: pre-processing and schema validation operational; OCR and table extraction verified.
-– Month 3: retrieval pipeline and vector index built; first extraction prototypes tested on sample filings.
-– Month 4: ratio calculator and baseline risk scoring implemented; integration of yfinance data.
-– Month 5: data assessment framework finalized; expert evaluation executed; hallucination metrics computed.
-– Month 6: calibration, full validation, report writing, and repository finalization.
+- **Storage**: SQLite/DuckDB for structured data; filesystem for raw filings
+- **Processing**: Python (pandas, scikit-learn, XGBoost)
+- **LLM Inference**: Ollama / HuggingFace Transformers for local open-source models
+- **Environment**: Conda environment with pinned dependencies
+- **Logging**: loguru for pipeline logs
 
-Milestones
+### Data Quality
 
-Dataset fully collected and normalized.
+- Schema validation with Pandera/Pydantic
+- Missing value handling rules
+- Temporal alignment checks (rating date vs fiscal year)
+- News date range validation (within fiscal year)
 
-Baseline ratio module operational.
+---
 
-RAG extraction producing schema-valid JSON outputs.
+## Modeling Layer
 
-Expert-validated ground truth established.
+### Architecture Overview
 
-Model evaluation report completed with hallucination and calibration metrics.
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        DATA SOURCES                             │
+├─────────────┬─────────────┬─────────────┬─────────────────────┤
+│  Financials │    KAMs     │    News     │  Tassnief Ratings   │
+│  (Tadawul)  │  (Filings)  │ (NewsAPI)   │  (Ground Truth)     │
+└──────┬──────┴──────┬──────┴──────┬──────┴──────────┬──────────┘
+       │             │             │                 │
+       ▼             ▼             ▼                 │
+┌─────────────────────────────────────────────┐     │
+│           FEATURE EXTRACTION                │     │
+│  • Financial ratios (15-20 features)        │     │
+│  • KAM categorical features (5-10 features) │     │
+│  • News sentiment features (5-10 features)  │     │
+└──────────────────┬──────────────────────────┘     │
+                   │                                 │
+                   ▼                                 │
+┌─────────────────────────────────────────────┐     │
+│         FEATURE VECTOR                      │     │
+│  [financial_ratios | kam_features |         │     │
+│   news_features | market_features]          │     │
+│  ~30-50 features per company-period         │     │
+└──────────────────┬──────────────────────────┘     │
+                   │                                 │
+                   ▼                                 │
+┌─────────────────────────────────────────────┐     │
+│         ML CLASSIFIER                       │     │
+│  • XGBoost / Random Forest                  │     │
+│  • Target: Tassnief rating category         │◄────┘
+│  • Output: Predicted rating + probabilities │
+└──────────────────┬──────────────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────────────┐
+│         LLM VERDICT GENERATOR               │
+│  • Input: Features + ML prediction          │
+│  • Model: Mistral / Llama (open-source)     │
+│  • Output: Structured credit verdict        │
+└──────────────────┬──────────────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────────────┐
+│              EVALUATION                      │
+│  • ML: Accuracy, F1, ordinal correlation   │
+│  • Verdict: Factual accuracy, coherence    │
+└─────────────────────────────────────────────┘
+```
 
-Final reproducible repository and documentation delivered.
+### Feature Engineering
 
-Version Control and Reproducibility
-– Git for source code and scripts.
-– DVC or git-lfs for data and model artefact versioning.
-– Tagged releases for each major milestone.
-– All experiments logged with configuration snapshots.
+#### Financial Ratios (from Tadawul filings)
+| Feature | Formula | Category |
+|---------|---------|----------|
+| current_ratio | Current Assets / Current Liabilities | Liquidity |
+| quick_ratio | (Current Assets - Inventory) / Current Liabilities | Liquidity |
+| debt_to_equity | Total Debt / Total Equity | Leverage |
+| debt_to_assets | Total Debt / Total Assets | Leverage |
+| interest_coverage | EBIT / Interest Expense | Coverage |
+| debt_service_coverage | Operating Cash Flow / Total Debt Service | Coverage |
+| return_on_assets | Net Income / Total Assets | Profitability |
+| return_on_equity | Net Income / Total Equity | Profitability |
+| net_margin | Net Income / Revenue | Profitability |
+| operating_margin | Operating Income / Revenue | Profitability |
+| asset_turnover | Revenue / Total Assets | Efficiency |
+| revenue_growth | (Revenue_t - Revenue_t-1) / Revenue_t-1 | Growth |
 
-Progress Monitoring
-– Weekly progress log summarizing work completed, blockers, and next tasks.
-– Error tracker for failed document parses or schema validation issues.
-– Automated run reports generated after each batch extraction and evaluation.
+#### KAM Features (from audit reports)
+| Feature | Type | Description |
+|---------|------|-------------|
+| kam_count | Integer | Total number of KAMs |
+| kam_going_concern | Binary | Going concern issue flagged |
+| kam_impairment | Binary | Asset impairment KAM present |
+| kam_revenue_recognition | Binary | Revenue recognition KAM present |
+| kam_related_party | Binary | Related party transactions KAM |
+| kam_litigation | Binary | Litigation/contingencies KAM |
+| kam_severity_score | Float | Weighted severity (0-1) |
 
-Documentation and Reporting
-– README and pipeline guide explaining environment setup, directory structure, and run commands.
-– Technical report describing system architecture, methods, evaluation, and findings.
-– Appendix tables summarizing metrics and expert assessment outcomes.
+#### News Features (from NewsAPI/MarketAux)
+| Feature | Type | Description |
+|---------|------|-------------|
+| news_count | Integer | Total articles in fiscal year |
+| avg_sentiment | Float | Average sentiment score (-1 to 1) |
+| sentiment_std | Float | Sentiment volatility |
+| negative_news_ratio | Float | % negative articles |
+| positive_news_ratio | Float | % positive articles |
+| event_lawsuit | Integer | Lawsuit/legal mentions count |
+| event_expansion | Integer | Expansion/growth mentions count |
+| event_regulatory | Integer | Regulatory issue mentions count |
 
-Risk Management
-– Backup of all collected filings and intermediate data.
-– Redundant logs for scraping and OCR to prevent reprocessing loss.
-– Contingency schedule for expert delays or failed extractions.
+### ML Model
 
-Completion Criteria
-All deliverables reproducible from raw data to evaluation results using open-source components, with complete documentation and validated credit risk outputs.
+**Primary Model**: XGBoost Classifier
+- Handles mixed feature types well
+- Provides feature importance
+- Robust to missing values
+- Good performance on tabular data
+
+**Baseline Models** (for comparison):
+- Logistic Regression (interpretable baseline)
+- Random Forest (ensemble alternative)
+
+**Target Variable**:
+- Multi-class: Full Tassnief scale (AAA, AA+, AA, AA-, A+, A, A-, BBB+, ...)
+- Binary: Investment Grade (BBB- and above) vs Speculative (BB+ and below)
+
+**Training Setup**:
+- Train/validation/test split by time (avoid leakage)
+- Cross-validation for hyperparameter tuning
+- Class weighting for imbalanced ratings
+
+### LLM Verdict Generator
+
+**Purpose**: Generate human-readable credit assessment explaining the ML prediction
+
+**Input to LLM**:
+```
+Company: {company_name} ({ticker})
+Period: FY {fiscal_year}
+
+=== FINANCIAL RATIOS ===
+Current Ratio: {current_ratio}
+Debt/Equity: {debt_equity}
+Interest Coverage: {interest_coverage}
+ROA: {roa}%
+Net Margin: {net_margin}%
+...
+
+=== KEY AUDIT MATTERS ===
+{kam_summary}
+
+=== NEWS SUMMARY ===
+{news_summary}
+
+=== ML PREDICTION ===
+Predicted Rating: {predicted_rating}
+Confidence: {confidence}%
+Actual Tassnief Rating: {actual_rating} (if available)
+
+=== TASK ===
+Provide a structured credit verdict as JSON with:
+1. overall_assessment: 1-2 sentence summary
+2. strengths: list of positive factors with supporting data
+3. weaknesses: list of risk factors with supporting data
+4. risk_factors: key items to monitor
+5. prediction_analysis: does the data support the prediction?
+```
+
+**Output Schema**:
+```json
+{
+  "company": "...",
+  "period": "FY 2023",
+  "overall_assessment": "...",
+  "strengths": ["Strong liquidity (CR: 1.8)", "..."],
+  "weaknesses": ["Elevated leverage (D/E: 2.1)", "..."],
+  "risk_factors": ["Debt refinancing in 2024", "..."],
+  "prediction_analysis": "The BBB+ prediction aligns with..."
+}
+```
+
+**Models**: Mistral 7B, Llama 3 8B (via Ollama or HuggingFace)
+
+---
+
+## Evaluation Layer
+
+### ML Model Evaluation
+
+| Metric | Description | Target |
+|--------|-------------|--------|
+| **Accuracy** | % correct predictions | >60% (multi-class) |
+| **Macro F1** | Average F1 across classes | >0.5 |
+| **Weighted F1** | Class-weighted F1 | >0.6 |
+| **Spearman Correlation** | Ordinal ranking correlation | >0.7 |
+| **Investment Grade F1** | Binary classification F1 | >0.75 |
+| **Confusion Matrix** | Error analysis by rating | - |
+
+### Feature Importance Analysis
+
+- SHAP values for global feature importance
+- Per-category analysis (financials vs KAMs vs news)
+- Ablation study: model performance with each feature category removed
+
+### LLM Verdict Evaluation
+
+| Metric | Description | Method |
+|--------|-------------|--------|
+| **Factual Accuracy** | Are cited numbers correct? | Automated check against input |
+| **Completeness** | Does verdict cover key factors? | Rubric-based scoring |
+| **Coherence** | Is reasoning logically consistent? | Manual review |
+| **Alignment** | Does verdict support prediction? | Automated + manual |
+| **Citation Rate** | % claims with data backing | Automated parsing |
+
+### Comparison Framework
+
+1. **ML vs Tassnief**: How well does the model predict actual ratings?
+2. **Feature Ablation**: Which features matter most?
+3. **Verdict Quality**: Are LLM explanations useful and accurate?
+4. **Error Analysis**: Where and why does the model fail?
+
+---
+
+## Project Management Layer
+
+### Timeline
+
+| Phase | Duration | Deliverables |
+|-------|----------|--------------|
+| **Phase 1: Data Collection** | - | Financials, KAMs, news, ratings collected |
+| **Phase 2: Feature Engineering** | - | Feature extraction pipeline, clean dataset |
+| **Phase 3: ML Development** | - | Trained classifier, baseline evaluation |
+| **Phase 4: LLM Integration** | - | Verdict generator, prompt templates |
+| **Phase 5: Evaluation** | - | Full evaluation report, analysis |
+| **Phase 6: Documentation** | - | Final report, reproducible codebase |
+
+### Milestones
+
+- [ ] Data inventory populated with all companies and sources
+- [ ] Raw data collected (filings, news, ratings)
+- [ ] Feature extraction pipeline operational
+- [ ] ML model trained and evaluated
+- [ ] LLM verdict generator producing valid outputs
+- [ ] Evaluation report completed
+- [ ] Final repository and documentation delivered
+
+### Risk Management
+
+| Risk | Mitigation |
+|------|------------|
+| Limited Tassnief coverage | Focus on rated companies only; use rating buckets |
+| News data sparsity | Aggregate by company-year; use multiple news sources |
+| Class imbalance in ratings | Class weighting, SMOTE, focus on binary classification |
+| KAM extraction errors | Manual validation of extraction rules |
+| LLM hallucination in verdicts | Schema enforcement, factual accuracy checks |
+
+### Version Control
+
+- Git for code and documentation
+- DVC for data versioning (optional)
+- Tagged releases for milestones
+- Experiment logging for model runs
+
+---
+
+## Appendix: Rating Scale Reference
+
+### Tassnief Rating Scale
+
+| Rating | Category | Description |
+|--------|----------|-------------|
+| AAA | Investment Grade | Highest credit quality |
+| AA+, AA, AA- | Investment Grade | Very high credit quality |
+| A+, A, A- | Investment Grade | High credit quality |
+| BBB+, BBB, BBB- | Investment Grade | Good credit quality |
+| BB+, BB, BB- | Speculative | Speculative |
+| B+, B, B- | Speculative | Highly speculative |
+| CCC+, CCC, CCC- | Speculative | Substantial risk |
+| CC, C | Speculative | Extremely speculative |
+| D | Default | In default |
+
+### Rating Bucket Mapping
+
+For binary classification:
+- **Investment Grade**: AAA, AA+, AA, AA-, A+, A, A-, BBB+, BBB, BBB-
+- **Speculative**: BB+ and below

@@ -1,85 +1,248 @@
-## Project Skeleton
+# Project Skeleton
+
+## Directory Structure
 
 ```
-final_project/
+mxa1438/
 │
-├── README.md                      # Quickstart, architecture, run commands
+├── README.md                      # Quick start, architecture overview
+├── FYP_layers.md                  # Detailed project specification
 ├── LICENSE
-├── .env.example                   # API keys/paths placeholders
-├── requirements.txt / environment.yml
-├── docker-compose.yml (optional)
+├── .env.example                   # API keys placeholders
+├── requirements.txt
+├── environment.yml
 │
 ├── data/
-│   ├── raw/                       # Mirrored filings, PDFs, HTML, XLS
-│   ├── interim/                   # OCR/text chunks, parsed tables
-│   ├── processed/                 # Tidy company-period tables, ratio inputs
-│   └── market/                    # yfinance extracts (CSV/Parquet)
+│   ├── raw/                       # Original Tadawul filings (PDFs, HTML, XLS)
+│   ├── interim/                   # Parsed text, extracted tables, KAM text
+│   ├── processed/                 # Clean company-period structured data
+│   ├── market/                    # yfinance market data (CSV/Parquet)
+│   ├── news/                      # News articles and metadata
+│   ├── ratings/                   # Tassnief credit ratings
+│   ├── features/                  # Extracted feature vectors for ML
+│   └── data_inventory.json        # Master inventory of all data sources
 │
-├── dvc.yaml / dvc.lock (if using DVC)
+├── models/                        # Trained model artifacts
+│   ├── xgboost_model.pkl          # Trained XGBoost classifier
+│   ├── feature_scaler.pkl         # Feature preprocessing scaler
+│   └── model_config.json          # Model hyperparameters
+│
+├── results/
+│   ├── predictions/               # ML model predictions
+│   ├── verdicts/                  # LLM-generated verdicts (JSON)
+│   └── evaluation/                # Evaluation reports and metrics
 │
 ├── notebooks/
-│   ├── 01_exploration.ipynb       # Inspect filings, schema notes
-│   ├── 02_preprocessing_tests.ipynb
-│   ├── 03_rag_prototype.ipynb
-│   └── 04_evaluation.ipynb
+│   ├── 01_data_exploration.ipynb  # Explore raw data and filings
+│   ├── 02_feature_analysis.ipynb  # Feature engineering and EDA
+│   ├── 03_model_training.ipynb    # Model development and tuning
+│   ├── 04_verdict_analysis.ipynb  # LLM verdict quality review
+│   └── 05_evaluation.ipynb        # Final evaluation and reporting
 │
 ├── src/
-│   ├── config/                    # Hydra/OmegaConf configs (model, schema, paths)
+│   ├── config/
+│   │   ├── data_schema.json       # Data validation schemas
+│   │   ├── feature_config.yaml    # Feature definitions
+│   │   └── model_config.yaml      # Model hyperparameters
+│   │
 │   ├── pipelines/
-│   │   ├── ingest_filings.py
-│   │   ├── preprocess_documents.py
-│   │   ├── build_vector_store.py
-│   │   └── extract_financials.py
-│   ├── retrieval/
-│   │   ├── index_builder.py       # FAISS/Chroma wrapper
-│   │   └── retriever.py           # Similarity search + filters
+│   │   ├── ingest_filings.py      # Download Tadawul filings
+│   │   ├── collect_news.py        # Fetch news from APIs
+│   │   ├── collect_ratings.py     # Collect Tassnief ratings
+│   │   ├── parse_financials.py    # Parse financial statements
+│   │   ├── extract_kams.py        # Extract Key Audit Matters
+│   │   └── extract_features.py    # Feature engineering pipeline
+│   │
 │   ├── models/
-│   │   ├── prompts.py             # Prompt templates, JSON schema enforcement
-│   │   └── rag_runner.py          # Orchestration for open-source LLM calls
+│   │   ├── train_classifier.py    # Train XGBoost/RF classifier
+│   │   ├── generate_verdicts.py   # LLM verdict generation
+│   │   ├── prompts.py             # Prompt templates for LLM
+│   │   └── inference.py           # Model inference utilities
+│   │
 │   ├── evaluation/
-│   │   ├── ratio_baseline.py      # Deterministic ratio calculations
-│   │   ├── risk_flagger.py        # Heuristic score/binary flag
-│   │   └── metrics.py             # NHR, citation accuracy, schema compliance
-│   ├── utils/
-│   │   ├── io.py                  # Storage helpers (DuckDB/Postgres)
-│   │   ├── logging.py
-│   │   └── validation.py          # Pandera/Great Expectations wrappers
-│   └── cli.py                     # Prefect/Airflow entry points or Typer CLI
-│
-├── configs/                       # Pipeline schedules, model settings
-│   ├── preprocessing.yaml
-│   ├── retrieval.yaml
-│   ├── evaluation.yaml
-│   └── environment.yaml
+│   │   ├── evaluate_model.py      # ML model evaluation metrics
+│   │   ├── evaluate_verdicts.py   # Verdict quality assessment
+│   │   ├── metrics.py             # Custom evaluation metrics
+│   │   └── feature_importance.py  # SHAP analysis
+│   │
+│   └── utils/
+│       ├── io.py                  # Data I/O helpers
+│       ├── logging.py             # Logging configuration
+│       ├── validation.py          # Schema validation
+│       └── text_processing.py     # Text cleaning utilities
 │
 ├── scripts/
-│   ├── sync_market_data.py        # yfinance fetch, coverage checks
-│   ├── run_pipeline.py            # End-to-end orchestration
-│   └── monitor_quality.py         # Generate QA reports
+│   ├── init_data.py               # Initialize data directories
+│   ├── init_database.py           # Database setup
+│   ├── sync_market_data.py        # Fetch yfinance data
+│   └── run_pipeline.py            # End-to-end pipeline runner
 │
 ├── tests/
-│   ├── test_parsers.py
-│   ├── test_schema.py
-│   ├── test_rag_outputs.py
+│   ├── test_feature_extraction.py
+│   ├── test_model.py
+│   ├── test_verdict_schema.py
 │   └── fixtures/
+│       └── sample_company_data.json
 │
 ├── docs/
-│   ├── architecture.md
-│   ├── data_dictionary.md
-│   ├── evaluation_report.md
-│   └── progress_log.md
+│   ├── DATA_STORAGE_GUIDE.md
+│   ├── data_initialization.md
+│   ├── feature_dictionary.md      # Feature definitions and sources
+│   └── evaluation_report.md       # Final evaluation findings
+│
+├── configs/
+│   ├── logging.yaml
+│   └── pipeline.yaml
 │
 └── logs/
-    ├── pipeline/                  # Prefect/Airflow runs
-    └── evaluation/
+    ├── pipeline/                  # Data collection logs
+    └── evaluation/                # Model evaluation logs
 ```
 
-### Checkpoints
+## Pipeline Stages
 
-- `data/raw` populated and hashed before running `pipelines/ingest_filings.py`.
-- `pipelines/preprocess_documents.py` outputs schema-valid tables validated via `tests/test_parsers.py`.
-- `retrieval/index_builder.py` builds the vector store; smoke test with `retriever.py`.
-- `models/rag_runner.py` produces citation-backed JSON validated by `tests/test_rag_outputs.py`.
-- `evaluation/ratio_baseline.py` plus `risk_flagger.py` generate heuristics-only risk flags documented in `docs/evaluation_report.md`.
-- `scripts/sync_market_data.py` verifies yfinance coverage and records gaps in `docs/data_dictionary.md`.
+### Stage 1: Data Collection
 
+| Script | Input | Output | Description |
+|--------|-------|--------|-------------|
+| `sync_market_data.py` | Tickers | `data/market/*.parquet` | Fetch yfinance data |
+| `ingest_filings.py` | Inventory | `data/raw/` | Download Tadawul filings |
+| `collect_news.py` | Inventory | `data/news/` | Fetch news articles |
+| `collect_ratings.py` | Inventory | `data/ratings/` | Collect Tassnief ratings |
+
+### Stage 2: Data Processing
+
+| Script | Input | Output | Description |
+|--------|-------|--------|-------------|
+| `parse_financials.py` | `data/raw/` | `data/interim/` | Parse financial tables |
+| `extract_kams.py` | `data/raw/` | `data/interim/kams/` | Extract KAMs from audits |
+
+### Stage 3: Feature Engineering
+
+| Script | Input | Output | Description |
+|--------|-------|--------|-------------|
+| `extract_features.py` | `data/interim/`, `data/news/` | `data/features/` | Create feature vectors |
+
+### Stage 4: Model Training
+
+| Script | Input | Output | Description |
+|--------|-------|--------|-------------|
+| `train_classifier.py` | `data/features/` | `models/` | Train ML classifier |
+
+### Stage 5: Verdict Generation
+
+| Script | Input | Output | Description |
+|--------|-------|--------|-------------|
+| `generate_verdicts.py` | Features + Model | `results/verdicts/` | Generate LLM verdicts |
+
+### Stage 6: Evaluation
+
+| Script | Input | Output | Description |
+|--------|-------|--------|-------------|
+| `evaluate_model.py` | Predictions | `results/evaluation/` | ML metrics |
+| `evaluate_verdicts.py` | Verdicts | `results/evaluation/` | Verdict quality |
+
+## Checkpoints
+
+### Data Collection
+- [ ] `data/data_inventory.json` populated with companies, filings, ratings
+- [ ] `data/raw/` contains downloaded filings
+- [ ] `data/news/` contains news articles
+- [ ] `data/ratings/` contains Tassnief ratings
+- [ ] `data/market/` contains yfinance data
+
+### Feature Engineering
+- [ ] Financial ratios extracted and validated
+- [ ] KAM features extracted from audit reports
+- [ ] News sentiment computed
+- [ ] `data/features/features.parquet` contains complete feature matrix
+
+### Model Training
+- [ ] XGBoost model trained
+- [ ] Cross-validation completed
+- [ ] Feature importance computed
+- [ ] `models/xgboost_model.pkl` saved
+
+### Verdict Generation
+- [ ] LLM prompts tested
+- [ ] Verdicts generated for all companies
+- [ ] JSON schema validation passed
+- [ ] `results/verdicts/` populated
+
+### Evaluation
+- [ ] ML accuracy vs Tassnief computed
+- [ ] Confusion matrix generated
+- [ ] Verdict factual accuracy assessed
+- [ ] `docs/evaluation_report.md` completed
+
+## Data Flow
+
+```
+┌────────────────┐     ┌────────────────┐     ┌────────────────┐
+│   Tadawul      │────▶│   data/raw/    │────▶│ data/interim/  │
+│   Filings      │     │   (PDFs, XLS)  │     │ (parsed text)  │
+└────────────────┘     └────────────────┘     └────────────────┘
+                                                      │
+┌────────────────┐     ┌────────────────┐            │
+│   NewsAPI      │────▶│   data/news/   │────────────┤
+│   MarketAux    │     │   (articles)   │            │
+└────────────────┘     └────────────────┘            │
+                                                      │
+┌────────────────┐     ┌────────────────┐            │
+│   yfinance     │────▶│  data/market/  │────────────┤
+│                │     │  (prices)      │            │
+└────────────────┘     └────────────────┘            │
+                                                      │
+┌────────────────┐     ┌────────────────┐            │
+│   Tassnief     │────▶│ data/ratings/  │────────────┤
+│                │     │  (labels)      │            ▼
+└────────────────┘     └────────────────┘     ┌────────────────┐
+                                              │ data/features/ │
+                                              │ (ML input)     │
+                                              └───────┬────────┘
+                                                      │
+                       ┌──────────────────────────────┼──────────────────────────────┐
+                       │                              │                              │
+                       ▼                              ▼                              ▼
+                ┌────────────┐                ┌────────────┐                ┌────────────┐
+                │   Train    │                │  Predict   │                │  Generate  │
+                │   Model    │───────────────▶│  Ratings   │───────────────▶│  Verdicts  │
+                └────────────┘                └────────────┘                └────────────┘
+                       │                              │                              │
+                       ▼                              ▼                              ▼
+                ┌────────────┐                ┌────────────┐                ┌────────────┐
+                │  models/   │                │ results/   │                │ results/   │
+                │            │                │predictions/│                │ verdicts/  │
+                └────────────┘                └────────────┘                └────────────┘
+```
+
+## Configuration Files
+
+### data_inventory.json
+Master inventory of all companies, filings, ratings, and data sources.
+
+### feature_config.yaml
+Defines all features, their sources, and computation methods.
+
+### model_config.yaml
+Model hyperparameters and training configuration.
+
+## Testing
+
+```bash
+# Run all tests
+pytest tests/
+
+# Run specific test file
+pytest tests/test_feature_extraction.py
+
+# Run with coverage
+pytest --cov=src tests/
+```
+
+## Logging
+
+All pipeline scripts log to `logs/pipeline/` with rotation.
+Evaluation logs go to `logs/evaluation/`.
+
+Configure via `configs/logging.yaml` or environment variables.
