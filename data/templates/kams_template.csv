@@ -1,0 +1,6 @@
+ticker,fiscal_year,kam_title,kam_category,severity,source_file,source_page,notes
+2222.SR,2023,Revenue Recognition from Long-term Contracts,revenue_recognition,medium,2222_2023_annual.pdf,45,
+2222.SR,2023,Impairment of Exploration Assets,impairment,medium,2222_2023_annual.pdf,46,
+2222.SR,2023,Decommissioning Provisions,valuation,low,2222_2023_annual.pdf,47,
+1120.SR,2023,Expected Credit Loss on Financing,allowance,high,1120_2023_annual.pdf,52,
+1120.SR,2023,Fair Value of Investment Securities,valuation,medium,1120_2023_annual.pdf,53,
