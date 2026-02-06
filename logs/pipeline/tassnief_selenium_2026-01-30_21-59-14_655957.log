@@ -1,0 +1,6 @@
+2026-01-30 21:59:19.833 | INFO     | __main__:_init_driver:92 - Chrome WebDriver initialized
+2026-01-30 21:59:19.833 | INFO     | __main__:scrape_all:323 - Loading https://tassnief.com/find-rating
+2026-01-30 21:59:27.303 | INFO     | __main__:scrape_all:329 - Detected 1 pages
+2026-01-30 21:59:27.303 | INFO     | __main__:scrape_all:337 - Scraping page 1/10
+2026-01-30 21:59:27.753 | WARNING  | __main__:scrape_all:343 - No ratings found on page 1
+2026-01-30 21:59:30.319 | INFO     | __main__:scrape_all:376 - Total unique ratings collected: 0

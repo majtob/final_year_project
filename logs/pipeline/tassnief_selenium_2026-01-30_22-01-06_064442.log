@@ -1,0 +1,24 @@
+2026-01-30 22:01:08.467 | INFO     | __main__:_init_driver:93 - Chrome WebDriver initialized
+2026-01-30 22:01:08.467 | INFO     | __main__:scrape_all:443 - Loading https://tassnief.com/find-rating
+2026-01-30 22:01:17.515 | INFO     | __main__:scrape_all:449 - Detected 1 pages
+2026-01-30 22:01:17.515 | INFO     | __main__:scrape_all:457 - Scraping page 1/1
+2026-01-30 22:01:22.523 | INFO     | __main__:_parse_current_page:253 - Found table with selector: table
+2026-01-30 22:01:22.529 | INFO     | __main__:_parse_current_page:279 - Found 11 rows in table
+2026-01-30 22:01:32.585 | INFO     | __main__:_parse_current_page:285 - Row 0: 0 td cells, 7 th cells
+2026-01-30 22:01:42.641 | INFO     | __main__:_parse_current_page:285 - Row 1: 7 td cells, 0 th cells
+2026-01-30 22:01:42.663 | INFO     | __main__:_parse_current_page:288 - Row 1 content: ['SAL Saudi Logistics Services Company', 'Credit Rating', 'A', 'Assigned', 'Stable']
+2026-01-30 22:01:52.720 | INFO     | __main__:_parse_current_page:285 - Row 2: 7 td cells, 0 th cells
+2026-01-30 22:01:52.741 | INFO     | __main__:_parse_current_page:288 - Row 2 content: ['Quara Finance Company', 'Credit Rating', 'BBB-', 'Maintained', 'Stable']
+2026-01-30 22:01:52.783 | DEBUG    | __main__:_parse_current_page:337 - Parsed: SAL Saudi Logistics Services Company - A
+2026-01-30 22:01:52.820 | DEBUG    | __main__:_parse_current_page:337 - Parsed: Quara Finance Company - BBB
+2026-01-30 22:01:52.858 | DEBUG    | __main__:_parse_current_page:337 - Parsed: Pharma Medical Company - BBB
+2026-01-30 22:01:52.901 | DEBUG    | __main__:_parse_current_page:337 - Parsed: Perfect Presentation for Commercial Services Company (2P) - BBB+
+2026-01-30 22:01:52.941 | DEBUG    | __main__:_parse_current_page:337 - Parsed: CATRION Catering Holding Company - A
+2026-01-30 22:01:52.982 | DEBUG    | __main__:_parse_current_page:337 - Parsed: Al Hammadi Holding Company - A
+2026-01-30 22:01:53.021 | DEBUG    | __main__:_parse_current_page:337 - Parsed: Dr. Sulaiman Al-Habib Medical Services Group Company - AA
+2026-01-30 22:01:53.062 | DEBUG    | __main__:_parse_current_page:337 - Parsed: Middle East Healthcare Company - BBB
+2026-01-30 22:01:53.109 | DEBUG    | __main__:_parse_current_page:337 - Parsed: Alkhorayef for Water and Power Technologies Company - A
+2026-01-30 22:01:53.156 | DEBUG    | __main__:_parse_current_page:337 - Parsed: Saudi Telecom Company (STC) - AAA
+2026-01-30 22:01:53.156 | INFO     | __main__:scrape_all:474 - Found 10 ratings on page 1
+2026-01-30 22:01:55.718 | INFO     | __main__:scrape_all:496 - Total unique ratings collected: 10
+2026-01-30 22:01:55.738 | INFO     | __main__:save_to_csv:518 - Saved 10 ratings to C:\Users\majtob\Desktop\final_project\mxa1438\data\templates\ratings_scraped.csv

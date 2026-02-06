@@ -1,0 +1,33 @@
+2026-01-30 21:47:11.177 | INFO     | __main__:scrape_all:266 - Scraping page 1/10
+2026-01-30 21:47:11.178 | INFO     | __main__:scrape_page:150 - Fetching page 1: https://tassnief.com/find-rating?page=1
+2026-01-30 21:47:14.009 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 1
+2026-01-30 21:47:16.010 | INFO     | __main__:scrape_all:266 - Scraping page 2/10
+2026-01-30 21:47:16.010 | INFO     | __main__:scrape_page:150 - Fetching page 2: https://tassnief.com/find-rating?page=2
+2026-01-30 21:47:17.919 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 2
+2026-01-30 21:47:19.936 | INFO     | __main__:scrape_all:266 - Scraping page 3/10
+2026-01-30 21:47:19.936 | INFO     | __main__:scrape_page:150 - Fetching page 3: https://tassnief.com/find-rating?page=3
+2026-01-30 21:47:21.806 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 3
+2026-01-30 21:47:23.808 | INFO     | __main__:scrape_all:266 - Scraping page 4/10
+2026-01-30 21:47:23.808 | INFO     | __main__:scrape_page:150 - Fetching page 4: https://tassnief.com/find-rating?page=4
+2026-01-30 21:47:25.710 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 4
+2026-01-30 21:47:27.711 | INFO     | __main__:scrape_all:266 - Scraping page 5/10
+2026-01-30 21:47:27.711 | INFO     | __main__:scrape_page:150 - Fetching page 5: https://tassnief.com/find-rating?page=5
+2026-01-30 21:47:29.577 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 5
+2026-01-30 21:47:31.578 | INFO     | __main__:scrape_all:266 - Scraping page 6/10
+2026-01-30 21:47:31.578 | INFO     | __main__:scrape_page:150 - Fetching page 6: https://tassnief.com/find-rating?page=6
+2026-01-30 21:47:33.450 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 6
+2026-01-30 21:47:35.451 | INFO     | __main__:scrape_all:266 - Scraping page 7/10
+2026-01-30 21:47:35.451 | INFO     | __main__:scrape_page:150 - Fetching page 7: https://tassnief.com/find-rating?page=7
+2026-01-30 21:47:37.298 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 7
+2026-01-30 21:47:39.298 | INFO     | __main__:scrape_all:266 - Scraping page 8/10
+2026-01-30 21:47:39.298 | INFO     | __main__:scrape_page:150 - Fetching page 8: https://tassnief.com/find-rating?page=8
+2026-01-30 21:47:41.170 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 8
+2026-01-30 21:47:43.172 | INFO     | __main__:scrape_all:266 - Scraping page 9/10
+2026-01-30 21:47:43.172 | INFO     | __main__:scrape_page:150 - Fetching page 9: https://tassnief.com/find-rating?page=9
+2026-01-30 21:47:45.034 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 9
+2026-01-30 21:47:47.036 | INFO     | __main__:scrape_all:266 - Scraping page 10/10
+2026-01-30 21:47:47.036 | INFO     | __main__:scrape_page:150 - Fetching page 10: https://tassnief.com/find-rating?page=10
+2026-01-30 21:47:48.935 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 10
+2026-01-30 21:47:50.936 | INFO     | __main__:scrape_all:289 - Total unique ratings collected: 10
+2026-01-30 21:47:50.949 | INFO     | __main__:save_to_csv:328 - Saved 10 ratings to C:\Users\majtob\Desktop\final_project\mxa1438\data\templates\ratings_scraped.csv
+2026-01-30 21:47:50.951 | INFO     | __main__:save_to_csv:333 - Saved JSON to C:\Users\majtob\Desktop\final_project\mxa1438\data\templates\ratings_scraped.json

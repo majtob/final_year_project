@@ -1,0 +1,11 @@
+2026-01-30 21:49:38.966 | INFO     | __main__:scrape_all:266 - Scraping page 1/50
+2026-01-30 21:49:38.966 | INFO     | __main__:scrape_page:150 - Fetching page 1: https://tassnief.com/find-rating?page=1
+2026-01-30 21:49:41.293 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 1
+2026-01-30 21:49:43.294 | INFO     | __main__:scrape_all:266 - Scraping page 2/50
+2026-01-30 21:49:43.294 | INFO     | __main__:scrape_page:150 - Fetching page 2: https://tassnief.com/find-rating?page=2
+2026-01-30 21:49:45.417 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 2
+2026-01-30 21:49:47.434 | INFO     | __main__:scrape_all:266 - Scraping page 3/50
+2026-01-30 21:49:47.434 | INFO     | __main__:scrape_page:150 - Fetching page 3: https://tassnief.com/find-rating?page=3
+2026-01-30 21:49:49.324 | INFO     | __main__:scrape_all:275 - Found 10 ratings on page 3
+2026-01-30 21:49:51.325 | INFO     | __main__:scrape_all:266 - Scraping page 4/50
+2026-01-30 21:49:51.325 | INFO     | __main__:scrape_page:150 - Fetching page 4: https://tassnief.com/find-rating?page=4
