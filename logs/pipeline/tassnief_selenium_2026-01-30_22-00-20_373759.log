@@ -1,7 +1,0 @@
-2026-01-30 22:00:22.738 | INFO     | __main__:_init_driver:93 - Chrome WebDriver initialized
-2026-01-30 22:00:22.738 | INFO     | __main__:scrape_all:433 - Loading https://tassnief.com/find-rating
-2026-01-30 22:00:32.219 | INFO     | __main__:scrape_all:439 - Detected 1 pages
-2026-01-30 22:00:32.220 | INFO     | __main__:scrape_all:447 - Scraping page 1/10
-2026-01-30 22:00:37.227 | INFO     | __main__:_parse_current_page:253 - Found table with selector: table
-2026-01-30 22:00:37.668 | WARNING  | __main__:scrape_all:453 - No ratings found on page 1
-2026-01-30 22:00:40.292 | INFO     | __main__:scrape_all:486 - Total unique ratings collected: 0

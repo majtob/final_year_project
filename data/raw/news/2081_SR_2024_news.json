@@ -1,0 +1,50 @@
+{
+  "ticker": "2081.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:47:01.140955",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2081.SR",
+      "title": "Alkhorayef Water raises SAIB facilities to SAR 380.5M",
+      "description": "Alkhorayef Water and Power Technologies Co.increased the existing credit facilities with the Saudi Investment Bank (SAIB) by SAR 200 million, from SAR",
+      "snippet": "Logo of Alkhorayef Water and Power Technologies Co.\n\nAlkhorayef Water and Power Technologies Co. increased the existing credit facilities with the Saudi Investm...",
+      "published_at": "2024-05-30T18:41:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1731896",
+      "search_term": "Alkhorayef",
+      "sentiment_compound": 0.3818,
+      "sentiment_pos": 0.082,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.918
+    },
+    {
+      "ticker": "2081.SR",
+      "title": "Alkhorayef Water ups facilities from Riyad Bank by SAR 94M",
+      "description": "Logo ofAlkhorayef Water and Power Technologies Co.\r\n\r\n\r\nAlkhorayef Water and Power Technologies Co. increased the Shariah-compliant facilities agr",
+      "snippet": "Logo of Alkhorayef Water and Power Technologies Co.\n\nAlkhorayef Water and Power Technologies Co. increased the Shariah-compliant facilities agreement with Riyad...",
+      "published_at": "2024-01-02T18:15:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1695420",
+      "search_term": "Alkhorayef",
+      "sentiment_compound": 0.2732,
+      "sentiment_pos": 0.072,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.928
+    },
+    {
+      "ticker": "2081.SR",
+      "title": "Alkhorayef, SAICO among 4 stocks hitting 52-week highs",
+      "description": "Shares of four companies, including Alkhorayef Water and Power Technologies Co. (AWPT) andSaudi Arabian Cooperative Insurance Co. (SAICO),hit their hi",
+      "snippet": "Tadawul trading screen\n\nShares of four companies, including Alkhorayef Water and Power Technologies Co. (AWPT) and Saudi Arabian Cooperative Insurance Co. (SAIC...",
+      "published_at": "2024-01-30T11:51:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1701302",
+      "search_term": "Alkhorayef",
+      "sentiment_compound": 0.296,
+      "sentiment_pos": 0.075,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.925
+    }
+  ]
+}

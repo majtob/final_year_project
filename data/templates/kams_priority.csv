@@ -1,0 +1,149 @@
+ticker,company_name,fiscal_year,rating,kam_going_concern,kam_revenue,kam_assets,kam_liabilities,kam_other,kam_count,kam_descriptions,extracted,notes
+1010.SR,Riyad Bank,2024,A-,,,,,,,,,Banks - Fitch: A-
+1010.SR,Riyad Bank,2023,A-,,,,,,,,,Fitch historical 2023
+1010.SR,Riyad Bank,2022,BBB+,,,,,,,,,Fitch historical 2022
+1010.SR,Riyad Bank,2021,BBB+,,,,,,,,,Fitch historical 2021
+1010.SR,Riyad Bank,2020,BBB+,,,,,,,,,Fitch historical 2020
+1010.SR,Riyad Bank,2019,BBB+,,,,,,,,,Fitch historical 2019
+1020.SR,Bank AlJazira,2024,A-,,,,,,,,,Banks - Fitch: A-
+1020.SR,Bank AlJazira,2023,A-,,,,,,,,,Fitch historical 2023
+1020.SR,Bank AlJazira,2022,BBB+,,,,,,,,,Fitch historical 2022
+1020.SR,Bank AlJazira,2021,BBB+,,,,,,,,,Fitch historical 2021
+1020.SR,Bank AlJazira,2020,BBB+,,,,,,,,,Fitch historical 2020
+1020.SR,Bank AlJazira,2019,BBB+,,,,,,,,,Fitch historical 2019
+1030.SR,SAIB,2024,A-,,,,,,,,,Banks - Fitch: A-
+1030.SR,SAIB,2023,A-,,,,,,,,,Fitch historical 2023
+1030.SR,SAIB,2022,BBB+,,,,,,,,,Fitch historical 2022
+1030.SR,SAIB,2021,BBB+,,,,,,,,,Fitch historical 2021
+1030.SR,SAIB,2020,BBB+,,,,,,,,,Fitch historical 2020
+1030.SR,SAIB,2019,BBB+,,,,,,,,,Fitch historical 2019
+1050.SR,BSF,2024,A-,,,,,,,,,Banks - Fitch: A-
+1050.SR,BSF,2023,A-,,,,,,,,,Fitch historical 2023
+1050.SR,BSF,2022,BBB+,,,,,,,,,Fitch historical 2022
+1050.SR,BSF,2021,BBB+,,,,,,,,,Fitch historical 2021
+1050.SR,BSF,2020,BBB+,,,,,,,,,Fitch historical 2020
+1050.SR,BSF,2019,BBB+,,,,,,,,,Fitch historical 2019
+1060.SR,SAB,2024,BBB+,,,,,,,,,Banks - Fitch: BBB+
+1060.SR,SAB,2023,A-,,,,,,,,,Fitch historical 2023
+1060.SR,SAB,2022,BBB+,,,,,,,,,Fitch historical 2022
+1060.SR,SAB,2021,BBB+,,,,,,,,,Fitch historical 2021
+1060.SR,SAB,2020,BBB+,,,,,,,,,Fitch historical 2020
+1060.SR,SAB,2019,BBB+,,,,,,,,,Fitch historical 2019
+1080.SR,ANB,2024,BBB+,,,,,,,,,Banks - Fitch: BBB+
+1080.SR,ANB,2023,A-,,,,,,,,,Fitch historical 2023
+1080.SR,ANB,2022,BBB+,,,,,,,,,Fitch historical 2022
+1080.SR,ANB,2021,BBB+,,,,,,,,,Fitch historical 2021
+1080.SR,ANB,2020,BBB+,,,,,,,,,Fitch historical 2020
+1080.SR,ANB,2019,BBB+,,,,,,,,,Fitch historical 2019
+1120.SR,Al Rajhi Bank,2024,A-,,,,,,,,,Banks - Fitch: A-
+1120.SR,Al Rajhi Bank,2023,A-,,,,,,,,,Fitch historical 2023
+1120.SR,Al Rajhi Bank,2022,A-,,,,,,,,,Fitch historical 2022
+1120.SR,Al Rajhi Bank,2021,A-,,,,,,,,,Fitch historical 2021
+1120.SR,Al Rajhi Bank,2020,A-,,,,,,,,,Fitch historical 2020
+1120.SR,Al Rajhi Bank,2019,A-,,,,,,,,,Fitch historical 2019
+1140.SR,Bank Albilad,2024,A-,,,,,,,,,Banks - Fitch: A-
+1140.SR,Bank Albilad,2023,A-,,,,,,,,,Fitch historical 2023
+1140.SR,Bank Albilad,2022,BBB+,,,,,,,,,Fitch historical 2022
+1140.SR,Bank Albilad,2021,BBB+,,,,,,,,,Fitch historical 2021
+1140.SR,Bank Albilad,2020,BBB+,,,,,,,,,Fitch historical 2020
+1140.SR,Bank Albilad,2019,BBB+,,,,,,,,,Fitch historical 2019
+1150.SR,Alinma Bank,2024,A-,,,,,,,,,Banks - Fitch: A-
+1150.SR,Alinma Bank,2023,A-,,,,,,,,,Fitch historical 2023
+1150.SR,Alinma Bank,2022,BBB+,,,,,,,,,Fitch historical 2022
+1150.SR,Alinma Bank,2021,BBB+,,,,,,,,,Fitch historical 2021
+1150.SR,Alinma Bank,2020,BBB+,,,,,,,,,Fitch historical 2020
+1150.SR,Alinma Bank,2019,BBB+,,,,,,,,,Fitch historical 2019
+1180.SR,SNB,2024,A-,,,,,,,,,Banks - Fitch: A-
+1180.SR,SNB,2023,A-,,,,,,,,,Fitch historical 2023
+1180.SR,SNB,2022,A-,,,,,,,,,Fitch historical 2022
+1180.SR,SNB,2021,A-,,,,,,,,,Fitch historical 2021
+1180.SR,SNB,2020,A-,,,,,,,,,Fitch historical 2020
+1180.SR,SNB,2019,A-,,,,,,,,,Fitch historical 2019
+1202.SR,MEPCO (Middle East Paper),2024,A,0,0,1,0,0,1,,,Has all 4 ratios
+1211.SR,Maaden,2024,BBB+,,,,,,,,,Materials - Fitch: BBB+
+1211.SR,Maaden,2023,BBB+,,,,,,,,,Fitch historical 2023
+2010.SR,SABIC,2024,A+,,,,,,,,,Materials - Fitch: A+
+2010.SR,SABIC,2023,A+,,,,,,,,,Fitch historical 2023
+2010.SR,SABIC,2022,A,,,,,,,,,Fitch historical 2022
+2010.SR,SABIC,2021,A,,,,,,,,,Fitch historical 2021
+2010.SR,SABIC,2020,A,,,,,,,,,Fitch historical 2020
+2010.SR,SABIC,2019,A,,,,,,,,,Fitch historical 2019
+2070.SR,Perfect Presentation (2P),2024,BBB+,0,1,1,0,0,2,,,Has all 4 ratios
+2070.SR,Perfect Presentation (2P),2023,BBB+,0,1,1,0,0,2,,,Has all 4 ratios
+2070.SR,Perfect Presentation (2P),2022,BBB+,0,1,1,0,0,2,,,Has all 4 ratios
+2081.SR,Alkhorayef Water & Power,2024,A,0,1,1,0,0,2,,,Has all 4 ratios
+2081.SR,Alkhorayef Water & Power,2023,A,0,1,1,0,0,2,,,Has all 4 ratios
+2082.SR,ACWA Power,2024,BBB-,,,,,,,,,Utilities - Fitch: BBB-
+2082.SR,ACWA Power,2023,BBB-,,,,,,,,,Fitch historical 2023
+2082.SR,ACWA Power,2022,BBB-,,,,,,,,,Fitch historical 2022
+2082.SR,ACWA Power,2021,BBB-,,,,,,,,,Fitch historical 2021
+2222.SR,Saudi Aramco,2024,A+,,,,,,,,,Energy - Fitch: A+
+2222.SR,Saudi Aramco,2023,A+,,,,,,,,,Fitch historical 2023
+2222.SR,Saudi Aramco,2022,A,,,,,,,,,Fitch historical 2022
+2222.SR,Saudi Aramco,2021,A,,,,,,,,,Fitch historical 2021
+2222.SR,Saudi Aramco,2020,A,,,,,,,,,Fitch historical 2020
+2222.SR,Saudi Aramco,2019,A,,,,,,,,,Fitch historical 2019
+2280.SR,Almarai,2024,BBB-,,,,,,,,,Food & Beverages - S&P: BBB-
+2382.SR,ADES,2024,B+,,,,,,,,,Energy - Fitch: B+
+2382.SR,ADES,2023,B+,,,,,,,,,Fitch historical 2023
+2382.SR,ADES,2022,B+,,,,,,,,,Fitch historical 2022
+3008.SR,Al Kathiri (AKHC),2023,BBB,0,1,1,0,0,2,,,Has all 4 ratios
+3008.SR,Al Kathiri (AKHC),2022,BBB,0,1,1,0,0,2,,,Has all 4 ratios
+3008.SR,Al Kathiri (AKHC),2021,BBB,0,1,1,0,0,2,,,Has all 4 ratios
+4290.SR,Alkhaleej Training,2024,BBB+,0,0,1,0,0,1,,,Has all 4 ratios
+4290.SR,Alkhaleej Training,2023,BBB+,0,0,1,0,0,1,,,Has all 4 ratios
+4320.SR,Arabia Insurance,2024,A+,,,,,,,,,Insurance - S&P: A+
+4321.SR,Cenomi Centers,2024,BB,,,,,,,,,Real Estate - Fitch: BB
+4321.SR,Cenomi Centers,2023,BB,,,,,,,,,Fitch historical 2023
+4321.SR,Cenomi Centers,2022,BB,,,,,,,,,Fitch historical 2022
+4321.SR,Cenomi Centers,2021,BB,,,,,,,,,Fitch historical 2021
+4321.SR,Cenomi Centers,2020,BB,,,,,,,,,Fitch historical 2020
+5110.SR,Saudi Electricity,2024,A+,,,,,,,,,Utilities - Fitch: A+
+5110.SR,Saudi Electricity,2023,A+,,,,,,,,,Fitch historical 2023
+5110.SR,Saudi Electricity,2022,A,,,,,,,,,Fitch historical 2022
+5110.SR,Saudi Electricity,2021,A,,,,,,,,,Fitch historical 2021
+5110.SR,Saudi Electricity,2020,A,,,,,,,,,Fitch historical 2020
+5110.SR,Saudi Electricity,2019,A,,,,,,,,,Fitch historical 2019
+7010.SR,Saudi Telecom (STC),2024,AAA,0,1,1,0,1,3,,,Has all 4 ratios
+7010.SR,Saudi Telecom (STC),2023,AAA,0,1,1,0,0,2,,,Has all 4 ratios
+7010.SR,Saudi Telecom (STC),2022,AAA,0,1,1,1,0,3,,,Has all 4 ratios
+7010.SR,Saudi Telecom (STC),2021,AAA,0,1,1,1,0,3,,,Has all 4 ratios
+7020.SR,Mobily,2024,AA,0,1,1,0,0,2,,,Has all 4 ratios
+7020.SR,Mobily,2023,AA,0,1,1,0,0,2,,,Has all 4 ratios
+7030.SR,Zain Saudi Arabia,2024,A,0,1,1,0,0,2,,,Has all 4 ratios
+7030.SR,Zain Saudi Arabia,2023,A,0,1,1,0,0,2,,,Has all 4 ratios
+8010.SR,Tawuniya,2024,A,,,,,,,,,Insurance - Fitch: A
+8010.SR,Tawuniya,2023,A,,,,,,,,,Fitch historical 2023
+8010.SR,Tawuniya,2022,A-,,,,,,,,,Fitch historical 2022
+8010.SR,Tawuniya,2021,A-,,,,,,,,,Fitch historical 2021
+8010.SR,Tawuniya,2020,A-,,,,,,,,,Fitch historical 2020
+8010.SR,Tawuniya,2019,A-,,,,,,,,,Fitch historical 2019
+8060.SR,Malath Insurance,2024,A-,,,,,,,,,Insurance - Financial Analytics: A-
+8070.SR,Arabian Shield,2024,A-,,,,,,,,,Insurance - Fitch: A-
+8070.SR,Arabian Shield,2023,A-,,,,,,,,,Fitch historical 2023
+8070.SR,Arabian Shield,2022,A-,,,,,,,,,Fitch historical 2022
+8070.SR,Arabian Shield,2021,A-,,,,,,,,,Fitch historical 2021
+8100.SR,SAICO,2024,A-,,,,,,,,,Insurance - Financial Analytics: A-
+8120.SR,Gulf Union Alahlia,2024,BBB+,,,,,,,,,Insurance - Fitch: BBB+
+8120.SR,Gulf Union Alahlia,2023,BBB+,,,,,,,,,Fitch historical 2023
+8120.SR,Gulf Union Alahlia,2022,BBB+,,,,,,,,,Fitch historical 2022
+8170.SR,Al-Etihad Insurance,2024,A-,,,,,,,,,Insurance - Fitch: A-
+8180.SR,Al Sagr Insurance,2024,BBB,,,,,,,,,Insurance - Fitch: BBB
+8180.SR,Al Sagr Insurance,2023,BBB,,,,,,,,,Fitch historical 2023
+8180.SR,Al Sagr Insurance,2022,BBB,,,,,,,,,Fitch historical 2022
+8180.SR,Al Sagr Insurance,2021,BBB,,,,,,,,,Fitch historical 2021
+8190.SR,UCA,2024,A,,,,,,,,,Insurance - S&P: A
+8200.SR,Saudi Re,2024,A-,,,,,,,,,Insurance - S&P: A-
+8230.SR,Al Rajhi Takaful,2024,A-,,,,,,,,,Insurance - Moodys: A-
+8240.SR,Chubb Arabia,2024,AA,,,,,,,,,Insurance - S&P: AA
+8250.SR,GIG,2024,A,,,,,,,,,Insurance - Financial Analytics: A
+8280.SR,LIVA,2024,BBB,,,,,,,,,Insurance - Moodys: BBB
+8300.SR,Wataniya,2024,A-,,,,,,,,,Insurance - S&P: A-
+9511.SR,Sumou Real Estate,2024,BBB+,,,,,,,,,Real Estate - Financial Analytics: BBB+
+9535.SR,Ladun Investment,2024,BBB+,0,1,1,0,0,2,,,Has all 4 ratios
+9535.SR,Ladun Investment,2022,BBB+,0,1,1,0,0,2,,,
+9568.SR,Mayar Holding,2024,BB,0,1,1,0,0,0,,,Has all 4 ratios
+9578.SR,Atlas Elevators,2024,BB,,,,,,,,,Capital Goods - Financial Analytics: BB
+9596.SR,Quara Finance,2024,BBB,0,1,1,0,0,2,,,Has all 4 ratios
+9596.SR,Quara Finance,2023,BBB,0,0,1,0,1,2,,,Has all 4 ratios
+9619.SR,Multi Business Group,2024,BB+,0,1,0,0,0,1,,,Has all 4 ratios

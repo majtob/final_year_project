@@ -1,0 +1,48 @@
+ticker,company_name,sector,moodys,fitch,sp,tassnief,financial_analytics,source
+2222.SR,Saudi Aramco,Energy,Aa3,A+,,,, argaam_oct2025
+2382.SR,ADES,Energy,,B+,B+,,,argaam_oct2025
+1202.SR,MEPCO,Materials,,,,,A-,argaam_oct2025
+1211.SR,Maaden,Materials,Baa1,BBB+,,,,argaam_oct2025
+2010.SR,SABIC,Materials,A2,A+,A+,,,argaam_oct2025
+3008.SR,Al Kathiri Holding,Materials,,,,,BBB-,argaam_oct2025
+4290.SR,Alkhaleej Training,Consumer Services,,,,BBB+,A-,argaam_oct2025
+2280.SR,Almarai,Food & Beverages,Baa3,,BBB-,,,argaam_oct2025
+1010.SR,Riyad Bank,Banks,A1,A-,A,,,argaam_oct2025
+1020.SR,Bank AlJazira,Banks,A3,A-,,,,argaam_oct2025
+1030.SR,SAIB,Banks,A2,A-,BBB+,,,argaam_oct2025
+1050.SR,BSF,Banks,A1,A-,A-,,,argaam_oct2025
+1060.SR,SAB,Banks,A1,BBB+,,,,argaam_oct2025
+1080.SR,ANB,Banks,A1,BBB+,BBB+,,,argaam_oct2025
+1120.SR,Al Rajhi Bank,Banks,Aa3,A-,A,,,argaam_oct2025
+1140.SR,Bank Albilad,Banks,A2,A-,,,,argaam_oct2025
+1150.SR,Alinma Bank,Banks,A2,A-,A-,,,argaam_oct2025
+1180.SR,SNB,Banks,Aa3,A-,A-,,,argaam_oct2025
+8010.SR,Tawuniya,Insurance,,A,,,,argaam_oct2025
+8060.SR,Malath Insurance,Insurance,,,,,A-,argaam_oct2025
+8070.SR,Arabian Shield,Insurance,,A-,,,,argaam_oct2025
+8100.SR,SAICO,Insurance,,,,,A-,argaam_oct2025
+8120.SR,Gulf Union Alahlia,Insurance,,BBB+,,,,argaam_oct2025
+4320.SR,Arabia Insurance,Insurance,,,A+,,,argaam_oct2025
+8170.SR,Al-Etihad Insurance,Insurance,,A-,,,,argaam_oct2025
+8180.SR,Al Sagr Insurance,Insurance,,BBB,BBB,,,argaam_oct2025
+8190.SR,UCA,Insurance,,,A,,,argaam_oct2025
+8200.SR,Saudi Re,Insurance,A3,,A-,,,argaam_oct2025
+8230.SR,Al Rajhi Takaful,Insurance,A3,,,,,argaam_oct2025
+8240.SR,Chubb Arabia,Insurance,,,AA,,,argaam_oct2025
+8250.SR,GIG,Insurance,,,,,A,argaam_oct2025
+8280.SR,LIVA,Insurance,Baa2,,,,,argaam_oct2025
+8300.SR,Wataniya,Insurance,,,A-,,,argaam_oct2025
+2070.SR,Perfect Presentation (2P),Software & Services,,,,,BBB+,argaam_oct2025
+7010.SR,Saudi Telecom (STC),Telecom,Aa3,A+,A+,AAA,,argaam_oct2025
+2081.SR,Alkhorayef Water & Power,Utilities,,,,,A-,argaam_oct2025
+2082.SR,ACWA Power,Utilities,,BBB-,,,,argaam_oct2025
+5110.SR,Saudi Electricity,Utilities,Aa3,A+,A+,,,argaam_oct2025
+4321.SR,Cenomi Centers,Real Estate,,BB,BB-,,A-,argaam_oct2025
+9511.SR,Sumou Real Estate,Real Estate,,,,,BBB+,argaam_oct2025
+7020.SR,Mobily,Telecom,,,,,AA,argaam_oct2025
+7030.SR,Zain KSA,Telecom,,,,,A,argaam_oct2025
+9535.SR,Ladun Investment,Financial Services,,,,,BBB+,argaam_oct2025
+9596.SR,Quara Finance,Financial Services,,,,,BBB-,argaam_oct2025
+9619.SR,Multi Business Group,Commercial Services,,,,,BB+,argaam_oct2025
+9578.SR,Atlas Elevators,Capital Goods,,,,,BB,argaam_oct2025
+9568.SR,Mayar Holding,Capital Goods,,,,,BBB,argaam_oct2025

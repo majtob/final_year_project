@@ -1,0 +1,50 @@
+{
+  "ticker": "4263.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:45:51.873144",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "4263.SR",
+      "title": "SAL signs MoU with Emaar EC to enhance, develop logistics services",
+      "description": "SAL Logistics Services Co. signed a memorandum of understanding (MoU) with Emaar The Economic City (Emaar EC) for joint cooperation aimed at enhancing",
+      "snippet": "The signing ceremony\n\nSAL Logistics Services Co. signed a memorandum of understanding (MoU) with Emaar The Economic City (Emaar EC) for joint cooperation aimed ...",
+      "published_at": "2025-02-28T10:11:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1793891",
+      "search_term": "SAL Logistics",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4263.SR",
+      "title": "SAL signs addendum with SGS for ramp, cargo aircraft handling",
+      "description": "SAL Saudi Logistics Services signed an addendum yesterday, July 21, to its contract with Saudi Ground Services Co. (SGS) to provide ramp handling serv",
+      "snippet": "Logo of SAL Saudi Logistics Services\n\nSAL Saudi Logistics Services signed an addendum yesterday, July 21, to its contract with Saudi Ground Services Co. (SGS) t...",
+      "published_at": "2025-07-22T10:07:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1829479",
+      "search_term": "SAL Logistics",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4263.SR",
+      "title": "SAL inks MoU with stc following agreement with Saudi MDA at LEAP 2025",
+      "description": "5 conference. The joint agreement aims at bringing innovative AI-based and Internet of Things …",
+      "snippet": "Riyadh– Mubasher: SAL Saudi Logistics Services Company has signed a memorandum of understanding (MoU) with Saudi Telecom Company (stc) at the LEAP 2025 confer...",
+      "published_at": "2025-02-11T16:27:48.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4402160/SAL-inks-MoU-with-stc-following-agreement-with-Saudi-MDA-at-LEAP-2025",
+      "search_term": "SAL Logistics",
+      "sentiment_compound": 0.8519,
+      "sentiment_pos": 0.271,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.729
+    }
+  ]
+}

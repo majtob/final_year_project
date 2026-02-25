@@ -1,0 +1,36 @@
+{
+  "ticker": "9596.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:45:53.983531",
+  "article_count": 2,
+  "articles": [
+    {
+      "ticker": "9596.SR",
+      "title": "Quara Finance obtains SAR 100M credit facility from Bank AlJazira",
+      "description": "Quara Finance Co.entered on Aug. 3 intoa five-year, Shariah-compliant credit facility agreement for SAR 100 million withBank AlJazira.\r\n\r\n\r\n\r\nFor more",
+      "snippet": "Agree\n\nArgaam Investment Company has updated the Privacy Policy of its services and digital platforms. Know more about our Privacy Policy here.\n\nArgaam uses coo...",
+      "published_at": "2025-08-04T09:39:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1832949",
+      "search_term": "Quara Finance",
+      "sentiment_compound": 0.8126,
+      "sentiment_pos": 0.237,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.763
+    },
+    {
+      "ticker": "9596.SR",
+      "title": "Insight into TASI-listed companies with credit ratings",
+      "description": "A recent survey by Argaam revealed that 39 companies listed on the Main Market (TASI), and eight on the Nomu-Parallel Market, have received credit rat",
+      "snippet": "A recent survey by Argaam revealed that 39 companies listed on the Main Market (TASI), and eight on the Nomu-Parallel Market, have received credit ratings from ...",
+      "published_at": "2025-10-16T11:19:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1850297",
+      "search_term": "Quara Finance",
+      "sentiment_compound": 0.6369,
+      "sentiment_pos": 0.148,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.852
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+ticker,company_name,sector,rating_agency,rating,rating_numeric,fiscal_year,source,has_financials,liquid,cumprof,profitab,leverage,rating_category
+2222.SR,Saudi Aramco,Energy,Fitch,A,16,2019,fitch_confirmed,False,,,,,A
+2222.SR,Saudi Aramco,Energy,Fitch,A,16,2020,fitch_confirmed,False,,,,,A
+2222.SR,Saudi Aramco,Energy,Fitch,A,16,2021,fitch_confirmed,True,0.1421438116419829,0.4709149253938382,0.36139206266270246,1.4519683182505652,A
+2222.SR,Saudi Aramco,Energy,Fitch,A,16,2022,fitch_confirmed,True,0.19741676842133976,0.5374780779518349,0.46605672695998757,2.0152314348367213,A
+2222.SR,Saudi Aramco,Energy,Fitch,A+,17,2023,fitch_confirmed,True,0.15960031316335344,0.5696158906188205,0.36169277706481995,2.344734682417986,A
+2222.SR,Saudi Aramco,Energy,Fitch,A+,17,2024,fitch_confirmed,True,0.09743318905938612,0.5538972532936133,0.327009485771343,2.1382991809912273,A
+2010.SR,SABIC,Materials,Fitch,A,16,2019,fitch_confirmed,False,,,,,A
+2010.SR,SABIC,Materials,Fitch,A,16,2020,fitch_confirmed,False,,,,,A
+2010.SR,SABIC,Materials,Fitch,A,16,2021,fitch_confirmed,True,0.17886227656737264,0.08703328099789837,0.11220723081219425,1.9701385660222375,A
+2010.SR,SABIC,Materials,Fitch,A,16,2022,fitch_confirmed,True,0.18723287724801357,0.10248426971894936,0.08531532009192917,2.278987802915612,A
+2010.SR,SABIC,Materials,Fitch,A+,17,2023,fitch_confirmed,True,0.1623883407937302,0.09550953164345821,0.023515128047684117,1.9706019837290012,A
+2010.SR,SABIC,Materials,Fitch,A+,17,2024,fitch_confirmed,True,0.16546571367929075,0.07214108004562124,0.025031390593800613,1.9544837391850092,A
+5110.SR,Saudi Electricity,Utilities,Fitch,A,16,2019,fitch_confirmed,False,,,,,A
+5110.SR,Saudi Electricity,Utilities,Fitch,A,16,2020,fitch_confirmed,False,,,,,A
+5110.SR,Saudi Electricity,Utilities,Fitch,A,16,2021,fitch_confirmed,True,-0.0655995936378185,0.07480005581335321,0.03677510315419443,1.1270477272268573,A
+5110.SR,Saudi Electricity,Utilities,Fitch,A,16,2022,fitch_confirmed,True,-0.025113037929368774,0.07983906391757284,0.03828076291137934,1.1556435085980803,A
+5110.SR,Saudi Electricity,Utilities,Fitch,A+,17,2023,fitch_confirmed,True,-0.0476821369441999,0.07578576564782642,0.029073280945342513,1.0484581028565396,A
+5110.SR,Saudi Electricity,Utilities,Fitch,A+,17,2024,fitch_confirmed,True,-0.05082833356865925,0.07480473476080919,0.022115121164303073,0.8502550575355645,A
+1211.SR,Maaden,Materials,Fitch,BBB+,14,2023,fitch_confirmed,True,0.12950037535408115,0.08641176599810356,0.04293293717596355,1.031909883761302,BBB
+1211.SR,Maaden,Materials,Fitch,BBB+,14,2024,fitch_confirmed,True,0.08229946149256538,0.0873914626383562,0.060389038978256614,1.0950809143529225,BBB
+2082.SR,ACWA Power,Utilities,Fitch,BBB-,12,2021,fitch_confirmed,True,0.10025293216621484,0.028612191053877755,0.04139837892560405,0.45622189082752557,BBB
+2082.SR,ACWA Power,Utilities,Fitch,BBB-,12,2022,fitch_confirmed,True,0.1413959241631645,0.04260034410243476,0.054740764428226556,0.695007406256873,BBB
+2082.SR,ACWA Power,Utilities,Fitch,BBB-,12,2023,fitch_confirmed,True,0.11534015746102289,0.0590240006264096,0.05975830157209107,0.6035919344956632,BBB
+2082.SR,ACWA Power,Utilities,Fitch,BBB-,12,2024,fitch_confirmed,True,0.09624598379690305,0.08565501437290976,0.05831499999314379,0.7461273149897591,BBB
+2382.SR,ADES,Energy,Fitch,B+,8,2022,fitch_confirmed,False,,,,,BB
+2382.SR,ADES,Energy,Fitch,B+,8,2023,fitch_confirmed,True,-0.04076014707102893,0.08863618249642218,0.06615797016772136,0.42335480187856184,BB
+2382.SR,ADES,Energy,Fitch,B+,8,2024,fitch_confirmed,True,0.00971575254904481,0.11312848813312318,0.08250250015141924,0.4332457341624706,BB
+4321.SR,Cenomi Centers,Real Estate,Fitch,BB,10,2020,fitch_confirmed,False,,,,,BB
+4321.SR,Cenomi Centers,Real Estate,Fitch,BB,10,2021,fitch_confirmed,True,0.016357365913592152,0.30785814064187245,0.025665704564779353,1.167074825100584,BB
+4321.SR,Cenomi Centers,Real Estate,Fitch,BB,10,2022,fitch_confirmed,True,0.007805981264914778,0.2961720244153838,0.03650696883872478,1.0867770132936718,BB
+4321.SR,Cenomi Centers,Real Estate,Fitch,BB,10,2023,fitch_confirmed,True,-0.09126900690434397,0.2966230230259127,0.05952548346778674,1.064937268149597,BB
+4321.SR,Cenomi Centers,Real Estate,Fitch,BB,10,2024,fitch_confirmed,True,0.04045450158136625,0.27785494308220543,0.044563913916292615,0.891938328708021,BB
+1180.SR,SNB,Banks,Fitch,A-,15,2019,fitch_confirmed,False,,,,,A
+1180.SR,SNB,Banks,Fitch,A-,15,2020,fitch_confirmed,False,,,,,A
+1180.SR,SNB,Banks,Fitch,A-,15,2021,fitch_confirmed,False,,,,,A
+1180.SR,SNB,Banks,Fitch,A-,15,2022,fitch_confirmed,True,,0.023231941905092823,,0.21416933526566181,A
+1180.SR,SNB,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.008829747652721574,,0.20527422773786405,A
+1180.SR,SNB,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.012997443908762635,,0.21218535127250915,A
+1120.SR,Al Rajhi Bank,Banks,Fitch,A-,15,2019,fitch_confirmed,False,,,,,A
+1120.SR,Al Rajhi Bank,Banks,Fitch,A-,15,2020,fitch_confirmed,False,,,,,A
+1120.SR,Al Rajhi Bank,Banks,Fitch,A-,15,2021,fitch_confirmed,False,,,,,A
+1120.SR,Al Rajhi Bank,Banks,Fitch,A-,15,2022,fitch_confirmed,True,,0.012952538540509515,,0.1515360848084568,A
+1120.SR,Al Rajhi Bank,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.020929435918902697,,0.15222232786619613,A
+1120.SR,Al Rajhi Bank,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.02202417229520981,,0.14498821173365276,A
+1010.SR,Riyad Bank,Banks,Fitch,BBB+,14,2019,fitch_confirmed,False,,,,,BBB
+1010.SR,Riyad Bank,Banks,Fitch,BBB+,14,2020,fitch_confirmed,False,,,,,BBB
+1010.SR,Riyad Bank,Banks,Fitch,BBB+,14,2021,fitch_confirmed,False,,,,,BBB
+1010.SR,Riyad Bank,Banks,Fitch,BBB+,14,2022,fitch_confirmed,True,,0.020854637615182352,,0.1850976672863197,BBB
+1010.SR,Riyad Bank,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.029151356394216617,,0.1845063005407212,A
+1010.SR,Riyad Bank,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.029596397281301357,,0.17856898560575157,A
+1060.SR,SAB,Banks,Fitch,BBB+,14,2019,fitch_confirmed,False,,,,,BBB
+1060.SR,SAB,Banks,Fitch,BBB+,14,2020,fitch_confirmed,False,,,,,BBB
+1060.SR,SAB,Banks,Fitch,BBB+,14,2021,fitch_confirmed,True,,0.012245031932790003,,0.24173369140642006,BBB
+1060.SR,SAB,Banks,Fitch,BBB+,14,2022,fitch_confirmed,True,,0.019714203876028038,,0.21032906995249556,BBB
+1060.SR,SAB,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.02722097764266649,,0.2100126472273268,A
+1060.SR,SAB,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.02870093976331916,,0.20620509341703464,A
+1050.SR,BSF,Banks,Fitch,BBB+,14,2019,fitch_confirmed,False,,,,,BBB
+1050.SR,BSF,Banks,Fitch,BBB+,14,2020,fitch_confirmed,False,,,,,BBB
+1050.SR,BSF,Banks,Fitch,BBB+,14,2021,fitch_confirmed,False,,,,,BBB
+1050.SR,BSF,Banks,Fitch,BBB+,14,2022,fitch_confirmed,True,,0.04208929752657983,,0.20040741251585079,BBB
+1050.SR,BSF,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.04616690950471941,,0.19506115349308448,A
+1050.SR,BSF,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.01537584440917956,,0.19148618674692383,A
+1080.SR,ANB,Banks,Fitch,BBB+,14,2019,fitch_confirmed,False,,,,,BBB
+1080.SR,ANB,Banks,Fitch,BBB+,14,2020,fitch_confirmed,False,,,,,BBB
+1080.SR,ANB,Banks,Fitch,BBB+,14,2021,fitch_confirmed,False,,,,,BBB
+1080.SR,ANB,Banks,Fitch,BBB+,14,2022,fitch_confirmed,True,,0.03207122776574966,,0.17949508370856773,BBB
+1080.SR,ANB,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.04377918847259795,,0.19290834099976753,A
+1080.SR,ANB,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.024694023131838414,,0.18405987894856346,A
+1150.SR,Alinma Bank,Banks,Fitch,BBB+,14,2019,fitch_confirmed,False,,,,,BBB
+1150.SR,Alinma Bank,Banks,Fitch,BBB+,14,2020,fitch_confirmed,False,,,,,BBB
+1150.SR,Alinma Bank,Banks,Fitch,BBB+,14,2021,fitch_confirmed,False,,,,,BBB
+1150.SR,Alinma Bank,Banks,Fitch,BBB+,14,2022,fitch_confirmed,True,,0.02137839063016896,,0.18910968726396377,BBB
+1150.SR,Alinma Bank,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.004724759888361662,,0.16964792487921956,A
+1150.SR,Alinma Bank,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.011517248896253909,,0.1760590126912804,A
+1030.SR,SAIB,Banks,Fitch,BBB+,14,2019,fitch_confirmed,False,,,,,BBB
+1030.SR,SAIB,Banks,Fitch,BBB+,14,2020,fitch_confirmed,False,,,,,BBB
+1030.SR,SAIB,Banks,Fitch,BBB+,14,2021,fitch_confirmed,True,,0.007040119070290031,,0.19106762550181627,BBB
+1030.SR,SAIB,Banks,Fitch,BBB+,14,2022,fitch_confirmed,True,,0.00877083187174195,,0.1819411502157174,BBB
+1030.SR,SAIB,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.0131666876089599,,0.1528619735568668,A
+1030.SR,SAIB,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.01348305135549939,,0.15248571198676833,A
+1020.SR,Bank AlJazira,Banks,Fitch,BBB+,14,2019,fitch_confirmed,False,,,,,BBB
+1020.SR,Bank AlJazira,Banks,Fitch,BBB+,14,2020,fitch_confirmed,False,,,,,BBB
+1020.SR,Bank AlJazira,Banks,Fitch,BBB+,14,2021,fitch_confirmed,False,,,,,BBB
+1020.SR,Bank AlJazira,Banks,Fitch,BBB+,14,2022,fitch_confirmed,True,,0.009450188766310624,,0.13310909114454458,BBB
+1020.SR,Bank AlJazira,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.013395180177113102,,0.1450961500666419,A
+1020.SR,Bank AlJazira,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.016516285237758343,,0.1322228705682061,A
+1140.SR,Bank Albilad,Banks,Fitch,BBB+,14,2019,fitch_confirmed,False,,,,,BBB
+1140.SR,Bank Albilad,Banks,Fitch,BBB+,14,2020,fitch_confirmed,False,,,,,BBB
+1140.SR,Bank Albilad,Banks,Fitch,BBB+,14,2021,fitch_confirmed,True,,0.004709432171973252,,0.12116569340734323,BBB
+1140.SR,Bank Albilad,Banks,Fitch,BBB+,14,2022,fitch_confirmed,True,,0.012273390050934186,,0.11536505212137342,BBB
+1140.SR,Bank Albilad,Banks,Fitch,A-,15,2023,fitch_confirmed,True,,0.02355899308329314,,0.11934597905074701,A
+1140.SR,Bank Albilad,Banks,Fitch,A-,15,2024,fitch_confirmed,True,,0.012061676993546279,,0.12072795327527358,A
+8010.SR,Tawuniya,Insurance,Fitch,A-,15,2019,fitch_confirmed,False,,,,,A
+8010.SR,Tawuniya,Insurance,Fitch,A-,15,2020,fitch_confirmed,False,,,,,A
+8010.SR,Tawuniya,Insurance,Fitch,A-,15,2021,fitch_confirmed,True,,0.029814327241649563,0.030417459505345315,0.30622326788180615,A
+8010.SR,Tawuniya,Insurance,Fitch,A-,15,2022,fitch_confirmed,True,,0.04083126315906736,0.034742231358438416,0.25829517729057877,A
+8010.SR,Tawuniya,Insurance,Fitch,A,16,2023,fitch_confirmed,True,,0.04024830472039384,,0.24480157329795,A
+8010.SR,Tawuniya,Insurance,Fitch,A,16,2024,fitch_confirmed,True,,0.06901698590582901,,0.27112180336707986,A
+8070.SR,Arabian Shield,Insurance,Fitch,A-,15,2021,fitch_confirmed,True,,0.09479807467007677,,1.2269183658127822,A
+8070.SR,Arabian Shield,Insurance,Fitch,A-,15,2022,fitch_confirmed,True,,0.04984170948073478,,0.9284972826789487,A
+8070.SR,Arabian Shield,Insurance,Fitch,A-,15,2023,fitch_confirmed,True,,0.05387768287282478,,0.8525097424590138,A
+8070.SR,Arabian Shield,Insurance,Fitch,A-,15,2024,fitch_confirmed,True,,0.06574996582296906,,0.8422855010316385,A
+8180.SR,Al Sagr Insurance,Insurance,Fitch,BBB,13,2021,fitch_confirmed,True,,-0.261405812104055,-0.09627682058249991,0.39458816121352785,BBB
+8180.SR,Al Sagr Insurance,Insurance,Fitch,BBB,13,2022,fitch_confirmed,True,,-0.05150016685905507,-0.08592678996601454,0.3702804785804713,BBB
+8180.SR,Al Sagr Insurance,Insurance,Fitch,BBB,13,2023,fitch_confirmed,True,,0.01819392854536573,0.08629093549552157,0.5274599403636788,BBB
+8180.SR,Al Sagr Insurance,Insurance,Fitch,BBB,13,2024,fitch_confirmed,True,,0.03878947822356609,0.054721104850562426,1.1702009861744087,BBB
+8120.SR,Gulf Union Alahlia,Insurance,Fitch,BBB+,14,2022,fitch_confirmed,True,,-0.1296212596594621,-0.016932384185299857,0.7818191156275055,BBB
+8120.SR,Gulf Union Alahlia,Insurance,Fitch,BBB+,14,2023,fitch_confirmed,True,,0.0017322171553709683,0.11953361126809382,1.0553837851093315,BBB
+8120.SR,Gulf Union Alahlia,Insurance,Fitch,BBB+,14,2024,fitch_confirmed,True,,0.030740604164444428,0.043466011478600755,1.1008654937580662,BBB

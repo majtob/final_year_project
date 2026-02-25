@@ -1,0 +1,64 @@
+{
+  "ticker": "7030.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:46:26.317382",
+  "article_count": 4,
+  "articles": [
+    {
+      "ticker": "7030.SR",
+      "title": "Zain KSA, Yansab see 3 negotiated deals worth SAR 15.2M",
+      "description": "The Saudi Exchange (Tadawul) witnessed today, Oct. 30, three negotiated deals onMobile Telecommunication Company Saudi Arabia (Zain KSA) and Yanbu Nat",
+      "snippet": "Two investors monitor stock market movements at the Saudi Stock Exchange (Tadawul)\n\nThe Saudi Exchange (Tadawul) witnessed today, Oct. 30, three negotiated deal...",
+      "published_at": "2025-10-30T12:00:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1854237",
+      "search_term": "Zain Saudi",
+      "sentiment_compound": 0.2263,
+      "sentiment_pos": 0.06,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.94
+    },
+    {
+      "ticker": "7030.SR",
+      "title": "Zain KSA obtains SAR 5.5bn Mrabaha facility from 5 banks",
+      "description": "consortium of five lenders. The telecom group obtained the loan from Al Rajhi Bank, Arab …",
+      "snippet": "Riyadh – Mubasher: Mobile Telecommunication Company Saudi Arabia (Zain KSA) secured a Murabaha facility agreement amounting to SAR 5.50 billion from a consort...",
+      "published_at": "2025-09-16T05:36:27.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4498251/Zain-KSA-obtains-SAR-5-5bn-Mrabaha-facility-from-5-banks",
+      "search_term": "Zain Saudi",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7030.SR",
+      "title": "MSCI implements periodic changes to Saudi market today",
+      "description": "MSCI Inc., the provider of research-based indexes and analytics, implements today, Feb. 27, its changes to the Saudi Exchange (Tadawul) according to i",
+      "snippet": "Logo of MSCI Inc.\n\nMSCI Inc., the provider of research-based indexes and analytics, implements today, Feb. 27, its changes to the Saudi Exchange (Tadawul) accor...",
+      "published_at": "2025-02-27T11:43:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1793626",
+      "search_term": "Zain Saudi",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7030.SR",
+      "title": "Tadawul: 5 stocks fall to 52-week lows",
+      "description": "Shares of fiveTadawul-listed companies, includingSaudi Kayan Petrochemical Co. (Saudi Kayan)and Sahara International Petrochemical Co. (Sipchem)fell t",
+      "snippet": "Tadawul trading screen\n\nShares of five Tadawul-listed companies, including Saudi Kayan Petrochemical Co. (Saudi Kayan) and Sahara International Petrochemical Co...",
+      "published_at": "2025-01-07T11:59:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1780690",
+      "search_term": "Zain KSA",
+      "sentiment_compound": 0.1027,
+      "sentiment_pos": 0.088,
+      "sentiment_neg": 0.072,
+      "sentiment_neu": 0.84
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "ticker": "8050.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:46:42.492217",
+  "article_count": 6,
+  "articles": [
+    {
+      "ticker": "8050.SR",
+      "title": "SAICO cuts accumulated losses to 17.1% of capital",
+      "description": "The Saudi Arabian Cooperative Insurance Co. (SAICO) trimmed its accumulated losses to SAR 51.2 million as of June 30, 2024, which is 17.07% of its SAR",
+      "snippet": "Logo of Saudi Arabian Cooperative Insurance Co. (SAICO)\n\nThe Saudi Arabian Cooperative Insurance Co. (SAICO) trimmed its accumulated losses to SAR 51.2 million ...",
+      "published_at": "2024-08-12T17:54:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1747728",
+      "search_term": "SAICO",
+      "sentiment_compound": -0.765,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.197,
+      "sentiment_neu": 0.803
+    },
+    {
+      "ticker": "8050.SR",
+      "title": "SAICO recommends using statutory reserve to offset accumulated losses",
+      "description": "Saudi Arabian Cooperative Insurance Co.’s (SAICO)board of directors recommended, on Nov. 12, to use SAR 39.09 million from the total statutory reserve",
+      "snippet": "Logo of Saudi Arabian Cooperative Insurance Co. (SAICO)\n\nSaudi Arabian Cooperative Insurance Co.’s (SAICO) board of directors recommended, on Nov. 12, to use ...",
+      "published_at": "2024-11-13T08:51:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1768867",
+      "search_term": "SAICO",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.108,
+      "sentiment_neg": 0.078,
+      "sentiment_neu": 0.814
+    },
+    {
+      "ticker": "8050.SR",
+      "title": "Alkhorayef, SAICO among 4 stocks hitting 52-week highs",
+      "description": "Shares of four companies, including Alkhorayef Water and Power Technologies Co. (AWPT) andSaudi Arabian Cooperative Insurance Co. (SAICO),hit their hi",
+      "snippet": "Tadawul trading screen\n\nShares of four companies, including Alkhorayef Water and Power Technologies Co. (AWPT) and Saudi Arabian Cooperative Insurance Co. (SAIC...",
+      "published_at": "2024-01-30T11:51:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1701302",
+      "search_term": "SAICO",
+      "sentiment_compound": 0.296,
+      "sentiment_pos": 0.075,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.925
+    },
+    {
+      "ticker": "8050.SR",
+      "title": "Bupa Arabia for Cooperative Insurance Co. Announces Contract Award with Saudi Arabian Airlines Corporation",
+      "description": "rlines Corporation to provide health insurance services to its employees, their families and …",
+      "snippet": "Introduction\n\nBupa Arabia for Cooperative Insurance Company announces it has received the confirmation of the Saudi Arabian Airlines Corporation to provide heal...",
+      "published_at": "2024-01-11T05:00:51.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4234349/Bupa-Arabia-for-Cooperative-Insurance-Co-Announces-Contract-Award-with-Saudi-Arabian-Airlines-Corporation",
+      "search_term": "Saudi Arabian Cooperative Insurance",
+      "sentiment_compound": 0.5423,
+      "sentiment_pos": 0.115,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.885
+    },
+    {
+      "ticker": "8050.SR",
+      "title": "Alinma Bank Announces Purchase of (4,589,314) Shares in Arabian Shield Cooperative Insurance Co.",
+      "description": "ails Alinma Bank announces the completion of a Private Transaction to purchase (4,589,314) shares …",
+      "snippet": "Element List Explanation\n\nIntroduction Alinma Bank Announces Purchase of (4,589,314) Shares in Arabian Shield Cooperative Insurance Co.\n\nTransaction Details Ali...",
+      "published_at": "2024-02-05T12:39:37.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4243436/Alinma-Bank-Announces-Purchase-of-4-589-314-Shares-in-Arabian-Shield-Cooperative-Insurance-Co-",
+      "search_term": "Saudi Arabian Cooperative Insurance",
+      "sentiment_compound": 0.5267,
+      "sentiment_pos": 0.145,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.855
+    },
+    {
+      "ticker": "8050.SR",
+      "title": "The Saudi Arabian Cooperative Insurance Company announces that it has received a Sharia certificate regarding the company’s business and activities",
+      "description": "a certificate No. 55-M-2024 from the company’s Sharia advisor, of Dr. Muhammad Ali Al-Qari …",
+      "snippet": "Announcement Detail\n\nThe Saudi Arabian Cooperative Insurance Company announces that it received on Tuesday 11/06/2024, a Sharia certificate No. 55-M-2024 from t...",
+      "published_at": "2024-06-12T05:00:25.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4303276/The-Saudi-Arabian-Cooperative-Insurance-Company-announces-that-it-has-received-a-Sharia-certificate-regarding-the-company-s-business-and-activities",
+      "search_term": "Saudi Arabian Cooperative Insurance",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

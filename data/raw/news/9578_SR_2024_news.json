@@ -1,0 +1,50 @@
+{
+  "ticker": "9578.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:46:36.964755",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "9578.SR",
+      "title": "Atlas Elevators deposits SAR 18M at Al Jazira Bank with 5.9% annual return",
+      "description": "Atlas Elevators General Trading and Contracting Co. announced today, May 30, making a deposit worth SAR 17.96 million in Bank AlJazira with 5.90% annu",
+      "snippet": "Logo of Atlas Elevators General Trading and Contracting Co.\n\nAtlas Elevators General Trading and Contracting Co. announced today, May 30, making a deposit worth...",
+      "published_at": "2024-05-30T19:09:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1731909",
+      "search_term": "Atlas Elevators",
+      "sentiment_compound": 0.2263,
+      "sentiment_pos": 0.05,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.95
+    },
+    {
+      "ticker": "9578.SR",
+      "title": "Atlas Elevators renews SAR 18M deposit with Bank AlJazira",
+      "description": "Atlas Elevators General Trading and Contracting Co. renewed a SAR 17.96 million deposit with Bank AlJazira.\r\n\r\n\r\n\r\nFor more news on listed companies",
+      "snippet": "Agree\n\nArgaam Investment Company has updated the Privacy Policy of its services and digital platforms. Know more about our Privacy Policy here.\n\nArgaam uses coo...",
+      "published_at": "2024-09-08T10:45:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1753253",
+      "search_term": "Atlas Elevators",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "9578.SR",
+      "title": "The World’s Best Cruise Tips, According To Experts",
+      "description": "From first time cruise tips to seasoned secrets, here are the world's best cruise tips and cruise hacks, according to 34 cruise line presidents and experts.",
+      "snippet": "Seabourn Encore Seabourn Cruise Line\n\nS ailing across the seven seas from the sparkling shores of the Caribbean to the chilly iceberg-filled waters of Antarctic...",
+      "published_at": "2024-12-20T13:59:12.000000Z",
+      "source_name": "forbes.com",
+      "url": "https://www.forbes.com/sites/lewisnunn/2024/12/20/the-worlds-best-cruise-tips-according-to-experts/",
+      "search_term": "Atlas Elevators",
+      "sentiment_compound": 0.8555,
+      "sentiment_pos": 0.208,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.792
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "ticker": "6004.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:46:00.517940",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "6004.SR",
+      "title": "CATRION names Wajdy as Managing Director, Al Shuhail as CEO",
+      "description": "CATRION Catering Holding Co.’s board appointed the current CEO, Wajdy Mohammed Al-Ghabban, to the position of Managing Director for the current term a",
+      "snippet": "Logo of CATRION Catering Holding Co.\n\nCATRION Catering Holding Co.’s board appointed the current CEO, Wajdy Mohammed Al-Ghabban, to the position of Managing D...",
+      "published_at": "2025-01-27T19:21:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1785312",
+      "search_term": "CATRION",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "6004.SR",
+      "title": "CATRION Catering Holding Co. Announces Contract Sign Off with Middle East Healthcare Company (Saudi German Health)",
+      "description": "ny (Saudi German Health), whereby CATRION will provide Middle East Healthcare Company with …",
+      "snippet": "Introduction\n\nCATRION Catering Holding Company (CATRION) announces the signing of a contract with Middle East Healthcare Company (Saudi German Health), whereby ...",
+      "published_at": "2025-01-23T12:49:49.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4395571/CATRION-Catering-Holding-Co-Announces-Contract-Sign-Off-with-Middle-East-Healthcare-Company-Saudi-German-Health-",
+      "search_term": "CATRION",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "6004.SR",
+      "title": "CATRION signs a SAR 114M contract with Saudi German Health",
+      "description": "CATRION Catering Holding Co. signed a contract with Middle East Healthcare Co. (Saudi German Health), where the former will provide the latter with he",
+      "snippet": "CATRION Catering Holding Co. signed a contract with Middle East Healthcare Co. (Saudi German Health), where the former will provide the latter with healthy meal...",
+      "published_at": "2025-01-23T18:00:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1784551",
+      "search_term": "CATRION",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

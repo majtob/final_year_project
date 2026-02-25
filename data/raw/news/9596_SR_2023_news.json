@@ -1,0 +1,36 @@
+{
+  "ticker": "9596.SR",
+  "year": 2023,
+  "fetch_date": "2026-02-22T02:47:23.688994",
+  "article_count": 2,
+  "articles": [
+    {
+      "ticker": "9596.SR",
+      "title": "Mobily’s fintech arm Mobily Pay signs 4 agreements at Seamless Saudi Arabia",
+      "description": "Seamless Saudi Arabia 2023 with the signing of four memoranda of understanding (MoU) with local …",
+      "snippet": "Riyadh – Mubasher: Etihad Fintech Company (Mobily Pay), a wholly owned subsidiary of Etihad Etisalat Company (Mobily), concluded its participation in Seamless...",
+      "published_at": "2023-09-06T10:45:16.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4180268/Mobily-s-fintech-arm-Mobily-Pay-signs-4-agreements-at-Seamless-Saudi-Arabia",
+      "search_term": "Quara Finance",
+      "sentiment_compound": 0.1779,
+      "sentiment_pos": 0.071,
+      "sentiment_neg": 0.047,
+      "sentiment_neu": 0.881
+    },
+    {
+      "ticker": "9596.SR",
+      "title": "Saudi Arabia Personal Loans Market Is Expected to Reach $670.58 Billion by 2031: Allied Market Research",
+      "description": "The rapid increase in need for personal loans to consolidate debt, the growing demand for personal loans with lower interest rates, the adoption of advance...",
+      "snippet": "Portland, OR, March 14, 2023 (GLOBE NEWSWIRE) -- According to the report published by Allied Market Research, the Saudi Arabia personal loans market generated $...",
+      "published_at": "2023-03-14T14:39:00.000000Z",
+      "source_name": "globenewswire.com",
+      "url": "https://www.globenewswire.com/news-release/2023/03/14/2626892/0/en/Saudi-Arabia-Personal-Loans-Market-Is-Expected-to-Reach-670-58-Billion-by-2031-Allied-Market-Research.html",
+      "search_term": "Quara Finance",
+      "sentiment_compound": 0.2263,
+      "sentiment_pos": 0.168,
+      "sentiment_neg": 0.128,
+      "sentiment_neu": 0.704
+    }
+  ]
+}

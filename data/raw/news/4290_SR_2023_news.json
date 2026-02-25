@@ -1,0 +1,50 @@
+{
+  "ticker": "4290.SR",
+  "year": 2023,
+  "fetch_date": "2026-02-22T02:47:44.293091",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "4290.SR",
+      "title": "Alkhaleej Training pens SAR 149.5m deal with SEC",
+      "description": ". Under the agreement, Alkhaleej Training will operate call centres for the subscriber services …",
+      "snippet": "Riyadh – Mubasher: Alkhaleej Training and Education Company inked a SAR 149.41 million contract with Saudi Electricity Company (SEC) on 1 October 2023.\n\nUnder...",
+      "published_at": "2023-10-02T08:48:51.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4190803/Alkhaleej-Training-pens-SAR-149-5m-deal-with-SEC",
+      "search_term": "Alkhaleej Training",
+      "sentiment_compound": 0.4939,
+      "sentiment_pos": 0.127,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.873
+    },
+    {
+      "ticker": "4290.SR",
+      "title": "Alkhaleej Training signs SAR 149.4 mln contract with Saudi Electricity",
+      "description": "Logo ofAlkhaleej Training and Education Co.\r\n\r\n\r\nAlkhaleej Training and Education Co. signed today, Oct. 1, a contract worth around SAR 149.42 mil",
+      "snippet": "Logo of Alkhaleej Training and Education Co.\n\nAlkhaleej Training and Education Co. signed today, Oct. 1, a contract worth around SAR 149.42 million, excluding v...",
+      "published_at": "2023-10-01T17:32:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1673814",
+      "search_term": "Alkhaleej Training",
+      "sentiment_compound": 0.2263,
+      "sentiment_pos": 0.058,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.942
+    },
+    {
+      "ticker": "4290.SR",
+      "title": "Saudi Aramco, Alkhaleej Training log 3 negotiated deals worth SAR 177.7 mln",
+      "description": "Tadawul trading screen\r\n\r\n\r\nThe Saudi Exchange (Tadawul) witnessed today, Nov. 21, three negotiated deals worth SAR 177.7 million onSaudi Arabian",
+      "snippet": "Tadawul trading screen\n\nThe Saudi Exchange (Tadawul) witnessed today, Nov. 21, three negotiated deals worth SAR 177.7 million on Saudi Arabian Oil Co. (Saudi Ar...",
+      "published_at": "2023-11-21T12:52:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1686517",
+      "search_term": "Alkhaleej Training",
+      "sentiment_compound": 0.4215,
+      "sentiment_pos": 0.112,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.888
+    }
+  ]
+}

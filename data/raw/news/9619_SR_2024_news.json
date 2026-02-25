@@ -1,0 +1,50 @@
+{
+  "ticker": "9619.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:47:03.864760",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "9619.SR",
+      "title": "Multi Business signs contract with Leejam to build sports club",
+      "description": "Multi Business Group Co.signed today, Dec. 18, a contract with Leejam Sports Co. to design, build, and finish a sports club at the King Abdullah Finan",
+      "snippet": "Logo of Multi Business Group Co.\n\nMulti Business Group Co. signed today, Dec. 18, a contract with Leejam Sports Co. to design, build, and finish a sports club a...",
+      "published_at": "2024-12-18T17:30:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1776889",
+      "search_term": "Multi Business Group",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "9619.SR",
+      "title": "Multi Business Group Co. Announces Contract Sign Off with Leejam Sports Company",
+      "description": "in King Abdullah Financial District (KAFD) Exceeding Value (10%) of the Company`s Total Revenues …",
+      "snippet": "Element List Explanation\n\nIntroduction Multi Business Group Co. Announces Contract Sign-Off with Leejam Sports Company for Design & Build of Sport Club in King ...",
+      "published_at": "2024-12-18T12:37:16.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4382293/Multi-Business-Group-Co-Announces-Contract-Sign-Off-with-Leejam-Sports-Company",
+      "search_term": "Multi Business Group",
+      "sentiment_compound": 0.34,
+      "sentiment_pos": 0.085,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.915
+    },
+    {
+      "ticker": "9619.SR",
+      "title": "Hain Celestial highlights its multi-year business strategy (NASDAQ:HAIN)",
+      "description": "Hain Celestial Group takes strategic actions to fuel growth with cost-saving initiatives and operational efficiencies per Hain Reimagined plan.",
+      "snippet": "The Hain Celestial Group (NASDAQ:HAIN) announced on Wednesday that it took strategic actions to progress the fuel pillar of its Hain Reimagined multi-year busin...",
+      "published_at": "2024-08-21T14:39:20.000000Z",
+      "source_name": "seekingalpha.com",
+      "url": "https://seekingalpha.com/news/4142392-hain-celestial-highlights-its-multi-year-business-strategy",
+      "search_term": "Multi Business Group",
+      "sentiment_compound": 0.6369,
+      "sentiment_pos": 0.172,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.828
+    }
+  ]
+}

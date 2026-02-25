@@ -1,0 +1,50 @@
+{
+  "ticker": "2081.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:46:12.287960",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2081.SR",
+      "title": "Alkhorayef Water hikes financing from Alinma Bank to SAR 630m",
+      "description": "AR 250 million, according to a bourse filing. The security provided for the financing under the …",
+      "snippet": "Riyadh – Mubasher: Alkhorayef Water and Power Technologies Company increased its Sharia-compliant financing with Alinma Bank to SAR 630 million from SAR 250 m...",
+      "published_at": "2025-02-03T15:27:49.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4399322/Alkhorayef-Water-hikes-financing-from-Alinma-Bank-to-SAR-630m",
+      "search_term": "Alkhorayef",
+      "sentiment_compound": 0.34,
+      "sentiment_pos": 0.085,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.915
+    },
+    {
+      "ticker": "2081.SR",
+      "title": "Alkhorayef Water’s backlog revenue likely to grow 25% in 2025: CEO",
+      "description": "Rami Moussilli, CEO ofAlkhorayef Water  Power Technologies Co. (AWPT)\r\n\r\n\r\nAlkhorayef Water  Power Technologies Co.’s (AWPT) revenues from backlog con",
+      "snippet": "Rami Moussilli, CEO of Alkhorayef Water & Power Technologies Co. (AWPT)\n\nArgaam . Alkhorayef Water & Power Technologies Co.’s ( AWPT ) revenues from backlog c...",
+      "published_at": "2025-03-19T15:21:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1798613",
+      "search_term": "Alkhorayef",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2081.SR",
+      "title": "Mineral wealth security needed to drive global energy transition – Alkhorayef at FMF 2025",
+      "description": "across the region spanning Africa to West and Central Asia to boost global energy transition. …",
+      "snippet": "Riyadh – Mubasher: Saudi Minister of Industry and Mineral Resources, Bandar bin Ibrahim Alkhorayef, urged securing supply chains for critical minerals across ...",
+      "published_at": "2025-01-16T09:31:54.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4392762/Mineral-wealth-security-needed-to-drive-global-energy-transition-Alkhorayef-at-FMF-2025",
+      "search_term": "Alkhorayef",
+      "sentiment_compound": 0.8885,
+      "sentiment_pos": 0.333,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.667
+    }
+  ]
+}

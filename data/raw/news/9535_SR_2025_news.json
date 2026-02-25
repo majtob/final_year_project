@@ -1,0 +1,50 @@
+{
+  "ticker": "9535.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:46:18.591506",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "9535.SR",
+      "title": "Ladun signs SAR 216M credit facilities deal with BSF",
+      "description": "Ladun Investment Co. signed today, Feb. 16, a Shariah-compliant credit facility agreement valued at SAR 216 million with Banque Saudi Fransi (BSF), th",
+      "snippet": "Logo of Ladun Investment Co.\n\nLadun Investment Co. signed today, Feb. 16, a Shariah-compliant credit facility agreement valued at SAR 216 million with Banque Sa...",
+      "published_at": "2025-02-16T17:39:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1790568",
+      "search_term": "Ladun Investment",
+      "sentiment_compound": 0.8834,
+      "sentiment_pos": 0.288,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.712
+    },
+    {
+      "ticker": "9535.SR",
+      "title": "Ladun sells Al Rimal land in Riyadh for SAR 117.5M",
+      "description": "Ladun Investment Co. sold a 50,000-square-meter land plot in Riyadh’s Al Rimal district for SAR 117.5 million, excluding real estate transaction tax a",
+      "snippet": "Logo of Ladun Investment Co.\n\nLadun Investment Co. sold a 50,000-square-meter land plot in Riyadh’s Al Rimal district for SAR 117.5 million, excluding real es...",
+      "published_at": "2025-02-16T17:45:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1790571",
+      "search_term": "Ladun Investment",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "9535.SR",
+      "title": "Merrill Lynch KSA 'market maker' for 20 TASI, Nomu-listed firms",
+      "description": "The Saudi Exchange (Tadawul) approved Merrill Lynch Saudi Arabia’s request to conduct market-making activities on 20 companies listed on the Main Mark",
+      "snippet": "Logo of Saudi Exchange (Tadawul)\n\nThe Saudi Exchange ( Tadawul ) approved Merrill Lynch Saudi Arabia’s request to conduct market-making activities on 20 compa...",
+      "published_at": "2025-03-19T16:50:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1798691",
+      "search_term": "Ladun Investment",
+      "sentiment_compound": 0.4215,
+      "sentiment_pos": 0.083,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.917
+    }
+  ]
+}

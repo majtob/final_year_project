@@ -1,0 +1,50 @@
+{
+  "ticker": "9535.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:47:05.876234",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "9535.SR",
+      "title": "Ladun renews SAR 181.6M facility with Riyad Bank",
+      "description": "Ladun Investment Co.’s board of directors approved today, July 23, the agreement to renew Shariah-compliant credit facilities worth SAR 181.60 million",
+      "snippet": "Logo of Ladun Investment Co.\n\nLadun Investment Co.’s board of directors approved today, July 23, the agreement to renew Shariah-compliant credit facilities wo...",
+      "published_at": "2024-07-23T18:00:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1742577",
+      "search_term": "Ladun Investment",
+      "sentiment_compound": 0.8591,
+      "sentiment_pos": 0.296,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.704
+    },
+    {
+      "ticker": "9535.SR",
+      "title": "Ladun sings agreement to establish SAR 1.45B Real estate Development Fund",
+      "description": "Logo ofLadun Investment Co.\r\n\r\n\r\nLadun Investment Co.‘s board of directors signed on Nov. 7 an investment agreement to establish a real estate develop",
+      "snippet": "Logo of Ladun Investment Co.\n\nLadun Investment Co.‘s board of directors signed on Nov. 7 an investment agreement to establish a real estate development fund w...",
+      "published_at": "2024-11-10T12:11:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1767861",
+      "search_term": "Ladun Investment",
+      "sentiment_compound": 0.7506,
+      "sentiment_pos": 0.167,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.833
+    },
+    {
+      "ticker": "9535.SR",
+      "title": "Ladun renews SAR 181.5m facilities with Riyad Bank",
+      "description": "on from Riyad Bank. The approval was granted on 23 July 2024 for the funding date of 22 July this …",
+      "snippet": "Riyadh – Mubasher: The board members of Ladun Investment Company approved an agreement to renew Sharia-compliant facilities totalling SAR 181.59 million from ...",
+      "published_at": "2024-07-23T14:52:14.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4318016/Ladun-renews-SAR-181-5m-facilities-with-Riyad-Bank",
+      "search_term": "Ladun Investment",
+      "sentiment_compound": 0.6249,
+      "sentiment_pos": 0.159,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.841
+    }
+  ]
+}

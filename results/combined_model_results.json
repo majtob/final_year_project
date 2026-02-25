@@ -1,0 +1,39 @@
+{
+  "date": "2026-02-22T02:39:35.818132",
+  "dataset_size": 23,
+  "features": {
+    "financial": [
+      "liquid",
+      "cumprof",
+      "profitab",
+      "leverage"
+    ],
+    "kam": [
+      "kam_going_concern",
+      "kam_revenue",
+      "kam_assets",
+      "kam_liabilities",
+      "kam_other",
+      "kam_count"
+    ],
+    "total": 10
+  },
+  "models": {
+    "financials_only": {
+      "accuracy": 0.6515151515151515,
+      "std": 0.015151515151515138,
+      "paper_reference": 0.7155
+    },
+    "kams_only": {
+      "accuracy": 0.4772727272727273,
+      "std": 0.022727272727272735,
+      "paper_reference": 0.7414
+    },
+    "combined": {
+      "accuracy": 0.6515151515151515,
+      "std": 0.015151515151515138,
+      "paper_reference": 0.8404
+    }
+  },
+  "improvement": 0.0
+}

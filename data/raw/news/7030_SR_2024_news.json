@@ -1,0 +1,64 @@
+{
+  "ticker": "7030.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:47:13.284212",
+  "article_count": 4,
+  "articles": [
+    {
+      "ticker": "7030.SR",
+      "title": "Tadawul: 3 stocks dip to 52-week lows",
+      "description": "Shares of Mobile Telecommunication Company Saudi Arabia (Zain KSA), Saudi Industrial Investment Group (SIIG), and Saudi Awwal Bank (SAB) fell to their",
+      "snippet": "Tadawul trading screen\n\nShares of Mobile Telecommunication Company Saudi Arabia (Zain KSA), Saudi Industrial Investment Group (SIIG), and Saudi Awwal Bank (SAB)...",
+      "published_at": "2024-12-02T11:05:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1773206",
+      "search_term": "Zain Saudi",
+      "sentiment_compound": 0.1027,
+      "sentiment_pos": 0.071,
+      "sentiment_neg": 0.058,
+      "sentiment_neu": 0.871
+    },
+    {
+      "ticker": "7030.SR",
+      "title": "Tadawul: 2 stocks, 1 REIT fall to 52-week lows",
+      "description": "Shares ofMobile Telecommunication Company Saudi Arabia (Zain KSA)andSABIC Agri-Nutrients Co. (SABIC AN), as well as units of MusharakaREIT Fund, hitth",
+      "snippet": "Tadawul trading screen\n\nShares of Mobile Telecommunication Company Saudi Arabia (Zain KSA) and SABIC Agri-Nutrients Co. (SABIC AN), as well as units of Musharak...",
+      "published_at": "2024-04-17T12:21:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1719998",
+      "search_term": "Zain Saudi",
+      "sentiment_compound": 0.3612,
+      "sentiment_pos": 0.134,
+      "sentiment_neg": 0.056,
+      "sentiment_neu": 0.81
+    },
+    {
+      "ticker": "7030.SR",
+      "title": "Tadawul shows mixed performance on Monday",
+      "description": "TASI’s trading value reached SAR 7.33 billion through the exchange of 273.67 million shares. …",
+      "snippet": "Riyadh – Mubasher: The main All Share Index (TASI) of the Saudi Exchange (Tadawul) closed Monday’s trading session lower by 0.18% at 11,658.53 points.\n\nTASI...",
+      "published_at": "2024-07-01T12:35:06.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4308723/Tadawul-shows-mixed-performance-on-Monday",
+      "search_term": "Zain Saudi",
+      "sentiment_compound": 0.6124,
+      "sentiment_pos": 0.25,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.75
+    },
+    {
+      "ticker": "7030.SR",
+      "title": "Zain KSA, Riyad REIT slump to 52-week lows",
+      "description": "Shares of Zain KSA Co. and units of Riyad REIT Fund fell today, May 13, to their lowest levels in 52 weeks, data compiled byArgaamshowed.",
+      "snippet": "Tadawul trading screen\n\nShares of Zain KSA Co. and units of Riyad REIT Fund fell today, May 13, to their lowest levels in 52 weeks, data compiled by Argaam show...",
+      "published_at": "2024-05-13T12:48:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1727013",
+      "search_term": "Zain KSA",
+      "sentiment_compound": -0.296,
+      "sentiment_pos": 0.06,
+      "sentiment_neg": 0.12,
+      "sentiment_neu": 0.82
+    }
+  ]
+}

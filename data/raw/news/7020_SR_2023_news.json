@@ -1,0 +1,92 @@
+{
+  "ticker": "7020.SR",
+  "year": 2023,
+  "fetch_date": "2026-02-22T02:47:38.817605",
+  "article_count": 6,
+  "articles": [
+    {
+      "ticker": "7020.SR",
+      "title": "TASI rises 0.6% to over 10,640 points, turnover at SAR 4.9 bln",
+      "description": "",
+      "snippet": "Saudi Aramco rose 1% to SAR 34 amid trading of about 15 million shares valued at nearly SAR 500 million, representing 10% of total market trading today.\n\nACWA P...",
+      "published_at": "2023-10-10T15:35:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/market-daily-report/3/36932?preview=true",
+      "search_term": "Etihad Etisalat",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "TASI falls 1% to 10,949 points, records lowest close since April",
+      "description": "",
+      "snippet": "Saudi Aramco and Al Rajhi Bank declined 1% to SAR 34.10 and SAR 68, respectively.\n\nAlmarai, Saudi Kayan, Mouwasat, Alinma Bank, Etihad Etisalat, SRMG and Astra ...",
+      "published_at": "2023-09-21T15:44:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/market-daily-report/3/36610?preview=true",
+      "search_term": "Etihad Etisalat",
+      "sentiment_compound": -0.3818,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.206,
+      "sentiment_neu": 0.794
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "TASI falls 0.4% to 10,790 points, turnover at SAR 5.2 bln",
+      "description": "",
+      "snippet": "Al Rajhi Bank fell 1% to SAR 70.\n\nShares of Saudi National Bank, Alinma Bank, stc, Etihad Etisalat, Riyad Bank, Saudi Awwal Bank, and Savola declined between 1%...",
+      "published_at": "2023-11-13T15:38:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/market-daily-report/3/37754?preview=true",
+      "search_term": "Etihad Etisalat",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily endorses partnership with Ericsson for Mobily Pay, AI solutions",
+      "description": "e users in Saudi Arabia. Mobily Pay will allow conducting customised financial services such as …",
+      "snippet": "Riyadh – Mubasher: Etihad Etisalat Company (Mobily) has teamed up with Ericsson to launch Mobily Pay as a mobile financial service available to all the users ...",
+      "published_at": "2023-02-06T15:00:38.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4071153/Mobily-endorses-partnership-with-Ericsson-for-Mobily-Pay-AI-solutions",
+      "search_term": "Mobily",
+      "sentiment_compound": 0.4939,
+      "sentiment_pos": 0.201,
+      "sentiment_neg": 0.094,
+      "sentiment_neu": 0.705
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily’s fintech arm Mobily Pay signs 4 agreements at Seamless Saudi Arabia",
+      "description": "Seamless Saudi Arabia 2023 with the signing of four memoranda of understanding (MoU) with local …",
+      "snippet": "Riyadh – Mubasher: Etihad Fintech Company (Mobily Pay), a wholly owned subsidiary of Etihad Etisalat Company (Mobily), concluded its participation in Seamless...",
+      "published_at": "2023-09-06T10:45:16.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4180268/Mobily-s-fintech-arm-Mobily-Pay-signs-4-agreements-at-Seamless-Saudi-Arabia",
+      "search_term": "Mobily",
+      "sentiment_compound": 0.1779,
+      "sentiment_pos": 0.071,
+      "sentiment_neg": 0.047,
+      "sentiment_neu": 0.881
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily among 4 firms at 52-week highs",
+      "description": "Tadawul trading screen\r\n\r\n\r\nAs many as four stocks, including Etihad Etisalat Co. (Mobily), hittheir highest levels in 52 weeks today, July 24, da",
+      "snippet": "Tadawul trading screen\n\nAs many as four stocks, including Etihad Etisalat Co. (Mobily), hit their highest levels in 52 weeks today, July 24, data compiled by Ar...",
+      "published_at": "2023-07-24T12:06:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1658659",
+      "search_term": "Mobily",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "ticker": "4004.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:46:10.250608",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "4004.SR",
+      "title": "CATRION Catering Holding Co. Announces Contract Sign Off with Middle East Healthcare Company (Saudi German Health)",
+      "description": "ny (Saudi German Health), whereby CATRION will provide Middle East Healthcare Company with …",
+      "snippet": "Introduction\n\nCATRION Catering Holding Company (CATRION) announces the signing of a contract with Middle East Healthcare Company (Saudi German Health), whereby ...",
+      "published_at": "2025-01-23T12:49:49.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4395571/CATRION-Catering-Holding-Co-Announces-Contract-Sign-Off-with-Middle-East-Healthcare-Company-Saudi-German-Health-",
+      "search_term": "Middle East Healthcare",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4004.SR",
+      "title": "Fosun International Partners with Abu Dhabi Investment Office to Boost Middle East Expansion",
+      "description": "Summary Fosun International Ltd (FOSUY) announced on February 20, 2025, a strategic partnership with the Abu Dhabi Investment Office (ADIO) during the Abu Dhabi",
+      "snippet": "Summary\n\nFosun International Ltd (FOSUY, Financial) announced on February 20, 2025, a strategic partnership with the Abu Dhabi Investment Office (ADIO) during t...",
+      "published_at": "2025-02-22T08:48:59.000000Z",
+      "source_name": "gurufocus.com",
+      "url": "https://www.gurufocus.com/news/2710056/fosun-international-partners-with-abu-dhabi-investment-office-to-boost-middle-east-expansion",
+      "search_term": "Middle East Healthcare",
+      "sentiment_compound": 0.4019,
+      "sentiment_pos": 0.07,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.93
+    },
+    {
+      "ticker": "4004.SR",
+      "title": "Middle East Healthcare Company (Saudi German Health) Announces the Resignation of a Board Member",
+      "description": "tive Member of the Board of Directors, has submitted his resignation from the Board effective …",
+      "snippet": "Introduction\n\nMiddle East Healthcare Company (Saudi German Health) announces that Dr. Khalid Abduljalil Batterjee, a Non-Executive Member of the Board of Direct...",
+      "published_at": "2025-12-17T13:02:16.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4537379/Middle-East-Healthcare-Company-Saudi-German-Health-Announces-the-Resignation-of-a-Board-Member",
+      "search_term": "Middle East Healthcare",
+      "sentiment_compound": -0.0772,
+      "sentiment_pos": 0.09,
+      "sentiment_neg": 0.128,
+      "sentiment_neu": 0.783
+    }
+  ]
+}
