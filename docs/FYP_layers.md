@@ -10,7 +10,7 @@ Evaluate whether classical machine learning models can predict credit ratings fo
 
 ### Scope
 - **Companies**: Saudi Exchange (Tadawul) main-market firms with Tassnief credit ratings
-- **Period**: Fiscal years 2021–2024
+- **Period**: Fiscal years 2019–2024
 - **Data**: Public filings (English), news, Key Audit Matters (KAMs), Tassnief ratings
 - **Exclusions**: Non-public data sources (banks, terminals, paid APIs)
 

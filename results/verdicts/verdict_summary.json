@@ -1,0 +1,17 @@
+{
+  "generation_timestamp": "2026-02-26T12:12:02.531455",
+  "total_verdicts": 75,
+  "generation_method": "template",
+  "quality_metrics": {
+    "avg_overall_score": 1.0,
+    "avg_citation_rate": 0.89,
+    "avg_number_accuracy": 0.9391111111111111,
+    "min_score": 1.0,
+    "max_score": 1.0
+  },
+  "ml_performance": {
+    "correct_predictions": 51,
+    "total": 75,
+    "accuracy": 0.68
+  }
+}

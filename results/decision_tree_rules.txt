@@ -1,0 +1,16 @@
+|--- leverage <= 1.20
+|   |--- liquid <= -0.01
+|   |   |--- leverage <= 0.52
+|   |   |   |--- class: Speculative Grade
+|   |   |--- leverage >  0.52
+|   |   |   |--- class: Investment Grade
+|   |--- liquid >  -0.01
+|   |   |--- profitab <= 0.09
+|   |   |   |--- class: Speculative Grade
+|   |   |--- profitab >  0.09
+|   |   |   |--- class: Investment Grade
+|--- leverage >  1.20
+|   |--- liquid <= 0.59
+|   |   |--- class: Investment Grade
+|   |--- liquid >  0.59
+|   |   |--- class: Speculative Grade
