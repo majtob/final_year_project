@@ -48,6 +48,15 @@ Predict Tassnief credit ratings for Saudi Tadawul-listed companies using public 
 
 ## Quick Start
 
+### Run the Streamlit demo with Docker (examiner-friendly, CPU-only)
+
+```bash
+docker compose up --build
+# Open http://localhost:8501
+```
+
+Uses a slim image (no GPU / no PyTorch). See **[docs/DOCKER.md](docs/DOCKER.md)** for details and troubleshooting.
+
 ### 1. Setup Environment
 
 ```bash
