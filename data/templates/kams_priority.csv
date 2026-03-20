@@ -1,59 +1,57 @@
-ticker,company_name,fiscal_year,rating,kam_going_concern,kam_revenue,kam_assets,kam_liabilities,kam_other,kam_count,kam_descriptions,extracted,notes
-1202.SR,MEPCO (Middle East Paper),2024,A,0,0,1,0,0,1,,,Has all 4 ratios
-1211.SR,Maaden,2024,BBB+,,,,,,,,,Materials - Fitch: BBB+
-1211.SR,Maaden,2023,BBB+,,,,,,,,,Fitch historical 2023
-2010.SR,SABIC,2024,A+,,,,,,,,,Materials - Fitch: A+
-2010.SR,SABIC,2023,A+,,,,,,,,,Fitch historical 2023
-2010.SR,SABIC,2022,A,,,,,,,,,Fitch historical 2022
-2010.SR,SABIC,2021,A,,,,,,,,,Fitch historical 2021
-2010.SR,SABIC,2020,A,,,,,,,,,Fitch historical 2020
-2010.SR,SABIC,2019,A,,,,,,,,,Fitch historical 2019
-2070.SR,Perfect Presentation (2P),2024,BBB+,0,1,1,0,0,2,,,Has all 4 ratios
-2070.SR,Perfect Presentation (2P),2023,BBB+,0,1,1,0,0,2,,,Has all 4 ratios
-2070.SR,Perfect Presentation (2P),2022,BBB+,0,1,1,0,0,2,,,Has all 4 ratios
-2081.SR,Alkhorayef Water & Power,2024,A,0,1,1,0,0,2,,,Has all 4 ratios
-2081.SR,Alkhorayef Water & Power,2023,A,0,1,1,0,0,2,,,Has all 4 ratios
-2082.SR,ACWA Power,2024,BBB-,,,,,,,,,Utilities - Fitch: BBB-
-2082.SR,ACWA Power,2023,BBB-,,,,,,,,,Fitch historical 2023
-2082.SR,ACWA Power,2022,BBB-,,,,,,,,,Fitch historical 2022
-2082.SR,ACWA Power,2021,BBB-,,,,,,,,,Fitch historical 2021
-2222.SR,Saudi Aramco,2024,A+,,,,,,,,,Energy - Fitch: A+
-2222.SR,Saudi Aramco,2023,A+,,,,,,,,,Fitch historical 2023
-2222.SR,Saudi Aramco,2022,A,,,,,,,,,Fitch historical 2022
-2222.SR,Saudi Aramco,2021,A,,,,,,,,,Fitch historical 2021
-2222.SR,Saudi Aramco,2020,A,,,,,,,,,Fitch historical 2020
-2222.SR,Saudi Aramco,2019,A,,,,,,,,,Fitch historical 2019
-2280.SR,Almarai,2024,BBB-,,,,,,,,,Food & Beverages - S&P: BBB-
-2382.SR,ADES,2024,B+,,,,,,,,,Energy - Fitch: B+
-2382.SR,ADES,2023,B+,,,,,,,,,Fitch historical 2023
-2382.SR,ADES,2022,B+,,,,,,,,,Fitch historical 2022
-3008.SR,Al Kathiri (AKHC),2023,BBB,0,1,1,0,0,2,,,Has all 4 ratios
-3008.SR,Al Kathiri (AKHC),2022,BBB,0,1,1,0,0,2,,,Has all 4 ratios
-3008.SR,Al Kathiri (AKHC),2021,BBB,0,1,1,0,0,2,,,Has all 4 ratios
-4290.SR,Alkhaleej Training,2024,BBB+,0,0,1,0,0,1,,,Has all 4 ratios
-4290.SR,Alkhaleej Training,2023,BBB+,0,0,1,0,0,1,,,Has all 4 ratios
-4321.SR,Cenomi Centers,2024,BB,,,,,,,,,Real Estate - Fitch: BB
-4321.SR,Cenomi Centers,2023,BB,,,,,,,,,Fitch historical 2023
-4321.SR,Cenomi Centers,2022,BB,,,,,,,,,Fitch historical 2022
-4321.SR,Cenomi Centers,2021,BB,,,,,,,,,Fitch historical 2021
-4321.SR,Cenomi Centers,2020,BB,,,,,,,,,Fitch historical 2020
-5110.SR,Saudi Electricity,2024,A+,,,,,,,,,Utilities - Fitch: A+
-5110.SR,Saudi Electricity,2023,A+,,,,,,,,,Fitch historical 2023
-5110.SR,Saudi Electricity,2022,A,,,,,,,,,Fitch historical 2022
-5110.SR,Saudi Electricity,2021,A,,,,,,,,,Fitch historical 2021
-5110.SR,Saudi Electricity,2020,A,,,,,,,,,Fitch historical 2020
-5110.SR,Saudi Electricity,2019,A,,,,,,,,,Fitch historical 2019
-7010.SR,Saudi Telecom (STC),2024,AAA,0,1,1,0,1,3,,,Has all 4 ratios
-7010.SR,Saudi Telecom (STC),2023,AAA,0,1,1,0,0,2,,,Has all 4 ratios
-7010.SR,Saudi Telecom (STC),2022,AAA,0,1,1,1,0,3,,,Has all 4 ratios
-7010.SR,Saudi Telecom (STC),2021,AAA,0,1,1,1,0,3,,,Has all 4 ratios
-7020.SR,Mobily,2024,AA,0,1,1,0,0,2,,,Has all 4 ratios
-7020.SR,Mobily,2023,AA,0,1,1,0,0,2,,,Has all 4 ratios
-7030.SR,Zain Saudi Arabia,2024,A,0,1,1,0,0,2,,,Has all 4 ratios
-7030.SR,Zain Saudi Arabia,2023,A,0,1,1,0,0,2,,,Has all 4 ratios
-9511.SR,Sumou Real Estate,2024,BBB+,,,,,,,,,Real Estate - Financial Analytics: BBB+
-9535.SR,Ladun Investment,2024,BBB+,0,1,1,0,0,2,,,Has all 4 ratios
-9535.SR,Ladun Investment,2022,BBB+,0,1,1,0,0,2,,,
-9568.SR,Mayar Holding,2024,BB,0,1,1,0,0,0,,,Has all 4 ratios
-9578.SR,Atlas Elevators,2024,BB,,,,,,,,,Capital Goods - Financial Analytics: BB
-9619.SR,Multi Business Group,2024,BB+,0,1,0,0,0,1,,,Has all 4 ratios
+ticker,company_name,fiscal_year,rating,AUSIZE,AUOP,EMP,GCUP,GCKAM,REVKAM,ASSETKAM,LIABKAM,OTHERKAM,FIRMAGE,FIRMSIZE,INDUSTRY,LIQUID,CUMPROF,PROFITAB,LEVERAGE
+1202.SR,MEPCO (Middle East Paper),2024,A,1,0,0,0,0,0,1,0,0,1,1,0,,,,
+1211.SR,Maaden,2024,BBB+,1,0,0,0,0,0,1,0,0,1,1,0,,,,
+1211.SR,Maaden,2023,BBB+,1,0,0,0,0,0,1,0,0,1,1,0,,,,
+2010.SR,SABIC,2024,A+,1,0,0,0,0,0,1,0,1,1,1,0,,,,
+2010.SR,SABIC,2023,A+,1,0,0,0,0,0,1,0,0,1,1,0,,,,
+2010.SR,SABIC,2022,A,1,0,0,0,0,0,1,0,1,1,1,0,,,,
+2010.SR,SABIC,2021,A,1,0,0,0,0,0,1,0,1,1,1,0,,,,
+7204.SR,Perfect Presentation (2P),2024,BBB+,0,0,0,0,0,1,0,0,0,1,1,2,,,,
+7204.SR,Perfect Presentation (2P),2023,BBB+,0,0,0,0,0,1,0,0,0,1,1,2,,,,
+7204.SR,Perfect Presentation (2P),2022,BBB+,0,0,0,0,0,1,0,0,0,1,1,2,,,,
+2081.SR,Alkhorayef Water & Power,2024,A,1,0,0,0,0,1,0,0,0,1,1,2,,,,
+2081.SR,Alkhorayef Water & Power,2023,A,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+2082.SR,ACWA Power,2024,BBB-,1,0,0,0,0,0,1,0,1,1,1,2,,,,
+2082.SR,ACWA Power,2023,BBB-,1,0,0,0,0,0,1,0,1,1,1,2,,,,
+2082.SR,ACWA Power,2022,BBB-,1,0,0,0,0,0,1,0,1,1,1,2,,,,
+2082.SR,ACWA Power,2021,BBB-,1,0,0,0,0,0,1,0,1,1,1,2,,,,
+2222.SR,Saudi Aramco,2024,A+,1,0,0,0,0,0,1,0,0,1,1,0,,,,
+2222.SR,Saudi Aramco,2023,A+,1,0,0,0,0,0,1,0,0,1,1,0,,,,
+2222.SR,Saudi Aramco,2022,A,1,0,0,0,0,0,1,0,1,1,1,0,,,,
+2222.SR,Saudi Aramco,2021,A,1,0,0,0,0,0,1,0,1,1,1,0,,,,
+2222.SR,Saudi Aramco,2020,A,1,0,0,0,0,0,1,0,1,1,1,0,,,,
+2222.SR,Saudi Aramco,2019,A,1,0,0,0,0,0,1,0,0,1,1,0,,,,
+2280.SR,Almarai,2024,BBB-,1,0,0,0,0,0,1,0,0,1,1,1,,,,
+2382.SR,ADES,2024,B+,1,0,0,0,0,1,0,0,1,0,1,2,,,,
+2382.SR,ADES,2023,B+,1,0,0,0,0,1,1,0,0,0,1,2,,,,
+2382.SR,ADES,2022,B+,1,0,1,0,0,0,0,0,0,1,1,2,,,,
+3008.SR,Al Kathiri (AKHC),2023,BBB-,0,0,0,0,0,1,1,0,0,1,1,0,,,,
+3008.SR,Al Kathiri (AKHC),2022,BBB-,0,0,0,0,0,1,1,0,0,1,1,0,,,,
+3008.SR,Al Kathiri (AKHC),2021,BBB-,0,0,0,0,0,1,1,0,0,1,0,0,,,,
+4290.SR,Alkhaleej Training,2024,BBB+,0,0,0,0,0,0,1,0,1,1,1,2,,,,
+4290.SR,Alkhaleej Training,2023,BBB+,0,0,1,0,0,0,1,0,1,1,1,2,,,,
+4321.SR,Cenomi Centers,2024,BB,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+4321.SR,Cenomi Centers,2023,BB,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+4321.SR,Cenomi Centers,2022,BB,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+4321.SR,Cenomi Centers,2021,BB,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+4321.SR,Cenomi Centers,2020,BB,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+5110.SR,Saudi Energy,2024,A+,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+5110.SR,Saudi Energy,2023,A+,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+5110.SR,Saudi Energy,2022,A,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+5110.SR,Saudi Energy,2021,A,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+5110.SR,Saudi Energy,2020,A,1,0,0,0,0,1,1,1,0,1,1,2,,,,
+5110.SR,Saudi Energy,2019,A,1,0,0,0,0,1,1,0,0,1,1,2,,,,
+7010.SR,Saudi Telecom (STC),2024,AAA,,,,,0,1,1,0,1,,,,,,,
+7010.SR,Saudi Telecom (STC),2023,AAA,,,,,0,1,1,0,0,,,,,,,
+7010.SR,Saudi Telecom (STC),2022,AAA,,,,,0,1,1,1,0,,,,,,,
+7010.SR,Saudi Telecom (STC),2021,AAA,,,,,0,1,1,1,0,,,,,,,
+7020.SR,Mobily,2024,AA,,,,,0,1,1,0,0,,,,,,,
+7020.SR,Mobily,2023,AA,,,,,0,1,1,0,0,,,,,,,
+7030.SR,Zain Saudi Arabia,2024,A,,,,,0,1,1,0,0,,,,,,,
+7030.SR,Zain Saudi Arabia,2023,A,,,,,0,1,1,0,0,,,,,,,
+9511.SR,Sumou Real Estate,2024,BBB+,,,,,,,,,,,,,,,,
+9535.SR,Ladun Investment,2024,BBB+,,,,,0,1,1,0,0,,,,,,,
+9535.SR,Ladun Investment,2022,BBB+,,,,,0,1,1,0,0,,,,,,,
+9568.SR,Mayar Holding,2024,BB,,,,,0,1,1,0,0,,,,,,,
+9578.SR,Atlas Elevators,2024,BB,,,,,,,,,,,,,,,,
+9619.SR,Multi Business Group,2024,BB+,,,,,0,1,0,0,0,,,,,,,

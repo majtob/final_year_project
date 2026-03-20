@@ -1111,6 +1111,12 @@ Only 6 unique KAM profiles exist across 23 companies. By contrast, the Spanish m
 
 **Script:** `models/model_with_kams.py`
 
+### 17.6 Implemented KAM Extraction vs Reference Protocol
+
+The reference paper’s full feature set combined audit-firm variables (AUSIZE, AUOP, EMP, GCUP) with five KAM category dummies. In this project, the implemented extraction is narrower: we only collect the five KAM category indicators (`kam_going_concern`, `kam_revenue`, `kam_assets`, `kam_liabilities`, `kam_other`) and a simple `kam_count` for 23 non‑financial Saudi companies. We do **not** extract AUSIZE, AUOP, EMP, or GCUP from the audit reports, and these audit‑opinion features are therefore **not** used in any of the ML models.
+
+Given the strong KAM homogeneity documented above and the limited incremental signal from KAM features, the final production classifier used in Sections 13–16 relies **only on financial ratios** as predictive inputs. KAM features are retained purely for descriptive analysis (profiling Saudi audit reports and reproducing the paper’s idea qualitatively), not as core inputs to the deployed rating model.
+
 ---
 
 ## 18. LLM Verdict Generator
@@ -1664,4 +1670,4 @@ mxa1438/
 
 ---
 
-*Report last updated: February 6, 2026*
+*Report last updated: March 16, 2026*
