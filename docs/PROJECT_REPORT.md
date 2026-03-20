@@ -78,7 +78,7 @@ Develop a machine learning system to predict credit ratings for Saudi Exchange (
                          ▼
 ┌────────────────────────────────────────────────────────────────┐
 │         LLM VERDICT GENERATOR                                   │
-│  Ollama (Mistral/Llama) or Template-based                      │
+│  Fine-tuned Qwen 2.5 3B (QLoRA), Ollama, or Template           │
 │  Input: Ratios + ML prediction + confidence                    │
 │  Output: Structured credit verdict (JSON)                      │
 │  Quality: 94% number accuracy, 89% citation rate               │
@@ -1161,7 +1161,7 @@ Financial Ratios + KAM Data
 
 The system supports three generation methods, falling back through the chain automatically:
 
-1. **Fine-tuned Qwen 2.5 7B (QLoRA):** The primary method. A Qwen 2.5 7B Instruct model fine-tuned with QLoRA on our 75 Saudi company records produces contextually rich, analyst-style credit verdicts. See Section 18.7 for full details.
+1. **Fine-tuned Qwen 2.5 3B (QLoRA):** The primary method. A Qwen 2.5 3B Instruct model fine-tuned with QLoRA on our 75 Saudi company records produces contextually rich, analyst-style credit verdicts. See Section 18.7 for full details.
 
 2. **Ollama (Mistral/Llama):** When a local Ollama instance is running, prompts are sent to the LLM for zero-shot natural language generation. Responses are parsed as structured JSON.
 
@@ -1250,7 +1250,7 @@ We selected the Qwen 2.5 Instruct family over ZiGong's original Mistral 7B base 
 
 #### 18.7.3 QLoRA Configuration
 
-Standard LoRA fine-tuning requires 12-16GB VRAM for a 7B model. Our 8GB GPU necessitates QLoRA, which quantizes the base model to 4-bit (nf4) precision, reducing memory footprint to ~6-8GB. The `unsloth` library provides optimized 4-bit training kernels.
+Standard full fine-tuning requires far more VRAM than we have available. Our 8GB GPU uses QLoRA, which quantizes the base model to 4-bit (nf4) precision; a **3B** instruct model in 4-bit typically fits in roughly **3--5GB VRAM** for training/inference, leaving headroom on an 8GB card. Training uses `transformers` + `peft` + `bitsandbytes` (Windows-compatible); `unsloth` was not used due to stability issues on Windows.
 
 | Parameter | Value | Rationale |
 |-----------|-------|-----------|
@@ -1295,7 +1295,7 @@ Priority companies for improvement included Saudi Aramco, STC, SABIC, ACWA Power
 
 | Aspect | ZiGong 1.0 (Lei et al., 2025) | Our Approach |
 |--------|-------------------------------|--------------|
-| Base model | Mistral 7B | Qwen 2.5 7B Instruct |
+| Base model | Mistral 7B | Qwen 2.5 3B Instruct |
 | Fine-tuning | Standard LoRA (16GB+ GPU) | QLoRA 4-bit (8GB GPU) |
 | Training data | ~100K+ examples | 75 examples (18 manually improved) |
 | Tasks | Credit scoring, fraud detection, Q&A | Credit verdict generation |
@@ -1340,6 +1340,8 @@ Fine-tuned verdicts were compared against template baselines across all 75 compa
 4. **Schema divergence:** The overall quality score dropped from 100% to 43% because the model adapted its own JSON schema (e.g., nesting ratios under `credit_verdict` with per-ratio `comment` fields) rather than strictly reproducing the training schema fields (`strengths`, `weaknesses`, `prediction_analysis`). With only 75 training examples, the 3B model learned the *task* (analyzing credit data and producing structured verdicts) but not the exact *format*.
 
 5. **75 examples are at the boundary:** This dataset size is sufficient for teaching domain vocabulary, ratio citation, and valid JSON generation, but insufficient for strict schema compliance. This finding aligns with the general fine-tuning literature suggesting ~200-500 examples for reliable instruction following on structured output tasks.
+
+6. **3B vs 7B:** We also ran a separate QLoRA training on **Qwen 2.5 7B Instruct** with the same data and hyperparameters. On our automated evaluation (JSON validity, citation rate, schema-style overall score, diversity), the **3B** run was **slightly better** than 7B; the repository and inference code are therefore standardised on **3B**. LoRA weights are **not interchangeable** across base sizes -- after switching to 3B, the adapter in `models/lora_adapter/` must be regenerated with `models/finetune_qwen.py`, and `models/evaluate_finetune.py` should be re-run to refresh `results/finetune_evaluation.json`.
 
 **Implication for the hybrid architecture:** The template generator remains the production default for schema reliability, while the fine-tuned model demonstrates the feasibility of LLM-based verdict generation with domain-specific fine-tuning. A larger training corpus (200+ manually curated verdicts) would likely resolve the schema divergence.
 

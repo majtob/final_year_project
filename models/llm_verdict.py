@@ -2,7 +2,7 @@
 LLM Verdict Generator for Credit Rating Predictions.
 
 Supports three generation modes:
-  1. fine-tuned  -- Qwen 2.5 7B with QLoRA adapter (recommended)
+  1. fine-tuned  -- Qwen 2.5 3B with QLoRA adapter (recommended)
   2. ollama      -- Zero-shot via local Ollama (Mistral/Llama)
   3. template    -- Deterministic rule-based fallback
 
@@ -26,7 +26,7 @@ ADAPTER_DIR = PROJECT_ROOT / "models" / "lora_adapter"
 OLLAMA_URL = "http://localhost:11434/api/generate"
 OLLAMA_MODELS = ["mistral", "llama3", "llama3.1"]
 
-QWEN_MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+QWEN_MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 QWEN_MAX_SEQ_LENGTH = 1024
 
 FINETUNED_SYSTEM_PROMPT = (
@@ -109,6 +109,19 @@ def load_finetuned_model():
     if not check_finetuned():
         print(f"LoRA adapter not found at {ADAPTER_DIR}")
         return None, None
+
+    adapter_cfg_path = ADAPTER_DIR / "adapter_config.json"
+    try:
+        with open(adapter_cfg_path, encoding="utf-8") as f:
+            adapter_base = json.load(f).get("base_model_name_or_path")
+        if adapter_base and adapter_base != QWEN_MODEL_NAME:
+            print(
+                f"LoRA adapter was trained on {adapter_base} but this code expects "
+                f"{QWEN_MODEL_NAME}. Re-run: python models/finetune_qwen.py"
+            )
+            return None, None
+    except (OSError, json.JSONDecodeError):
+        pass
 
     print(f"Loading fine-tuned model from {ADAPTER_DIR}...")
 
@@ -505,7 +518,7 @@ def generate_verdicts(data_path=None, mode="auto", limit=None):
             active_mode = "template"
 
     method_labels = {
-        "finetuned": "Fine-tuned Qwen 2.5 7B (QLoRA)",
+        "finetuned": "Fine-tuned Qwen 2.5 3B (QLoRA)",
         "ollama": f"Ollama ({ollama_model})" if ollama_model else "Ollama",
         "template": "Template-based (deterministic)",
     }

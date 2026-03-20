@@ -1,5 +1,5 @@
 {
-  "base_model": "Qwen/Qwen2.5-7B-Instruct",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
   "lora_rank": 8,
   "lora_alpha": 16,
   "lora_dropout": 0.05,
@@ -13,7 +13,7 @@
   "learning_rate": 2e-05,
   "batch_size": 1,
   "gradient_accumulation": 4,
-  "training_loss": 2.0385528363679586,
+  "training_loss": 1.9730547754388106,
   "total_steps": 95,
   "training_examples": 75
 }

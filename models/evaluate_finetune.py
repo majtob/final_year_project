@@ -25,7 +25,7 @@ DATASET_FILE = PROJECT_ROOT / "data" / "processed" / "finetune_dataset.jsonl"
 ADAPTER_DIR = PROJECT_ROOT / "models" / "lora_adapter"
 RESULTS_DIR = PROJECT_ROOT / "results"
 
-MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 MAX_SEQ_LENGTH = 1024
 
 SYSTEM_PROMPT = (
@@ -38,6 +38,17 @@ SYSTEM_PROMPT = (
 
 def load_model_and_tokenizer():
     """Load base Qwen model with LoRA adapter."""
+    cfg_path = ADAPTER_DIR / "adapter_config.json"
+    if cfg_path.exists():
+        with open(cfg_path, encoding="utf-8") as f:
+            adapter_base = json.load(f).get("base_model_name_or_path")
+        if adapter_base and adapter_base != MODEL_NAME:
+            raise SystemExit(
+                f"Adapter was trained on {adapter_base} but evaluate_finetune.py expects "
+                f"{MODEL_NAME}. Re-run training (models/finetune_qwen.py) or temporarily "
+                f"set MODEL_NAME to match adapter_config.json."
+            )
+
     print(f"Loading {MODEL_NAME} + LoRA adapter...")
 
     bnb_config = BitsAndBytesConfig(

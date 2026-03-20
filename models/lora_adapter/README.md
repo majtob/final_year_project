@@ -1,14 +1,16 @@
 ---
-base_model: Qwen/Qwen2.5-7B-Instruct
+base_model: Qwen/Qwen2.5-3B-Instruct
 library_name: peft
 pipeline_tag: text-generation
 tags:
-- base_model:adapter:Qwen/Qwen2.5-7B-Instruct
+- base_model:adapter:Qwen/Qwen2.5-3B-Instruct
 - lora
 - sft
 - transformers
 - trl
 ---
+
+**Project note:** The codebase expects **`Qwen/Qwen2.5-3B-Instruct`** + this LoRA folder. If `adapter_config.json` still records **7B** (or another base), re-run `python models/finetune_qwen.py` so weights match 3B—LoRA is **not** portable across 3B vs 7B.
 
 # Model Card for Model ID
 

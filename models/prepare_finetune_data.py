@@ -1,5 +1,5 @@
 """
-Prepare instruction-format dataset for QLoRA fine-tuning of Qwen 2.5 7B.
+Prepare instruction-format dataset for QLoRA fine-tuning of Qwen 2.5 3B.
 
 Reads the 75 training records and their template verdicts,
 then formats them into instruction/input/output JSONL for SFTTrainer.

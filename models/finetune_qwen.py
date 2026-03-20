@@ -30,7 +30,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 DATASET_FILE = PROJECT_ROOT / "data" / "processed" / "finetune_dataset.jsonl"
 ADAPTER_DIR = PROJECT_ROOT / "models" / "lora_adapter"
 
-MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 MAX_SEQ_LENGTH = 1024
 LORA_RANK = 8
 LORA_ALPHA = 16
@@ -57,7 +57,7 @@ def load_dataset_jsonl():
 
 def main():
     print("=" * 60)
-    print("QWEN 2.5 7B INSTRUCT -- QLoRA FINE-TUNING")
+    print("QWEN 2.5 3B INSTRUCT -- QLoRA FINE-TUNING")
     print("=" * 60)
 
     if torch.cuda.is_available():
