@@ -1,0 +1,92 @@
+{
+  "ticker": "2120.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:46:58.945170",
+  "article_count": 6,
+  "articles": [
+    {
+      "ticker": "2120.SR",
+      "title": "Tadawul: 12 stocks scale 52-week highs",
+      "description": "Shares of 12 companies, including Leejam Sports Co. (Fitness Time) and Al Sagr Cooperative Insurance Co., hit their highest levels in 52 weeks today,",
+      "snippet": "Tadawul trading screen\n\nShares of 12 companies, including Leejam Sports Co. (Fitness Time) and Al Sagr Cooperative Insurance Co., hit their highest levels in 52...",
+      "published_at": "2024-03-19T12:19:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1713608",
+      "search_term": "MEPCO",
+      "sentiment_compound": 0.5106,
+      "sentiment_pos": 0.133,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.867
+    },
+    {
+      "ticker": "2120.SR",
+      "title": "Tadawul: 12 stocks scale 52-week highs",
+      "description": "Shares of 12 companies, includingNational Agricultural Development Co. (NADEC), Elm Co. and National Medical Care Co., hit their highest levels in 52",
+      "snippet": "Tadawul trading screen\n\nShares of 12 companies, including National Agricultural Development Co. (NADEC), Elm Co. and National Medical Care Co., hit their highes...",
+      "published_at": "2024-02-20T12:12:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1706612",
+      "search_term": "MEPCO",
+      "sentiment_compound": 0.6597,
+      "sentiment_pos": 0.172,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.828
+    },
+    {
+      "ticker": "2120.SR",
+      "title": "12 stocks climb to 52-week highs",
+      "description": "Shares of 12 companies, includingAl-Babtain Power and Telecommunication Co., Saudi Arabian Amiantit Co.andAlkhaleej Training and Education Co., hit th",
+      "snippet": "Tadawul trading screen\n\nShares of 12 companies, including Al-Babtain Power and Telecommunication Co., Saudi Arabian Amiantit Co. and Alkhaleej Training and Educ...",
+      "published_at": "2024-02-25T12:35:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1707711",
+      "search_term": "MEPCO",
+      "sentiment_compound": 0.296,
+      "sentiment_pos": 0.084,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.916
+    },
+    {
+      "ticker": "2120.SR",
+      "title": "Middle East Paper Co. Announces its subsidiary (Juthor) has signed a contract with Andritz AG company",
+      "description": "irectors’ approval of the investment in the Tissue Paper Production Line 6 project (TM6), The …",
+      "snippet": "Element List Explanation\n\nIntroduction Referring to the company's previous announcement on 18/08/2024 G on the Tadawul website regarding the Board of Directors?...",
+      "published_at": "2024-11-11T05:06:26.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4366305/Middle-East-Paper-Co-Announces-its-subsidiary-Juthor-has-signed-a-contract-with-Andritz-AG-company",
+      "search_term": "Middle East Paper",
+      "sentiment_compound": 0.4767,
+      "sentiment_pos": 0.091,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.909
+    },
+    {
+      "ticker": "2120.SR",
+      "title": "Glencore Boosts Middle East Oil Buying for Singapore Bukom Plant",
+      "description": "Glencore Plc has emerged as an active buyer of spot oil cargoes from the Middle East this month, as the merchant starts procuring crude for the Bukom refinery in Si…",
+      "snippet": "Glencore Plc has emerged as an active buyer of spot oil cargoes from the Middle East this month, as the merchant starts procuring crude for the Bukom refinery i...",
+      "published_at": "2024-12-19T05:12:43.000000Z",
+      "source_name": "financialpost.com",
+      "url": "https://financialpost.com/pmn/business-pmn/glencore-boosts-middle-east-oil-buying-for-singapore-bukom-plant",
+      "search_term": "Middle East Paper",
+      "sentiment_compound": 0.0772,
+      "sentiment_pos": 0.109,
+      "sentiment_neg": 0.081,
+      "sentiment_neu": 0.81
+    },
+    {
+      "ticker": "2120.SR",
+      "title": "Saudi Paper, MESC hit 52-week highs",
+      "description": "Shares of Saudi Paper Manufacturing Co. and Middle East Specialized Cables Co. (MESC) hit their highest levels in 52 weeks today, April 29, data compi",
+      "snippet": "Tadawul trading screen\n\nShares of Saudi Paper Manufacturing Co. and Middle East Specialized Cables Co. (MESC) hit their highest levels in 52 weeks today, April ...",
+      "published_at": "2024-04-29T15:12:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1722968",
+      "search_term": "Middle East Paper",
+      "sentiment_compound": 0.296,
+      "sentiment_pos": 0.068,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.932
+    }
+  ]
+}

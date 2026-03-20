@@ -1,0 +1,50 @@
+{
+  "ticker": "2081.SR",
+  "year": 2023,
+  "fetch_date": "2026-02-22T02:47:33.532755",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2081.SR",
+      "title": "Alkhorayef Water secures SAR 450M credit facilities from Riyad Bank",
+      "description": "Logo ofAlkhorayef Water and Power Technologies Co.\r\n\r\n\r\nAlkhorayef Water and Power Technologies Co. signed a Sharia-compliant credit facility agre",
+      "snippet": "Logo of Alkhorayef Water and Power Technologies Co.\n\nAlkhorayef Water and Power Technologies Co. signed a Sharia-compliant credit facility agreement at a total ...",
+      "published_at": "2023-12-25T17:14:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1693748",
+      "search_term": "Alkhorayef",
+      "sentiment_compound": 0.7579,
+      "sentiment_pos": 0.224,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.776
+    },
+    {
+      "ticker": "2081.SR",
+      "title": "Alkhorayef Water & Power Technologies announces that it has assigned with credit rating by SIMAH Rating Agency “Tassnief”",
+      "description": "g Agency-Tassnief- (Licensed by the Capital Market Authority) on September 5th , 2023 as “A-” for …",
+      "snippet": "Announcement Detail\n\nAlkhorayef Water & Power Technologies announcement that it has assigned with credit rating by SIMAH Rating Agency-Tassnief- (Licensed by th...",
+      "published_at": "2023-09-06T12:31:20.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4180363/Alkhorayef-Water-Power-Technologies-announces-that-it-has-assigned-with-credit-rating-by-SIMAH-Rating-Agency-Tassnief-",
+      "search_term": "Alkhorayef",
+      "sentiment_compound": 0.4404,
+      "sentiment_pos": 0.106,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.894
+    },
+    {
+      "ticker": "2081.SR",
+      "title": "Alkhorayef Water and Power Technologies. Announces Obtaining an Islamic Banking facilities Agreement with Riyad Bank",
+      "description": "of a Sharia-compliant with Riyad Bank for project financing of Operation and Maintenance for …",
+      "snippet": "Introduction\n\nAlkhorayef Water and Power Technologies Co. Announces has signed and Obtained Bank facility agreement compliant of a Sharia-compliant with Riyad B...",
+      "published_at": "2023-12-25T12:41:06.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4229221/Alkhorayef-Water-and-Power-Technologies-Announces-Obtaining-an-Islamic-Banking-facilities-Agreement-with-Riyad-Bank",
+      "search_term": "Alkhorayef",
+      "sentiment_compound": 0.4939,
+      "sentiment_pos": 0.099,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.901
+    }
+  ]
+}

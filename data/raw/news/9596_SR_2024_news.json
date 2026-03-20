@@ -1,0 +1,50 @@
+{
+  "ticker": "9596.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:46:47.693254",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "9596.SR",
+      "title": "TASI closes Monday down; NomuC ends session higher",
+      "description": "74.76 points. The trading value amounted to SAR 8.34 billion through the exchange of 439.52 …",
+      "snippet": "Riyadh – Mubasher: The main All Share Index (TASI) of the Saudi Exchange (Tadawul) went down by 0.23% on Monday and closed the trading session at 12,174.76 po...",
+      "published_at": "2024-07-22T12:52:03.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4317416/TASI-closes-Monday-down-NomuC-ends-session-higher",
+      "search_term": "Quara Finance",
+      "sentiment_compound": 0.34,
+      "sentiment_pos": 0.094,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.906
+    },
+    {
+      "ticker": "9596.SR",
+      "title": "The Saudi Exchange announces Indices Maintenance for the 1st Quarter 2024",
+      "description": "rom the start of trading on Sunday, 31/03/2024. Moreover, the following companies will be …",
+      "snippet": "The Saudi Exchange announces the update of the free float shares for all listed issuers in the main market and the parallel market (NOMU), effective from the st...",
+      "published_at": "2024-03-25T12:35:47.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4265736/The-Saudi-Exchange-announces-Indices-Maintenance-for-the-1st-Quarter-2024",
+      "search_term": "Quara Finance",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "9596.SR",
+      "title": "Tadawul announces indices maintenance for Q1 2024",
+      "description": "The Saudi Exchange (Tadawul) announced the update of the free float shares for all listed issuers in the main market and the Nomu-Parallel Market, eff",
+      "snippet": "Tadawul trading screen\n\nThe Saudi Exchange (Tadawul) announced the update of the free float shares for all listed issuers in the main market and the Nomu-Parall...",
+      "published_at": "2024-03-25T17:38:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1715158",
+      "search_term": "Quara Finance",
+      "sentiment_compound": 0.6705,
+      "sentiment_pos": 0.155,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.845
+    }
+  ]
+}

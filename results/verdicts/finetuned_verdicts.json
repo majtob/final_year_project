@@ -1,0 +1,1967 @@
+[
+  {
+    "Company": "MEPCO",
+    "Ticker": "1202.SR",
+    "Sector": "N/A",
+    "FiscalYear": "2024",
+    "Agency": "Financial Analytics",
+    "ActualRating": "A- (Investment Grade)",
+    "MLPredictedRating": "A (Investment Grade)",
+    "ConfidenceLevel": "100%",
+    "Verdict": {
+      "LIQUIDITY": {
+        "RatioValue": "0.2396",
+        "Comment": "Liquidity ratio is within the normal range, indicating adequate short-term assets to cover short-term liabilities."
+      },
+      "CUMPROFITABILITY": {
+        "RatioValue": "-0.0095",
+        "Comment": "Cumulative profitability ratio is slightly negative but still positive, suggesting some level of profitability over the past few years."
+      },
+      "EARNINGSLEV": {
+        "RatioValue": "1.6692",
+        "Comment": "Earnings leverage ratio is above the average for the sector, indicating that the company generates higher earnings per share than its peers."
+      }
+    }
+  },
+  {
+    "company": "Maaden",
+    "ticker": "1211.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "credit_rating": {
+      "actual": "BBB+",
+      "predicted": "BBB",
+      "confidence": "54%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquidity Ratio (LIQUID) of 0.1295 indicates adequate short-term liquidity to cover its current liabilities.",
+        "rating_implication": "This suggests the company can meet its immediate financial obligations without significant difficulty."
+      },
+      {
+        "claim": "The Cumulative Profits Ratio (CUMPROF) of 0.0864 implies that the company has maintained a positive trend in its cumulative profits over the past few years.",
+        "rating_implication": "This suggests a consistent profitability, which is beneficial for long-term stability and growth."
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 0.0429 reflects the company's ability to generate profit from its operations, indicating a moderate level of profitability.",
+        "rating_implication": "While the profitability is below average, it shows that the company is generating some form of income, which is important for sustaining operations."
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 1.0319 suggests that the company is moderately leveraged, with a slight increase compared to previous years.",
+        "rating_implication": "This indicates that the company is using debt to finance a portion of its assets, which could be seen as prudent but also poses risk if interest rates or economic conditions change."
+      }
+    ]
+  },
+  {
+    "company": "Maaden",
+    "ticker": "1211.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_verdict": {
+      "rating": "BBB+",
+      "prediction": "BBB (Investment Grade)",
+      "confidence": "99%",
+      "justification": [
+        "LIQUID Ratio: 0.0823 - Indicates a low level of current assets relative to current liabilities, which may pose liquidity risk.",
+        "CUMPROF Ratio: 0.0874 - Reflects the cumulative profit margin, suggesting steady profitability over time.",
+        "PROFITAB Ratio: 0.0604 - Represents the average annual profit margin, indicating moderate profitability.",
+        "LEVERAGE Ratio: 1.0951 - Indicates moderate leverage, with a slight increase from previous years."
+      ]
+    }
+  },
+  {
+    "company": "Maaden",
+    "ticker": "1211.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Moodys",
+    "actual_rating": "BBB+",
+    "predicted_rating": "BBB",
+    "confidence_level": "99%",
+    "verdict": {
+      "liquidity_ratio": {
+        "value": "0.0823",
+        "comment": "The liquidity ratio of 0.0823 is within the normal range for investment grade ratings."
+      },
+      "cumulative_profitability": {
+        "value": "0.0874",
+        "comment": "The cumulative profitability ratio of 0.0874 indicates a strong ability to generate profits over time, which supports the predicted rating."
+      },
+      "profitability": {
+        "value": "0.0604",
+        "comment": "The profitability ratio of 0.0604 suggests a moderate level of profitability, which aligns with the predicted rating."
+      },
+      "leverage": {
+        "value": "1.0951",
+        "comment": "The leverage ratio of 1.0951 is slightly above the industry average but still within a reasonable range for an investment grade rating."
+      }
+    }
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2021",
+    "agency": "Fitch",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "94%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The Liquidity Ratio (LIQUID) of 0.1789 indicates adequate short-term liquidity to cover current liabilities.",
+        "rating_implication": "This supports the Investment Grade rating."
+      },
+      {
+        "claim": "The Cumulative Profit Margin (CUMPROF) of 0.0870 suggests modest profitability over the past five years.",
+        "rating_implication": "While not strong, this margin aligns with the Investment Grade rating."
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 0.1122 implies that the company has been generating positive profits on its operations.",
+        "rating_implication": "This contributes to the Investment Grade rating."
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 1.9701 indicates moderate debt levels relative to equity, which is consistent with the Investment Grade rating.",
+        "rating_implication": "This aspect supports the Investment Grade rating."
+      }
+    ]
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2022",
+    "agency": "Fitch",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "92%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquidity Ratio (LIQUID) of 0.1872 indicates adequate short-term solvency.",
+        "ratio_value": "0.1872"
+      },
+      {
+        "claim": "The Cumulative Profits Ratio (CUMPROF) of 0.1025 suggests a positive trend in profitability over the last three years.",
+        "ratio_value": "0.1025"
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 0.0853 implies a moderate level of profitability.",
+        "ratio_value": "0.0853"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 2.2790 indicates a moderate level of debt relative to equity, which is manageable.",
+        "ratio_value": "2.2790"
+      }
+    ]
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "agency": "Fitch",
+    "actual_rating": "A+",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "95%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquidity Ratio (LIQUID) of 0.1624 indicates adequate short-term financial health.",
+        "ratio_value": "0.1624"
+      },
+      {
+        "claim": "The Cumulative Profits Ratio (CUMPROF) of 0.0955 suggests a positive trend in profitability over the last three years.",
+        "ratio_value": "0.0955"
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 0.0235 reflects a moderate level of profitability.",
+        "ratio_value": "0.0235"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 1.9706 indicates that the company has a relatively high level of debt compared to equity, which could pose credit risk if it cannot sustain its debt levels.",
+        "ratio_value": "1.9706"
+      }
+    ]
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Fitch",
+    "actual_rating": "A+",
+    "ml_prediction": "A (Investment Grade)",
+    "confidence": "99%",
+    "verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.1655",
+        "comment": "The liability coverage ratio of 16.55% is below the industry average, indicating that the company may face challenges in meeting its short-term obligations. However, this is within the acceptable range for investment grade ratings."
+      },
+      "cumulative_profitability": {
+        "ratio_value": "0.0721",
+        "comment": "The cumulative profitability ratio of 7.21% suggests that the company has been able to maintain a positive trend in its profitability over the past few years. This is a positive indicator for long-term stability."
+      },
+      "profitability": {
+        "ratio_value": "0.0250",
+        "comment": "The profitability ratio of 2.50% indicates that the company has been generating profits at a rate that is slightly below the industry average. This could be due to various factors such as market conditions or operational inefficiencies."
+      },
+      "financial_leverage": {
+        "ratio_value": "1.9545",
+        "comment": "The financial leverage ratio of 1.95 is within the normal range for investment grade companies. It shows that the company is using debt moderately to support its operations, which is a prudent approach."
+      }
+    }
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Moodys",
+    "actual_rating": "A",
+    "predicted_rating": "A",
+    "confidence_level": "99%",
+    "credit_verdict": {
+      "LIQUIDITY": {
+        "ratio_value": "0.1655",
+        "comment": "SABIC's liquidity ratio of 0.1655 indicates adequate short-term solvency, which supports the Investment Grade rating."
+      },
+      "CUMULATIVE_PROFITABILITY": {
+        "ratio_value": "0.0721",
+        "comment": "The cumulative profitability ratio of 0.0721 suggests that the company has shown consistent profitability over time, aligning with the Investment Grade rating."
+      },
+      "PROFITABILITY": {
+        "ratio_value": "0.0250",
+        "comment": "The profitability ratio of 0.0250 indicates a moderate level of profitability, which is in line with the Investment Grade rating."
+      },
+      "DEBT_TO_EQUITY": {
+        "ratio_value": "1.9545",
+        "comment": "The debt to equity ratio of 1.9545 is relatively high, but the Investment Grade rating implies that the company manages its debt effectively, supporting the current rating."
+      }
+    }
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_verdict": {
+      "rating": "A (Investment Grade)",
+      "confidence_level": "High (99%)"
+    },
+    "ratios": {
+      "LIQUID": 0.1655,
+      "CUMPROF": 0.0721,
+      "PROFITAB": 0.025,
+      "LEVERAGE": 1.9545
+    },
+    "analysis": [
+      "The company's Liquid Ratio (0.1655) indicates a moderate level of liquidity, which is acceptable for its industry.",
+      "The Cumulative Profits Margin (0.0721) suggests that the company has maintained a positive margin over time, which is beneficial for long-term sustainability.",
+      "The Profitability Margin (0.0250) is relatively low, indicating that the company generates a small profit margin from its operations, which may pose challenges in maintaining consistent earnings growth.",
+      "The Leverage Ratio (1.9545) is on the higher side, suggesting that the company relies heavily on debt financing, which could increase financial risk if interest rates or other economic conditions change."
+    ]
+  },
+  {
+    "company": "Perfect Presentation (2P)",
+    "ticker": "2070.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Financial Analytics",
+    "actual_rating": "BBB+",
+    "predicted_rating": "BBB",
+    "confidence_level": "100%",
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.0801",
+        "comment": "The liability coverage ratio is positive, indicating that the company has sufficient liquid assets to cover its short-term liabilities. This is a strong indicator of financial health."
+      },
+      "cumulative_profit": {
+        "ratio_value": "-0.0278",
+        "comment": "The cumulative profit ratio is negative but close to zero, suggesting that the company has had some profitability issues in recent years. However, the absolute value is low, which is a positive sign."
+      },
+      "profitability": {
+        "ratio_value": "0.0389",
+        "comment": "The profitability ratio is positive and relatively high, indicating that the company generates a decent amount of profit. This suggests that it can sustainably generate earnings."
+      },
+      "leverage": {
+        "ratio_value": "0.5492",
+        "comment": "The leverage ratio is moderate, indicating that the company uses debt financing moderately. This level of leverage is generally considered acceptable for investment grade ratings."
+      }
+    }
+  },
+  {
+    "company": "Perfect Presentation Commercial Services Company",
+    "ticker": "2070.SR",
+    "predicted_rating": {
+      "grade": "BBB",
+      "confidence_level": "100%"
+    },
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.0801",
+        "comment": "The liability coverage ratio indicates that the company has sufficient liquidity to meet its short-term obligations. This is a positive indicator for creditworthiness."
+      },
+      "cumulative_profit": {
+        "ratio_value": "-0.0278",
+        "comment": "The cumulative profit ratio suggests that the company has experienced a slight decline in profitability over the past year. However, this is within a reasonable range and does not pose significant risk."
+      },
+      "profitability": {
+        "ratio_value": "0.0389",
+        "comment": "The profitability ratio is slightly positive, indicating that the company generates a small amount of profit. This is a positive sign but may not be sustainable without further improvement."
+      },
+      "leverage": {
+        "ratio_value": "0.5492",
+        "comment": "The leverage ratio is moderate, suggesting that the company is moderately leveraged. While this level of debt is manageable, it could affect the company\u2019s ability to service debt if earnings decrease."
+      }
+    }
+  },
+  {
+    "company": "Alkhorayef Water & Power",
+    "ticker": "2081.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Financial Analytics",
+    "actual_rating": "A- (Investment Grade)",
+    "ml_prediction": "A (Investment Grade)",
+    "confidence_level": "100%",
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.1627",
+        "verdict": "The company has a strong liquidity position, with a liability coverage ratio of 16.27%, indicating sufficient funds to cover short-term liabilities."
+      },
+      "cumulative_profitability": {
+        "ratio_value": "0.1537",
+        "verdict": "The cumulative profitability ratio of 15.37% suggests that the company has a consistent track record of generating positive earnings over time, which is a positive indicator for future performance."
+      },
+      "profitability": {
+        "ratio_value": "0.1238",
+        "verdict": "The profitability ratio of 12.38% indicates that the company generates a profit margin, though it is lower than ideal. This could be due to various factors such as industry standards or one-time expenses."
+      },
+      "leverage": {
+        "ratio_value": "0.4839",
+        "verdict": "The leverage ratio of 48.39% is relatively high, which might pose risks if the company relies heavily on debt financing. However, the ML model predicts an investment grade, suggesting that the company can manage its debt effectively."
+      }
+    }
+  },
+  {
+    "company": "Alkhorayef for Water and Power Technologies Company",
+    "ticker": "2081.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "A",
+      "confidence": "100%"
+    },
+    "credit_verdict": [
+      {
+        "ratio": "LIQUID",
+        "value": "0.1627",
+        "comment": "The Liquidity Ratio of 16.27% is within the Investment Grade range, indicating adequate short-term solvency."
+      },
+      {
+        "ratio": "CUMPROF",
+        "value": "0.1537",
+        "comment": "The Cumulative Profit Ratio of 15.37% suggests that the company has maintained profitability over time, which is positive for its ability to sustain operations."
+      },
+      {
+        "ratio": "PROFITAB",
+        "value": "0.1238",
+        "comment": "The Profitability Ratio of 12.38% indicates that the company generates a reasonable profit margin, which is favorable for long-term viability."
+      },
+      {
+        "ratio": "LEVERAGE",
+        "value": "0.4839",
+        "comment": "The Leverage Ratio of 48.39% is below the Investment Grade threshold, suggesting that the company is not overly leveraged and maintains a prudent balance between debt and equity."
+      }
+    ]
+  },
+  {
+    "company": "ACWA Power",
+    "ticker": "2082.SR",
+    "sector": "N/A",
+    "fiscal_year": "2021",
+    "agency": "Fitch",
+    "actual_rating": "BBB-",
+    "predicted_rating": "BBB",
+    "confidence_level": "98%",
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.1003",
+        "comment": "The Liability Coverage Ratio (LIQUID) of 10% is below the industry average, indicating that the company has a lower ability to cover its liabilities with liquid assets."
+      },
+      "cumulative_profit": {
+        "ratio_value": "0.0286",
+        "comment": "The Cumulative Profit Margin (CUMPROF) of 2.86% suggests that the company has been able to maintain a positive profit margin over time, which is a positive indicator."
+      },
+      "profit_margin": {
+        "ratio_value": "0.0414",
+        "comment": "The Profit Margin (PROFITAB) of 4.14% indicates that the company generates a relatively high profit margin, which is a strong indicator of profitability."
+      },
+      "debt_leverage": {
+        "ratio_value": "0.4562",
+        "comment": "The Debt Leverage Ratio (LEVERAGE) of 45.62% is within the industry range, suggesting that the company has moderate debt levels relative to its equity."
+      }
+    }
+  },
+  {
+    "company": "ACWA Power",
+    "ticker": "2082.SR",
+    "sector": "N/A",
+    "fiscal_year": "2022",
+    "agency": "Fitch",
+    "actual_rating": "BBB-",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "51%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquidity Ratio (LIQUID) of 0.1414 indicates adequate short-term liquidity to meet its obligations.",
+        "rating_implication": "This supports the Fitch's BBB- rating."
+      },
+      {
+        "claim": "The Cumulative Profits Margin (CUMPROF) of 0.0426 suggests that the company has a margin of 4.26% on its cumulative profits, which is below the industry average and may indicate room for improvement in profitability.",
+        "rating_implication": "This could explain why the ML model predicts a higher rating than Fitch's current assessment."
+      },
+      {
+        "claim": "The Profitability Margin (PROFITAB) of 0.0547 implies that the company generates 5.47% of its revenue as profit, which is relatively low compared to peers, but still positive.",
+        "rating_implication": "This might justify the ML model's higher rating, as it sees potential for growth or efficiency improvements."
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 0.6950 is lower than the industry average, indicating that the company is less leveraged, which could be a factor in the ML model's prediction of a higher rating."
+      }
+    ]
+  },
+  {
+    "company": "ACWA Power",
+    "ticker": "2082.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "agency": "Fitch",
+    "actual_rating": "BBB-",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "79%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company has a Liquid Ratio of 0.1153, which is below the industry average, indicating a potential liquidity risk.",
+        "impact": "Negative"
+      },
+      {
+        "claim": "The Cumulative Profits Margin of 0.0590 suggests that the company has a moderate ability to generate profits from its operations.",
+        "impact": "Neutral"
+      },
+      {
+        "claim": "The Profitability Margin of 0.0598 indicates that the company earns a reasonable profit margin from its core business activities.",
+        "impact": "Positive"
+      },
+      {
+        "claim": "The Leverage Ratio of 0.6036 is lower than the industry average, suggesting that the company has a relatively low level of debt compared to assets, which is favorable for creditworthiness.",
+        "impact": "Positive"
+      }
+    ]
+  },
+  {
+    "company": "ACWA Power",
+    "ticker": "2082.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_rating": {
+      "actual": "BBB-",
+      "predicted": "BBB (Investment Grade)",
+      "confidence": "97%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company has a Liquid Ratio of 0.0962, which is within the acceptable range for investment grade ratings.",
+        "ratio_value": "0.0962"
+      },
+      {
+        "claim": "The Cumulative Profits Margin (CUMPROF) of 0.0857 suggests the company has maintained profitability over time, supporting its investment grade status.",
+        "ratio_value": "0.0857"
+      },
+      {
+        "claim": "The Profitability Margin (PROFITAB) of 0.0583 indicates that the company generates a positive profit margin, contributing to its investment grade rating.",
+        "ratio_value": "0.0583"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 0.7461 is below the industry average, which helps maintain a healthy capital structure and supports the investment grade outlook.",
+        "ratio_value": "0.7461"
+      }
+    ]
+  },
+  {
+    "company": "Middle East Paper Company",
+    "ticker": "2120.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "grade": "BBB",
+      "investment_grade": true,
+      "confidence": 89
+    },
+    "ratios": {
+      "LIQUID": 0.3926,
+      "CUMPROF": 0.3541,
+      "PROFITAB": 0.2333,
+      "LEVERAGE": 9.7581
+    },
+    "credit_verdict": "The ML model predicts an investment grade rating of BBB for Middle East Paper Company. The company's financial health, indicated by the positive Cumulative Profits and Profitability Ratios, and moderate Leverage, supports this prediction. However, the company's Liquidity Ratio (0.3926) is below the industry average, which could be a concern. Overall, the company appears to be in a stable position."
+  },
+  {
+    "company": "Napco National",
+    "ticker": "2210.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "BBB+",
+    "ml_prediction": {
+      "rating": "BBB",
+      "confidence": "100%"
+    },
+    "credit_verdict": [
+      {
+        "ratio": "LIQUID",
+        "value": "-0.4946",
+        "comment": "The negative value of the Liquidity Ratio suggests that the company may have difficulty meeting its short-term obligations. This could be a cause for concern."
+      },
+      {
+        "ratio": "CUMPROF",
+        "value": "0.0052",
+        "comment": "The Cumulative Profits Ratio is positive but low, indicating that the company has had some profitability over time, which is a positive sign."
+      },
+      {
+        "ratio": "PROFITAB",
+        "value": "0.0442",
+        "comment": "The Profitability Ratio is also positive, suggesting that the company generates a profit from its operations. However, the low value indicates room for improvement."
+      },
+      {
+        "ratio": "LEVERAGE",
+        "value": "0.2855",
+        "comment": "The Leverage Ratio is below one, which is generally considered healthy for a company. It implies that the company has less debt relative to equity, reducing financial risk."
+      }
+    ]
+  },
+  {
+    "company": "Saudi Aramco",
+    "ticker": "2222.SR",
+    "sector": "N/A",
+    "fiscal_year": "2021",
+    "agency": "Fitch",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "87%"
+    },
+    "ratios": {
+      "LIQUID": "0.1421",
+      "CUMPROF": "0.4709",
+      "PROFITAB": "0.3614",
+      "LEVERAGE": "1.4520"
+    },
+    "credit_verdict": "Based on the provided financial ratios and ML model prediction, Saudi Aramco is rated 'A' by Fitch, which is an Investment Grade. The model predicts this rating with a high confidence of 87%. The financial health indicated by the ratios, such as a Liquid Ratio of 0.1421, Cumulative Profits Ratio of 0.4709, Profitability Ratio of 0.3614, and Leverage Ratio of 1.4520, supports the positive outlook. These metrics suggest that the company has a strong ability to manage its liquidity, profitability, and debt levels."
+  },
+  {
+    "company": "Saudi Aramco",
+    "ticker": "2222.SR",
+    "sector": "N/A",
+    "fiscal_year": "2022",
+    "agency": "Fitch",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "84%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquidity Ratio (LIQUID) of 0.1974 indicates adequate short-term liquidity.",
+        "rating": "A"
+      },
+      {
+        "claim": "The Cumulative Profit Ratio (CUMPROF) of 0.5375 suggests the company has maintained positive profitability over the last five years.",
+        "rating": "A"
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 0.4661 implies that the company generates a reasonable profit margin.",
+        "rating": "A"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 2.0152 shows moderate debt levels relative to equity, which is acceptable for a large company like Saudi Aramco.",
+        "rating": "A"
+      }
+    ]
+  },
+  {
+    "company": "Saudi Aramco",
+    "ticker": "2222.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "credit_verdict": {
+      "rating": "A (Investment Grade)",
+      "confidence": "78%",
+      "verdict": "The company is rated A (Investment Grade) by Fitch, with a high degree of confidence in this rating based on the provided financial ratios and ML model prediction. The liquidity ratio (LIQUID) of 0.1596 suggests adequate short-term solvency, the cumulative profitability ratio (CUMPROF) of 0.5696 indicates positive long-term profitability trends, the profitability ratio (PROFITAB) of 0.3617 shows consistent earnings performance, and the leverage ratio (LEVERAGE) of 2.3447 reflects a moderate level of debt use."
+    }
+  },
+  {
+    "company": "Saudi Aramco",
+    "ticker": "2222.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_verdict": {
+      "rating": "A+",
+      "predicted_rating": "A",
+      "confidence_level": "56%",
+      "verdict": "Creditworthy with strong fundamentals."
+    },
+    "ratios": {
+      "LIQUIDITY": "0.0974",
+      "CUMULATIVE_PROFITABILITY": "0.5539",
+      "PROFITABILITY": "0.3270",
+      "LEVERAGE": "2.1383"
+    },
+    "analysis": [
+      "The company's cumulative profitability (CUMPROF) of 0.5539 suggests a solid track record of generating profits over the past few years.",
+      "The profitability (PROFITAB) ratio at 0.3270 indicates that the company generates a positive return on its operations.",
+      "Despite the relatively low liquidity (LIQUID) ratio of 0.0974, the company's ability to leverage its assets (LEVERAGE) at 2.1383 suggests it has a strong financial structure for its size.",
+      "The ML model predicts an investment grade rating, which aligns well with the actual Fitch rating of A+."
+    ]
+  },
+  {
+    "company": "Saudi Aramco",
+    "ticker": "2222.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Moodys",
+    "actual_rating": "AA-",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "56%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company has a Liquid Ratio of 0.0974, which is below the industry average, indicating potential liquidity challenges.",
+        "impact": "Negative"
+      },
+      {
+        "claim": "The Cumulative Profits Margin (CUMPROF) of 0.5539 suggests that the company has maintained a consistent profit margin over time.",
+        "impact": "Neutral to Positive"
+      },
+      {
+        "claim": "The Profitability Index (PROFITAB) of 0.3270 indicates that the company's profitability has been relatively low compared to its peers.",
+        "impact": "Negative"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 2.1383 is above the industry average, suggesting that the company may be heavily leveraged, which could pose credit risk if earnings decline or interest rates rise.",
+        "impact": "Negative"
+      }
+    ]
+  },
+  {
+    "company": "Almarai",
+    "ticker": "2280.SR",
+    "predicted_rating": "A (Investment Grade)",
+    "confidence_level": "90%",
+    "liabilities_to_equity_ratio": {
+      "value": "0.0828",
+      "comment": "This is below the industry average, indicating strong liquidity."
+    },
+    "cumulative_profit_margin": {
+      "value": "0.2158",
+      "comment": "High profitability margin suggests stable earnings."
+    },
+    "profitability_ratio": {
+      "value": "0.0855",
+      "comment": "Moderate profitability ratio supports investment grade rating."
+    },
+    "leverage_ratio": {
+      "value": "1.1201",
+      "comment": "Moderate leverage level, within acceptable range for investment grade."
+    },
+    "credit_verdict": "Based on the provided financial ratios and ML model prediction, Almarai appears to be in a favorable position with a high likelihood of maintaining its current investment-grade status. The company demonstrates strong liquidity, profitability, and a moderate level of leverage, which aligns well with the predicted A (Investment Grade) rating."
+  },
+  {
+    "company": "Almarai",
+    "ticker": "2280.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_rating": {
+      "actual": "BBB-",
+      "predicted": "A (Investment Grade)",
+      "confidence": "90%"
+    },
+    "ratios": {
+      "LIQUID": "0.0828",
+      "CUMPROF": "0.2158",
+      "PROFITAB": "0.0855",
+      "LEVERAGE": "1.1201"
+    },
+    "verdict": "Based on the ML model prediction of 'A (Investment Grade)' with a high confidence level of 90%, Almarai appears to be in a strong financial position. The company's liquidity ratio (LIQUID) at 0.0828, cumulative profit margin (CUMPROF) at 0.2158, profitability (PROFITAB) at 0.0855, and leverage (LEVERAGE) at 1.1201 all support this positive outlook. These ratios indicate that the company has a solid financial health and a capacity for generating profits, which aligns well with the predicted rating."
+  },
+  {
+    "company": "ADES",
+    "ticker": "2382.SR",
+    "sector": "N/A",
+    "fiscal_year": 2023,
+    "credit_verdict": {
+      "rating": "A (Investment Grade)",
+      "confidence_level": "High (96%)"
+    },
+    "analysis": [
+      {
+        "ratio": "LIQUID",
+        "value": "-0.0408",
+        "comment": "Negative Liquid Ratio suggests the company may have difficulty meeting short-term obligations with its current assets."
+      },
+      {
+        "ratio": "CUMPROF",
+        "value": "0.0886",
+        "comment": "Positive Cumulative Profits Ratio indicates that the company has been profitable over the past few years, which is a positive indicator for future performance."
+      },
+      {
+        "ratio": "PROFITAB",
+        "value": "0.0662",
+        "comment": "Positive Profitability Ratio suggests that the company generates a profit margin that is above average, indicating good earnings performance."
+      },
+      {
+        "ratio": "LEVERAGE",
+        "value": "0.4234",
+        "comment": "Moderate Leverage Ratio implies that the company is moderately leveraged, which might be seen as risky but also potentially rewarding if it can manage debt effectively."
+      }
+    ]
+  },
+  {
+    "company": "ADES",
+    "ticker": "2382.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_verdict": {
+      "rating": "BBB (Investment Grade)",
+      "confidence": "73%",
+      "verdict": "The company ADES appears to be in a strong financial position, indicated by its positive liquidity (LIQUID = 0.0097), moderate leverage (LEVERAGE = 0.4332), and a reasonable cumulative profit (CUMPROF = 0.1131). The ML model predicts an investment grade rating, which aligns with the actual rating of B+ from Fitch. This suggests that the company is likely to maintain or improve its financial health, making it a suitable candidate for investment."
+    },
+    "ratios": {
+      "LIQUID": "0.0097",
+      "CUMPROF": "0.1131",
+      "PROFITAB": "0.0825",
+      "LEVERAGE": "0.4332"
+    }
+  },
+  {
+    "company": "ADES",
+    "ticker": "2382.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_verdict": {
+      "rating": "BBB (Investment Grade)",
+      "confidence": "73%",
+      "analysis": [
+        {
+          "ratio": "LIQUID",
+          "value": "0.0097",
+          "comment": "The liquidity ratio of 0.0097 indicates that the company has a very low level of liquid assets relative to its current liabilities. This suggests that the company may face significant challenges in meeting short-term obligations if necessary."
+        },
+        {
+          "ratio": "CUMPROF",
+          "value": "0.1131",
+          "comment": "The cumulative profitability ratio of 0.1131 implies that the company has shown consistent profitability over the past few years. However, this figure alone does not provide a clear picture without context about the industry performance or other factors affecting profitability."
+        },
+        {
+          "ratio": "PROFITAB",
+          "value": "0.0825",
+          "comment": "The profitability ratio of 0.0825 suggests that the company generates earnings at a rate lower than the industry average. This could be due to various factors such as higher costs, lower sales volumes, or more competitive pricing."
+        },
+        {
+          "ratio": "LEVERAGE",
+          "value": "0.4332",
+          "comment": "The leverage ratio of 0.4332 indicates that the company has a moderate level of debt relative to equity. While it is below the industry average, it still poses some risk, especially if the company's earnings are not sufficient to cover interest payments."
+        }
+      ],
+      "overall_rating": "BBB (Investment Grade)",
+      "predicted_rating_reason": "The ML model predicts an investment grade rating based on the provided financial ratios, which show a strong track record of profitability and a moderate level of debt. The confidence level of 73% further supports this prediction."
+    }
+  },
+  {
+    "company": "Al Kathiri Holding",
+    "ticker": "3008.SR",
+    "predicted_rating": "A (Investment Grade)",
+    "confidence_level": "95%",
+    "verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.2780",
+        "comment": "The Liability Coverage Ratio (LIQUID) is below the industry average, indicating that the company may have difficulty meeting its short-term obligations. However, this alone does not justify a lower rating."
+      },
+      "cumulative_profit": {
+        "ratio_value": "-0.0465",
+        "comment": "The Cumulative Profit Ratio is negative, suggesting that the company has been experiencing losses over the past few years. This could be a concern for future earnings and cash flows."
+      },
+      "profitability": {
+        "ratio_value": "-0.0261",
+        "comment": "The Profitability Ratio is also negative, which is concerning as it indicates that the company is not generating enough profit to sustain operations. This negatively impacts the company's ability to meet debt obligations."
+      },
+      "leverage": {
+        "ratio_value": "0.6416",
+        "comment": "The Leverage Ratio is above the industry average, which suggests that the company is heavily leveraged. High levels of debt can increase the risk of default if the company is unable to generate sufficient income to cover interest payments."
+      }
+    },
+    "analysis": {
+      "summary": "Despite the negative financial ratios, the ML model predicts an 'A' rating, which is an investment grade. The model likely takes into account other factors not included in the financial ratios, such as market conditions, competitive landscape, and management quality. The current financial situation, however, remains a significant concern."
+    }
+  },
+  {
+    "company": "Al Kathiri Holding Company (AKHC)",
+    "ticker": "3008.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "BBB",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "97%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company has a Liquid Ratio of 0.3443, which is below the industry average, indicating potential liquidity challenges.",
+        "impact": "Low"
+      },
+      {
+        "claim": "The Cumulative Profits Margin (CUMPROF) of 1.84% suggests that the company is generating profits but at a low rate.",
+        "impact": "Moderate"
+      },
+      {
+        "claim": "The Profitability Margin (PROFITAB) of 2.18% indicates that the company is profitable, albeit with a relatively low margin.",
+        "impact": "Moderate"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 0.7737 is above the industry average, suggesting that the company is using debt to finance its operations, which could pose credit risk if it cannot sustainably manage its debt levels.",
+        "impact": "High"
+      }
+    ],
+    "overall_credit_status": "Positive",
+    "justification": "Despite the lower actual rating from the agency, the ML model predicts an investment grade, which is more favorable than the actual rating. The positive ML prediction, combined with the company's profitability and low leverage, outweighs the lower actual rating."
+  },
+  {
+    "company": "Alkhaleej Training",
+    "ticker": "4290.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_verdict": {
+      "rating": "BBB",
+      "investment_grade": true,
+      "confidence_level": 100,
+      "analysis": [
+        {
+          "ratio": "LIQUID",
+          "value": "0.0256",
+          "comment": "The Liquidity Ratio is positive but low, indicating that the company has some short-term assets to cover its short-term liabilities. This suggests adequate liquidity, which is good for short-term financial health."
+        },
+        {
+          "ratio": "CUMPROF",
+          "value": "-0.0129",
+          "comment": "The Cumulative Profits Ratio is negative, suggesting that the company has been losing money over time. However, this could be due to one-off factors or strategic decisions that may improve in the future."
+        },
+        {
+          "ratio": "PROFITAB",
+          "value": "0.0860",
+          "comment": "The Profitability Ratio is positive, indicating that the company generates a profit on its operations. This is a strong indicator of the company's ability to sustainably generate earnings."
+        },
+        {
+          "ratio": "LEVERAGE",
+          "value": "0.3610",
+          "comment": "The Leverage Ratio is moderate, meaning the company has a reasonable level of debt relative to equity. This suggests that the company can manage its debt effectively without being overly leveraged."
+        }
+      ]
+    }
+  },
+  {
+    "company": "Alkhaleej Training",
+    "ticker": "4290.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "BBB+",
+    "predicted_rating": "BBB (Investment Grade)",
+    "confidence_level": "100%",
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.0256",
+        "comment": "The Liquidity Ratio (LIQUID) of 0.0256 suggests the company has a low level of current assets relative to its current liabilities, which may indicate potential liquidity issues."
+      },
+      "cumulative_profit": {
+        "ratio_value": "-0.0129",
+        "comment": "The Cumulative Profit Ratio (CUMPROF) of -0.0129 implies that the company has been experiencing a slight decline in cumulative profits over the past years, which could be concerning for future earnings."
+      },
+      "profitability": {
+        "ratio_value": "0.0860",
+        "comment": "The Profitability Ratio (PROFITAB) of 0.0860 indicates that the company generates a moderate level of profit margin, which is positive but not extremely high."
+      },
+      "financial_leverage": {
+        "ratio_value": "0.3610",
+        "comment": "The Leverage Ratio (LEVERAGE) of 0.3610 suggests that the company has a relatively low level of debt compared to its equity, indicating a lower risk of financial distress."
+      }
+    }
+  },
+  {
+    "company": "Cenomi Centers",
+    "ticker": "4321.SR",
+    "sector": "N/A",
+    "fiscal_year": "2021",
+    "credit_verdict": {
+      "rating": "A (Investment Grade)",
+      "confidence": "100%",
+      "justification": [
+        "The company has a Liquid Ratio (LIQUID) of 0.0164, which is below the industry average, indicating adequate short-term liquidity.",
+        "Cumulative Profits (CUMPROF) of 0.3079 suggests that the company has been able to maintain profitability over time.",
+        "Profitability (PROFITAB) of 0.0257 implies that the company generates a modest profit margin.",
+        "Leverage (LEVERAGE) of 1.1671 is within the normal range for the sector, suggesting the company is not overly indebted."
+      ]
+    }
+  },
+  {
+    "company": "Cenomi Centers",
+    "ticker": "4321.SR",
+    "sector": "N/A",
+    "fiscal_year": "2022",
+    "agency": "Fitch",
+    "actual_rating": "BB",
+    "ml_prediction": {
+      "rating": "BBB",
+      "confidence": "98%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquidity Ratio (LIQUID) of 0.0078 suggests adequate short-term liquidity, which aligns with the positive outlook from the ML model.",
+        "score": "Positive"
+      },
+      {
+        "claim": "The Cumulative Profit Margin (CUMPROF) of 29.62% indicates strong profitability over the past years, supporting the higher rating predicted by the ML model.",
+        "score": "Strong Support"
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 3.65% shows consistent profitability, which is a key factor for the improved rating.",
+        "score": "Supportive"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 1.0868 is within a reasonable range, suggesting the company manages its debt effectively, contributing to the positive prediction.",
+        "score": "Neutral"
+      }
+    ]
+  },
+  {
+    "company": "Cenomi Centers",
+    "ticker": "4321.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "agency": "Fitch",
+    "actual_rating": "BB",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "100%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Cumulative Profits (CUMPROF) of 0.2966 indicates positive earnings growth over the past few years.",
+        "ratio_value": "0.2966"
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 0.0595 suggests that the company has a moderate ability to generate profits from its operations.",
+        "ratio_value": "0.0595"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 1.0649 is slightly above the industry average, indicating that the company may be using more debt than equity.",
+        "ratio_value": "1.0649"
+      },
+      {
+        "claim": "The Liquidity Ratio (LIQUID) of -0.0913 is negative, which could imply that the company might have difficulty meeting short-term obligations, but this is an unusual value and should be interpreted with caution.",
+        "ratio_value": "-0.0913"
+      }
+    ]
+  },
+  {
+    "company": "Cenomi Centers",
+    "ticker": "4321.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Financial Analytics",
+    "actual_rating": "A-",
+    "ml_prediction": {
+      "grade": "BBB",
+      "investment_grade": true,
+      "confidence": 95
+    },
+    "credit_verdict": [
+      {
+        "ratio": "LIQUID",
+        "value": "0.0405",
+        "comment": "The liquidity ratio is low, indicating that the company may have difficulty meeting its short-term obligations. This could be a concern for creditors."
+      },
+      {
+        "ratio": "CUMPROF",
+        "value": "0.2779",
+        "comment": "The cumulative profit margin is positive, suggesting that the company has been able to sustain profitability over time. However, it is below the industry average, which might indicate room for improvement."
+      },
+      {
+        "ratio": "PROFITAB",
+        "value": "0.0446",
+        "comment": "The profit margin is relatively low, which could mean that the company is not generating significant profits from its operations. This is a key factor in determining the company's ability to meet debt obligations."
+      },
+      {
+        "ratio": "LEVERAGE",
+        "value": "0.8919",
+        "comment": "The leverage ratio is moderate, indicating that the company is moderately leveraged. While this suggests some level of risk, it also implies that the company has access to additional capital if needed."
+      }
+    ]
+  },
+  {
+    "company": "Cenomi Centers",
+    "ticker": "4321.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Fitch",
+    "actual_rating": "BB",
+    "ml_predicted": {
+      "rating": "BBB",
+      "confidence": "95%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company has a Liquid Ratio of 0.0405, which is below the industry average and suggests that the company may have difficulty meeting its short-term obligations.",
+        "impact": "Weak"
+      },
+      {
+        "claim": "The Cumulative Profits Margin of 0.2779 indicates that the company generates a positive profit margin over time, which is a good sign for long-term viability.",
+        "impact": "Strong"
+      },
+      {
+        "claim": "The Profitability Index of 0.0446 is negative, suggesting that the company's current earnings per share are lower than its historical earnings per share, which could indicate declining profitability or a need to improve operational efficiency.",
+        "impact": "Weak"
+      },
+      {
+        "claim": "The Leverage Ratio of 0.8919 is relatively low, indicating that the company has a moderate level of debt relative to equity, which can be seen as a positive indicator of financial health.",
+        "impact": "Neutral"
+      }
+    ]
+  },
+  {
+    "company": "Cenomi Centers",
+    "ticker": "4321.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_rating": {
+      "actual": "BB-",
+      "predicted": "BBB (Investment Grade)",
+      "confidence": "95%"
+    },
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.0405",
+        "comment": "The Liquidity Coverage Ratio (LCR) of 4.05% is below the industry average, which may indicate potential liquidity constraints."
+      },
+      "cumulative_profit_margin": {
+        "ratio_value": "0.2779",
+        "comment": "The Cumulative Profit Margin (CPM) of 27.79% is above the industry average, suggesting strong profitability over time."
+      },
+      "profitability": {
+        "ratio_value": "0.0446",
+        "comment": "The Profitability Ratio (P/R) of 4.46% is below the industry average, indicating lower profitability compared to peers."
+      },
+      "financial_leverage": {
+        "ratio_value": "0.8919",
+        "comment": "The Financial Leverage Ratio (FLR) of 89.19% is below the industry average, suggesting a relatively low level of debt relative to equity."
+      }
+    }
+  },
+  {
+    "company": "Saudi Electricity",
+    "ticker": "5110.SR",
+    "sector": "N/A",
+    "fiscal_year": "2021",
+    "agency": "Fitch",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "BBB",
+      "confidence": "98%"
+    },
+    "credit_verdict": {
+      "liabilities_to_equities_ratio": "-0.0656",
+      "cumulative_profit_margin": "0.0748",
+      "profitability": "0.0368",
+      "leverage_ratio": "1.1270"
+    }
+  },
+  {
+    "company": "Saudi Electricity",
+    "ticker": "5110.SR",
+    "sector": "N/A",
+    "fiscal_year": "2022",
+    "agency": "Fitch",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "BBB",
+      "confidence": "100%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquidity Ratio (-0.0251) suggests it has some short-term liquidity challenges.",
+        "impact": "Negative"
+      },
+      {
+        "claim": "However, the Cumulative Profits Ratio (0.0798) indicates that the company has been able to maintain profitability over the past years.",
+        "impact": "Positive"
+      },
+      {
+        "claim": "The Profitability Ratio (0.0383) shows that the company generates a modest profit margin, which may not be sufficient to cover its debt obligations.",
+        "impact": "Neutral"
+      },
+      {
+        "claim": "Despite the leverage ratio (1.1556), which is moderate, the company's ability to sustain profitability and manage its debts is a key factor in its creditworthiness.",
+        "impact": "Neutral"
+      }
+    ]
+  },
+  {
+    "company": "Saudi Electricity",
+    "ticker": "5110.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "credit_rating": {
+      "actual": "A+",
+      "predicted": "BBB",
+      "confidence": "98%"
+    },
+    "verdict": {
+      "liquidity_ratio": "-0.0477",
+      "cumulative_profitability": "0.0758",
+      "profitability": "0.0291",
+      "leverage": "1.0485"
+    },
+    "analysis": [
+      "The company's cumulative profitability (CUMPROF) of 0.0758 suggests a positive trend in earnings over the past year.",
+      "Profitability (PROFITAB) at 0.0291 indicates a modest improvement in profit margins compared to previous years.",
+      "Leverage (LEVERAGE) at 1.0485 is slightly above the industry average, which may pose some risk but is manageable given the company's strong liquidity (LIQUID) of -0.0477.",
+      "Despite the slight negative liquidity ratio, the company's ability to generate profits and maintain a moderate level of leverage suggests it can meet its short-term obligations."
+    ]
+  },
+  {
+    "company": "Saudi Electricity",
+    "ticker": "5110.SR",
+    "predicted_rating": "BBB (Investment Grade)",
+    "confidence_level": "97%",
+    "verdict": {
+      "financial_strength": {
+        "liability_coverage_ratio": "-0.0508",
+        "cumulative_profit_margin": "0.0748",
+        "profitability": "0.0221",
+        "leverage_ratio": "0.8503"
+      },
+      "credit_risk": {
+        "liquidity": "-0.0508",
+        "profitability": "0.0221",
+        "risk_management": "0.8503"
+      },
+      "analysis": [
+        "The company's profitability margin (CUMPROF) of 0.0748 indicates a positive trend in earnings."
+      ]
+    }
+  },
+  {
+    "company": "Saudi Electricity",
+    "ticker": "5110.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "rating": {
+      "actual": "AA-",
+      "predicted": "BBB (Investment Grade)",
+      "confidence": "97%"
+    },
+    "ratios": {
+      "LIQUID": "-0.0508",
+      "CUMPROF": "0.0748",
+      "PROFITAB": "0.0221",
+      "LEVERAGE": "0.8503"
+    },
+    "verdict": "The ML model predicts an investment grade rating for Saudi Electricity, which aligns with the actual rating of AA-. The company's financial health, indicated by positive Cumulative Profits and Profitability Ratios, coupled with a moderate Leverage Ratio, supports this prediction. However, the Negative Liquidity Ratio (-0.0508) suggests potential challenges in meeting short-term obligations, which could impact the company's ability to maintain its current credit rating."
+  },
+  {
+    "company": "Saudi Electricity",
+    "ticker": "5110.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "credit_rating": {
+      "actual": "A+",
+      "predicted": "BBB (Investment Grade)",
+      "confidence": "97%"
+    },
+    "ratios": {
+      "LIQUID": "-0.0508",
+      "CUMPROF": "0.0748",
+      "PROFITAB": "0.0221",
+      "LEVERAGE": "0.8503"
+    },
+    "verdict": "The company's financial health, as indicated by the positive Cumulative Profits Ratio (CUMPROF = 0.0748), suggests a moderate level of profitability. The company's Leverage (LEVERAGE = 0.8503) is within a healthy range, indicating a balanced use of debt. However, the Negative Liquid Ratio (LIQUID = -0.0508) is concerning, suggesting potential liquidity issues. Despite this, the ML model predicts an Investment Grade rating with high confidence, which aligns with the actual rating of A+. Therefore, the credit risk is manageable but requires close monitoring."
+  },
+  {
+    "company": "Saudi Telecom (STC)",
+    "ticker": "7010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Fitch",
+    "actual_rating": "A+",
+    "ml_prediction": {
+      "rating": "A",
+      "confidence": "93%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The Liquidity Ratio (LIQUID) of 0.2105 indicates that the company has a moderate level of liquidity to meet its short-term obligations.",
+        "impact": "Positive"
+      },
+      {
+        "claim": "The Cumulative Profit Margin (CUMPROF) of 0.2394 suggests that the company has been able to maintain profitability over time, which is a positive indicator for future performance.",
+        "impact": "Positive"
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 0.0832 implies that the company generates a relatively low profit margin, which might be a concern for investors seeking higher returns.",
+        "impact": "Neutral to Negative"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 1.3570 shows that the company has a moderate level of debt relative to equity, which could affect its ability to withstand economic downturns but also indicates potential for growth financing.",
+        "impact": "Neutral"
+      }
+    ]
+  },
+  {
+    "company": "Saudi Telecom (STC)",
+    "ticker": "7010.SR",
+    "predicted_rating": "A (Investment Grade)",
+    "confidence_level": "93%",
+    "liability_coverage_ratio": {
+      "value": "0.2105",
+      "interpretation": "The liability coverage ratio indicates that the company has sufficient liquidity to cover its short-term liabilities, which is a positive sign."
+    },
+    "cumulative_profit_margin": {
+      "value": "0.2394",
+      "interpretation": "The cumulative profit margin suggests that the company has been able to maintain profitability over time, which is beneficial for long-term stability."
+    },
+    "profitability": {
+      "value": "0.0832",
+      "interpretation": "The profitability ratio shows that the company generates a reasonable profit margin, which is important for sustaining operations and growth."
+    },
+    "leverage_ratio": {
+      "value": "1.3570",
+      "interpretation": "The leverage ratio indicates that the company has moderate debt levels relative to equity, which is generally seen as manageable for continued growth."
+    },
+    "credit_verdict": "Based on the provided financial ratios and the ML model prediction, STC appears to be in good standing with a solid financial health profile. The company's ability to manage its liabilities, profitability, and leverage ratios suggest a strong position. However, the actual rating of AA- from Moody's adds credibility to this assessment. The ML model also predicts an investment grade, further supporting the view that STC is a creditworthy entity."
+  },
+  {
+    "company": "Saudi Telecom (STC)",
+    "ticker": "7010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "S&P",
+    "actual_rating": "A+",
+    "predicted_rating": "A (Investment Grade)",
+    "confidence_level": "93%",
+    "verdict": {
+      "financial_strength": {
+        "liability_coverage": "LIQUID = 0.2105",
+        "cumulative_profit_margin": "CUMPROF = 0.2394",
+        "profitability": "PROFITAB = 0.0832"
+      },
+      "risk_assessment": {
+        "leverage_ratio": "LEVERAGE = 1.3570"
+      },
+      "comparison_with_prediction": {
+        "predicted_grade": "A (Investment Grade)",
+        "confidence_in_prediction": "93%"
+      }
+    }
+  },
+  {
+    "company": "Saudi Telecom (STC)",
+    "ticker": "7010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "AAA",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "93%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The Liquidity Ratio (LIQUID) of 0.2105 indicates that the company has a moderate level of liquidity, which is within the acceptable range for investment grade ratings.",
+        "supporting_data": "LIQUID=0.2105"
+      },
+      {
+        "claim": "The Cumulative Profitability Ratio (CUMPROF) of 0.2394 suggests that the company has maintained a positive trend in its profitability over the years, supporting the Investment Grade prediction.",
+        "supporting_data": "CUMPROF=0.2394"
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 0.0832 implies that the company generates a modest profit margin, which aligns with the Investment Grade assessment.",
+        "supporting_data": "PROFITAB=0.0832"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 1.3570 shows that the company maintains a moderate level of debt relative to equity, which is consistent with the Investment Grade rating.",
+        "supporting_data": "LEVERAGE=1.3570"
+      }
+    ]
+  },
+  {
+    "company": "Mobily",
+    "ticker": "7020.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Financial Analytics",
+    "actual_rating": "AA",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "60%"
+    },
+    "ratios": {
+      "LIQUID": "-0.0238",
+      "CUMPROF": "0.2907",
+      "PROFITAB": "0.0984",
+      "LEVERAGE": "0.9611"
+    },
+    "credit_verdict": "Based on the ML model prediction, Mobily is expected to maintain its Investment Grade status. The financial ratios indicate a moderate level of profitability and low leverage, which supports the positive outlook. However, the negative Liquid Ratio suggests potential liquidity issues that should be closely monitored."
+  },
+  {
+    "company": "Etihad Etisalat Company",
+    "ticker": "7020.SR",
+    "predicted_rating": "A (Investment Grade)",
+    "confidence_level": "60%",
+    "liabilities_to_equity_ratio": "-0.0238",
+    "cumulative_profit_margin": "0.2907",
+    "profitability_ratio": "0.0984",
+    "leverage_ratio": "0.9611",
+    "credit_verdict": {
+      "financial_strength": "The company has a negative liabilities to equity ratio, indicating potential over-leveraging. The cumulative profit margin suggests steady profitability, but the low profitability ratio may indicate areas for improvement. The leverage ratio is healthy, supporting the company's ability to manage debt effectively. The ML model predicts an investment grade rating, which aligns with the actual rating of AA.",
+      "recommendation": "Given the predicted A (Investment Grade) rating, coupled with the ML model's high confidence level, the company appears financially sound. However, further analysis on profitability and operational efficiency might be necessary to ensure alignment with the investment grade classification."
+    }
+  },
+  {
+    "company": "Zain KSA",
+    "ticker": "7030.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Financial Analytics",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "BBB",
+      "confidence": "100%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company has a negative Liquid Ratio (-0.1944), indicating potential liquidity issues.",
+        "impact": "Negative"
+      },
+      {
+        "claim": "The Cumulative Profits Margin (CUMPROF) of 0.0596 suggests modest profitability improvements over the past year.",
+        "impact": "Positive"
+      },
+      {
+        "claim": "The Profitability Margin (PROFITAB) of 0.0448 indicates a relatively low level of profitability, which may be a concern for investors.",
+        "impact": "Neutral to Negative"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 0.6143 is below 1, suggesting that the company is not heavily leveraged, which could be seen as a positive aspect.",
+        "impact": "Positive"
+      }
+    ]
+  },
+  {
+    "company": "Mobile Telecommunications Company Saudi Arabia",
+    "ticker": "7030.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "BBB (Investment Grade)",
+      "confidence_level": "100%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Leverage Ratio (LEVERAGE) of 0.6143 indicates moderate debt levels, which is favorable for investors.",
+        "ratio_value": "0.6143"
+      },
+      {
+        "claim": "The Cumulative Profitability (CUMPROF) of 0.0596 suggests a positive trend in earnings over the past few years, which is a positive indicator for future performance.",
+        "ratio_value": "0.0596"
+      },
+      {
+        "claim": "The Profitability (PROFITAB) of 0.0448 also shows a positive trend, indicating that the company generates profits at a reasonable rate.",
+        "ratio_value": "0.0448"
+      },
+      {
+        "claim": "The Liquidity (LIQUID) ratio of -0.1944 is negative, which might suggest some short-term liquidity issues or potential cash flow problems. However, given the high confidence level of the ML model, this could be an anomaly or a temporary issue.",
+        "ratio_value": "-0.1944"
+      }
+    ]
+  },
+  {
+    "company": "Ladun Investment Company",
+    "ticker": "9535.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "BBB+",
+    "predicted_rating": "BBB",
+    "confidence_level": "100%",
+    "credit_verdict": {
+      "liability_to_equity_ratio": {
+        "ratio_value": "0.0058",
+        "comment": "The low liability to equity ratio suggests the company has a strong capital structure, which is beneficial for its debt servicing capacity."
+      },
+      "cumulative_profit_margin": {
+        "ratio_value": "0.0512",
+        "comment": "The high cumulative profit margin indicates that the company has been able to sustainably increase its profitability over time, which is a positive indicator of its financial health."
+      },
+      "profitability_ratio": {
+        "ratio_value": "0.0341",
+        "comment": "The profitability ratio shows that the company generates a reasonable profit margin, which is crucial for maintaining its operational viability."
+      },
+      "leverage_ratio": {
+        "ratio_value": "0.2670",
+        "comment": "The moderate leverage ratio suggests that the company is not overly reliant on debt financing, which can be seen as a prudent risk management strategy."
+      }
+    }
+  },
+  {
+    "company": "Mayar Holding",
+    "ticker": "9568.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Financial Analytics",
+    "actual_rating": "BBB",
+    "ml_prediction": {
+      "rating": "BBB (Investment Grade)",
+      "confidence": "97%"
+    },
+    "ratios": {
+      "LIQUID": "-0.3496",
+      "CUMPROF": "0.0022",
+      "PROFITAB": "0.0783",
+      "LEVERAGE": "0.0681"
+    },
+    "credit_verdict": "The company is currently rated as BBB by the agency, which aligns with the ML model's prediction of the same rating. The financial ratios indicate a moderate level of profitability (PROFITAB), low leverage (LEVERAGE), and a negative liquidity (LIQUID). These factors support the investment grade classification."
+  },
+  {
+    "company": "Mayar Holding Company",
+    "ticker": "9568.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "BB",
+    "ml_prediction": {
+      "rating": "BBB (Investment Grade)",
+      "confidence": "97%"
+    },
+    "verdict": [
+      {
+        "claim": "The company has a negative Liquid Ratio (-0.3496), which indicates that the company may have difficulty meeting its short-term obligations.",
+        "impact": "Negative"
+      },
+      {
+        "claim": "The Cumulative Profit Margin (CUMPROF) of 0.0022 suggests minimal improvement in profitability over the fiscal year.",
+        "impact": "Neutral"
+      },
+      {
+        "claim": "The Profitability Margin (PROFITAB) of 0.0783 indicates a modest increase in profitability compared to the previous period.",
+        "impact": "Positive"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 0.0681 is below the industry average, suggesting the company is well-managed with low debt levels.",
+        "impact": "Positive"
+      }
+    ]
+  },
+  {
+    "company": "Quara Finance Company",
+    "ticker": "9596.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "BBB",
+    "ml_prediction": {
+      "rating": "BBB (Investment Grade)",
+      "confidence": "95%"
+    },
+    "ratios": {
+      "LIQUID": 0.8078,
+      "CUMPROF": 0.1281,
+      "PROFITAB": 0.0603,
+      "LEVERAGE": 1.0987
+    },
+    "credit_verdict": {
+      "overall_assessment": "The company Quara Finance Company is rated by the agency Tassnief as BBB (Investment Grade). The ML model predicts the same rating with a confidence of 95%. The financial ratios indicate a moderate level of liquidity (LIQUID = 0.8078), low cumulative profitability (CUMPROF = 0.1281), low profitability (PROFITAB = 0.0603), and moderate leverage (LEVERAGE = 1.0987). These metrics suggest a stable financial position but with room for improvement in profitability and leverage.",
+      "recommendation": "Given the positive ML prediction and the agency's rating, the company appears to be in a good financial health. However, further analysis of the ratios and additional context may be needed to make a final decision."
+    }
+  },
+  {
+    "company": "Multi Business Group",
+    "ticker": "9619.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Financial Analytics",
+    "actual_rating": "BB+",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "100%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company has a Liquid Ratio of 0.7789, which is below the industry average, indicating potential liquidity issues.",
+        "liability": "Low"
+      },
+      {
+        "claim": "The Cumulative Profits Margin (CUMPROF) is 0.2920, suggesting that the company has been able to maintain profitability over time.",
+        "liability": "Medium"
+      },
+      {
+        "claim": "The Profitability Margin (PROFITAB) is 0.2090, which is relatively low, but still positive, indicating some level of profitability.",
+        "liability": "Medium"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) is 3.2734, which is higher than the industry average, potentially increasing financial risk.",
+        "liability": "High"
+      }
+    ]
+  },
+  {
+    "company": "Multi Business Group for Projects Company",
+    "ticker": "9619.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "BB+",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "100%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquidity Ratio (LIQUID) of 0.7789 suggests adequate short-term liquidity to meet its obligations.",
+        "rating_implication": "This is below the industry average, which might indicate potential challenges in meeting short-term liabilities."
+      },
+      {
+        "claim": "The Cumulative Profit Margin (CUMPROF) of 0.2920 indicates that the company has a moderate ability to generate profits over time.",
+        "rating_implication": "While positive, this margin is below the industry average, suggesting room for improvement in profitability."
+      },
+      {
+        "claim": "The Profitability Index (PROFITAB) of 0.2090 implies that the company has a low profitability index, indicating poor earnings performance.",
+        "rating_implication": "This is significantly below the industry average, which could be a red flag for investors."
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 3.2734 shows a high level of debt relative to equity, indicating significant financial risk.",
+        "rating_implication": "High leverage can lead to higher interest expenses and increased vulnerability to adverse economic conditions."
+      }
+    ]
+  },
+  {
+    "company": "Etihad Etisalat (Mobily)",
+    "ticker": "7020.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "AA-",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "60%"
+    },
+    "credit_verdict": {
+      "liabilities_to_equity_ratio": "-0.0238",
+      "cumulative_profit_margin": "0.2907",
+      "profitability_ratio": "0.0984",
+      "leverage_ratio": "0.9611"
+    }
+  },
+  {
+    "company": "Alkhorayef Water & Power",
+    "ticker": "2081.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "A- (Investment Grade)",
+    "ml_prediction": "A (Investment Grade)",
+    "confidence_level": "100%",
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.1627",
+        "comment": "The Liquidity Ratio (LIQUID) of 0.1627 indicates that the company has a low level of liquid assets to cover its current liabilities. This suggests some risk in meeting short-term obligations."
+      },
+      "cumulative_profit": {
+        "ratio_value": "0.1537",
+        "comment": "The Cumulative Profit Ratio (CUMPROF) of 0.1537 implies that the company has had a positive cumulative profit over the last few years, which is a positive indicator for future earnings potential."
+      },
+      "profitability": {
+        "ratio_value": "0.1238",
+        "comment": "The Profitability Ratio (PROFITAB) of 0.1238 suggests that the company has been able to generate profits, though at a relatively low rate. This could indicate room for improvement in operational efficiency or cost management."
+      },
+      "financial_leverage": {
+        "ratio_value": "0.4839",
+        "comment": "The Leverage Ratio (LEVERAGE) of 0.4839 is below the industry average, indicating that the company relies less on debt financing. This is generally seen as a positive sign for financial health."
+      }
+    }
+  },
+  {
+    "company": "Saudi Telecom Company (STC)",
+    "ticker": "7010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "agency": "Tassnief",
+    "actual_rating": "AAA",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "97%"
+    },
+    "ratios": {
+      "LIQUID": 0.145,
+      "CUMPROF": 0.1721,
+      "PROFITAB": 0.0943,
+      "LEVERAGE": 1.0433
+    },
+    "credit_verdict": "Based on the ML model prediction, STC is expected to maintain its Investment Grade status with a high confidence level. The financial ratios indicate a moderate level of liquidity and profitability, which aligns with the predicted A rating. However, the leverage ratio is slightly above average, which could be a concern for potential credit risks."
+  },
+  {
+    "company": "Saudi Telecom Company (STC)",
+    "ticker": "7010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2022",
+    "agency": "Tassnief",
+    "actual_rating": "AAA",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "99%"
+    },
+    "ratios": {
+      "LIQUID": "0.1777",
+      "CUMPROF": "0.0798",
+      "PROFITAB": "0.1032",
+      "LEVERAGE": "1.2424"
+    },
+    "verdict": "The ML model predicts an 'A' rating (Investment Grade) with high confidence. STC has maintained a positive Cumulative Profit Margin (0.0798), a moderate Leverage Ratio (1.2424), and a Positive Profitability Index (0.1032). However, the Liquidity Ratio (0.1777) is below average. Overall, the company appears to be performing within the Investment Grade range based on the ML model's assessment."
+  },
+  {
+    "company": "Saudi Telecom Company (STC)",
+    "ticker": "7010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2021",
+    "agency": "Tassnief",
+    "actual_rating": "AAA",
+    "ml_predicted_rating": "A (Investment Grade)",
+    "confidence_level": "93%",
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.1401",
+        "comment": "The liability coverage ratio is below the industry average, indicating that the company may have difficulty meeting its short-term obligations. However, this is within the acceptable range for investment grade ratings."
+      },
+      "cumulative_profit": {
+        "ratio_value": "0.2973",
+        "comment": "The cumulative profit ratio is above the industry average, suggesting that the company has a strong track record of profitability over the past five years. This supports the investment grade rating."
+      },
+      "profitability": {
+        "ratio_value": "0.1037",
+        "comment": "The profitability ratio is slightly below the industry average, which could be due to various factors such as high operating costs or competition. This is consistent with the lower rating predicted by the ML model."
+      },
+      "leverage": {
+        "ratio_value": "1.2659",
+        "comment": "The leverage ratio is above the industry average, indicating that the company relies heavily on debt financing. This is a concern for investors but does not significantly impact the investment grade rating."
+      }
+    }
+  },
+  {
+    "company": "Etihad Etisalat (Mobily)",
+    "ticker": "7020.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "agency": "Tassnief",
+    "actual_rating": "AA-",
+    "ml_prediction": {
+      "rating": "BBB",
+      "confidence": "88%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquid Ratio (-0.0436) indicates potential liquidity issues, which might affect its ability to meet short-term obligations.",
+        "impact": "Negative"
+      },
+      {
+        "claim": "The Cumulative Profits Ratio (0.1863) suggests that the company has been able to maintain profitability over time, which is positive for its financial health.",
+        "impact": "Positive"
+      },
+      {
+        "claim": "The Profitability Ratio (0.0801) is below zero, indicating that the company may be facing operational challenges or inefficiencies, which could impact future earnings growth.",
+        "impact": "Negative"
+      },
+      {
+        "claim": "The Leverage Ratio (0.8286) is within a reasonable range, suggesting that the company is managing its debt effectively and maintaining a balance between equity and debt financing.",
+        "impact": "Neutral"
+      }
+    ]
+  },
+  {
+    "company": "Etihad Etisalat (Mobily)",
+    "ticker": "7020.SR",
+    "sector": "N/A",
+    "fiscal_year": "2022",
+    "agency": "Tassnief",
+    "actual_rating": "A+",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "63%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company has a negative Liquid Ratio (-0.0508), indicating potential liquidity issues.",
+        "impact": "Negative"
+      },
+      {
+        "claim": "The Cumulative Profit Margin (CUMPROF) of 15.5% suggests the company has maintained profitability over time.",
+        "impact": "Positive"
+      },
+      {
+        "claim": "The Profitability Margin (PROFITAB) at 6.19% indicates a moderate level of profitability.",
+        "impact": "Neutral"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 74.97% is high, which may pose risk but is also consistent with industry norms.",
+        "impact": "Neutral"
+      }
+    ],
+    "summary": "Despite the negative Liquid Ratio, the company maintains a positive cumulative profit margin and moderate profitability. The high leverage ratio poses risk, but it aligns with industry norms. The ML model predicts an 'A' rating, which matches the actual rating. Overall, the company appears to be in a stable position."
+  },
+  {
+    "company": "Etihad Etisalat (Mobily)",
+    "ticker": "7020.SR",
+    "sector": "N/A",
+    "fiscal_year": "2021",
+    "credit_verdict": {
+      "rating": "A (Investment Grade)",
+      "confidence": "87%",
+      "verdict": "Creditworthy"
+    },
+    "ratios": {
+      "LIQUID": "-0.0762",
+      "CUMPROF": "0.1241",
+      "PROFITAB": "0.0415",
+      "LEVERAGE": "0.6288"
+    },
+    "analysis": [
+      "The company has been rated A+ by Tassnief, which aligns with the ML model's prediction of an A grade.",
+      "The Cumulative Profits (CUMPROF) ratio indicates a positive trend, suggesting that the company has managed to accumulate profits over time.",
+      "The Profitability (PROFITAB) ratio is slightly positive, which is a good sign for future earnings potential.",
+      "The Leverage (LEVERAGE) ratio is moderate, indicating a balanced approach to debt management.",
+      "The Liquidity (LIQUID) ratio is negative, which could be concerning but needs further context or analysis to fully understand its implications."
+    ]
+  },
+  {
+    "company": "Dar Al Arkan Real Estate",
+    "ticker": "4300.SR",
+    "sector": "N/A",
+    "fiscal_year": "2024",
+    "agency": "Tassnief",
+    "actual_rating": "A- (Investment Grade)",
+    "ml_prediction": "A (Investment Grade)",
+    "confidence_level": "100%",
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.0990",
+        "verdict": "The company has a low liability coverage ratio of 9.90%, which indicates that it may have significant debt obligations relative to its liquid assets."
+      },
+      "cumulative_profitability": {
+        "ratio_value": "0.2427",
+        "verdict": "The cumulative profitability ratio of 24.27% suggests that the company has been able to sustainably increase its profits over time, indicating a positive trend in earnings."
+      },
+      "profitability": {
+        "ratio_value": "0.0219",
+        "verdict": "The profitability ratio of 2.19% is relatively low, but this could be due to factors such as high operating costs or capital expenditures, which need further investigation."
+      },
+      "leverage": {
+        "ratio_value": "1.3322",
+        "verdict": "The leverage ratio of 1.33 indicates that the company is moderately leveraged, with a moderate level of debt relative to equity, which is generally considered acceptable for investment grade ratings."
+      }
+    }
+  },
+  {
+    "company": "Dar Al Arkan Real Estate",
+    "ticker": "4300.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "agency": "Tassnief",
+    "actual_rating": "A- (Investment Grade)",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": 100
+    },
+    "credit_verdict": [
+      {
+        "aspect": "Liquidity",
+        "ratio": "LIQUID = 0.1535",
+        "verdict": "The company has a moderate liquidity position, which is within the acceptable range for investment grade ratings."
+      },
+      {
+        "aspect": "Cumulative Profits",
+        "ratio": "CUMPROF = 0.2421",
+        "verdict": "The cumulative profits indicate a positive trend, supporting the current investment grade rating."
+      },
+      {
+        "aspect": "Profitability",
+        "ratio": "PROFITAB = 0.0186",
+        "verdict": "The profitability ratio suggests a slight improvement in earnings, which aligns with the current rating."
+      },
+      {
+        "aspect": "Financial Leverage",
+        "ratio": "LEVERAGE = 1.5185",
+        "verdict": "The financial leverage ratio is moderate, indicating a balanced use of debt which supports the investment grade."
+      }
+    ]
+  },
+  {
+    "company": "Dar Al Arkan Real Estate",
+    "ticker": "4300.SR",
+    "sector": "N/A",
+    "fiscal_year": "2022",
+    "agency": "Tassnief",
+    "actual_rating": "A- (Investment Grade)",
+    "ml_prediction": "A (Investment Grade)",
+    "confidence": "100%",
+    "verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.1335",
+        "comment": "The Liquidity Ratio (LIQUID) of 0.1335 indicates that the company has a low level of current assets relative to its current liabilities, which could pose a risk if it needs to meet short-term obligations."
+      },
+      "cumulative_profitability": {
+        "ratio_value": "0.2268",
+        "comment": "The Cumulative Profitability Ratio (CUMPROF) of 0.2268 suggests that the company has been able to maintain profitability over time, which is positive for long-term sustainability."
+      },
+      "profitability": {
+        "ratio_value": "0.0176",
+        "comment": "The Profitability Ratio (PROFITAB) of 0.0176 is very low, indicating that the company has a negative net profit margin, which is concerning and may indicate financial distress."
+      },
+      "financial_leverage": {
+        "ratio_value": "1.4095",
+        "comment": "The Financial Leverage Ratio (LEVERAGE) of 1.4095 suggests that the company is moderately leveraged, with debt levels that could impact its ability to meet financial obligations."
+      }
+    }
+  },
+  {
+    "company": "Dar Al Arkan Real Estate",
+    "ticker": "4300.SR",
+    "sector": "N/A",
+    "fiscal_year": "2021",
+    "agency_rating": "A-",
+    "predicted_rating": "A (Investment Grade)",
+    "confidence_level": "100%",
+    "verdict": {
+      "liquidity_ratio": {
+        "value": "0.1424",
+        "comment": "The liquidity ratio of 14.24% is below the industry average, indicating that the company may face short-term liquidity challenges."
+      },
+      "cumulative_profitability": {
+        "value": "0.2254",
+        "comment": "The cumulative profitability ratio of 22.54% suggests that the company has shown consistent profitability over time, which is positive for its long-term viability."
+      },
+      "profitability": {
+        "value": "0.0042",
+        "comment": "The profitability ratio of 0.42% indicates that the company generates a small profit margin, which might be a concern for investors looking for higher returns."
+      },
+      "leverage": {
+        "value": "1.4966",
+        "comment": "The leverage ratio of 1.4966 is within the normal range, suggesting that the company is well-managed in terms of debt levels."
+      }
+    }
+  },
+  {
+    "company": "Alkhorayef Water & Power",
+    "ticker": "2081.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "credit_verdict": {
+      "rating": "A (Investment Grade)",
+      "confidence": "100%",
+      "verdict": "Creditworthy with strong fundamentals."
+    },
+    "ratios": {
+      "LIQUID": 0.2866,
+      "CUMPROF": 0.1385,
+      "PROFITAB": 0.1155,
+      "LEVERAGE": 0.4617
+    },
+    "predictions": {
+      "liabilities_to_assets_ratio": "LIQUID = 0.2866",
+      "cumulative_profit_margin": "CUMPROF = 0.1385",
+      "profitability_margin": "PROFITAB = 0.1155",
+      "debt_to_equity_ratio": "LEVERAGE = 0.4617"
+    }
+  },
+  {
+    "company": "Alkhorayef Water & Power",
+    "ticker": "2081.SR",
+    "sector": "N/A",
+    "fiscal_year": "2022",
+    "agency": "Tassnief",
+    "actual_rating": "BBB+",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "89%"
+    },
+    "credit_verdict": {
+      "liability_coverage": {
+        "ratio_value": "0.2358",
+        "comment": "The Liquidity Ratio (LIQUID) of 0.2358 indicates that the company has a low level of liquid assets to cover its current liabilities. This could be a concern for short-term liquidity needs."
+      },
+      "cumulative_profit": {
+        "ratio_value": "0.0925",
+        "comment": "The Cumulative Profit Ratio (CUMPROF) of 0.0925 suggests that the company has been able to maintain positive cumulative profits over the past few years, which is a positive indicator of profitability."
+      },
+      "profitability": {
+        "ratio_value": "0.1148",
+        "comment": "The Profitability Ratio (PROFITAB) of 0.1148 implies that the company generates a relatively high profit margin on its sales, which is a strong indicator of operational efficiency."
+      },
+      "financial_leverage": {
+        "ratio_value": "0.5039",
+        "comment": "The Leverage Ratio (LEVERAGE) of 0.5039 shows that the company uses a moderate amount of debt relative to equity, which can be seen as a balanced approach to financing."
+      }
+    }
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "sector": "N/A",
+    "fiscal_year": "2023",
+    "agency": "Fitch",
+    "actual_rating": "A",
+    "ml_prediction": {
+      "rating": "A (Investment Grade)",
+      "confidence": "95%"
+    },
+    "credit_verdict": [
+      {
+        "claim": "The company's Liquidity Ratio (LIQUID) of 0.1624 suggests adequate short-term liquidity to cover its current liabilities.",
+        "ratio_value": "0.1624"
+      },
+      {
+        "claim": "The Cumulative Profits Ratio (CUMPROF) of 0.0955 indicates that the company has a positive trend in cumulative profits over the past three years.",
+        "ratio_value": "0.0955"
+      },
+      {
+        "claim": "The Profitability Ratio (PROFITAB) of 0.0235 shows that the company has been able to maintain profitability, albeit at a low level.",
+        "ratio_value": "0.0235"
+      },
+      {
+        "claim": "The Leverage Ratio (LEVERAGE) of 1.9706 suggests that the company has a moderate level of debt relative to equity, which is manageable given its financial health.",
+        "ratio_value": "1.9706"
+      }
+    ]
+  }
+]

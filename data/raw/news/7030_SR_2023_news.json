@@ -1,0 +1,64 @@
+{
+  "ticker": "7030.SR",
+  "year": 2023,
+  "fetch_date": "2026-02-22T02:47:42.142034",
+  "article_count": 4,
+  "articles": [
+    {
+      "ticker": "7030.SR",
+      "title": "Zain KSA reports 221% leap in H1-23 net profit",
+      "description": "tax to SAR 687 million during the first half (H1) of 2023 from SAR 214 million. The earnings per …",
+      "snippet": "Riyadh – Mubasher: Mobile Telecommunication Company Saudi Arabia (Zain KSA) witnessed a 221.03% year-on-year (YoY) jump in net profit after Zakat and tax to S...",
+      "published_at": "2023-08-06T09:04:48.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4164370/Zain-KSA-reports-221-leap-in-H1-23-net-profit",
+      "search_term": "Zain Saudi",
+      "sentiment_compound": 0.4404,
+      "sentiment_pos": 0.094,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.906
+    },
+    {
+      "ticker": "7030.SR",
+      "title": "Saudi data centre market to ‘double’ in size by 2028",
+      "description": "The kingdom's data centre market is expected to dramatically increase in size over the next four years as demand for 5G and edge computing ramps up.",
+      "snippet": "Saudi Arabia’s data centre market will more than double in size, from $1.02bn in 2022 to $2.17bn in 2028.\n\nThis is according to a note from ResearchAndMarkets...",
+      "published_at": "2023-11-17T12:44:40.000000Z",
+      "source_name": "gulfbusiness.com",
+      "url": "https://gulfbusiness.com/saudi-data-centre-market-to-double-in-size-by-2028/",
+      "search_term": "Zain Saudi",
+      "sentiment_compound": 0.2023,
+      "sentiment_pos": 0.061,
+      "sentiment_neg": 0.04,
+      "sentiment_neu": 0.899
+    },
+    {
+      "ticker": "7030.SR",
+      "title": "Saudi stc leads innovation hub project with GCC Telco Alliance; listed firms included",
+      "description": "mbers, which include leading telecom operators from Saudi Arabia, the UAE, Bahrain, Oman, and …",
+      "snippet": "Riyadh – Mubasher: Saudi Telecom Company (stc) has announced the Sustainability Innovation Hub as part of its collaboration with GCC Telco Alliance members, w...",
+      "published_at": "2023-12-10T13:47:17.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4224408/Saudi-stc-leads-innovation-hub-project-with-GCC-Telco-Alliance-listed-firms-included",
+      "search_term": "Zain Saudi",
+      "sentiment_compound": 0.3818,
+      "sentiment_pos": 0.088,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.912
+    },
+    {
+      "ticker": "7030.SR",
+      "title": "Shares of 6 companies go ex-dividend today",
+      "description": "Tadawul trading screen\r\n\r\n\r\nShares ofsix companies have their ex-dividend today, June 22, for 2022, including Saudi Arabia Refineries Co. (SARCO),",
+      "snippet": "Tadawul trading screen\n\nShares of six companies have their ex-dividend today, June 22, for 2022, including Saudi Arabia Refineries Co. (SARCO), Bupa Arabia for ...",
+      "published_at": "2023-06-22T13:33:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1653137",
+      "search_term": "Zain KSA",
+      "sentiment_compound": 0.5267,
+      "sentiment_pos": 0.15,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.85
+    }
+  ]
+}

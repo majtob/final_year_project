@@ -1,0 +1,50 @@
+{
+  "ticker": "3008.SR",
+  "year": 2022,
+  "fetch_date": "2026-02-22T02:47:52.760390",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "3008.SR",
+      "title": "The Capital Market Authority Announces the Approval on the Registration and the Public Offering of Debt-Based Recourse Debt Instruments Program of the Special Purposes Entity Al Kathiri Sukuk",
+      "description": "pplication of Special Purposes Entity Al Kathiry Sukuk (“SPE”) for the registration and public …",
+      "snippet": "The Capital Market Authority (“CMA”) announces the issuance of its Board resolution dated 1444/03/02 AH corresponding to 2022/09/28 AD approving the applica...",
+      "published_at": "2022-09-28T14:20:09.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "http://english.mubasher.info/news/4017625/The-Capital-Market-Authority-Announces-the-Approval-on-the-Registration-and-the-Public-Offering-of-Debt-Based-Recourse-Debt-Instruments-Program-of-the-Special-Purposes-Entity-Al-Kathiri-Sukuk",
+      "search_term": "Al Kathiri Holding",
+      "sentiment_compound": 0.743,
+      "sentiment_pos": 0.195,
+      "sentiment_neg": 0.05,
+      "sentiment_neu": 0.755
+    },
+    {
+      "ticker": "3008.SR",
+      "title": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 2.45% By Investing.com",
+      "description": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 2.45%",
+      "snippet": "© Reuters. Saudi Arabia stocks higher at close of trade; Tadawul All Share up 2.45%\n\nInvesting.com – Saudi Arabia stocks were higher after the close on Sunda...",
+      "published_at": "2022-05-15T14:15:02.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-higher-at-close-of-trade-tadawul-all-share-up-245-2825036",
+      "search_term": "Al Kathiri Holding",
+      "sentiment_compound": 0.5267,
+      "sentiment_pos": 0.145,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.855
+    },
+    {
+      "ticker": "3008.SR",
+      "title": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.34% By Investing.com",
+      "description": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.34%",
+      "snippet": "© Reuters Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.34%\n\nInvesting.com – Saudi Arabia stocks were higher after the close on Tuesda...",
+      "published_at": "2022-03-08T14:15:02.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-higher-at-close-of-trade-tadawul-all-share-up-034-2780233",
+      "search_term": "Al Kathiri Holding",
+      "sentiment_compound": 0.5267,
+      "sentiment_pos": 0.145,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.855
+    }
+  ]
+}

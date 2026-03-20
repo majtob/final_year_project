@@ -1,0 +1,50 @@
+{
+  "ticker": "9511.SR",
+  "year": 2023,
+  "fetch_date": "2026-02-22T02:47:18.495960",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "9511.SR",
+      "title": "Sumou Real Estate to trade on main market",
+      "description": "arket (Nomu) to the Main Market, according to a bourse filing. Sumou Real Estate’s capital is …",
+      "snippet": "Riyadh – Mubasher: The Saudi Exchange (Tadawul) has authorised, on 20 August 2023, Sumou Real Estate Company’s request to transfer from the Parallel Market ...",
+      "published_at": "2023-08-20T11:07:47.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4173000/Sumou-Real-Estate-to-trade-on-main-market",
+      "search_term": "Sumou Real Estate",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "9511.SR",
+      "title": "Sumou Real Estate inks SAR 120m development agreement",
+      "description": "0 million. The 24-month deal covers a mixed-use high-rise towers project in Jeddah, according to …",
+      "snippet": "Riyadh – Mubasher: Sumou Real Estate Company penned a development management agreement with Asmou Real Estate Development Company at a value of SAR 120 millio...",
+      "published_at": "2023-10-02T06:35:01.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4190676/Sumou-Real-Estate-inks-SAR-120m-development-agreement",
+      "search_term": "Sumou Real Estate",
+      "sentiment_compound": 0.4939,
+      "sentiment_pos": 0.122,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.878
+    },
+    {
+      "ticker": "9511.SR",
+      "title": "Sumou Real Estate signs marketing, sales agreement for Areem Project",
+      "description": "Headquarters of Sumou Real Estate Co.\r\n\r\n\r\nSumou Real Estate Co.signed, on June 18, with a related party a marketing and sale agreement for Areem",
+      "snippet": "Headquarters of Sumou Real Estate Co.\n\nSumou Real Estate Co. signed, on June 18, with a related party a marketing and sale agreement for Areem project on the la...",
+      "published_at": "2023-06-19T10:54:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1652136",
+      "search_term": "Sumou Real Estate",
+      "sentiment_compound": 0.8442,
+      "sentiment_pos": 0.227,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.773
+    }
+  ]
+}

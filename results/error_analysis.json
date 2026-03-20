@@ -1,0 +1,1143 @@
+{
+  "summary": {
+    "total_samples": 75,
+    "correct": 51,
+    "incorrect": 24,
+    "accuracy": 0.68,
+    "false_positives": 12,
+    "false_negatives": 12,
+    "false_positive_desc": "Companies that are actually Investment Grade but predicted as Speculative",
+    "false_negative_desc": "Companies that are actually Speculative but predicted as Investment Grade"
+  },
+  "misclassified_companies": [
+    {
+      "ticker": "2082.SR",
+      "company": "ACWA Power",
+      "rating_agency": "Fitch",
+      "actual_rating": "BBB-",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.5062317397633374,
+      "prob_speculative": 0.49376826023666265,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": 0.1413959241631645,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": 0.20902869537128807,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0426003441024347,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.8631657851331972,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0547407644282265,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.344449513471024,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.695007406256873,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.44155375925301144,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "Low model confidence (50.6%), indicating the model was uncertain"
+      ]
+    },
+    {
+      "ticker": "2082.SR",
+      "company": "ACWA Power",
+      "rating_agency": "Fitch",
+      "actual_rating": "BBB-",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.7923910364359708,
+      "prob_speculative": 0.20760896356402928,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": 0.1153401574610228,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": 0.08184844185122549,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0590240006264096,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.7473713671254676,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.059758301572091,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.28839084483661,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.6035919344956632,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.5179713718897757,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "2120.SR",
+      "company": "Middle East Paper Company",
+      "rating_agency": "Tassnief",
+      "actual_rating": "A",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.8881726452902068,
+      "prob_speculative": 0.8881726452902068,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": 0.3925853555160754,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": 1.4351041329594554,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.3540634422434639,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": 1.332793934766991,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.2333080664708693,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": 1.650602028178344,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 9.758068734776357,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": 7.134598248310338,
+          "is_outlier": true
+        }
+      },
+      "likely_reasons": [
+        "Outlier ratios: leverage are >2 std from mean"
+      ]
+    },
+    {
+      "ticker": "2280.SR",
+      "company": "Almarai",
+      "rating_agency": "Moodys",
+      "actual_rating": "BBB-",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.8961128681325738,
+      "prob_speculative": 0.10388713186742621,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": 0.082814195697476,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.07691334437292452,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.215755190907772,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": 0.3576564283472483,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0855119888798795,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.0006565677387266689,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 1.1200646510770689,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.0862325072009819,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "2280.SR",
+      "company": "Almarai",
+      "rating_agency": "S&P",
+      "actual_rating": "BBB-",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.8961128681325738,
+      "prob_speculative": 0.10388713186742621,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": 0.082814195697476,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.07691334437292452,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.215755190907772,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": 0.3576564283472483,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0855119888798795,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.0006565677387266689,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 1.1200646510770689,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.0862325072009819,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "2382.SR",
+      "company": "ADES",
+      "rating_agency": "Fitch",
+      "actual_rating": "B+",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.9582016848620388,
+      "prob_speculative": 0.04179831513796121,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.0407601470710289,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.6800894635612251,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0886361824964221,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.5385917107455582,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0661579701677213,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.21689024785324792,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.4233548018785618,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.6686383335948202,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "3008.SR",
+      "company": "Al Kathiri Holding",
+      "rating_agency": "Financial Analytics",
+      "actual_rating": "BBB-",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.9524180854249608,
+      "prob_speculative": 0.04758191457503925,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": 0.2780411373225696,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": 0.8760047644534418,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": -0.046543240807603,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -1.4916695241581894,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": -0.0260658966959597,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -1.247265717822071,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.6415755178993517,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.4862194735822185,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "3008.SR",
+      "company": "Al Kathiri Holding Company (AKHC)",
+      "rating_agency": "Tassnief",
+      "actual_rating": "BBB",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.9697471447078645,
+      "prob_speculative": 0.030252855292135533,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": 0.3442554681713606,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": 1.1992021387728224,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0183509024383714,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -1.0341356285662726,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0217933323906302,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.7125562403358179,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.7737110081103302,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.3757624742146764,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "4290.SR",
+      "company": "Alkhaleej Training",
+      "rating_agency": "Financial Analytics",
+      "actual_rating": "A-",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9988310568883595,
+      "prob_speculative": 0.9988310568883595,
+      "is_boundary_rating": true,
+      "has_agency_disagreement": true,
+      "ratios": {
+        "liquid": {
+          "value": 0.0255963690657133,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.3561980716304966,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": -0.0128946179746185,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -1.254431081426556,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0860367617468628,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": 0.005206481684738157,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.3609582967261378,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.7207979064631963,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "Boundary rating (A-): sits at the A-/BBB+ divide between Investment and Speculative grade",
+        "Agency disagreement: different agencies rate this company differently ([['Financial Analytics', 'A-'], ['Tassnief', 'BBB+']])"
+      ]
+    },
+    {
+      "ticker": "4321.SR",
+      "company": "Cenomi Centers",
+      "rating_agency": "Fitch",
+      "actual_rating": "BB",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.9999319478584429,
+      "prob_speculative": 6.805214155718628e-05,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": true,
+      "ratios": {
+        "liquid": {
+          "value": 0.0163573659135921,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.401294375131819,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.3078581406418724,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": 1.0070250659394173,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0256657045647793,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.6692919809361246,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 1.167074825100584,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.046934944115602506,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "Agency disagreement: different agencies rate this company differently ([['Fitch', 'BB'], ['Fitch', 'BB'], ['Fitch', 'BB'], ['Financial Analytics', 'A-'], ['Fitch', 'BB'], ['S&P', 'BB-']])"
+      ]
+    },
+    {
+      "ticker": "4321.SR",
+      "company": "Cenomi Centers",
+      "rating_agency": "Fitch",
+      "actual_rating": "BB",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.9999593876792183,
+      "prob_speculative": 4.061232078166671e-05,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": true,
+      "ratios": {
+        "liquid": {
+          "value": -0.0912690069043439,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.9266271944230194,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.2966230230259127,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": 0.9278122606978244,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0595254834677867,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.2909920160062637,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 1.064937268149597,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.13231554886852695,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "Agency disagreement: different agencies rate this company differently ([['Fitch', 'BB'], ['Fitch', 'BB'], ['Fitch', 'BB'], ['Financial Analytics', 'A-'], ['Fitch', 'BB'], ['S&P', 'BB-']])"
+      ]
+    },
+    {
+      "ticker": "4321.SR",
+      "company": "Cenomi Centers",
+      "rating_agency": "Financial Analytics",
+      "actual_rating": "A-",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9486869437169808,
+      "prob_speculative": 0.9486869437169808,
+      "is_boundary_rating": true,
+      "has_agency_disagreement": true,
+      "ratios": {
+        "liquid": {
+          "value": 0.0404545015813662,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.28367435426008825,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.2778549430822054,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": 0.7954885670653081,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0445639139162926,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.4581508522419953,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.891938328708021,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.2769318341221911,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "Boundary rating (A-): sits at the A-/BBB+ divide between Investment and Speculative grade",
+        "Agency disagreement: different agencies rate this company differently ([['Fitch', 'BB'], ['Fitch', 'BB'], ['Fitch', 'BB'], ['Financial Analytics', 'A-'], ['Fitch', 'BB'], ['S&P', 'BB-']])"
+      ]
+    },
+    {
+      "ticker": "5110.SR",
+      "company": "Saudi Electricity",
+      "rating_agency": "Fitch",
+      "actual_rating": "A",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9841838438618059,
+      "prob_speculative": 0.9841838438618059,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.0655995936378185,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.8013327625121128,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0748000558133532,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.6361428397775373,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0367751031541944,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.5451717051125191,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 1.1270477272268573,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.08039509261517219,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "5110.SR",
+      "company": "Saudi Electricity",
+      "rating_agency": "Fitch",
+      "actual_rating": "A",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9980027842396498,
+      "prob_speculative": 0.9980027842396498,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.0251130379293687,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.6037146890154865,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0798390639175728,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.6006154887328673,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0382807629113793,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.5283496509883334,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 1.1556435085980803,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.0564908092179391,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "5110.SR",
+      "company": "Saudi Electricity",
+      "rating_agency": "Fitch",
+      "actual_rating": "A+",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9841838438618059,
+      "prob_speculative": 0.9841838438618059,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.0476821369441999,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.7138762423959018,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0757857656478264,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.6291931269385784,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0290732809453425,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.631220674299554,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 1.0484581028565396,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.14609109961152955,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "5110.SR",
+      "company": "Saudi Electricity",
+      "rating_agency": "Fitch",
+      "actual_rating": "A+",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9741274932116963,
+      "prob_speculative": 0.9741274932116963,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.0508283335686592,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.7292330764087658,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0748047347608091,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.6361098510215466,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.022115121164303,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.7089610401975077,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.8502550575355645,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.31177643983850284,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "5110.SR",
+      "company": "Saudi Electricity",
+      "rating_agency": "Moodys",
+      "actual_rating": "AA-",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9741274932116963,
+      "prob_speculative": 0.9741274932116963,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.0508283335686592,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.7292330764087658,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0748047347608091,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.6361098510215466,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.022115121164303,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.7089610401975077,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.8502550575355645,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.31177643983850284,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "5110.SR",
+      "company": "Saudi Electricity",
+      "rating_agency": "S&P",
+      "actual_rating": "A+",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9741274932116963,
+      "prob_speculative": 0.9741274932116963,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.0508283335686592,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.7292330764087658,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0748047347608091,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.6361098510215466,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.022115121164303,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.7089610401975077,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.8502550575355645,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.31177643983850284,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "7030.SR",
+      "company": "Zain KSA",
+      "rating_agency": "Financial Analytics",
+      "actual_rating": "A",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9978934665034868,
+      "prob_speculative": 0.9978934665034868,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.1943878936264808,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -1.4299586183626576,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0596033951602925,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.7432863661544662,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0448243232979193,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.45524141623477915,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.6143248600692746,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.5089993178912371,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "7030.SR",
+      "company": "Mobile Telecommunications Company Saudi Arabia",
+      "rating_agency": "Tassnief",
+      "actual_rating": "A",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.9978934665034868,
+      "prob_speculative": 0.9978934665034868,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.1943878936264808,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -1.4299586183626576,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0596033951602925,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.7432863661544662,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0448243232979193,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.45524141623477915,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.6143248600692746,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.5089993178912371,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "9619.SR",
+      "company": "Multi Business Group",
+      "rating_agency": "Financial Analytics",
+      "actual_rating": "BB+",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.9997516045531659,
+      "prob_speculative": 0.00024839544683404627,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": 0.7788510408510891,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": 3.3204974260675737,
+          "is_outlier": true
+        },
+        "cumprof": {
+          "value": 0.2920126838050294,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": 0.8953072246773083,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.2090439572806831,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": 1.3795101323335521,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 3.27344370038947,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": 1.7138575965871679,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "Outlier ratios: liquid are >2 std from mean"
+      ]
+    },
+    {
+      "ticker": "9619.SR",
+      "company": "Multi Business Group for Projects Company",
+      "rating_agency": "Tassnief",
+      "actual_rating": "BB+",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.9997516045531659,
+      "prob_speculative": 0.00024839544683404627,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": 0.7788510408510891,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": 3.3204974260675737,
+          "is_outlier": true
+        },
+        "cumprof": {
+          "value": 0.2920126838050294,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": 0.8953072246773083,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.2090439572806831,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": 1.3795101323335521,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 3.27344370038947,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": 1.7138575965871679,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "Outlier ratios: liquid are >2 std from mean"
+      ]
+    },
+    {
+      "ticker": "7020.SR",
+      "company": "Etihad Etisalat (Mobily)",
+      "rating_agency": "Tassnief",
+      "actual_rating": "AA-",
+      "actual_class": "Investment Grade",
+      "predicted_class": "Speculative Grade",
+      "error_type": "False Positive",
+      "confidence": 0.8783367419924418,
+      "prob_speculative": 0.8783367419924418,
+      "is_boundary_rating": false,
+      "has_agency_disagreement": false,
+      "ratios": {
+        "liquid": {
+          "value": -0.0436320318082912,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": -0.6941073596047675,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.1863497079220812,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": 0.1503340952484205,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.0800550677647924,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": -0.06162427436126199,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.8285822830459388,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.32989352279835826,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "No obvious single cause; may reflect genuine difficulty in classification from financial ratios alone"
+      ]
+    },
+    {
+      "ticker": "2081.SR",
+      "company": "Alkhorayef Water & Power",
+      "rating_agency": "Tassnief",
+      "actual_rating": "BBB+",
+      "actual_class": "Speculative Grade",
+      "predicted_class": "Investment Grade",
+      "error_type": "False Negative",
+      "confidence": 0.8940408753482788,
+      "prob_speculative": 0.10595912465172118,
+      "is_boundary_rating": true,
+      "has_agency_disagreement": true,
+      "ratios": {
+        "liquid": {
+          "value": 0.2358290171628868,
+          "dataset_mean": 0.09857164311399863,
+          "dataset_std": 0.2048727375593052,
+          "z_score": 0.6699640746937147,
+          "is_outlier": false
+        },
+        "cumprof": {
+          "value": 0.0924895117853073,
+          "dataset_mean": 0.16502712962614147,
+          "dataset_std": 0.14183461350337792,
+          "z_score": -0.5114239468710973,
+          "is_outlier": false
+        },
+        "profitab": {
+          "value": 0.1148031445260392,
+          "dataset_mean": 0.08557075504569782,
+          "dataset_std": 0.08950510716881828,
+          "z_score": 0.32660023997519255,
+          "is_outlier": false
+        },
+        "leverage": {
+          "value": 0.5038994997971336,
+          "dataset_mean": 1.2232213063942123,
+          "dataset_std": 1.1962618119952897,
+          "z_score": -0.6013080074814853,
+          "is_outlier": false
+        }
+      },
+      "likely_reasons": [
+        "Boundary rating (BBB+): sits at the A-/BBB+ divide between Investment and Speculative grade",
+        "Agency disagreement: different agencies rate this company differently ([['Financial Analytics', 'A-'], ['Tassnief', 'A'], ['Tassnief', 'A-'], ['Tassnief', 'A-'], ['Tassnief', 'BBB+']])"
+      ]
+    }
+  ],
+  "error_patterns": {
+    "boundary_ratings": {
+      "count": 3,
+      "pct": 0.125,
+      "explanation": "Errors on companies rated A- or BBB+, which sit at the exact boundary between Investment and Speculative grade"
+    },
+    "agency_disagreement": {
+      "count": 5,
+      "pct": 0.20833333333333334,
+      "explanation": "Errors on companies where different rating agencies disagree on the binary classification"
+    },
+    "outlier_ratios": {
+      "count": 3,
+      "pct": 0.125,
+      "explanation": "Errors on companies with at least one financial ratio >2 std from the dataset mean"
+    },
+    "low_confidence": {
+      "count": 1,
+      "pct": 0.041666666666666664,
+      "explanation": "Errors where model confidence was below 60%"
+    }
+  }
+}

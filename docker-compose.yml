@@ -1,0 +1,11 @@
+# Streamlit demo — CPU only. Run: docker compose up --build
+# Open http://localhost:8501
+
+services:
+  demo:
+    build: .
+    image: mxa1438-demo:latest
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_HEADLESS=true

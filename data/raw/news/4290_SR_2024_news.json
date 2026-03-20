@@ -1,0 +1,50 @@
+{
+  "ticker": "4290.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:47:07.894076",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "4290.SR",
+      "title": "Alkhaleej Training, Tawuniya pen SAR 29m insurance deal",
+      "description": "n 27 August 2024. Tawuniya will provide medical insurance services to Alkhaleej Training’s …",
+      "snippet": "Riyadh – Mubasher: Alkhaleej Training and Education Company inked a SAR 29.19 million contract with the Company for Cooperative Insurance (Tawuniya) on 27 Aug...",
+      "published_at": "2024-08-28T07:06:08.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4333865/Alkhaleej-Training-Tawuniya-pen-SAR-29m-insurance-deal",
+      "search_term": "Alkhaleej Training",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4290.SR",
+      "title": "Alkhaleej Training inks SAR 29.2M medical coverage contract with Tawuniya",
+      "description": "Alkhaleej Training and Education Co. signed today, Aug. 27, a contract with The Company for Cooperative Insurance (Tawuniya) to provide medical insura",
+      "snippet": "Logo of Alkhaleej Training and Education Co.\n\nTadawul. Alkhaleej Training and Education Co. signed today, Aug. 27, a contract with The Company for Cooperative I...",
+      "published_at": "2024-08-27T11:17:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1750842",
+      "search_term": "Alkhaleej Training",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4290.SR",
+      "title": "Tadawul sees 2 negotiated deals worth SAR 83.2M",
+      "description": "The Saudi Exchange (Tadawul) witnessed today, Nov. 21, two negotiated deals worth SAR 83.2 million on Alkhaleej Training and Education Co. and Saudi A",
+      "snippet": "Tadawul trading screen\n\nThe Saudi Exchange (Tadawul) witnessed today, Nov. 21, two negotiated deals worth SAR 83.2 million on Alkhaleej Training and Education C...",
+      "published_at": "2024-11-21T12:12:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1770958",
+      "search_term": "Alkhaleej Training",
+      "sentiment_compound": 0.4215,
+      "sentiment_pos": 0.112,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.888
+    }
+  ]
+}

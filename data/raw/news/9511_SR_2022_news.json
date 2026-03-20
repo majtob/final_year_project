@@ -1,0 +1,50 @@
+{
+  "ticker": "9511.SR",
+  "year": 2022,
+  "fetch_date": "2026-02-22T02:47:55.018757",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "9511.SR",
+      "title": "Sumou Real Estate unveils SAR 403m development project",
+      "description": "No. 1/B of Dahiyat Al Fursan 1 and 2. Upon the 42-month deal, the Saudi listed firm will build …",
+      "snippet": "Riyadh – Mubasher: Sumou Real Estate Company signed a development agreement worth SAR 403 million with the National Housing Company in Riyadh for Area No. 1/B...",
+      "published_at": "2022-09-20T12:28:08.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4012681/Sumou-Real-Estate-unveils-SAR-403m-development-project",
+      "search_term": "Sumou Real Estate",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "9511.SR",
+      "title": "Sumou Real Estate unveils SAR 377m project with National Housing",
+      "description": "uare metres, according to a bourse disclosure. Located in Makkah, residential units will be built …",
+      "snippet": "Riyadh – Mubasher: Sumou Real Estate Company announced a SAR 377 million development project with the National Housing Company on an area of 88,569 square met...",
+      "published_at": "2022-11-23T11:53:17.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4042302/Sumou-Real-Estate-unveils-SAR-377m-project-with-National-Housing",
+      "search_term": "Sumou Real Estate",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "9511.SR",
+      "title": "Sumou Real Estate pens SAR 305m deal with National Housing",
+      "description": "The two parties signed the 36-month deal for the Area Apt Zone 4A and 4B of Al Aali project in …",
+      "snippet": "Riyadh – Mubasher: Sumou Real Estate Company has sealed a development agreement with the National Housing Company at a total cost of SAR 305 million.\n\nThe two...",
+      "published_at": "2022-09-28T14:33:54.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "http://english.mubasher.info/news/4017605/Sumou-Real-Estate-pens-SAR-305m-deal-with-National-Housing",
+      "search_term": "Sumou Real Estate",
+      "sentiment_compound": 0.4019,
+      "sentiment_pos": 0.083,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.917
+    }
+  ]
+}

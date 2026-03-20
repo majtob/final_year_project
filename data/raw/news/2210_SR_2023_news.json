@@ -1,0 +1,50 @@
+{
+  "ticker": "2210.SR",
+  "year": 2023,
+  "fetch_date": "2026-02-22T02:47:35.674580",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2210.SR",
+      "title": "NAPCO Deadline Alert",
+      "description": "Securities Litigation Partner James (Josh) Wilson Encourages Investors Who Suffered Losses In NAPCO To Contact Him Directly To Discuss Their Optio...",
+      "snippet": "Securities Litigation Partner James (Josh) Wilson Encourages Investors Who Suffered Losses In NAPCO To Contact Him Directly To Discuss Their Options\n\nIf you pur...",
+      "published_at": "2023-10-23T21:31:00.000000Z",
+      "source_name": "markets.businessinsider.com",
+      "url": "https://markets.businessinsider.com/news/stocks/napco-deadline-alert-1032614477",
+      "search_term": "Napco National",
+      "sentiment_compound": -0.1027,
+      "sentiment_pos": 0.221,
+      "sentiment_neg": 0.233,
+      "sentiment_neu": 0.545
+    },
+    {
+      "ticker": "2210.SR",
+      "title": "NAPCO Ongoing Deadline Alert",
+      "description": "Securities Litigation Partner James (Josh) Wilson Encourages Investors Who Suffered Losses In NAPCO To Contact Him Directly To Discuss Their Optio...",
+      "snippet": "Securities Litigation Partner James (Josh) Wilson Encourages Investors Who Suffered Losses In NAPCO To Contact Him Directly To Discuss Their Options\n\nIf you pur...",
+      "published_at": "2023-10-15T12:29:00.000000Z",
+      "source_name": "markets.businessinsider.com",
+      "url": "https://markets.businessinsider.com/news/stocks/napco-ongoing-deadline-alert-1032650731",
+      "search_term": "Napco National",
+      "sentiment_compound": -0.1027,
+      "sentiment_pos": 0.215,
+      "sentiment_neg": 0.226,
+      "sentiment_neu": 0.559
+    },
+    {
+      "ticker": "2210.SR",
+      "title": "NAPCO: Kaplan Fox Investigates Potential Securities Fraud at Napco Security Technologies, Inc.",
+      "description": "NEW YORK, Aug.  22, 2023  (GLOBE NEWSWIRE) -- Kaplan Fox & Kilsheimer LLP (www.kaplanfox.com) is investigating claims on behalf of investors of NAPCO...",
+      "snippet": "NEW YORK, Aug. 22, 2023 (GLOBE NEWSWIRE) -- Kaplan Fox & Kilsheimer LLP ( www.kaplanfox.com ) is investigating claims on behalf of investors of NAPCO Security T...",
+      "published_at": "2023-08-22T19:04:00.000000Z",
+      "source_name": "globenewswire.com",
+      "url": "https://www.globenewswire.com/news-release/2023/08/22/2729970/1020/en/NAPCO-Kaplan-Fox-Investigates-Potential-Securities-Fraud-at-Napco-Security-Technologies-Inc.html",
+      "search_term": "Napco National",
+      "sentiment_compound": -0.0516,
+      "sentiment_pos": 0.114,
+      "sentiment_neg": 0.094,
+      "sentiment_neu": 0.792
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "ticker": "2070.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:45:57.432478",
+  "article_count": 5,
+  "articles": [
+    {
+      "ticker": "2070.SR",
+      "title": "Perfect Presentation for Commercial Services Co. (2P) Announces an Increase & renewal of bank facility in compliant with Islamic sharia with Bank AlJazira.",
+      "description": "ant with Islamic sharia with Bank AlJazira. Date of obtaining the funding 2025-04-06 …",
+      "snippet": "Element List Explanation\n\nIntroduction Perfect Presentation for Commercial Services Co. (2P) Announces an Increase & renewal of bank facility in compliant with ...",
+      "published_at": "2025-04-07T05:01:27.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4428253/Perfect-Presentation-for-Commercial-Services-Co-2P-Announces-an-Increase-renewal-of-bank-facility-in-compliant-with-Islamic-sharia-with-Bank-AlJazira-",
+      "search_term": "Perfect Presentation",
+      "sentiment_compound": 0.7184,
+      "sentiment_pos": 0.146,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.854
+    },
+    {
+      "ticker": "2070.SR",
+      "title": "Perfect Corp. Reports Unaudited Financial Results for the Three Months and Full Year Ended December 31, 2024",
+      "description": "Perfect Corp. (NYSE: PERF) (”Perfect” or the ”Company”), a global leader in providing artificial intelligence (”AI”) and augmented reality (”AR”",
+      "snippet": "Perfect Corp. (NYSE: PERF) (“Perfect” or the “Company”), a global leader in providing artificial intelligence (“AI”) and augmented reality (“AR”...",
+      "published_at": "2025-02-26T12:00:09.000000Z",
+      "source_name": "gurufocus.com",
+      "url": "https://www.gurufocus.com/news/2715725/perfect-corp-reports-unaudited-financial-results-for-the-three-months-and-full-year-ended-december-31-2024",
+      "search_term": "Perfect Presentation",
+      "sentiment_compound": 0.8885,
+      "sentiment_pos": 0.236,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.764
+    },
+    {
+      "ticker": "2070.SR",
+      "title": "2P renews, increases SAR 330M credit facilities with Riyad Bank",
+      "description": "Perfect Presentation for Commercial Services Co. (2P) renewed and increased a Shariah-compliant credit facility to SAR 330 million with Riyad Bank, th",
+      "snippet": "Logo of Perfect Presentation for Commercial Services Co. (2P)\n\nPerfect Presentation for Commercial Services Co. (2P) renewed and increased a Shariah-compliant c...",
+      "published_at": "2025-07-17T17:57:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1828624",
+      "search_term": "Perfect Presentation",
+      "sentiment_compound": 0.875,
+      "sentiment_pos": 0.282,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.718
+    },
+    {
+      "ticker": "2070.SR",
+      "title": "2P renews SAR 150M bank facilities with Bank AlJazira",
+      "description": "Perfect Presentation for Commercial Services Co. (2P) increased and renewed a Shariah-compliant bank facilities agreement worth SAR 150 million with B",
+      "snippet": "A 2P pavillion at an exhibition\n\nPerfect Presentation for Commercial Services Co. (2P) increased and renewed a Shariah-compliant bank facilities agreement worth...",
+      "published_at": "2025-04-07T09:41:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1802844",
+      "search_term": "2P Company",
+      "sentiment_compound": 0.872,
+      "sentiment_pos": 0.295,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.705
+    },
+    {
+      "ticker": "2070.SR",
+      "title": "2P Prefect Presentation increases, renews SAR 150m facility deal with Bank Aljazira",
+      "description": "R 150 million with  Bank Aljazira. The loan is valid from April 2025 till 22 January 2026, …",
+      "snippet": "Riyadh – Mubasher: Prefect Presentation for Commercial Services Company (2P Prefect Presentation) raised and renewed a facility agreement valued at SAR 150 mi...",
+      "published_at": "2025-04-07T14:10:20.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4428622/2P-Prefect-Presentation-increases-renews-SAR-150m-facility-deal-with-Bank-Aljazira",
+      "search_term": "2P Company",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

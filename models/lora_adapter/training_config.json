@@ -1,0 +1,19 @@
+{
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj"
+  ],
+  "max_seq_length": 1024,
+  "num_epochs": 5,
+  "learning_rate": 2e-05,
+  "batch_size": 1,
+  "gradient_accumulation": 4,
+  "training_loss": 1.9730547754388106,
+  "total_steps": 95,
+  "training_examples": 75
+}

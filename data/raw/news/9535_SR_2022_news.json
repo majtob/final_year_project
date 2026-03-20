@@ -1,0 +1,22 @@
+{
+  "ticker": "9535.SR",
+  "year": 2022,
+  "fetch_date": "2026-02-22T02:47:46.317316",
+  "article_count": 1,
+  "articles": [
+    {
+      "ticker": "9535.SR",
+      "title": "Ladun Investment Co. Announces Obtaining a None revolving Bai Ajal facility- mid term",
+      "description": "lad worth SAR 750 million to finance The company's future projects are commensurate with the …",
+      "snippet": "Element List Explanation\n\nIntroduction Ladun Investment Company announces the approval of the Board of Directors of the facilities granted by Bank Albilad worth...",
+      "published_at": "2022-11-29T12:30:57.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4044494/Ladun-Investment-Co-Announces-Obtaining-a-None-revolving-Bai-Ajal-facility-mid-term",
+      "search_term": "Ladun Investment",
+      "sentiment_compound": 0.2263,
+      "sentiment_pos": 0.064,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.936
+    }
+  ]
+}

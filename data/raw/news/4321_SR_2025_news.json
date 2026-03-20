@@ -1,0 +1,92 @@
+{
+  "ticker": "4321.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:46:32.646960",
+  "article_count": 6,
+  "articles": [
+    {
+      "ticker": "4321.SR",
+      "title": "Arabian Centers starts SAR-denominated sukuk offering",
+      "description": "Arabian Centres Co. (Cenomi Centers)commenced today, Nov. 3, the offering period for its SAR-denominated sukuk and opened subscription for retail and",
+      "snippet": "Logo of Arabian Centres Co. (Cenomi Centers)\n\nArabian Centres Co. (Cenomi Centers) commenced today, Nov. 3, the offering period for its SAR-denominated sukuk an...",
+      "published_at": "2025-11-03T10:08:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1855116",
+      "search_term": "Arabian Centers",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Arabian Centers Company (Cenomi Centers) announcement regarding the new regulations governing the relationship between landlords and tenants in Riyadh City",
+      "description": "ct of the new regulations governing the relationship between landlords and tenants in Riyadh …",
+      "snippet": "Announcement Detail\n\nArabian Centres Company (“Cenomi Centers” or the “Company”) announces the limited expected financial impact of the new regulations ...",
+      "published_at": "2025-09-28T05:24:03.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4502343/Arabian-Centers-Company-Cenomi-Centers-announcement-regarding-the-new-regulations-governing-the-relationship-between-landlords-and-tenants-in-Riyadh-City",
+      "search_term": "Arabian Centers",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Arabian Centres Co. (Cenomi Centers) announces the signing of a strategic partnership within the Kingdom of Saudi Arabia with Westfield (Unibail-Rodamco-Westfield)",
+      "description": "hip within the Kingdom of Saudi Arabia with Unibail-Rodamco-Westfield (“URW”) on 06-11-1446 …",
+      "snippet": "Announcement Detail\n\nArabian Centres Company (“Cenomi Centers” or “the Company”) announces the signing of a strategic partnership within the Kingdom of ...",
+      "published_at": "2025-05-05T05:04:41.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4442837/Arabian-Centres-Co-Cenomi-Centers-announces-the-signing-of-a-strategic-partnership-within-the-Kingdom-of-Saudi-Arabia-with-Westfield-Unibail-Rodamco-Westfield-",
+      "search_term": "Arabian Centers",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Cenomi Centers unveils EGP 100m sale deal",
+      "description": "square meters, for SAR 100 million. The sale deal aligns with the company’s program to sell an …",
+      "snippet": "Riyadh - Mubasher: Arabian Centres Company (Cenomi Centers) sold a land plot in Al Kharj located on Riyadh-Al Kharj Road, with a total area of 425,390 square me...",
+      "published_at": "2025-06-11T10:12:39.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4459615/Cenomi-Centers-unveils-EGP-100m-sale-deal",
+      "search_term": "Cenomi Centers",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Cenomi Centers Sukuk to debut on Tadawul on Nov. 30",
+      "description": "The Saudi Exchange (Tadawul) announced that Arabian Centres Co.’s (Cenomi Centers)Sukuk 1 will be listed and commence trading on Nov. 30, under the sy",
+      "snippet": "Logo of Arabian Centres Co. (Cenomi Centers)\n\nThe Saudi Exchange (Tadawul) announced that Arabian Centres Co.’s (Cenomi Centers) Sukuk 1 will be listed and co...",
+      "published_at": "2025-11-27T09:41:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1862167",
+      "search_term": "Cenomi Centers",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Cenomi Centers receives SAR 200M for Sahara Plaza sale",
+      "description": "Arabian Centres Co. (Cenomi Centers) received cash check for the sale value of Sahara Plaza Center in King Fahd district, Riyadh, from the purchaser,",
+      "snippet": "Logo of Arabian Centres Co. (Cenomi Centers)\n\nArabian Centres Co. (Cenomi Centers) received cash check for the sale value of Sahara Plaza Center in King Fahd di...",
+      "published_at": "2025-02-18T09:06:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1791019",
+      "search_term": "Cenomi Centers",
+      "sentiment_compound": 0.34,
+      "sentiment_pos": 0.07,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.93
+    }
+  ]
+}

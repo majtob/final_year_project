@@ -1,0 +1,92 @@
+{
+  "ticker": "8200.SR",
+  "year": 2022,
+  "fetch_date": "2026-02-22T02:47:49.664465",
+  "article_count": 6,
+  "articles": [
+    {
+      "ticker": "8200.SR",
+      "title": "Saudi Re inks reinsurance contracts worth nearly SAR 194.5m",
+      "description": "premium of SAR 194.40 million. The agreements, which were signed on 30 November 2022, hold a …",
+      "snippet": "Riyadh – Mubasher: Saudi Reinsurance Company (Saudi Re) penned reinsurance deals with Probitas Corporate Capital Limited at an estimated gross written premium...",
+      "published_at": "2022-12-01T12:21:09.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4047558/Saudi-Re-inks-reinsurance-contracts-worth-nearly-SAR-194-5m",
+      "search_term": "Saudi Re",
+      "sentiment_compound": 0.4588,
+      "sentiment_pos": 0.143,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.857
+    },
+    {
+      "ticker": "8200.SR",
+      "title": "Albilad Capital announcement on the process of re-balancing the Sukuk basket for Albilad Saudi Sovereign Sukuk ETF",
+      "description": "ukuk ETF to be in line with the Index constitutes. The Fund rebalancing process has been carried …",
+      "snippet": "Announcement Detail\n\nAlbilad Capital is pleased to announce the re-balancing of the Sukuk basket for Albilad Saudi Sovereign Sukuk ETF to be in line with the In...",
+      "published_at": "2022-12-07T06:44:17.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4049352/Albilad-Capital-announcement-on-the-process-of-re-balancing-the-Sukuk-basket-for-Albilad-Saudi-Sovereign-Sukuk-ETF",
+      "search_term": "Saudi Re",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "8200.SR",
+      "title": "Albilad Capital announcement on the process of re-balancing the Sukuk basket for Albilad Saudi Sovereign Sukuk ETF",
+      "description": "ukuk ETF to be in line with the Index constitutes. The Fund rebalancing process has been carried …",
+      "snippet": "Announcement Detail\n\nAlbilad Capital is pleased to announce the re-balancing of the Sukuk basket for Albilad Saudi Sovereign Sukuk ETF to be in line with the In...",
+      "published_at": "2022-06-07T05:02:17.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/3969006/Albilad-Capital-announcement-on-the-process-of-re-balancing-the-Sukuk-basket-for-Albilad-Saudi-Sovereign-Sukuk-ETF",
+      "search_term": "Saudi Re",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "8200.SR",
+      "title": "Walaa Cooperative Insurance Company announces receiving SAMA approval on renewing the company’s insurance and reinsurance license",
+      "description": "to 03/05/1444H to renew the company’s insurance and reinsurance license for three years starting …",
+      "snippet": "Announcement Detail\n\nWalaa Cooperative Insurance Company announces receiving SAMA approval on Sunday 27/11/2022G corresponding to 03/05/1444H to renew the compa...",
+      "published_at": "2022-11-27T12:36:09.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4043784/Walaa-Cooperative-Insurance-Company-announces-receiving-SAMA-approval-on-renewing-the-company-s-insurance-and-reinsurance-license",
+      "search_term": "Cooperative Reinsurance",
+      "sentiment_compound": 0.4767,
+      "sentiment_pos": 0.094,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.906
+    },
+    {
+      "ticker": "8200.SR",
+      "title": "The Mediterranean and Gulf Cooperative Insurance and Reinsurance Company (MEDGULF) announces the receipt of a Notice of Award from the Saudi Electricity Company in relation of the Health insurance for",
+      "description": "d on November 24th 2022, a Notice to Award the contract to provide health insurance services for …",
+      "snippet": "Element List Explanation\n\nIntroduction The Mediterranean and Gulf Cooperative Insurance and Reinsurance Company (Medgulf) announces that it has received on Nove...",
+      "published_at": "2022-11-28T13:00:10.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4044150/The-Mediterranean-and-Gulf-Cooperative-Insurance-and-Reinsurance-Company-MEDGULF-announces-the-receipt-of-a-Notice-of-Award-from-the-Saudi-Electricity-Company-in-relation-of-the-Health-insurance-for",
+      "search_term": "Cooperative Reinsurance",
+      "sentiment_compound": 0.7906,
+      "sentiment_pos": 0.132,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.868
+    },
+    {
+      "ticker": "8200.SR",
+      "title": "The Mediterranean and Gulf Insurance and Reinsurance Co. (Medgulf) Announces Resignation Of the Audit Committee Chairman",
+      "description": "Audit Committee Chairman (independent external member) Mr. Mohammed Aloyaidi, on Tuesday …",
+      "snippet": "Introduction\n\nThe Mediterranean and Gulf Cooperative Insurance and Reinsurance Company (Medgulf) announces the resignation of Audit Committee Chairman (independ...",
+      "published_at": "2022-07-06T06:43:16.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/3979935/The-Mediterranean-and-Gulf-Insurance-and-Reinsurance-Co-Medgulf-Announces-Resignation-Of-the-Audit-Committee-Chairman",
+      "search_term": "Cooperative Reinsurance",
+      "sentiment_compound": -0.296,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.075,
+      "sentiment_neu": 0.925
+    }
+  ]
+}

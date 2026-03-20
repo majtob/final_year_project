@@ -1,0 +1,57 @@
+{
+  "model_name": "baseline_xgboost_financials_only",
+  "created_at": "2026-02-17T19:08:19.617651",
+  "dataset": {
+    "total_records": 26,
+    "features": [
+      "liquid",
+      "cumprof",
+      "profitab",
+      "leverage"
+    ],
+    "target_binary": "investment_grade",
+    "target_multiclass": "rating_category"
+  },
+  "binary_classification": {
+    "description": "Investment Grade (BBB- and above) vs Speculative",
+    "cv_accuracy_mean": 0.07692307692307693,
+    "cv_accuracy_std": 0.0,
+    "cv_scores": [
+      0.07692307692307693,
+      0.07692307692307693
+    ],
+    "feature_importance": {
+      "liquid": 0.0,
+      "cumprof": 0.0,
+      "profitab": 0.0,
+      "leverage": 0.0
+    }
+  },
+  "multiclass_classification": {
+    "description": "Rating categories: AA, A, BBB, BB",
+    "classes": [
+      "A",
+      "AA",
+      "BB",
+      "BBB"
+    ],
+    "cv_accuracy_mean": 0.6153846153846154,
+    "cv_accuracy_std": 0.07692307692307693,
+    "cv_scores": [
+      0.6923076923076923,
+      0.5384615384615384
+    ],
+    "feature_importance": {
+      "liquid": 0.19446367025375366,
+      "cumprof": 0.23481781780719757,
+      "profitab": 0.3546498119831085,
+      "leverage": 0.21606865525245667
+    }
+  },
+  "comparison_to_paper": {
+    "paper_accuracy": 0.74,
+    "paper_method": "PART algorithm with KAMs only",
+    "paper_combined_accuracy": 0.84,
+    "note": "Paper used KAMs + financial ratios for 84% accuracy"
+  }
+}

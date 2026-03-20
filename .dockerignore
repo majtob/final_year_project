@@ -1,0 +1,30 @@
+# Git / IDE
+.git
+.gitignore
+.cursor
+.vscode
+.idea
+
+# Local Python
+venv
+.venv
+__pycache__
+*.py[cod]
+*$py.class
+.pytest_cache
+.mypy_cache
+.ruff_cache
+*.egg-info
+.ipynb_checkpoints
+
+# Large / dev-only (not needed for Streamlit demo)
+unsloth_compiled_cache
+models/training_output
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Env secrets (if any)
+.env
+.env.*

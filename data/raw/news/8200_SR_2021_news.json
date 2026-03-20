@@ -1,0 +1,78 @@
+{
+  "ticker": "8200.SR",
+  "year": 2021,
+  "fetch_date": "2026-02-22T02:48:06.382904",
+  "article_count": 5,
+  "articles": [
+    {
+      "ticker": "8200.SR",
+      "title": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.23% By Investing.com",
+      "description": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.23%",
+      "snippet": ". Upgrade your Investing.com experience. Save up to 40% More details\n\n© Reuters. Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.23%\n\nInve...",
+      "published_at": "2021-06-16T14:15:02.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-higher-at-close-of-trade-tadawul-all-share-up-023-2533906",
+      "search_term": "Saudi Re",
+      "sentiment_compound": 0.5267,
+      "sentiment_pos": 0.145,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.855
+    },
+    {
+      "ticker": "8200.SR",
+      "title": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.30% By Investing.com",
+      "description": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.30%",
+      "snippet": ". Upgrade your Investing.com experience. Save up to 40% More details\n\n© Reuters. Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.30%\n\nInve...",
+      "published_at": "2021-06-22T14:15:03.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-higher-at-close-of-trade-tadawul-all-share-up-030-2538975",
+      "search_term": "Saudi Re",
+      "sentiment_compound": 0.5267,
+      "sentiment_pos": 0.145,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.855
+    },
+    {
+      "ticker": "8200.SR",
+      "title": "In Review, Biden Seeks New Balance in Saudi Ties",
+      "description": "The new administration looks to toughen scrutiny while maintaining a key strategic relationship.",
+      "snippet": "As he sets about revamping policy toward Saudi Arabia, President Biden is aiming for a balance that tightens U.S. scrutiny of Riyadh, without breaking a strateg...",
+      "published_at": "2021-02-13T11:00:00.000000Z",
+      "source_name": "online.wsj.com",
+      "url": "https://www.wsj.com/articles/in-review-biden-seeks-new-balance-in-saudi-ties-11613214001",
+      "search_term": "Saudi Re",
+      "sentiment_compound": 0.0258,
+      "sentiment_pos": 0.05,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.95
+    },
+    {
+      "ticker": "8200.SR",
+      "title": "The Mediterranean and Gulf Insurance and Reinsurance Co. Announces the starting date of the Electronic Voting of the Extraordinary General Assembly Meeting with respect to its Capital Increase (First ",
+      "description": "A8030 MEDGULF 0.0 \n      1443/03/25    Sun Oct 31, 2021 09:09:38\n    \n    \n      The Mediterranean and Gulf Insurance and Reinsurance Co. Announces the starting date of the Electronic Voting of... | October 31,  2021",
+      "snippet": "Announcement Detail\n\nThe Board of Directors of the Mediterranean and Gulf Cooperative Insurance and Reinsurance Company (MEDGULF) is pleased to Announces to its...",
+      "published_at": "2021-10-31T06:37:07.000000Z",
+      "source_name": "marketscreener.com",
+      "url": "https://www.marketscreener.com/quote/stock/THE-MEDITERRANEAN-AND-GUL-10752172/news/The-Mediterranean-and-Gulf-Insurance-and-Reinsurance-Co-Announces-the-starting-date-of-the-Electron-36848918/",
+      "search_term": "Cooperative Reinsurance",
+      "sentiment_compound": 0.6597,
+      "sentiment_pos": 0.085,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.915
+    },
+    {
+      "ticker": "8200.SR",
+      "title": "MEDGULF secures $112mn capital increase approval",
+      "description": "The Mediterranean and Gulf Cooperative Insurance and Reinsurance Company (MEDGULF), one of Saudi Arabia's largest re/insurers, has had a capital increase",
+      "snippet": "The Mediterranean and Gulf Cooperative Insurance and Reinsurance Company (MEDGULF), one of Saudi Arabia’s largest re/insurers, has had a capital increase requ...",
+      "published_at": "2021-10-01T07:30:15.000000Z",
+      "source_name": "reinsurancene.ws",
+      "url": "https://www.reinsurancene.ws/medgulf-secures-112mn-capital-increase-approval/",
+      "search_term": "Cooperative Reinsurance",
+      "sentiment_compound": 0.8402,
+      "sentiment_pos": 0.303,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.697
+    }
+  ]
+}

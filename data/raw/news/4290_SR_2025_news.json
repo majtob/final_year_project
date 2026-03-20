@@ -1,0 +1,50 @@
+{
+  "ticker": "4290.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:46:20.705133",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "4290.SR",
+      "title": "Alkhaleej Training signs SAR 36.2M medical insurance contract with Tawuniya",
+      "description": "Alkhaleej Training and Education Co. signed today, Aug. 21, a contract worth SAR 36.23 million, excluding VAT, with The Company for Cooperative Insura",
+      "snippet": "Logo of Alkhaleej Training and Education Co.\n\nAlkhaleej Training and Education Co. signed today, Aug. 21, a contract worth SAR 36.23 million, excluding VAT, wit...",
+      "published_at": "2025-08-21T17:39:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1838080",
+      "search_term": "Alkhaleej Training",
+      "sentiment_compound": 0.2263,
+      "sentiment_pos": 0.056,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.944
+    },
+    {
+      "ticker": "4290.SR",
+      "title": "TASI: 9 stocks dip to 52-week lows",
+      "description": "Shares of nineTadawul-listed firms recorded their lowest levels in 52 weeks today, May 26, data compiled byArgaamshowed.\r\n\r\n\r\n\r\n\r\n\t\r\n\t\t\r\n\t\t\t\r\n\t\t\tStock",
+      "snippet": "Tadawul trading screen\n\nShares of nine Tadawul-listed firms recorded their lowest levels in 52 weeks today, May 26, data compiled by Argaam showed.\n\nStocks at 5...",
+      "published_at": "2025-05-26T11:08:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1816684",
+      "search_term": "Alkhaleej Training",
+      "sentiment_compound": -0.296,
+      "sentiment_pos": 0.077,
+      "sentiment_neg": 0.154,
+      "sentiment_neu": 0.769
+    },
+    {
+      "ticker": "4290.SR",
+      "title": "Tadawul: 16 stocks, 2 REITs at 52-week lows",
+      "description": "Shares of 16Tadawul-listed companies and units of2 REIT Fundsfell today, June 18, to their lowest levels in 52 weeks, data compiled byArgaamshowed.",
+      "snippet": "Tadawul trading screen\n\nShares of 16 Tadawul-listed companies and units of 2 REIT Funds fell today, June 18, to their lowest levels in 52 weeks, data compiled b...",
+      "published_at": "2025-06-18T11:54:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1821643",
+      "search_term": "Alkhaleej Training",
+      "sentiment_compound": -0.296,
+      "sentiment_pos": 0.065,
+      "sentiment_neg": 0.131,
+      "sentiment_neu": 0.804
+    }
+  ]
+}

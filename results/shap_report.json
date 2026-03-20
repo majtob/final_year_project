@@ -1,0 +1,233 @@
+{
+  "global_importance": {
+    "leverage": {
+      "rank": 1,
+      "mean_abs_shap": 2.1881039577493757,
+      "description": "Leverage (Equity/Liabilities)"
+    },
+    "liquid": {
+      "rank": 2,
+      "mean_abs_shap": 1.5369887269633622,
+      "description": "Liquidity (WC/TA)"
+    },
+    "cumprof": {
+      "rank": 3,
+      "mean_abs_shap": 1.3455786984232179,
+      "description": "Cumulative Profit (RE/TA)"
+    },
+    "profitab": {
+      "rank": 4,
+      "mean_abs_shap": 0.8895816578768774,
+      "description": "Profitability (EBIT/TA)"
+    }
+  },
+  "per_company_top_factors": [
+    {
+      "ticker": "1202.SR",
+      "company": "MEPCO",
+      "rating": "A-",
+      "top_feature": "leverage",
+      "shap_value": -3.694334472608117,
+      "feature_value": 1.6691931851363335,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "1211.SR",
+      "company": "Maaden",
+      "rating": "BBB+",
+      "top_feature": "liquid",
+      "shap_value": 1.6102761274616355,
+      "feature_value": 0.1295003753540811,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "2010.SR",
+      "company": "SABIC",
+      "rating": "A",
+      "top_feature": "leverage",
+      "shap_value": -3.4518405272244967,
+      "feature_value": 1.9701385660222368,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "2070.SR",
+      "company": "Perfect Presentation (2P)",
+      "rating": "BBB+",
+      "top_feature": "cumprof",
+      "shap_value": 3.0391735898659396,
+      "feature_value": -0.0278451747810086,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "2081.SR",
+      "company": "Alkhorayef Water & Power",
+      "rating": "A-",
+      "top_feature": "profitab",
+      "shap_value": -2.652610263710183,
+      "feature_value": 0.1237813191337475,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "2082.SR",
+      "company": "ACWA Power",
+      "rating": "BBB-",
+      "top_feature": "cumprof",
+      "shap_value": 3.181618289013611,
+      "feature_value": 0.0286121910538777,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "2120.SR",
+      "company": "Middle East Paper Company",
+      "rating": "A",
+      "top_feature": "leverage",
+      "shap_value": -2.353998299498745,
+      "feature_value": 9.758068734776357,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "2210.SR",
+      "company": "Napco National",
+      "rating": "BBB+",
+      "top_feature": "leverage",
+      "shap_value": 4.188161115772138,
+      "feature_value": 0.2855216390041251,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "2222.SR",
+      "company": "Saudi Aramco",
+      "rating": "A",
+      "top_feature": "leverage",
+      "shap_value": -2.4207188057810005,
+      "feature_value": 1.4519683182505652,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "2280.SR",
+      "company": "Almarai",
+      "rating": "BBB-",
+      "top_feature": "leverage",
+      "shap_value": 2.9974474531997357,
+      "feature_value": 1.1200646510770689,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "2382.SR",
+      "company": "ADES",
+      "rating": "B+",
+      "top_feature": "leverage",
+      "shap_value": 4.625814174030535,
+      "feature_value": 0.4233548018785618,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "3008.SR",
+      "company": "Al Kathiri Holding",
+      "rating": "BBB-",
+      "top_feature": "cumprof",
+      "shap_value": 3.389783135010187,
+      "feature_value": -0.046543240807603,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "4290.SR",
+      "company": "Alkhaleej Training",
+      "rating": "A-",
+      "top_feature": "profitab",
+      "shap_value": -2.6764067982133395,
+      "feature_value": 0.0860367617468628,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "4321.SR",
+      "company": "Cenomi Centers",
+      "rating": "BB",
+      "top_feature": "leverage",
+      "shap_value": 2.583934143880442,
+      "feature_value": 1.167074825100584,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "5110.SR",
+      "company": "Saudi Electricity",
+      "rating": "A",
+      "top_feature": "liquid",
+      "shap_value": -3.1987635960371374,
+      "feature_value": -0.0655995936378185,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "7010.SR",
+      "company": "Saudi Telecom (STC)",
+      "rating": "A+",
+      "top_feature": "leverage",
+      "shap_value": -3.6134153609541038,
+      "feature_value": 1.3570190120196448,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "7020.SR",
+      "company": "Mobily",
+      "rating": "AA",
+      "top_feature": "profitab",
+      "shap_value": -2.251072037692125,
+      "feature_value": 0.0983919835135521,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "7030.SR",
+      "company": "Zain KSA",
+      "rating": "A",
+      "top_feature": "liquid",
+      "shap_value": -3.2912563701935187,
+      "feature_value": -0.1943878936264808,
+      "effect": "decreases speculative-grade probability"
+    },
+    {
+      "ticker": "9535.SR",
+      "company": "Ladun Investment Company",
+      "rating": "BBB+",
+      "top_feature": "leverage",
+      "shap_value": 3.3014411567139414,
+      "feature_value": 0.2670089151055785,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "9568.SR",
+      "company": "Mayar Holding",
+      "rating": "BBB",
+      "top_feature": "leverage",
+      "shap_value": 4.222417143952305,
+      "feature_value": 0.0680592432727204,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "9596.SR",
+      "company": "Quara Finance Company",
+      "rating": "BBB",
+      "top_feature": "liquid",
+      "shap_value": 4.842022011558435,
+      "feature_value": 0.8077898269634161,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "9619.SR",
+      "company": "Multi Business Group",
+      "rating": "BB+",
+      "top_feature": "liquid",
+      "shap_value": 7.851247504922644,
+      "feature_value": 0.7788510408510891,
+      "effect": "increases speculative-grade probability"
+    },
+    {
+      "ticker": "4300.SR",
+      "company": "Dar Al Arkan Real Estate",
+      "rating": "A-",
+      "top_feature": "leverage",
+      "shap_value": -3.468589299959308,
+      "feature_value": 1.332157160437054,
+      "effect": "decreases speculative-grade probability"
+    }
+  ]
+}

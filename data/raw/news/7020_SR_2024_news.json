@@ -1,0 +1,92 @@
+{
+  "ticker": "7020.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:47:16.433124",
+  "article_count": 6,
+  "articles": [
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily inks hosting agreement with Red Bull Mobile",
+      "description": "Etihad Etisalat Co. (Mobily) signed, on Sept. 5, a hosting agreement with Red Bull Mobile (Future Networks Communications Co.).\r\n\r\n\r\n\r\nIn a statement",
+      "snippet": "Logo of Etihad Etisalat Co. (Mobily)\n\nEtihad Etisalat Co. (Mobily) signed, on Sept. 5, a hosting agreement with Red Bull Mobile (Future Networks Communications ...",
+      "published_at": "2024-09-08T11:10:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1753263",
+      "search_term": "Etihad Etisalat",
+      "sentiment_compound": 0.7506,
+      "sentiment_pos": 0.186,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.814
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily signs SAR 4.8B Murabaha agreement with SNB",
+      "description": "Logo ofEtihad Etisalat Co. (Mobily)\r\n\r\n\r\nEtihad Etisalat Co. (Mobily) signed on Jan. 17 a Murabaha financing agreement with Saudi National Bank (S",
+      "snippet": "Logo of Etihad Etisalat Co. (Mobily)\n\nEtihad Etisalat Co. (Mobily) signed on Jan. 17 a Murabaha financing agreement with Saudi National Bank (SNB) for SAR 4.8 b...",
+      "published_at": "2024-01-18T09:37:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1698718",
+      "search_term": "Etihad Etisalat",
+      "sentiment_compound": 0.7506,
+      "sentiment_pos": 0.186,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.814
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "TASI rises 1.1% to 11,625 points, total turnover hits SAR 5.6B",
+      "description": "",
+      "snippet": "BSF rose 6% to SAR 35.50. The bank’s board of directors recommended capital top-up through distributing one bonus share for every existing share.\n\nEast Pipes ...",
+      "published_at": "2024-06-02T15:39:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/market-daily-report/3/41746?preview=true",
+      "search_term": "Etihad Etisalat",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily unveils key appointments",
+      "description": "also named Nabeel Mohamed Al Amudi as Vice Chairman, according to a bourse filing. The two …",
+      "snippet": "Riyadh – Mubasher: Etihad Etisalat Company (Mobily) announced Abdulkarim Ibrahim Al Nafie as the board’s Chairman for the next three years.\n\nThe board also ...",
+      "published_at": "2024-12-01T08:47:14.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4375426/Mobily-unveils-key-appointments",
+      "search_term": "Mobily",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "ADES, Mobily scale 52-week highs",
+      "description": "Tadawul trading screen\r\n\r\n\r\nShares ofADES Holding Co. and Etihad Etisalat Co. (Mobily) hit their highest levels in 52 weeks today, Jan. 24, data compi",
+      "snippet": "Tadawul trading screen\n\nShares of ADES Holding Co. and Etihad Etisalat Co. (Mobily) hit their highest levels in 52 weeks today, Jan. 24, data compiled by Argaam...",
+      "published_at": "2024-01-24T13:28:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1700069",
+      "search_term": "Mobily",
+      "sentiment_compound": 0.296,
+      "sentiment_pos": 0.073,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.927
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily secures SAR 4.8bn financing from SNB",
+      "description": "80 billion for seven years. The Tadawul-listed firm secured the loan, on 17 January 2024, to …",
+      "snippet": "Riyadh – Mubasher: Etihad Etisalat Company (Mobily) inked a Murabaha financing agreement with the Saudi National Bank (SNB) at a total value of SAR 4.80 billi...",
+      "published_at": "2024-01-18T11:51:42.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4236954/Mobily-secures-SAR-4-8bn-financing-from-SNB",
+      "search_term": "Mobily",
+      "sentiment_compound": 0.6124,
+      "sentiment_pos": 0.185,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.815
+    }
+  ]
+}

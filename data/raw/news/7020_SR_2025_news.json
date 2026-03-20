@@ -1,0 +1,92 @@
+{
+  "ticker": "7020.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:46:29.372706",
+  "article_count": 6,
+  "articles": [
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily Chairman, Deputy step down; Al Azzawi named new head",
+      "description": "Etihad Etisalat Co.’s (Mobily) board of directors approved yesterday, Oct. 21, the resignation requests of Abdul Karim bin Ibrahim Al Nafea, Chairman,",
+      "snippet": "Logo of Etihad Etisalat Co. (Mobily)\n\nEtihad Etisalat Co.’s (Mobily) board of directors approved yesterday, Oct. 21, the resignation requests of Abdul Karim b...",
+      "published_at": "2025-10-22T09:03:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1851751",
+      "search_term": "Etihad Etisalat",
+      "sentiment_compound": 0.1531,
+      "sentiment_pos": 0.08,
+      "sentiment_neg": 0.063,
+      "sentiment_neu": 0.857
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily shareholders to vote on 2.5M share buyback on May 22",
+      "description": "Etihad Etisalat Co. (Mobily) invited its shareholders to attend the extraordinary general meeting (EGM) scheduled for May 22.\r\n\r\n\r\n\r\nFor more news on",
+      "snippet": "Logo of Etihad Etisalat Co. (Mobily)\n\nEtihad Etisalat Co. (Mobily) invited its shareholders to attend the extraordinary general meeting (EGM) scheduled for May ...",
+      "published_at": "2025-05-01T09:06:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1809440",
+      "search_term": "Etihad Etisalat",
+      "sentiment_compound": 0.296,
+      "sentiment_pos": 0.064,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.936
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily completes buyback of 2.5M shares worth SAR 159.2 million",
+      "description": "Etihad Etisalat Co. (Mobily) announced the completion of buyback of 2.5 million shares to be allocated to its long-term Employee Stock Incentive Progr",
+      "snippet": "Logo of Etihad Etisalat Co. (Mobily)\n\nEtihad Etisalat Co. (Mobily) announced the completion of buyback of 2.5 million shares to be allocated to its long-term Em...",
+      "published_at": "2025-09-07T09:38:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1841429",
+      "search_term": "Etihad Etisalat",
+      "sentiment_compound": 0.7783,
+      "sentiment_pos": 0.233,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.767
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily ends hosting deal with Red Bull Mobile",
+      "description": "Etihad Etisalat Co. (Mobily) said it received a letter on Dec. 25 from Red Bull Mobile (Future Networks Communications Co.) stating its intention to d",
+      "snippet": "Logo of Etihad Etisalat Co. (Mobily)\n\nEtihad Etisalat Co. (Mobily) said it received a letter on Dec. 25 from Red Bull Mobile (Future Networks Communications Co....",
+      "published_at": "2025-12-28T10:12:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1868674",
+      "search_term": "Mobily",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Anmat receives SAR 50M contract with Mobily",
+      "description": "Anmat Technology for Trading Co. received the signed contract related to its SAR 50 million deal with Etihad Etisalat (Mobily), according to a stateme",
+      "snippet": "Logo of Anmat Technology for Trading Co.\n\nAnmat Technology for Trading Co. received the signed contract related to its SAR 50 million deal with Etihad Etisalat ...",
+      "published_at": "2025-07-10T10:07:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1826836",
+      "search_term": "Mobily",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7020.SR",
+      "title": "Mobily sees negotiated deal worth SAR 34.8M",
+      "description": "Tadawul trading screen\r\n\r\n\r\nThe Saudi Exchange (Tadawul) witnessed today, March 27, a negotiated deal worth SAR 34.8 million onEtihad Etisalat Co. (Mo",
+      "snippet": "Tadawul trading screen\n\nThe Saudi Exchange (Tadawul) witnessed today, March 27, a negotiated deal worth SAR 34.8 million on Etihad Etisalat Co. (Mobily), as sho...",
+      "published_at": "2025-03-27T11:37:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1800982",
+      "search_term": "Mobily",
+      "sentiment_compound": 0.4215,
+      "sentiment_pos": 0.123,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.877
+    }
+  ]
+}

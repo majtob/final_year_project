@@ -1,0 +1,50 @@
+{
+  "ticker": "2210.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:47:09.961081",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2210.SR",
+      "title": "Napco Security Technologies, Inc. (NSSC) Q3 2024 Earnings Call Transcript",
+      "description": "Napco Security Technologies, Inc. (NASDAQ:NASDAQ:NSSC) Q3 2024 Earnings Conference Call May 6, 2024 11:00 AM ETCompany ParticipantsFrancis Okoniewski - VP,...",
+      "snippet": "Napco Security Technologies, Inc. (NASDAQ:NSSC) Q3 2024 Earnings Conference Call May 6, 2024 11:00 AM ET\n\nCompany Participants\n\nFrancis Okoniewski - VP, IR\n\nRic...",
+      "published_at": "2024-05-06T18:48:08.000000Z",
+      "source_name": "seekingalpha.com",
+      "url": "https://seekingalpha.com/article/4689849-napco-security-technologies-inc-nssc-q3-2024-earnings-call-transcript",
+      "search_term": "Napco National",
+      "sentiment_compound": 0.5859,
+      "sentiment_pos": 0.146,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.854
+    },
+    {
+      "ticker": "2210.SR",
+      "title": "Paper Packaging Material Market Size to Reach USD 656.5 Bn by 2033, at 5.1% CAGR: Dimension Market Research",
+      "description": "Advancements and Projections in the Paper Packaging Material Market: Insights, Trends, Opportunities, and Recent Developments...",
+      "snippet": "New York, July 01, 2024 (GLOBE NEWSWIRE) -- Overview\n\nThe Global Paper Packaging Material Market size is expected to reach USD 419.9 billion by 2024 and it is f...",
+      "published_at": "2024-07-01T16:01:00.000000Z",
+      "source_name": "globenewswire.com",
+      "url": "https://www.globenewswire.com/news-release/2024/07/01/2906936/0/en/Paper-Packaging-Material-Market-Size-to-Reach-USD-656-5-Bn-by-2033-at-5-1-CAGR-Dimension-Market-Research.html",
+      "search_term": "Napco National",
+      "sentiment_compound": 0.4019,
+      "sentiment_pos": 0.107,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.893
+    },
+    {
+      "ticker": "2210.SR",
+      "title": "Silage Cover Market is Expected to Grow at 5.8% CAGR, Reaching US$ 2.4 Billion by 2034 | Fact.MR",
+      "description": "Manufacturers Focusing on Developing Advanced Silage Covers with Enhanced Efficiency and Protection: Fact.MR Report...",
+      "snippet": "Rockville, MD, Aug. 07, 2024 (GLOBE NEWSWIRE) -- The Global Silage Cover Market is calculated at a value of US$ 1.36 million in 2024, as stated in the recently ...",
+      "published_at": "2024-08-07T10:30:00.000000Z",
+      "source_name": "globenewswire.com",
+      "url": "https://www.globenewswire.com/news-release/2024/08/07/2925770/0/en/Silage-Cover-Market-is-Expected-to-Grow-at-5-8-CAGR-Reaching-US-2-4-Billion-by-2034-Fact-MR.html",
+      "search_term": "Napco National",
+      "sentiment_compound": 0.6486,
+      "sentiment_pos": 0.178,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.822
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "ticker": "9511.SR",
+  "year": 2025,
+  "fetch_date": "2026-02-22T02:46:34.860093",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "9511.SR",
+      "title": "Sumou Real Estate inks SAR 135m infrastructure agreement",
+      "description": "tate fund managed by Sedco Capital, on 19 October. The agreement aims to develop and execute …",
+      "snippet": "Riyadh - Mubasher: Sumou Real Estate Company signed an infrastructure contract with Diyar Real Estate Development Fund Company, representing a real estate fund ...",
+      "published_at": "2025-10-22T08:48:54.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4512112/Sumou-Real-Estate-inks-SAR-135m-infrastructure-agreement",
+      "search_term": "Sumou Real Estate",
+      "sentiment_compound": 0.7506,
+      "sentiment_pos": 0.218,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.782
+    },
+    {
+      "ticker": "9511.SR",
+      "title": "Sumou Real Estate inks development agreement for Anara project",
+      "description": "ra Sumou Real Estate Fund. The two entities penned the deal for the Anara project in Riyadh, …",
+      "snippet": "Riyadh - Mubasher: Sumou Real Estate Company has inked a development management agreement with Maali AlJazira Real Estate Company, representing AlJazira Sumou R...",
+      "published_at": "2025-09-23T11:54:02.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4501046/Sumou-Real-Estate-inks-development-agreement-for-Anara-project",
+      "search_term": "Sumou Real Estate",
+      "sentiment_compound": 0.4939,
+      "sentiment_pos": 0.11,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.89
+    },
+    {
+      "ticker": "9511.SR",
+      "title": "Sumou Real Estate awarded SAR 680m development agreement",
+      "description": "Residential Villas in the Makkah Gate project. The company was awarded the project on 20 April …",
+      "snippet": "Riyadh – Mubasher: Sumou Real Estate Company announced a SAR 680 million development deal with the National Housing Company to establish more than 900 Residen...",
+      "published_at": "2025-04-21T12:26:25.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4435697/Sumou-Real-Estate-awarded-SAR-680m-development-agreement",
+      "search_term": "Sumou Real Estate",
+      "sentiment_compound": 0.8225,
+      "sentiment_pos": 0.281,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.719
+    }
+  ]
+}

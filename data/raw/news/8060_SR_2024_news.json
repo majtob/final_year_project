@@ -1,0 +1,92 @@
+{
+  "ticker": "8060.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:46:45.625415",
+  "article_count": 6,
+  "articles": [
+    {
+      "ticker": "8060.SR",
+      "title": "Malath Insurance announces 2 key appointments",
+      "description": "e insurance firm named Mohammed Ali Alammari as the Vice Chairman, according to a bourse …",
+      "snippet": "Riyadh – Mubasher: Malath Cooperative Insurance Company (Malath Insurance) has announced Bader Ali Alali as the Chairman of the board.\n\nIn addition, the insur...",
+      "published_at": "2024-02-07T09:19:46.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4244251/Malath-Insurance-announces-2-key-appointments",
+      "search_term": "Malath Insurance",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "8060.SR",
+      "title": "Malath Insurance swings to profitability in 2023",
+      "description": "table to shareholders of SAR 38.18 million, compared to a net loss of SAR 41.37 million. …",
+      "snippet": "Riyadh – Mubasher: Malath Cooperative Insurance Company (Malath Insurance) turned to profitability in 2023, recording a net profit after Zakat attributable to...",
+      "published_at": "2024-03-21T10:27:54.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4263987/Malath-Insurance-swings-to-profitability-in-2023",
+      "search_term": "Malath Insurance",
+      "sentiment_compound": -0.0516,
+      "sentiment_pos": 0.08,
+      "sentiment_neg": 0.087,
+      "sentiment_neu": 0.833
+    },
+    {
+      "ticker": "8060.SR",
+      "title": "Malath Insurance’s insurance revenues down 11%; accumulated losses unveiled",
+      "description": "59 million in the first half (H1) of 2024. The recorded net profit shrank by 77.84% year-on-year …",
+      "snippet": "Riyadh – Mubasher: Malath Cooperative Insurance Company (Malath Insurance) posted net profits after Zakat attributable to the owners valued at SAR 11.59 milli...",
+      "published_at": "2024-08-08T08:39:43.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4325535/Malath-Insurance-s-insurance-revenues-down-11-accumulated-losses-unveiled",
+      "search_term": "Malath Insurance",
+      "sentiment_compound": 0.0516,
+      "sentiment_pos": 0.095,
+      "sentiment_neg": 0.088,
+      "sentiment_neu": 0.817
+    },
+    {
+      "ticker": "8060.SR",
+      "title": "Malath Cooperative Insurance Co. Announces an update on the Malath Cooperative Insurance Co. announcement of the assigned Memorandum of Understanding with LIVA Insurance Co.",
+      "description": "signing a Memorandum of Understanding with Liva Insurance Company to evaluate a potential merger …",
+      "snippet": "Element List Explanation\n\nIntroduction With reference to the announcement of Malath Cooperative Insurance Co on Tadawul dated on 22/08/2024G, regarding signing ...",
+      "published_at": "2024-09-08T05:00:42.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4338973/Malath-Cooperative-Insurance-Co-Announces-an-update-on-the-Malath-Cooperative-Insurance-Co-announcement-of-the-assigned-Memorandum-of-Understanding-with-LIVA-Insurance-Co-",
+      "search_term": "Malath Cooperative",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "8060.SR",
+      "title": "LIVA Insurance Co. Announces an update on LIVA Insurance Co. announces signing a Memorandum of Understanding with Malath Cooperative Insurance Company",
+      "description": "orandum of Understanding with Malath Cooperative Insurance Company to evaluate a potential merger …",
+      "snippet": "Element List Explanation\n\nIntroduction With reference to the announcement of Liva Insurance Co on Tadawul dated on 22/08/2024G, regarding signing a Memorandum o...",
+      "published_at": "2024-09-08T05:02:42.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4338978/LIVA-Insurance-Co-Announces-an-update-on-LIVA-Insurance-Co-announces-signing-a-Memorandum-of-Understanding-with-Malath-Cooperative-Insurance-Company",
+      "search_term": "Malath Cooperative",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "8060.SR",
+      "title": "Malath Chairman resigns",
+      "description": "Logo ofMalath Cooperative Insurance Co.\r\n\r\n\r\nMalath Cooperative Insurance Co. announces the resignation of Mohammed Al Ammari, Chairman of the boa",
+      "snippet": "Logo of Malath Cooperative Insurance Co.\n\nMalath Cooperative Insurance Co. announces the resignation of Mohammed Al Ammari, Chairman of the board of directors, ...",
+      "published_at": "2024-01-08T10:51:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1696400",
+      "search_term": "Malath Cooperative",
+      "sentiment_compound": -0.5423,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.176,
+      "sentiment_neu": 0.824
+    }
+  ]
+}

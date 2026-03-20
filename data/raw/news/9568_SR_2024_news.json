@@ -1,0 +1,50 @@
+{
+  "ticker": "9568.SR",
+  "year": 2024,
+  "fetch_date": "2026-02-22T02:46:39.151110",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "9568.SR",
+      "title": "Saudi Exchange’s indices end Wednesday with varied performance",
+      "description": ".52 points. The trading value amounted to SAR 6.39 billion through the exchange of 352.45 million …",
+      "snippet": "Riyadh – Mubasher: The main All Share Index (TASI) of the Saudi Exchange (Tadawul) grew by 0.37% on Wednesday and closed the trading session at 12,109.52 poin...",
+      "published_at": "2024-07-31T13:29:08.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4321618/Saudi-Exchange-s-indices-end-Wednesday-with-varied-performance",
+      "search_term": "Mayar Holding",
+      "sentiment_compound": 0.34,
+      "sentiment_pos": 0.091,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.909
+    },
+    {
+      "ticker": "9568.SR",
+      "title": "Tadawul closes Sunday with positive note",
+      "description": "TASI’s trading value stood at SAR 6.38 billion through the exchange of 345.09 million shares. …",
+      "snippet": "Riyadh – Mubasher: The main All Share Index (TASI) of the Saudi Exchange (Tadawul) ended Sunday’s trading session higher by 0.12% at 12,202.93 points.\n\nTASI...",
+      "published_at": "2024-07-21T12:49:50.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4316857/Tadawul-closes-Sunday-with-positive-note",
+      "search_term": "Mayar Holding",
+      "sentiment_compound": 0.802,
+      "sentiment_pos": 0.301,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.699
+    },
+    {
+      "ticker": "9568.SR",
+      "title": "Tadawul’s indices end Thursday in green",
+      "description": ".41 points. TASI’s trading value stood at SAR 6.42 billion through the exchange of 219.35 million …",
+      "snippet": "Riyadh – Mubasher: The main All Share Index (TASI) of the Saudi Exchange (Tadawul) edged higher by 0.07%, closing Thursday’s trading session at 11,792.41 po...",
+      "published_at": "2024-07-11T13:48:49.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4312593/Tadawul-s-indices-end-Thursday-in-green",
+      "search_term": "Mayar Holding",
+      "sentiment_compound": 0.34,
+      "sentiment_pos": 0.098,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.902
+    }
+  ]
+}
