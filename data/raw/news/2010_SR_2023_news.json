@@ -1,0 +1,50 @@
+{
+  "ticker": "2010.SR",
+  "year": 2023,
+  "fetch_date": "2026-03-26T08:20:44.697938+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2010.SR",
+      "title": "GCC region M&A blazes trail as global deals decline",
+      "description": "The GCC has proven to be one of the most kinetic deal markets in the world in 2023, with dealmakers expected to remain active in the near future.",
+      "snippet": "Image courtesy: Getty Images\n\nThe GCC’s economies remain somewhat insulated from soaring inflation and high interest rates and have shown signs of resilience ...",
+      "published_at": "2023-12-26T12:34:40.000000Z",
+      "source_name": "gulfbusiness.com",
+      "url": "https://gulfbusiness.com/here-is-whats-driving-ma-activity-in-gcc-region/",
+      "search_term": "2010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2010.SR",
+      "title": "Saudi Kayan names Al Sahafi as new CEO",
+      "description": "commence the new position on 1 January 2024, according to a bourse disclosure. The resolution …",
+      "snippet": "Riyadh – Mubasher: The board of Saudi Kayan Petrochemical Company has appointed Sameeh bin Sulaiman Al Sahafi as the company's new CEO.\n\nAl Sahafi will commen...",
+      "published_at": "2023-12-26T12:33:28.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4229566/Saudi-Kayan-names-Al-Sahafi-as-new-CEO",
+      "search_term": "2010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2010.SR",
+      "title": "KSA ETF: Assessing Potential Value For 2024 And Beyond (NYSEARCA:KSA)",
+      "description": "iShares MSCI Saudi Arabia ETF offers global investors access to a thriving market and a diverse economy with ample growth potential. Read more on KSA ETF here.",
+      "snippet": "HansMusa/iStock via Getty Images\n\nThe iShares MSCI Saudi Arabia ETF (NYSEARCA:KSA) presents a unique investment vehicle, offering global investors a gateway int...",
+      "published_at": "2023-12-21T03:21:54.000000Z",
+      "source_name": "seekingalpha.com",
+      "url": "https://seekingalpha.com/article/4658942-ksa-assessing-potential-value-for-2024-and-beyond",
+      "search_term": "2010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

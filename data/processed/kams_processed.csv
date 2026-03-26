@@ -1,0 +1,48 @@
+ticker,company_name,fiscal_year,rating,AUSIZE,AUOP,EMP,GCUP,GCKAM,REVKAM,ASSETKAM,LIABKAM,OTHERKAM,FIRMAGE,FIRMSIZE,INDUSTRY
+1202.SR,MEPCO (Middle East Paper),2024,A,1,0,0,0,0,0,1,0,0,1,1,0
+1211.SR,Maaden,2024,BBB+,1,0,0,0,0,0,1,0,0,1,1,0
+1211.SR,Maaden,2023,BBB+,1,0,0,0,0,0,1,0,0,1,1,0
+2010.SR,SABIC,2024,A+,1,0,0,0,0,0,1,0,1,1,1,0
+2010.SR,SABIC,2023,A+,1,0,0,0,0,0,1,0,0,1,1,0
+2010.SR,SABIC,2022,A,1,0,0,0,0,0,1,0,1,1,1,0
+2010.SR,SABIC,2021,A,1,0,0,0,0,0,1,0,1,1,1,0
+7204.SR,Perfect Presentation (2P),2024,BBB+,0,0,0,0,0,1,0,0,0,1,1,2
+7204.SR,Perfect Presentation (2P),2023,BBB+,0,0,0,0,0,1,0,0,0,1,1,2
+7204.SR,Perfect Presentation (2P),2022,BBB+,0,0,0,0,0,1,0,0,0,1,1,2
+2081.SR,Alkhorayef Water & Power,2024,A,1,0,0,0,0,1,0,0,0,1,1,2
+2081.SR,Alkhorayef Water & Power,2023,A,1,0,0,0,0,1,1,0,0,1,1,2
+2082.SR,ACWA Power,2024,BBB-,1,0,0,0,0,0,1,0,1,1,1,2
+2082.SR,ACWA Power,2023,BBB-,1,0,0,0,0,0,1,0,1,1,1,2
+2082.SR,ACWA Power,2022,BBB-,1,0,0,0,0,0,1,0,1,1,1,2
+2082.SR,ACWA Power,2021,BBB-,1,0,0,0,0,0,1,0,1,1,1,2
+2222.SR,Saudi Aramco,2024,A+,1,0,0,0,0,0,1,0,0,1,1,0
+2222.SR,Saudi Aramco,2023,A+,1,0,0,0,0,0,1,0,0,1,1,0
+2222.SR,Saudi Aramco,2022,A,1,0,0,0,0,0,1,0,1,1,1,0
+2222.SR,Saudi Aramco,2021,A,1,0,0,0,0,0,1,0,1,1,1,0
+2280.SR,Almarai,2024,BBB-,1,0,0,0,0,0,1,0,0,1,1,1
+2382.SR,ADES,2024,B+,1,0,0,0,0,1,0,0,1,0,1,2
+2382.SR,ADES,2023,B+,1,0,0,0,0,1,1,0,0,0,1,2
+2382.SR,ADES,2022,B+,1,0,1,0,0,0,0,0,0,1,1,2
+3008.SR,Al Kathiri (AKHC),2023,BBB-,0,0,0,0,0,1,1,0,0,1,1,0
+3008.SR,Al Kathiri (AKHC),2022,BBB-,0,0,0,0,0,1,1,0,0,1,1,0
+3008.SR,Al Kathiri (AKHC),2021,BBB-,0,0,0,0,0,1,1,0,0,1,0,0
+4290.SR,Alkhaleej Training,2024,BBB+,0,0,0,0,0,0,1,0,1,1,1,2
+4290.SR,Alkhaleej Training,2023,BBB+,0,0,1,0,0,0,1,0,1,1,1,2
+4321.SR,Cenomi Centers,2024,BB,1,0,0,0,0,1,1,0,0,1,1,2
+4321.SR,Cenomi Centers,2023,BB,1,0,0,0,0,1,1,0,0,1,1,2
+4321.SR,Cenomi Centers,2022,BB,1,0,0,0,0,1,1,0,0,1,1,2
+5110.SR,Saudi Energy,2024,A+,1,0,0,0,0,1,1,0,0,1,1,2
+5110.SR,Saudi Energy,2023,A+,1,0,0,0,0,1,1,0,0,1,1,2
+5110.SR,Saudi Energy,2022,A,1,0,0,0,0,1,1,0,0,1,1,2
+5110.SR,Saudi Energy,2021,A,1,0,0,0,0,1,1,0,0,1,1,2
+7010.SR,Saudi Telecom (STC),2024,AAA,1,0,0,0,0,1,1,0,1,1,1,2
+7010.SR,Saudi Telecom (STC),2023,AAA,1,0,0,0,0,1,1,0,0,1,1,2
+7010.SR,Saudi Telecom (STC),2022,AAA,1,0,0,0,0,1,1,1,1,1,1,2
+7010.SR,Saudi Telecom (STC),2021,AAA,1,0,0,0,0,1,1,1,0,1,1,2
+7020.SR,Mobily,2024,AA,1,0,0,0,0,1,1,0,0,1,1,2
+7020.SR,Mobily,2023,AA,1,0,0,0,0,1,1,0,0,1,1,2
+7030.SR,Zain Saudi Arabia,2024,A,1,0,0,0,0,1,1,0,0,1,1,2
+7030.SR,Zain Saudi Arabia,2023,A,1,0,0,0,0,1,1,0,0,1,1,2
+9535.SR,Ladun Investment,2024,BBB+,0,0,0,0,0,1,1,0,0,0,0,1
+9568.SR,Mayar Holding,2024,BB,0,0,0,0,0,1,1,0,0,1,0,1
+9619.SR,Multi Business Group,2024,BB+,0,0,0,0,0,1,0,0,0,1,1,1

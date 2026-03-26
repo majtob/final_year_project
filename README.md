@@ -75,92 +75,102 @@ cp .env.example .env
 # Edit .env with your API keys (NewsAPI, etc.)
 ```
 
-### 3. Initialize Data Structure
+### 3. Rebuild processed datasets
+
+From the repo root (`mxa1438/`), ensure templates and source CSVs are in place (`data/templates/kams_priority.csv`, `data/processed/ratings_with_financials.csv`, `data/processed/ratings_financials_sentiment.csv` as applicable), then:
 
 ```bash
-python scripts/init_data.py
+python scripts/rebuild_processed_datasets.py
 ```
 
-### 4. Collect Data
+Optional: add `--yfinance` to refresh annual financials from Yahoo Finance into `ratings_with_financials.csv` before slicing ratios.
+
+To refresh **news sentiment** from cached `data/raw/news/*_news.json` with **FinBERT** (updates `ratings_financials_sentiment.csv`, then rebuild as above):
 
 ```bash
-# Collect market data
-python scripts/sync_market_data.py --tickers 2222.SR 1111.SR
-
-# Collect filings (after populating inventory)
-python src/pipelines/ingest_filings.py --inventory data/data_inventory.json
-
-# Collect news
-python src/pipelines/collect_news.py --inventory data/data_inventory.json
-
-# Collect Tassnief ratings
-python src/pipelines/collect_ratings.py --inventory data/data_inventory.json
+python scripts/collect_news_sentiment_finbert.py
 ```
 
-### 5. Extract Features
+See `docs/FINBERT_NEWS_SENTIMENT.md`.
+
+To **fill missing raw news** for every `(ticker, fiscal_year)` in `kams_processed.csv` (MarketAux + optional ticker-alias copies, e.g. `2070.SR` → `7204.SR`):
 
 ```bash
-python src/pipelines/extract_features.py --input data/processed --output data/features
+# Optional: see gaps without writing
+python scripts/fetch_kams_news_marketaux.py --dry-run
+
+export MARKETAUX_API_KEY="your_token"   # or put MARKETAUX_API_KEY in mxa1438/.env
+python scripts/fetch_kams_news_marketaux.py
+
+# If some JSON files exist but have zero articles (rate limits, etc.):
+python scripts/fetch_kams_news_marketaux.py --refetch-empty
 ```
 
-### 6. Train Model
+Then FinBERT + rebuild as above. **Never commit API keys**; add `mxa1438/.env` to `.gitignore` if you use it (already ignored here).
+
+**Figures missing on Yahoo:** add rows to `data/templates/saudiexchange_financial_supplement.csv` (amounts in the same currency as the annual report, usually SAR). Use the same `ticker` and `fiscal_year` as in `ratings_with_financials.csv`. Columns: `total_assets`, `total_liabilities`, `total_equity`, `current_assets`, `current_liabilities`, `retained_earnings`, `operating_profit` (EBIT or operating income), optional `statement_period_end`, `yfinance_sector`, `yfinance_industry`, `source_url`, `notes`. Rebuild recalculates `liquid`, `cumprof`, `profitab`, `leverage` and merges them in. You can use `ebit` instead of `operating_profit` if you prefer.
+
+Rebuild also drops `outlook`, `rating_action`, and `data_available` from `ratings_with_financials.csv` (they are not used for modeling).
+
+This writes:
+
+- `data/processed/kams_processed.csv`
+- `data/processed/financial_ratios_processed.csv`
+- `data/processed/news_features_processed.csv`
+- `data/processed/merged_multisource_training.csv` (inner join used by the app and LLM prep)
+
+### 4. Train XGBoost (multisource)
 
 ```bash
-python src/models/train_classifier.py --features data/features/features.parquet --output models/
+python models/xgboost_with_kams.py    # financial ratios + KAM dummies
+python models/xgboost_full.py         # + news sentiment features
 ```
 
-### 7. Generate Verdicts
+On macOS, XGBoost may require `brew install libomp`.
+
+### 5. Streamlit demo
 
 ```bash
-python src/models/generate_verdicts.py --model models/xgboost_model.pkl --output results/verdicts/
+streamlit run app.py
 ```
 
-### 8. Evaluate
+Reads `merged_multisource_training.csv` (rows with complete ratio columns).
+
+### 6. LLM verdicts and QLoRA (optional, local GPU)
 
 ```bash
-python src/evaluation/evaluate_model.py --predictions results/predictions.csv --verdicts results/verdicts/
+python models/prepare_finetune_data.py
+python models/finetune_qwen.py
+python models/evaluate_finetune.py
 ```
+
+See `docs/DOCKER.md` for a CPU-only container that runs `app.py` without PyTorch.
 
 ## Project Structure
 
 ```
 mxa1438/
+├── app.py                      # Streamlit demo
 ├── data/
-│   ├── raw/                    # Original filings (PDFs, HTML, XLS)
-│   ├── interim/                # Parsed text, extracted tables
-│   ├── processed/              # Clean company-period data
-│   ├── market/                 # yfinance market data
-│   ├── news/                   # News articles and sentiment
-│   ├── ratings/                # Tassnief ratings
-│   └── features/               # Extracted feature vectors
-│
-├── src/
-│   ├── config/                 # Configuration and schemas
-│   ├── pipelines/              # Data collection and processing
-│   │   ├── ingest_filings.py   # Download Tadawul filings
-│   │   ├── collect_news.py     # Fetch news from APIs
-│   │   ├── collect_ratings.py  # Collect Tassnief ratings
-│   │   ├── extract_kams.py     # Extract Key Audit Matters
-│   │   └── extract_features.py # Feature engineering pipeline
-│   ├── models/
-│   │   ├── train_classifier.py # Train XGBoost model
-│   │   ├── generate_verdicts.py# LLM verdict generation
-│   │   └── prompts.py          # Prompt templates
-│   ├── evaluation/
-│   │   ├── evaluate_model.py   # ML model evaluation
-│   │   ├── evaluate_verdicts.py# Verdict quality assessment
-│   │   └── metrics.py          # Evaluation metrics
-│   └── utils/
-│       ├── io.py               # Data I/O helpers
-│       ├── logging.py          # Logging configuration
-│       └── validation.py       # Schema validation
-│
-├── models/                     # Trained model artifacts
-├── results/                    # Predictions and verdicts
-├── notebooks/                  # Exploration notebooks
-├── tests/                      # Unit tests
-├── docs/                       # Documentation
-└── logs/                       # Pipeline logs
+│   ├── templates/              # kams_priority, ratings_scraped, ticker_mapping, …
+│   ├── processed/              # *_processed.csv, merged_multisource_training.csv
+│   └── raw/                    # financials/, news/ caches
+├── scripts/
+│   ├── rebuild_processed_datasets.py
+│   ├── collect_news_sentiment_finbert.py
+│   └── fetch_kams_news_marketaux.py
+├── models/
+│   ├── xgboost_with_kams.py
+│   ├── xgboost_full.py
+│   ├── llm_verdict.py
+│   ├── prepare_finetune_data.py
+│   ├── finetune_qwen.py
+│   ├── evaluate_finetune.py
+│   ├── improve_verdicts.py
+│   └── lora_adapter/
+├── results/                    # JSON metrics, verdicts/
+├── figures/
+└── docs/                       # PROJECT_REPORT.md, DOCKER.md, …
 ```
 
 ## Data Sources
@@ -175,22 +185,14 @@ mxa1438/
 
 ## Feature Categories
 
-### Financial Ratios
-- Liquidity: Current ratio, quick ratio
-- Leverage: Debt/equity, debt/assets
-- Coverage: Interest coverage, DSCR
-- Profitability: ROA, ROE, net margin
-- Efficiency: Asset turnover
-- Growth: Revenue growth
+### Financial ratios (Altman-style, in processed CSVs)
+- `liquid`, `cumprof`, `profitab`, `leverage` (definitions match `app.py` / XGBoost scripts)
 
-### KAM Features
-- KAM count and categories
-- Going concern, impairment, revenue recognition flags
-- Severity score
+### KAM features (paper-aligned dummies)
+- Category indicators (e.g. going concern, revenue, assets, liabilities, other) plus counts as built in `kams_processed.csv`
 
-### News Features
-- Article count, sentiment scores
-- Event flags (litigation, expansion, regulatory)
+### News features
+- `sentiment_mean`, `sentiment_std`, positive/negative proportions, `news_count` from **FinBERT** aggregates (see `news_features_processed.csv`, `docs/FINBERT_NEWS_SENTIMENT.md`)
 
 ## Evaluation Metrics
 
@@ -252,8 +254,8 @@ pytest tests/
 ### Code Quality
 
 ```bash
-black src/ scripts/
-flake8 src/ scripts/
+black models/ scripts/ app.py
+flake8 models/ scripts/ app.py
 ```
 
 ## License

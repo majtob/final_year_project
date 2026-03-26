@@ -1,0 +1,50 @@
+{
+  "ticker": "2082.SR",
+  "year": 2023,
+  "fetch_date": "2026-03-26T08:20:52.841720+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2082.SR",
+      "title": "ACWA Power signs key agreements with these European firms",
+      "description": "ACWA Power signed the cooperation agreements at the Saudi-Italian Investment Forum in Milan on September 4 to boost work on green hydrogen, water desalination, and R&D.",
+      "snippet": "Image: ACWA Power\n\nSaudi-listed ACWA Power has signed strategic agreements with six Italian partners at the Saudi-Italian Investment Forum in Milan on September...",
+      "published_at": "2023-09-04T10:09:20.000000Z",
+      "source_name": "gulfbusiness.com",
+      "url": "https://gulfbusiness.com/acwa-power-signs-deals-with-6-european-entities/",
+      "search_term": "ACWA Power",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2082.SR",
+      "title": "Bupa Arabia, ACWA Power scale 52-week highs",
+      "description": "Tadawul trading screen\r\n\r\n\r\nShares of Bupa Arabia for Cooperative Insurance Co. (Bupa Arabia) and ACWA Power Co. (ACWA Power) hit their highest le",
+      "snippet": "Tadawul trading screen\n\nShares of Bupa Arabia for Cooperative Insurance Co. (Bupa Arabia) and ACWA Power Co. (ACWA Power) hit their highest levels in 52 weeks t...",
+      "published_at": "2023-10-16T15:29:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1677138",
+      "search_term": "8210.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2082.SR",
+      "title": "ACWA Power inks clean energy deals with Chinese firms",
+      "description": "The MoUs between Acwa power and two Chinese firms will cover green hydrogen and ammonia, global renewable energies, and integrated smart energies",
+      "snippet": "Image: ACWA Power\n\nSaudi-listed ACWA Power has signed key MoUs with two Chinese firms to promote collaboration in areas such as green hydrogen and ammonia, glob...",
+      "published_at": "2023-09-14T00:41:03.000000Z",
+      "source_name": "gulfbusiness.com",
+      "url": "https://gulfbusiness.com/acwa-power-clean-energy-deal-with-chinese-firms/",
+      "search_term": "ACWA Power",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

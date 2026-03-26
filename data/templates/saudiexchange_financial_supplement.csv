@@ -1,0 +1,31 @@
+ticker,fiscal_year,total_assets,total_liabilities,total_equity,current_assets,current_liabilities,retained_earnings,operating_profit,statement_period_end,yfinance_sector,yfinance_industry,source_url,notes
+2070.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Perfect Presentation for Commercial Services Company
+2081.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Alkhorayef for Water and Power Technologies Company
+4004.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Middle East Healthcare Company
+4007.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Al Hammadi Holding Company
+4013.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Dr. Sulaiman Al-Habib Medical Services Group Company
+4263.SR,2025,3232436000,1830127000,1402309000,1978093000,486677000,501141000,709416000,2024-12-31,Industrials,Air Freight & Logistics,https://sal.sa/report2024/financial-statements/statement-of-financial-position,FY2024 consolidated (SAR); mapped to ratings row fiscal_year 2025 as latest audited statements at rating date
+4290.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Alkhaleej Training & Education Company
+4321.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Arabian Centers Company
+6004.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: CATRION Catering Holding Company
+7010.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Saudi Telecom Company (STC)
+7020.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Etihad Etisalat Company (Mobily)
+7030.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Mobile Telecommunication Company Saudi Arabia (Zain Saudi Arabia)
+9511.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Sumou Real Estate Company
+9535.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Ladun Investment Company
+9619.SR,2025,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Multi Business Group for Projects Company
+2070.SR,2024,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Perfect Presentation Commercial Services Company
+2120.SR,2024,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Middle East Paper Company
+2210.SR,2024,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Napco National
+9578.SR,2024,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Atlas Elevators Company for General Trading and Contracting (Unsolicited Rating)
+2070.SR,2023,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Perfect Presentation Commercial Services Company
+2210.SR,2023,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Napco National
+9511.SR,2023,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Sumou Real Estate Company
+2070.SR,2022,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Perfect Presentation Commercial Services Company
+2382.SR,2022,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: ADES
+9511.SR,2022,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Sumou Real Estate Company
+9535.SR,2022,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Ladun Investment Company
+2082.SR,2021,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: ACWA Power
+2222.SR,2021,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Saudi Aramco
+5110.SR,2021,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Saudi Energy
+7010.SR,2021,,,,,,,,,,,,Fill from Tadawul / annual report (SAR). Company: Saudi Telecom Company

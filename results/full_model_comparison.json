@@ -1,6 +1,6 @@
 {
-  "date": "2026-02-22T02:49:31.962049",
-  "dataset_size": 23,
+  "date": "2026-03-26T12:35:32.007996",
+  "dataset_size": 46,
   "classes": [
     "A",
     "AA",
@@ -8,27 +8,27 @@
     "BBB"
   ],
   "class_distribution": {
-    "A": 4,
+    "A": 18,
     "AA": 6,
-    "BB": 2,
-    "BBB": 11
+    "BB": 6,
+    "BBB": 16
   },
   "models": {
     "financials_only": {
-      "accuracy": 0.6515151515151515,
-      "std": 0.015151515151515138
+      "accuracy": 0.5688888888888888,
+      "std": 0.0979795897113271
     },
     "financials_kams": {
-      "accuracy": 0.6515151515151515,
-      "std": 0.015151515151515138
+      "accuracy": 0.6511111111111111,
+      "std": 0.08595146491472762
     },
     "financials_sentiment": {
-      "accuracy": 0.3068181818181818,
-      "std": 0.05681818181818182
+      "accuracy": 0.6133333333333333,
+      "std": 0.12773429211733256
     },
     "full_model": {
-      "accuracy": 0.3068181818181818,
-      "std": 0.05681818181818182
+      "accuracy": 0.7177777777777777,
+      "std": 0.08652409926191904
     }
   },
   "feature_sets": {
@@ -39,12 +39,11 @@
       "leverage"
     ],
     "kam": [
-      "kam_going_concern",
-      "kam_revenue",
-      "kam_assets",
-      "kam_liabilities",
-      "kam_other",
-      "kam_count"
+      "GCKAM",
+      "REVKAM",
+      "ASSETKAM",
+      "LIABKAM",
+      "OTHERKAM"
     ],
     "sentiment": [
       "sentiment_mean",

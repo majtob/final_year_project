@@ -1,0 +1,92 @@
+{
+  "ticker": "7204.SR",
+  "year": 2023,
+  "fetch_date": "2026-02-22T02:47:27.216198",
+  "article_count": 6,
+  "articles": [
+    {
+      "ticker": "7204.SR",
+      "title": "Perfect Presentation rolls out SAR 84.5m project contract",
+      "description": "gence Authority (SDAIA) to secure short message service (SMS) and digital connectivity with …",
+      "snippet": "Riyadh – Mubasher: Perfect Presentation for Commercial Services Company (2P) announced a SAR 84.45 million deal with Saudi Data and Artificial Intelligence Au...",
+      "published_at": "2023-06-12T12:09:43.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4140841/Perfect-Presentation-rolls-out-SAR-84-5m-project-contract",
+      "search_term": "Perfect Presentation",
+      "sentiment_compound": 0.7506,
+      "sentiment_pos": 0.28,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.72
+    },
+    {
+      "ticker": "7204.SR",
+      "title": "Perfect Presentation obtains SAR 235m loan from Riyad Bank",
+      "description": "SAR 235 million on 14 March 2023. The financing deal is secured by promissory notes worth the …",
+      "snippet": "Riyadh – Mubasher: Perfect Presentation for Commercial Services Company (2P) inked a Sharia-compliant facility agreement with Riyad Bank at a value of SAR 235...",
+      "published_at": "2023-03-16T08:11:11.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4090686/Perfect-Presentation-obtains-SAR-235m-loan-from-Riyad-Bank",
+      "search_term": "Perfect Presentation",
+      "sentiment_compound": 0.8481,
+      "sentiment_pos": 0.307,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.693
+    },
+    {
+      "ticker": "7204.SR",
+      "title": "Perfect Moment Begins U.S. IPO Plan (Pending:PMNT)",
+      "description": "Perfect Moment has filed for a $15 million IPO to raise funds for general corporate purposes and working capital. Read more to see a detailed analysis on PMNT.",
+      "snippet": "David Trood/DigitalVision via Getty Images\n\nA Quick Take On Perfect Moment Ltd.\n\nPerfect Moment Ltd. (PMNT) has filed to raise $15 million in an IPO of its comm...",
+      "published_at": "2023-10-11T17:11:19.000000Z",
+      "source_name": "seekingalpha.com",
+      "url": "https://seekingalpha.com/article/4640223-perfect-moment-begins-u-s-ipo-plan",
+      "search_term": "Perfect Presentation",
+      "sentiment_compound": 0.8126,
+      "sentiment_pos": 0.183,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.817
+    },
+    {
+      "ticker": "7204.SR",
+      "title": "Tadawul: 2P, Savola hit 52-week lows",
+      "description": "Tadawul trading screen\r\n\r\n\r\nShares of Perfect Presentation for Commercial Services Co. (2P) andSavola Group, hittheir highest levels in 52 weeks t",
+      "snippet": "Tadawul trading screen\n\nShares of Perfect Presentation for Commercial Services Co. (2P) and Savola Group, hit their highest levels in 52 weeks today, Aug. 2, da...",
+      "published_at": "2023-08-02T15:23:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1660968",
+      "search_term": "2P Company",
+      "sentiment_compound": 0.6249,
+      "sentiment_pos": 0.186,
+      "sentiment_neg": 0.057,
+      "sentiment_neu": 0.757
+    },
+    {
+      "ticker": "7204.SR",
+      "title": "2P, Leejam among 4 firms at 52-week highs",
+      "description": "Tadawul trading screen\r\n\r\n\r\nFourstocks, including LeejamSports Co. (Fitness Time) and Arabian Drilling Co., hittheir highest levels in 52 weeks to",
+      "snippet": "Tadawul trading screen\n\nFour stocks, including Leejam Sports Co. (Fitness Time) and Arabian Drilling Co., hit their highest levels in 52 weeks today, Aug. 3, da...",
+      "published_at": "2023-08-03T14:07:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1661241",
+      "search_term": "2P Company",
+      "sentiment_compound": 0.2732,
+      "sentiment_pos": 0.072,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.928
+    },
+    {
+      "ticker": "7204.SR",
+      "title": "Canacol Energy Ltd. Achieves 169% 2P Reserve Replacement Ratio Increasing 2P Reserves to 652 Bcfe with a Before Tax Value of US$1.9 Billion",
+      "description": "CALGARY, Alberta, March  21, 2023  (GLOBE NEWSWIRE) -- Canacol Energy Ltd. (“Canacol” or the “Corporation”) (TSX:CNE; OTCQX:CNNEF; BVC:CNEC) is pleased to...",
+      "snippet": "CALGARY, Alberta, March 21, 2023 (GLOBE NEWSWIRE) -- Canacol Energy Ltd. (“Canacol” or the “Corporation”) (TSX:CNE; OTCQX:CNNEF; BVC:CNEC) is pleased to...",
+      "published_at": "2023-03-21T11:30:00.000000Z",
+      "source_name": "globenewswire.com",
+      "url": "https://www.globenewswire.com/news-release/2023/03/21/2631174/0/en/Canacol-Energy-Ltd-Achieves-169-2P-Reserve-Replacement-Ratio-Increasing-2P-Reserves-to-652-Bcfe-with-a-Before-Tax-Value-of-US-1-9-Billion.html",
+      "search_term": "2P Company",
+      "sentiment_compound": 0.8176,
+      "sentiment_pos": 0.192,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 0.808
+    }
+  ]
+}

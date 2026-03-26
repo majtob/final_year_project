@@ -1,0 +1,50 @@
+{
+  "ticker": "2082.SR",
+  "year": 2021,
+  "fetch_date": "2026-03-26T08:20:48.427964+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2082.SR",
+      "title": "Air Products and Chemicals : Aramco, Air Products, ACWA Power, and Air Products Qudra Sign Asset Acquisition and Project Financing Agreements for $12 Billion ASU/Gasification/Power Joint Venture in Ja",
+      "description": "DHAHRAN, Kingdom of Saudi Arabia and RIYADH, Kingdom of Saudi Arabia and LEHIGH VALLEY, Pa., Sept. 27, 2021 /PRNewswire/ -- Aramco, Air Products , ACWA Power and Air Products Qudra... | September 27,  2021",
+      "snippet": "DHAHRAN, Kingdom of Saudi Arabia and RIYADH, Kingdom of Saudi Arabia and LEHIGH VALLEY, Pa., Sept. 27, 2021 /PRNewswire/ -- Aramco, Air Products (NYSE: APD), AC...",
+      "published_at": "2021-09-27T13:01:18.000000Z",
+      "source_name": "marketscreener.com",
+      "url": "https://www.marketscreener.com/quote/stock/AIR-PRODUCTS-AND-CHEMICAL-11666/news/Air-Products-and-Chemicals-Aramco-Air-Products-ACWA-Power-and-Air-Products-Qudra-Sign-Asset-Acq-36525836/",
+      "search_term": "APD",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2082.SR",
+      "title": "Aramco, Air Products, ACWA Power, And Air Products Qudra Sign Asset Acquisition And Project Financing Agreements For $12 Billion ASU/Gasification/Power Joint Venture In Jazan, Saudi Arabia",
+      "description": "DHAHRAN, Kingdom of Saudi Arabia and RIYADH, Kingdom of Saudi Arabia and LEHIGH VALLEY, Pa., Sept. 27, 2021 /PRNewswire/ -- Aramco, Air Products APD, ACWA Power",
+      "snippet": "- The JV formed in 2018 to enhance the overall value of Jazan refinery and integrated gasification combined cycle power plant, aiding in transforming the Jazan ...",
+      "published_at": "2021-09-27T13:00:00.000000Z",
+      "source_name": "thestreet.com",
+      "url": "https://www.thestreet.com/press-releases/aramco-air-products-acwa-power-and-air-products-qudra-sign-asset-acquisition-and-project-financing-agreements-for-12-billion-asu-gasification-power-joint-venture-in-jazan-saudi-arabia-15780496",
+      "search_term": "APD",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2082.SR",
+      "title": "EFG Hermes E : Completes Advisory on ACWA Power's USD 1.2 Billion Listing on the Saudi Stock Exchange (Tadawul)",
+      "description": "EFG Hermes Completes Advisory on ACWA Power's USD 1.2 Billion Listing on the Saudi Stock Exchange \n    \n    \n      The listing is one of the largest offerings in Saudi Arabia since the 2019 IPO... | October 11,  2021",
+      "snippet": "The listing is one of the largest offerings in Saudi Arabia since the 2019 IPO of Saudi Aramco, positioning EFG Hermes once again at the forefront of advisory f...",
+      "published_at": "2021-10-11T10:12:12.000000Z",
+      "source_name": "marketscreener.com",
+      "url": "https://www.marketscreener.com/quote/stock/EFG-HERMES-HOLDING-S-A-E-6493048/news/EFG-Hermes-E-Completes-Advisory-on-ACWA-Power-s-USD-1-2-Billion-Listing-on-the-Saudi-Stock-Exchang-36650077/",
+      "search_term": "2081.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

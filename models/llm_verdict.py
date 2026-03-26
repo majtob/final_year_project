@@ -19,8 +19,13 @@ from pathlib import Path
 from datetime import datetime
 
 PROJECT_ROOT = Path(__file__).parent.parent
-DATA_FILE = PROJECT_ROOT / "data" / "processed" / "model_training_data_v2.csv"
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from models.multisource_data import FULL_FEATURE_COLS, MERGED_TRAINING
+
 VERDICTS_DIR = PROJECT_ROOT / "results" / "verdicts"
+DATA_FILE = MERGED_TRAINING
 ADAPTER_DIR = PROJECT_ROOT / "models" / "lora_adapter"
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
@@ -31,9 +36,9 @@ QWEN_MAX_SEQ_LENGTH = 1024
 
 FINETUNED_SYSTEM_PROMPT = (
     "You are a credit analyst specializing in Saudi Exchange (Tadawul) listed companies. "
-    "Given a company's financial ratios and ML model prediction, generate a structured "
-    "credit verdict as a JSON object. Every claim must cite specific ratio values. "
-    "Do not invent information beyond what is provided."
+    "Given financial ratios, auditor Key Audit Matter (KAM) dummies, FinBERT news aggregates, "
+    "and a multicategory ML prediction (AA/A/BBB/BB), produce a structured JSON credit verdict. "
+    "Cite specific numbers from the prompt only; do not invent facts."
 )
 
 _finetuned_model = None
@@ -66,6 +71,28 @@ RATIO_DESCRIPTIONS = {
                  'reliance on debt financing.'),
 }
 
+KAM_DESCRIPTIONS = {
+    'GCKAM': 'Auditor Key Audit Matter: going concern (1=present)',
+    'REVKAM': 'KAM: revenue recognition (1=present)',
+    'ASSETKAM': 'KAM: impairment / assets (1=present)',
+    'LIABKAM': 'KAM: liabilities (1=present)',
+    'OTHERKAM': 'KAM: other audit topics (1=present)',
+}
+
+SENTIMENT_DESCRIPTIONS = {
+    'sentiment_mean': 'FinBERT mean article score (≈ P(pos)−P(neg))',
+    'sentiment_std': 'Dispersion of FinBERT scores across articles',
+    'sentiment_pos_pct': 'Share of articles scored positive by FinBERT',
+    'sentiment_neg_pct': 'Share of articles scored negative by FinBERT',
+    'news_count': 'Number of news articles in the fiscal year',
+}
+
+
+def _bucket_for_category(category: str) -> str:
+    if category in ('AA', 'A', 'BBB'):
+        return 'Investment-grade (AA / A / BBB buckets)'
+    return 'Speculative (BB bucket)'
+
 
 def check_ollama():
     """Check if Ollama is running and return available model name."""
@@ -97,8 +124,10 @@ def load_finetuned_model():
 
     try:
         import os
-        os.environ["HF_HOME"] = "D:\\hf_cache"
-        os.environ["TRANSFORMERS_CACHE"] = "D:\\hf_cache"
+
+        _hf = str(PROJECT_ROOT / ".hf_cache")
+        os.environ.setdefault("HF_HOME", _hf)
+        os.environ.setdefault("TRANSFORMERS_CACHE", _hf)
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
         from peft import PeftModel
@@ -168,17 +197,30 @@ def generate_finetuned_verdict(company_row, predicted_rating, confidence, actual
     agency = company_row.get('rating_agency', 'N/A')
     year = int(company_row.get('fiscal_year', 0))
     actual = actual_rating or company_row.get('rating', 'N/A')
-    num_rating = RATING_TO_NUMERIC.get(predicted_rating, 0)
-    risk_class = "Investment Grade" if num_rating >= 12 else "Speculative Grade"
+    risk_class = _bucket_for_category(predicted_rating)
+
+    kam_bits = ", ".join(
+        f"{k}={int(company_row.get(k, 0) or 0)}"
+        for k in ("GCKAM", "REVKAM", "ASSETKAM", "LIABKAM", "OTHERKAM")
+    )
+    sent_bits = (
+        f"SENT_MEAN={float(company_row.get('sentiment_mean', 0) or 0):.4f}, "
+        f"SENT_STD={float(company_row.get('sentiment_std', 0) or 0):.4f}, "
+        f"POS_PCT={float(company_row.get('sentiment_pos_pct', 0) or 0):.2f}, "
+        f"NEG_PCT={float(company_row.get('sentiment_neg_pct', 0) or 0):.2f}, "
+        f"NEWS_N={int(company_row.get('news_count', 0) or 0)}"
+    )
 
     user_input = (
         f"Company: {name} | Ticker: {ticker} | Sector: {sector}\n"
         f"Fiscal Year: {year} | Agency: {agency} | Actual Rating: {actual}\n"
-        f"ML Predicted: {predicted_rating} ({risk_class}) | Confidence: {confidence:.0%}\n"
+        f"ML Predicted category: {predicted_rating} ({risk_class}) | Confidence: {confidence:.0%}\n"
         f"Ratios: LIQUID={company_row.get('liquid', 0):.4f}, "
         f"CUMPROF={company_row.get('cumprof', 0):.4f}, "
         f"PROFITAB={company_row.get('profitab', 0):.4f}, "
-        f"LEVERAGE={company_row.get('leverage', 0):.4f}"
+        f"LEVERAGE={company_row.get('leverage', 0):.4f}\n"
+        f"KAM dummies (0/1): {kam_bits}\n"
+        f"News / FinBERT aggregates: {sent_bits}"
     )
 
     messages = [
@@ -222,7 +264,24 @@ def build_prompt(company_row, predicted_rating, confidence, actual_rating=None):
 
     ratios_text = "\n".join(ratio_lines) if ratio_lines else "  No financial ratios available."
 
-    risk_class = "Investment Grade" if RATING_TO_NUMERIC.get(predicted_rating, 0) >= 12 else "Speculative Grade"
+    kam_lines = [
+        f"  - {KAM_DESCRIPTIONS[k]}: {int(company_row.get(k, 0) or 0)}"
+        for k in KAM_DESCRIPTIONS
+    ]
+    kam_text = "\n".join(kam_lines)
+
+    sent_lines = []
+    for k, lab in SENTIMENT_DESCRIPTIONS.items():
+        v = company_row.get(k)
+        if v is None or (isinstance(v, float) and np.isnan(v)):
+            continue
+        if k == "news_count":
+            sent_lines.append(f"  - {lab}: {int(v)}")
+        else:
+            sent_lines.append(f"  - {lab}: {float(v):.4f}")
+    sent_text = "\n".join(sent_lines) if sent_lines else "  (No sentiment aggregates in row)"
+
+    risk_class = _bucket_for_category(predicted_rating)
     actual_line = f"Actual Rating ({agency}): {actual_rating}" if actual_rating else "Actual Rating: Not available"
 
     prompt = f"""You are a credit analyst writing a structured credit verdict for a Saudi-listed company.
@@ -233,18 +292,24 @@ COMPANY INFORMATION:
   Rating Agency: {agency}
   Fiscal Year: {year}
 
-FINANCIAL RATIOS (Altman Z''-Score Components):
+FINANCIAL RATIOS (Altman-style components):
 {ratios_text}
 
-ML MODEL PREDICTION:
-  Predicted Rating: {predicted_rating}
-  Risk Classification: {risk_class}
-  Model Confidence: {confidence:.1%}
+KEY AUDIT MATTER (KAM) DUMMIES (1 = topic disclosed as KAM, 0 = absent):
+{kam_text}
+
+NEWS SENTIMENT (FinBERT aggregates for this fiscal year):
+{sent_text}
+
+ML MODEL PREDICTION (multicategory XGBoost: AA / A / BBB / BB):
+  Predicted category: {predicted_rating}
+  Risk bucket: {risk_class}
+  Model confidence: {confidence:.1%}
   {actual_line}
 
 TASK:
-Write a credit verdict in the following JSON format. Be specific -- cite the actual ratio values.
-Every claim must be supported by the data provided above. Do NOT invent information.
+Write a credit verdict in the following JSON format. Cite specific numbers from ratios, KAM flags,
+and sentiment fields where relevant. Do NOT invent information.
 
 {{
   "company": "{name}",
@@ -252,11 +317,11 @@ Every claim must be supported by the data provided above. Do NOT invent informat
   "fiscal_year": {year},
   "predicted_rating": "{predicted_rating}",
   "risk_classification": "{risk_class}",
-  "overall_assessment": "1-2 sentence summary of creditworthiness based on the ratios",
-  "strengths": ["list 2-3 positive factors citing specific ratio values"],
-  "weaknesses": ["list 1-3 risk factors citing specific ratio values"],
-  "key_risks": ["list 1-2 forward-looking risk items to monitor"],
-  "prediction_analysis": "Does the financial data support the predicted rating? Explain why."
+  "overall_assessment": "1-2 sentence summary using ratios + KAMs + news context",
+  "strengths": ["2-3 items citing provided numbers"],
+  "weaknesses": ["1-3 items citing provided numbers"],
+  "key_risks": ["1-2 forward-looking risks"],
+  "prediction_analysis": "Does the evidence support the predicted category? Mention KAMs/news if material."
 }}
 
 Return ONLY the JSON object, no other text."""
@@ -286,14 +351,14 @@ def generate_template_verdict(company_row, predicted_rating, confidence, actual_
     ticker = company_row.get('ticker', 'N/A')
     agency = company_row.get('rating_agency', 'N/A')
     year = int(company_row.get('fiscal_year', 0))
+    row_cat = company_row.get("rating_category")
 
     liquid = company_row.get('liquid', 0)
     cumprof = company_row.get('cumprof', 0)
     profitab = company_row.get('profitab', 0)
     leverage = company_row.get('leverage', 0)
 
-    num_rating = RATING_TO_NUMERIC.get(predicted_rating, 0)
-    risk_class = "Investment Grade" if num_rating >= 12 else "Speculative Grade"
+    risk_class = _bucket_for_category(predicted_rating)
 
     strengths = []
     weaknesses = []
@@ -367,43 +432,48 @@ def generate_template_verdict(company_row, predicted_rating, confidence, actual_
         key_risks.append("Monitor macroeconomic conditions in Saudi Arabia and sector-specific "
                          "regulatory changes that could affect creditworthiness")
 
+    nc = int(company_row.get("news_count", 0) or 0)
+    sm = float(company_row.get("sentiment_mean", 0) or 0)
+    if nc == 0:
+        key_risks.append("No news articles in cache for this year — sentiment features are neutral "
+                         "and may understate headline risk")
+    elif sm < -0.2:
+        weaknesses.append(f"Negative FinBERT news tone (sentiment_mean={sm:.3f} across {nc} articles)")
+
+    if int(company_row.get("REVKAM", 0) or 0) == 1:
+        key_risks.append("Revenue-recognition KAM flagged — review accounting judgments and disclosures")
+    if int(company_row.get("ASSETKAM", 0) or 0) == 1:
+        strengths.append("Asset / impairment KAM present — auditor focused on balance-sheet carrying values")
+
     avg_score = (liquid + cumprof + profitab) / 3
-    if risk_class == "Investment Grade" and avg_score > 0.05:
+    ig_bucket = predicted_rating in ("AA", "A", "BBB")
+    if ig_bucket and avg_score > 0.05:
         prediction_analysis = (
-            f"The financial data supports the {predicted_rating} prediction. "
-            f"The company shows adequate liquidity (LIQUID={liquid:.4f}), "
-            f"positive cumulative profitability (CUMPROF={cumprof:.4f}), and "
-            f"operational returns (PROFITAB={profitab:.4f}), consistent with "
-            f"an investment-grade classification."
+            f"Ratios align with an investment-grade-style bucket ({predicted_rating}): "
+            f"LIQUID={liquid:.4f}, CUMPROF={cumprof:.4f}, PROFITAB={profitab:.4f}, "
+            f"LEVERAGE={leverage:.4f}. KAM/news context should be read alongside these figures."
         )
-    elif risk_class == "Investment Grade" and avg_score <= 0.05:
+    elif ig_bucket and avg_score <= 0.05:
         prediction_analysis = (
-            f"The {predicted_rating} prediction is borderline. While classified as "
-            f"investment grade, the weak financial ratios (avg score={avg_score:.4f}) "
-            f"suggest the company is near the boundary between investment and speculative grade."
+            f"The model predicts {predicted_rating} but average ratio strength is modest "
+            f"(avg={avg_score:.4f}), so outcomes are sensitive to KAM and news signals."
         )
-    elif risk_class == "Speculative Grade" and avg_score < 0.05:
+    elif not ig_bucket and avg_score < 0.05:
         prediction_analysis = (
-            f"The financial data supports the {predicted_rating} speculative-grade prediction. "
-            f"Weak liquidity (LIQUID={liquid:.4f}), limited profitability (PROFITAB={profitab:.4f}), "
-            f"and modest earnings retention (CUMPROF={cumprof:.4f}) are consistent with "
-            f"below-investment-grade creditworthiness."
+            f"Weak liquidity (LIQUID={liquid:.4f}), profitability (PROFITAB={profitab:.4f}), "
+            f"and cumulative earnings (CUMPROF={cumprof:.4f}) support a {predicted_rating} / "
+            f"speculative-bucket view."
         )
     else:
         prediction_analysis = (
-            f"The {predicted_rating} prediction may be conservative. Some financial ratios "
-            f"show moderate strength (avg score={avg_score:.4f}), though the model assigns "
-            f"speculative grade based on the overall pattern of ratios."
+            f"Mixed signals: model predicts {predicted_rating} with avg ratio score {avg_score:.4f}; "
+            f"review KAM flags and FinBERT aggregates for confirmation."
         )
 
-    if actual_rating and actual_rating != predicted_rating:
-        actual_num = RATING_TO_NUMERIC.get(actual_rating, 0)
-        diff = actual_num - num_rating
-        direction = "higher" if diff > 0 else "lower"
+    if actual_rating and row_cat and str(predicted_rating) != str(row_cat):
         prediction_analysis += (
-            f" Note: the actual {agency} rating is {actual_rating}, which is {abs(diff)} notch(es) "
-            f"{direction} than predicted, suggesting the model "
-            f"{'underestimates' if diff > 0 else 'overestimates'} this company's creditworthiness."
+            f" Note: actual agency rating is {actual_rating} (category {row_cat}) vs predicted "
+            f"category {predicted_rating}."
         )
 
     overall = (
@@ -498,8 +568,18 @@ def generate_verdicts(data_path=None, mode="auto", limit=None):
     Returns list of (verdict, evaluation) tuples.
     """
     if data_path is None:
-        data_path = DATA_FILE
-    df = pd.read_csv(data_path)
+        from models.multisource_data import load_or_build_merged_training
+
+        df = load_or_build_merged_training(save=True)
+    else:
+        df = pd.read_csv(data_path)
+    df = df.dropna(subset=["liquid", "cumprof", "profitab", "leverage"], how="any").reset_index(
+        drop=True
+    )
+    if "rating_category" not in df.columns:
+        from models.xgboost_full import prepare_target
+
+        df = prepare_target(df)
 
     if mode == "auto":
         if check_finetuned():
@@ -524,36 +604,45 @@ def generate_verdicts(data_path=None, mode="auto", limit=None):
     }
     print(f"Verdict generation method: {method_labels.get(active_mode, active_mode)}")
 
-    from sklearn.ensemble import GradientBoostingClassifier
-    from sklearn.model_selection import GroupKFold, cross_val_predict
+    from sklearn.model_selection import StratifiedKFold, cross_val_predict
+    from sklearn.preprocessing import LabelEncoder
+    from xgboost import XGBClassifier
 
-    features = ['liquid', 'cumprof', 'profitab', 'leverage']
-    df['target'] = df['rating'].apply(lambda r: 0 if RATING_TO_NUMERIC.get(r, 0) >= 15 else 1)
-
-    X = df[features].values
-    y = df['target'].values
-    groups = df['ticker'].values
-
-    ml_model = GradientBoostingClassifier(n_estimators=100, max_depth=3,
-                                          learning_rate=0.1, random_state=42)
-    n_splits = min(5, len(set(groups)))
-    cv = GroupKFold(n_splits=n_splits)
-
-    y_pred = cross_val_predict(ml_model, X, y, cv=cv, groups=groups)
-    y_proba = cross_val_predict(ml_model, X, y, cv=cv, groups=groups, method='predict_proba')
+    X = df[FULL_FEATURE_COLS].values.astype(np.float64)
+    le_ml = LabelEncoder()
+    y = le_ml.fit_transform(df["rating_category"].values)
+    counts = np.bincount(y)
+    n_splits = int(min(5, counts.min()))
+    if n_splits < 2:
+        n_splits = 2
+    cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
+    xgb = XGBClassifier(
+        n_estimators=100,
+        max_depth=3,
+        learning_rate=0.1,
+        random_state=42,
+        use_label_encoder=False,
+        eval_metric="mlogloss",
+    )
+    y_pred = cross_val_predict(xgb, X, y, cv=cv)
+    y_proba = cross_val_predict(xgb, X, y, cv=cv, method="predict_proba")
 
     pred_ratings = []
-    for p, prob in zip(y_pred, y_proba):
-        confidence = float(max(prob))
-        pred_rating = "A" if p == 0 else "BBB"
-        pred_ratings.append((pred_rating, confidence))
+    for i in range(len(df)):
+        pred_ratings.append(
+            (
+                le_ml.inverse_transform([int(y_pred[i])])[0],
+                float(np.max(y_proba[i])),
+            )
+        )
 
     results = []
-    rows_to_process = df.head(limit) if limit else df
+    n_rows = min(limit, len(df)) if limit else len(df)
 
-    for idx, row in rows_to_process.iterrows():
-        pred_rating, confidence = pred_ratings[idx]
-        actual_rating = row['rating']
+    for i in range(n_rows):
+        row = df.iloc[i]
+        pred_rating, confidence = pred_ratings[i]
+        actual_rating = row["rating"]
         row_dict = row.to_dict()
         verdict = None
 
@@ -561,7 +650,7 @@ def generate_verdicts(data_path=None, mode="auto", limit=None):
             try:
                 verdict = generate_finetuned_verdict(row_dict, pred_rating, confidence, actual_rating)
                 if verdict:
-                    verdict['generation_method'] = 'finetuned_qwen'
+                    verdict["generation_method"] = "finetuned_qwen"
             except Exception as e:
                 print(f"  Fine-tuned failed for {row['ticker']}: {e}")
 
@@ -571,28 +660,34 @@ def generate_verdicts(data_path=None, mode="auto", limit=None):
                 response = query_ollama(prompt, ollama_model)
                 verdict = parse_llm_response(response)
                 if verdict:
-                    verdict['generation_method'] = f'ollama_{ollama_model}'
+                    verdict["generation_method"] = f"ollama_{ollama_model}"
             except Exception as e:
                 print(f"  Ollama failed for {row['ticker']}: {e}")
 
         if verdict is None:
             verdict = generate_template_verdict(row_dict, pred_rating, confidence, actual_rating)
-            fallback_label = 'template_fallback' if active_mode != 'template' else 'template'
-            verdict['generation_method'] = fallback_label
+            fallback_label = "template_fallback" if active_mode != "template" else "template"
+            verdict["generation_method"] = fallback_label
 
         evaluation = evaluate_verdict(verdict, row_dict)
-        results.append({
-            'verdict': verdict,
-            'evaluation': evaluation,
-            'actual_rating': actual_rating,
-            'predicted_binary': int(y_pred[idx]),
-            'actual_binary': int(y[idx]),
-        })
+        results.append(
+            {
+                "verdict": verdict,
+                "evaluation": evaluation,
+                "actual_rating": actual_rating,
+                "actual_category": row["rating_category"],
+                "predicted_category": pred_rating,
+                "category_match": pred_rating == row["rating_category"],
+            }
+        )
 
-        company_label = f"{row['ticker']} ({row['company_name'][:25]})"
-        print(f"  [{idx+1}/{len(rows_to_process)}] {company_label:<40} "
-              f"pred={pred_rating} actual={actual_rating} "
-              f"quality={evaluation['overall_score']:.0%}")
+        co = str(row.get("company_name", "") or "")
+        company_label = f"{row['ticker']} ({co[:25]})"
+        print(
+            f"  [{i + 1}/{n_rows}] {company_label:<40} "
+            f"pred={pred_rating} actual_cat={row['rating_category']} "
+            f"quality={evaluation['overall_score']:.0%}"
+        )
 
     return results
 
@@ -630,9 +725,10 @@ def save_verdicts(results, output_dir=None):
             'max_score': float(np.max(scores)),
         },
         'ml_performance': {
-            'correct_predictions': sum(1 for r in results if r['predicted_binary'] == r['actual_binary']),
+            'category_correct': sum(1 for r in results if r.get('category_match')),
             'total': len(results),
-            'accuracy': sum(1 for r in results if r['predicted_binary'] == r['actual_binary']) / max(len(results), 1),
+            'category_accuracy': sum(1 for r in results if r.get('category_match'))
+            / max(len(results), 1),
         }
     }
 
@@ -645,7 +741,9 @@ def save_verdicts(results, output_dir=None):
     print(f"  Avg quality score:   {summary['quality_metrics']['avg_overall_score']:.1%}")
     print(f"  Avg citation rate:   {summary['quality_metrics']['avg_citation_rate']:.1%}")
     print(f"  Avg number accuracy: {summary['quality_metrics']['avg_number_accuracy']:.1%}")
-    print(f"  ML accuracy:         {summary['ml_performance']['accuracy']:.1%}")
+    print(
+        f"  ML category accuracy: {summary['ml_performance']['category_accuracy']:.1%}"
+    )
     print(f"\nSaved to {output_dir}")
 
     return summary

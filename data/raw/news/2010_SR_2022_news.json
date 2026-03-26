@@ -1,0 +1,50 @@
+{
+  "ticker": "2010.SR",
+  "year": 2022,
+  "fetch_date": "2026-03-26T08:20:43.252006+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2010.SR",
+      "title": "Conductive Polymers Market to hit $8 Billion by 2032, Says Global Market Insights inc.",
+      "description": "Conductive polymers industry is expected to register 8% CAGR between 2023 and 2032 propelled by expanding global semiconductor and electronics market....",
+      "snippet": "Selbyville, Delaware, Dec. 21, 2022 (GLOBE NEWSWIRE) -- As per the report published by Global Market Insights Inc., the global Conductive Polymers Market was es...",
+      "published_at": "2022-12-21T10:10:00.000000Z",
+      "source_name": "globenewswire.com",
+      "url": "https://www.globenewswire.com/news-release/2022/12/21/2577679/0/en/Conductive-Polymers-Market-to-hit-8-Billion-by-2032-Says-Global-Market-Insights-inc.html",
+      "search_term": "2010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2010.SR",
+      "title": "Arfin India stock zooms 11% on bagging orders worth Rs 350 crore",
+      "description": "Arfin India stock climbed 11.39 per cent intraday to Rs 28.35 against the previous close of Rs 25.45 on BSE today",
+      "snippet": "Shares of Arfin India zoomed over 11% today after the firm said it has bagged purchase order from Saudi Basic Industries Corporation (SABIC), Saudi Arabia. The ...",
+      "published_at": "2022-12-19T10:39:47.000000Z",
+      "source_name": "businesstoday.in",
+      "url": "https://www.businesstoday.in/markets/company-stock/story/arfin-india-stock-zooms-11-on-bagging-orders-worth-rs-350-crore-356932-2022-12-19",
+      "search_term": "2010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2010.SR",
+      "title": "Saudi Basic Industries Corporation (SABIC) announces signing a Memorandum of Understanding with Saudi Arabian Oil Company (Saudi Aramco) and China Petroleum & Chemical Corporation (Sinopec)",
+      "description": "a Petroleum & Chemical Corporation (Sinopec) Memorandum Subject Economic and technical …",
+      "snippet": "Memorandum Subject\n\nEconomic and technical feasibility study to develop an integrated petrochemical complex with an existing refinery in Yanbu, Saudi Arabia.",
+      "published_at": "2022-12-18T05:51:45.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4052626/Saudi-Basic-Industries-Corporation-SABIC-announces-signing-a-Memorandum-of-Understanding-with-Saudi-Arabian-Oil-Company-Saudi-Aramco-and-China-Petroleum-Chemical-Corporation-Sinopec-",
+      "search_term": "2010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

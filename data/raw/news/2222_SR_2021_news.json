@@ -1,0 +1,50 @@
+{
+  "ticker": "2222.SR",
+  "year": 2021,
+  "fetch_date": "2026-03-26T08:21:01.453058+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2222.SR",
+      "title": "Biggest Companies in the World by Market Cap",
+      "description": "With Apple in the top spot, these are the biggest companies in the world by market capitalization.",
+      "snippet": "The world's biggest companies by market cap operate within a range of different market sectors, including technology, communication services, energy, consumer c...",
+      "published_at": "2021-12-22T04:57:02.000000Z",
+      "source_name": "investopedia.com",
+      "url": "https://www.investopedia.com/biggest-companies-in-the-world-by-market-cap-5212784",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2222.SR",
+      "title": "Aramco, L&T in pact to develop manufacturing capabilities in Saudi Arabia",
+      "description": "The pact is in line with the Aramco Namaat program, launched in September, which aims to tap into the vast opportunities available in Saudi Arabia to create value, as well as drive economic expansion and diversification.",
+      "snippet": "Mumbai: The Saudi Arabian Oil Company (Aramco) in collaboration with Indian conglomerate Larsen & Toubro (L&T) is developing manufacturing capabilities in Saudi...",
+      "published_at": "2021-12-07T09:27:22.000000Z",
+      "source_name": "livemint.com",
+      "url": "https://www.livemint.com/companies/news/aramco-l-t-in-pact-to-develop-manufacturing-capabilities-in-saudi-arabia-11638868674100.html",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2222.SR",
+      "title": "Saudi Arabian Oil : Aramco and Larsen & Toubro to collaborate on manufacturing sector development",
+      "description": "Media contact information\n    \n    \n      All media enquiries are handled by Saudi Aramco's Corporate Communications Department, Dhahran, Saudi Arabia.\n    \n    \n      International:... | December  7,  2021",
+      "snippet": "Disclaimer\n\nSaudi Aramco - Saudi Arabian Oil Company published this content on 07 December 2021 and is solely responsible for the information contained therein....",
+      "published_at": "2021-12-07T08:42:18.000000Z",
+      "source_name": "marketscreener.com",
+      "url": "https://www.marketscreener.com/quote/stock/SAUDI-ARABIAN-OIL-COMPANY-103505448/news/Saudi-Arabian-Oil-Aramco-and-Larsen-Toubro-to-collaborate-on-manufacturing-sector-development-37231833/",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

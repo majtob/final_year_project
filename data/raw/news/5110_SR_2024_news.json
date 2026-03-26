@@ -1,0 +1,50 @@
+{
+  "ticker": "5110.SR",
+  "year": 2024,
+  "fetch_date": "2026-03-26T08:21:35.413048+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "5110.SR",
+      "title": "MedGulf enters into health insurance contract with SEC",
+      "description": "pany (SEC) to provide health insurance services for SEC employees and their dependents. The …",
+      "snippet": "Riyadh – Mubasher: The Mediterranean and Gulf Cooperative Insurance and Reinsurance Company (MedGulf) has signed a contract with Saudi Electricity Company (SE...",
+      "published_at": "2024-12-30T19:06:31.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4386418/MedGulf-enters-into-health-insurance-contract-with-SEC",
+      "search_term": "5110.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "5110.SR",
+      "title": "SEC obtains $3.6bn facility deal co-led by listed lenders",
+      "description": "12 December 2024. The company will use the proceeds of the loan to finance general corporate …",
+      "snippet": "Riyadh – Mubasher: Saudi Electricity Company (SEC) penned a $3.60 billion (to SAR 13.50 billion) international syndicated credit facility agreement on 12 Dece...",
+      "published_at": "2024-12-15T08:14:01.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4380778/SEC-obtains-3-6bn-facility-deal-co-led-by-listed-lenders",
+      "search_term": "5110.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "5110.SR",
+      "title": "Saudi Electricity inks $13.5B international syndicated credit facility",
+      "description": "Saudi Electricity Co. signed today, Dec. 12, an international syndicated credit facility agreement worth $3.6 billion (or SAR 13.5 billion), according",
+      "snippet": "Logo of Saudi Electricity Co. (SEC)\n\nSaudi Electricity Co. signed today, Dec. 12, an international syndicated credit facility agreement worth $3.6 billion (or S...",
+      "published_at": "2024-12-12T19:55:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1775712",
+      "search_term": "5110.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

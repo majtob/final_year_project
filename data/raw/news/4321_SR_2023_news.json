@@ -1,0 +1,50 @@
+{
+  "ticker": "4321.SR",
+  "year": 2023,
+  "fetch_date": "2026-03-26T08:21:23.633212+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "4321.SR",
+      "title": "Cenomi Centers logs SAR 10.5M negotiated deal",
+      "description": "Tadawul trading screen\r\n\r\n\r\n\r\nThe Saudi Exchange (Tadawul) registered today, Dec. 27, a negotiated deal worth SAR 10.5 million on Arabian Centres",
+      "snippet": "Tadawul trading screen\n\nThe Saudi Exchange ( Tadawul ) registered today, Dec. 27, a negotiated deal worth SAR 10.5 million on Arabian Centres Co. ( Cenomi Cente...",
+      "published_at": "2023-12-27T12:46:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1694165",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Cenomi Centers sees negotiated deal worth SAR 12.2 mln",
+      "description": "Tadawul trading screen\r\n\r\n\r\nThe Saudi Exchange (Tadawul) registered today, Dec. 25, a negotiated deal worth SAR 12.2 million on Arabian Centres Co",
+      "snippet": "Tadawul trading screen\n\nThe Saudi Exchange (Tadawul) registered today, Dec. 25, a negotiated deal worth SAR 12.2 million on Arabian Centres Co. (Cenomi Centers)...",
+      "published_at": "2023-12-25T12:26:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1693657",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Saudi Arabia stocks lower at close of trade; Tadawul All Share down 0.69% By Investing.com",
+      "description": "Saudi Arabia stocks lower at close of trade; Tadawul All Share down 0.69%",
+      "snippet": "Published Dec 21, 2023 07:45AM ET\n\n© Reuters. Saudi Arabia stocks lower at close of trade; Tadawul All Share down 0.69%\n\nInvesting.com – Saudi Arabia stocks ...",
+      "published_at": "2023-12-21T12:45:03.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-lower-at-close-of-trade-tadawul-all-share-down-069-3261652",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

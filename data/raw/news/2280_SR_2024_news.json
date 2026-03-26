@@ -1,0 +1,50 @@
+{
+  "ticker": "2280.SR",
+  "year": 2024,
+  "fetch_date": "2026-03-26T08:21:07.529549+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2280.SR",
+      "title": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.28% By Investing.com",
+      "description": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.28%",
+      "snippet": "Investing.com – Saudi Arabia stocks were higher after the close on Sunday, as gains in the , and sectors led shares higher.\n\nAt the close in Saudi Arabia, the...",
+      "published_at": "2024-12-29T12:45:03.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-higher-at-close-of-trade-tadawul-all-share-up-028-3790743",
+      "search_term": "2280.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2280.SR",
+      "title": "Tadawul auction: 144.7M shares worth SAR 4.1B traded",
+      "description": "The closing auction and trade-at-last on the Saudi Exchange (Tadawul) saw 23,623 transactions on nearly 144.7 million shares, valued at about SAR 4.07",
+      "snippet": "Tadawul trading screen\n\nThe closing auction and trade-at-last on the Saudi Exchange (Tadawul) saw 23,623 transactions on nearly 144.7 million shares, valued at ...",
+      "published_at": "2024-12-19T16:21:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1777170",
+      "search_term": "2280.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2280.SR",
+      "title": "Savola deposits Almarai’s shares in bank accounts",
+      "description": "Savola Groupannounced in a statement toTadawulthat it would depositAlmarai Co.’s shares in the bank accounts of Savola’s eligible shareholders on Dec.",
+      "snippet": "Logo of Savola Group\n\nSavola Group announced in a statement to Tadawul that it would deposit Almarai Co.’s shares in the bank accounts of Savola’s eligible ...",
+      "published_at": "2024-12-19T10:47:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1777049",
+      "search_term": "2280.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

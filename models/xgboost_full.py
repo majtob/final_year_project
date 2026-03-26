@@ -2,9 +2,14 @@
 Full XGBoost Model: Financials + KAMs + News Sentiment
 
 This is the final model combining all three feature sets:
-1. Financial ratios (4): LIQUID, CUMPROF, PROFITAB, LEVERAGE
-2. KAM features (6): 5 binary categories + count
-3. Sentiment features (4): mean, std, pos_pct, neg_pct, news_count
+1. Financial ratios (4): liquid, cumprof, profitab, leverage
+2. Paper-style KAM features (Muñoz-Izquierdo et al. 2022): GCKAM, REVKAM, ASSETKAM,
+   LIABKAM, OTHERKAM
+3. Sentiment features: mean, std, pos_pct, neg_pct, news_count
+
+Data sources (see scripts/rebuild_processed_datasets.py):
+  financial_ratios_processed.csv (or financials_processed.csv if ratios file is absent),
+  kams_processed.csv, news_features_processed.csv
 
 Trains 4 models for comparison:
 - Model 1: Financials only (baseline)
@@ -26,40 +31,70 @@ import warnings
 warnings.filterwarnings('ignore')
 
 PROJECT_ROOT = Path(__file__).parent.parent
-SENTIMENT_FILE = PROJECT_ROOT / "data" / "processed" / "ratings_financials_sentiment.csv"
-KAMS_FILE = PROJECT_ROOT / "data" / "templates" / "kams_priority.csv"
+FINANCIALS_FILE = PROJECT_ROOT / "data" / "processed" / "financial_ratios_processed.csv"
+FINANCIALS_ALT = PROJECT_ROOT / "data" / "processed" / "financials_processed.csv"
+NEWS_FILE = PROJECT_ROOT / "data" / "processed" / "news_features_processed.csv"
+KAMS_FILE = PROJECT_ROOT / "data" / "processed" / "kams_processed.csv"
 RESULTS_DIR = PROJECT_ROOT / "results"
 
 FINANCIAL_COLS = ['liquid', 'cumprof', 'profitab', 'leverage']
-KAM_COLS = ['kam_going_concern', 'kam_revenue', 'kam_assets', 'kam_liabilities', 'kam_other', 'kam_count']
+KAM_COLS = ['GCKAM', 'REVKAM', 'ASSETKAM', 'LIABKAM', 'OTHERKAM']
 SENTIMENT_COLS = ['sentiment_mean', 'sentiment_std', 'sentiment_pos_pct', 'sentiment_neg_pct', 'news_count']
 
 
-def load_data():
-    """Load and merge all data sources."""
-    print("Loading data...")
-    
-    # Load sentiment+financials
-    df = pd.read_csv(SENTIMENT_FILE)
-    print(f"Sentiment+Financials: {len(df)} records")
-    
-    # Load KAMs
-    kams = pd.read_csv(KAMS_FILE)
-    kams = kams.rename(columns={'fiscal_year': 'fy_kam'})
-    kams['fy_kam'] = kams['fy_kam'].astype(int)
-    print(f"KAMs: {len(kams)} records")
-    
-    # Merge KAMs
-    df['fiscal_year'] = df['fiscal_year'].astype(int)
-    merged = pd.merge(
-        df,
-        kams[['ticker', 'fy_kam'] + KAM_COLS],
-        left_on=['ticker', 'fiscal_year'],
-        right_on=['ticker', 'fy_kam'],
-        how='inner'
+def _load_financials() -> pd.DataFrame:
+    """Ticker × year with four ratios and rating (same fallback as xgboost_with_kams)."""
+    if FINANCIALS_FILE.exists():
+        fin = pd.read_csv(FINANCIALS_FILE)
+        fin["fiscal_year"] = fin["fiscal_year"].astype(int)
+        print(f"Financial ratios: {len(fin)} records (financial_ratios_processed.csv)")
+        return fin
+    if not FINANCIALS_ALT.exists():
+        raise FileNotFoundError(
+            f"Missing both {FINANCIALS_FILE.name} and {FINANCIALS_ALT.name}"
+        )
+    fin = pd.read_csv(FINANCIALS_ALT)
+    print(f"Financial ratios: {len(fin)} records (financials_processed.csv, raw)")
+    fin["fiscal_year"] = pd.to_numeric(fin["fiscal_year"], errors="coerce").astype("Int64")
+    fin = fin.dropna(subset=["fiscal_year"])
+    fin["fiscal_year"] = fin["fiscal_year"].astype(int)
+    agency = fin["rating_agency"].astype(str).str.strip().str.lower()
+    fin = fin.assign(_pri=(agency == "tassnief").astype(int))
+    fin = fin.sort_values("_pri", ascending=False)
+    fin = fin.drop_duplicates(subset=["ticker", "fiscal_year"], keep="first").drop(
+        columns=["_pri"]
     )
+    need = ["ticker", "fiscal_year", "rating", "liquid", "cumprof", "profitab", "leverage"]
+    missing = [c for c in need if c not in fin.columns]
+    if missing:
+        raise ValueError(f"financials_processed.csv missing columns: {missing}")
+    fin = fin[need].copy()
+    print(f"Financial ratios after dedupe: {len(fin)} records")
+    return fin
+
+
+def load_data():
+    """Load and merge financial ratios, news features, and paper-style KAMs."""
+    print("Loading data...")
+
+    fin = _load_financials()
+
+    news = pd.read_csv(NEWS_FILE)
+    news["fiscal_year"] = news["fiscal_year"].astype(int)
+    print(f"News features: {len(news)} records")
+
+    kams = pd.read_csv(KAMS_FILE)
+    kams["fiscal_year"] = kams["fiscal_year"].astype(int)
+    print(f"KAMs: {len(kams)} records")
+
+    df = fin.merge(news, on=["ticker", "fiscal_year"], how="left")
+    kam_merge = ["ticker", "fiscal_year", "company_name"] + [
+        c for c in KAM_COLS if c in kams.columns
+    ]
+    kam_merge = list(dict.fromkeys([c for c in kam_merge if c in kams.columns]))
+    merged = df.merge(kams[kam_merge], on=["ticker", "fiscal_year"], how="inner")
     print(f"Merged (all three sources): {len(merged)} records")
-    
+
     return merged
 
 
@@ -77,6 +112,19 @@ def prepare_target(df):
     
     df['rating_category'] = df['rating'].apply(rating_category)
     return df
+
+
+def prepare_modeling_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """Drop rows with missing financial ratios; fill missing sentiment and KAM columns."""
+    df_clean = df.dropna(subset=FINANCIAL_COLS).copy()
+    df_clean["sentiment_mean"] = df_clean["sentiment_mean"].fillna(0)
+    df_clean["sentiment_std"] = df_clean["sentiment_std"].fillna(0)
+    df_clean["sentiment_pos_pct"] = df_clean["sentiment_pos_pct"].fillna(0)
+    df_clean["sentiment_neg_pct"] = df_clean["sentiment_neg_pct"].fillna(0)
+    df_clean["news_count"] = df_clean["news_count"].fillna(0)
+    for col in KAM_COLS:
+        df_clean[col] = df_clean[col].fillna(0).astype(int)
+    return df_clean
 
 
 def run_model(X, y, le, feature_names, model_name):
@@ -138,20 +186,7 @@ def main():
     df = load_data()
     df = prepare_target(df)
     
-    # Drop rows with missing financial data
-    all_needed = FINANCIAL_COLS + SENTIMENT_COLS
-    df_clean = df.dropna(subset=FINANCIAL_COLS).copy()
-    
-    # Fill missing sentiment with neutral values
-    df_clean['sentiment_mean'] = df_clean['sentiment_mean'].fillna(0)
-    df_clean['sentiment_std'] = df_clean['sentiment_std'].fillna(0)
-    df_clean['sentiment_pos_pct'] = df_clean['sentiment_pos_pct'].fillna(0)
-    df_clean['sentiment_neg_pct'] = df_clean['sentiment_neg_pct'].fillna(0)
-    df_clean['news_count'] = df_clean['news_count'].fillna(0)
-    
-    # Fill missing KAM values
-    for col in KAM_COLS:
-        df_clean[col] = df_clean[col].fillna(0).astype(int)
+    df_clean = prepare_modeling_dataframe(df)
     
     print(f"\nUsable records: {len(df_clean)}")
     print(f"\nRating distribution:")

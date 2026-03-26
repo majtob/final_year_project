@@ -13,7 +13,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import GroupKFold, cross_val_predict
 
 PROJECT_ROOT = Path(__file__).parent.parent
-DATA_FILE = PROJECT_ROOT / "data" / "processed" / "model_training_data_v2.csv"
+DATA_FILE = PROJECT_ROOT / "data" / "processed" / "merged_multisource_training.csv"
 VERDICTS_FILE = PROJECT_ROOT / "results" / "verdicts" / "all_verdicts.json"
 OUTPUT_FILE = PROJECT_ROOT / "data" / "processed" / "finetune_dataset.jsonl"
 
@@ -66,7 +66,7 @@ def format_input(row, pred_rating, confidence):
     """Format a single record into the user input string."""
     name = row.get('company_name', 'Unknown')
     ticker = row.get('ticker', 'N/A')
-    sector = row.get('sector', 'N/A')
+    sector = row.get('sector') or row.get('yfinance_sector', 'N/A')
     agency = row.get('rating_agency', 'N/A')
     year = int(row.get('fiscal_year', 0))
     actual = row.get('rating', 'N/A')
@@ -76,8 +76,8 @@ def format_input(row, pred_rating, confidence):
         f"Company: {name} | Ticker: {ticker} | Sector: {sector}\n"
         f"Fiscal Year: {year} | Agency: {agency} | Actual Rating: {actual}\n"
         f"ML Predicted: {pred_rating} ({risk_class}) | Confidence: {confidence:.0%}\n"
-        f"Ratios: LIQUID={row['liquid']:.4f}, CUMPROF={row['cumprof']:.4f}, "
-        f"PROFITAB={row['profitab']:.4f}, LEVERAGE={row['leverage']:.4f}"
+        f"Ratios: LIQUID={float(row['liquid']):.4f}, CUMPROF={float(row['cumprof']):.4f}, "
+        f"PROFITAB={float(row['profitab']):.4f}, LEVERAGE={float(row['leverage']):.4f}"
     )
 
 
@@ -104,6 +104,7 @@ def main():
     print("=" * 60)
 
     df = pd.read_csv(DATA_FILE)
+    df = df.dropna(subset=["liquid", "cumprof", "profitab", "leverage"], how="any")
     print(f"Loaded {len(df)} records from {DATA_FILE.name}")
 
     with open(VERDICTS_FILE) as f:

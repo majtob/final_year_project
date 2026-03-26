@@ -1,0 +1,50 @@
+{
+  "ticker": "1202.SR",
+  "year": 2024,
+  "fetch_date": "2026-03-26T08:20:35.822171+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "1202.SR",
+      "title": "Saudi wealth fund PIF hikes stake in MEPCO to 23.08%",
+      "description": "PIF said that the investment will enable MEPCO to expand its production, raise its operational efficiency, and support environmental sustainability.",
+      "snippet": "Image credit: MEPCO\n\nSaudi Arabia’s Public Investment Fund (PIF) has increased its stake in the Middle East Paper Company (MEPCO) to 23.08 per cent through a ...",
+      "published_at": "2024-01-04T10:03:05.000000Z",
+      "source_name": "gulfbusiness.com",
+      "url": "https://gulfbusiness.com/saudi-pif-increases-stake-in-mepco-to-23-08/",
+      "search_term": "MEPCO",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "1202.SR",
+      "title": "Tadawul: 12 stocks scale 52-week highs",
+      "description": "Shares of 12 companies, including Leejam Sports Co. (Fitness Time) and Al Sagr Cooperative Insurance Co., hit their highest levels in 52 weeks today,",
+      "snippet": "Tadawul trading screen\n\nShares of 12 companies, including Leejam Sports Co. (Fitness Time) and Al Sagr Cooperative Insurance Co., hit their highest levels in 52...",
+      "published_at": "2024-03-19T12:19:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1713608",
+      "search_term": "1830.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "1202.SR",
+      "title": "Tadawul: 12 stocks scale 52-week highs",
+      "description": "Shares of 12 companies, includingNational Agricultural Development Co. (NADEC), Elm Co. and National Medical Care Co., hit their highest levels in 52",
+      "snippet": "Tadawul trading screen\n\nShares of 12 companies, including National Agricultural Development Co. (NADEC), Elm Co. and National Medical Care Co., hit their highes...",
+      "published_at": "2024-02-20T12:12:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1706612",
+      "search_term": "2050.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

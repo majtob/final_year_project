@@ -1,0 +1,50 @@
+{
+  "ticker": "4321.SR",
+  "year": 2022,
+  "fetch_date": "2026-03-26T08:21:22.133521+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "4321.SR",
+      "title": "Arabian Centres, Alhokair announce full rebrand to Cenomi",
+      "description": "brand to Cenomi, according to a press release. In this regard, Arabian Centres changed its …",
+      "snippet": "Riyadh – Mubasher: Arabian Centres Company (ACC), Fawaz Abdulaziz Alhokair Company, and Fawaz Alhokair Fashion Retail Company unveiled the new full rebrand to...",
+      "published_at": "2022-12-08T14:15:21.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4050175/Arabian-Centres-Alhokair-announce-full-rebrand-to-Cenomi",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Arabian Centres Company (Cenomi Centers) invites its shareholders to attend the Extraordinary General Assembly (First Meeting) Via Modern Technology",
+      "description": "nd the Extraordinary General Assembly (first meeting), on Wednesday 28 December 2022 at 20:30, …",
+      "snippet": "Element List Explanation\n\nIntroduction The Board of Directors of Arabian Centres Company (Cenomi Centers) is pleased to invite its shareholders to attend the Ex...",
+      "published_at": "2022-12-07T12:54:17.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4049655/Arabian-Centres-Company-Cenomi-Centers-invites-its-shareholders-to-attend-the-Extraordinary-General-Assembly-First-Meeting-Via-Modern-Technology",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Arabian Centres logs SAR 374m profits in H1-22/23 initial results",
+      "description": "of fiscal year (FY) 2022/2023, versus SAR 217.10 million in H1-21/22. Revenues amounted to SAR …",
+      "snippet": "Riyadh – Mubasher: The net profits after Zakat and tax of Arabian Centres Company (ACC) widened by 72.32% to SAR 374.10 million in the first half (H1) of fisc...",
+      "published_at": "2022-11-10T11:17:27.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4037250/Arabian-Centres-logs-SAR-374m-profits-in-H1-22-23-initial-results",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

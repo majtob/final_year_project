@@ -1,6 +1,9 @@
 {
-  "date": "2026-02-22T02:39:35.818132",
-  "dataset_size": 23,
+  "date": "2026-03-26T12:35:27.986205",
+  "financials_source": "financials_processed.csv",
+  "dataset_size": 46,
+  "financial_and_combined_only": false,
+  "kams_only_full_panel_file": "results/kams_only_model_results.json",
   "features": {
     "financial": [
       "liquid",
@@ -8,32 +11,40 @@
       "profitab",
       "leverage"
     ],
-    "kam": [
-      "kam_going_concern",
-      "kam_revenue",
-      "kam_assets",
-      "kam_liabilities",
-      "kam_other",
-      "kam_count"
+    "kam_full": [
+      "AUSIZE",
+      "AUOP",
+      "EMP",
+      "GCUP",
+      "GCKAM",
+      "REVKAM",
+      "ASSETKAM",
+      "LIABKAM",
+      "OTHERKAM",
+      "FIRMAGE",
+      "FIRMSIZE",
+      "INDUSTRY"
     ],
-    "total": 10
+    "kam_note": "Same 12 columns as models/xgboost_kams_only.py",
+    "total": 16
   },
   "models": {
     "financials_only": {
-      "accuracy": 0.6515151515151515,
-      "std": 0.015151515151515138,
+      "accuracy": 0.6333333333333333,
+      "std": 0.09686442096757052,
       "paper_reference": 0.7155
     },
-    "kams_only": {
-      "accuracy": 0.4772727272727273,
-      "std": 0.022727272727272735,
-      "paper_reference": 0.7414
-    },
     "combined": {
-      "accuracy": 0.6515151515151515,
-      "std": 0.015151515151515138,
+      "accuracy": 0.7822222222222222,
+      "std": 0.09977753031397177,
       "paper_reference": 0.8404
+    },
+    "kams_only_merged_sample": {
+      "accuracy": 0.6977777777777777,
+      "std": 0.0989824775614226,
+      "paper_reference": 0.7414,
+      "note": "Same rows as financial/combined; for full KAM panel use xgboost_kams_only.py"
     }
   },
-  "improvement": 0.0
+  "improvement": 0.14888888888888885
 }

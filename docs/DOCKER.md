@@ -54,4 +54,4 @@ Then open **http://localhost:8501** in a browser.
 ## Troubleshooting
 
 - **Port in use:** change the host port, e.g. `docker run -p 8502:8501 mxa1438-demo`
-- **Missing data:** ensure `data/processed/model_training_data_v2.csv`, `figures/`, and `results/` are present in the build context (they are not excluded by `.dockerignore`)
+- **Missing data:** ensure `data/processed/merged_multisource_training.csv` (built by `python scripts/rebuild_processed_datasets.py`), plus `figures/` and `results/` if the app references them, are present in the build context (they are not excluded by `.dockerignore`)

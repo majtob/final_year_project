@@ -1,0 +1,50 @@
+{
+  "ticker": "4321.SR",
+  "year": 2024,
+  "fetch_date": "2026-03-26T08:21:25.154414+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "4321.SR",
+      "title": "The Board of Directors of Arabian Centres Company (Cenomi Centers) invites its shareholders to attend the Extraordinary General Assembly Meeting (First Meeting) via modern technology",
+      "description": "eholders to attend the Extraordinary General Assembly (first meeting), on 1061446 corresponding …",
+      "snippet": "2. Voting on adding Article (12) to the company’s bylaws regarding the company’s purchase, sale, and pledge of its own shares (attached).\n\n3. Voting on amen...",
+      "published_at": "2024-11-19T05:16:33.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4370562/The-Board-of-Directors-of-Arabian-Centres-Company-Cenomi-Centers-invites-its-shareholders-to-attend-the-Extraordinary-General-Assembly-Meeting-First-Meeting-via-modern-technology",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Taiba Q3 2024: Analyst forecasts & insights",
+      "description": "Taiba Q3 2024: Analyst forecasts & insights",
+      "snippet": "Zahrat Al Waha for Trading Co. Leejam Sports Co. Arabian Internet and Communications Services Co. ACWA POWER Co. Arabian Contracting Services Co. Saudi Tadawul ...",
+      "published_at": "2024-11-06T13:00:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/reports/quarterly-overview-report-other/45106?preview=true",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Cenomi Centers, GIB Capital launch SAR 1bn fund",
+      "description": "nt fund with an initial capital of SAR 1 billion. The fund will facilitate the Qassim land sale …",
+      "snippet": "Riyadh - Mubasher: Arabian Centres Company (Cenomi Centers) and GIB Capital partnered to establish a closed-end Shariah-compliant real estate investment fund wi...",
+      "published_at": "2024-10-09T07:02:29.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4351564/Cenomi-Centers-GIB-Capital-launch-SAR-1bn-fund",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

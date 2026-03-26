@@ -1,0 +1,50 @@
+{
+  "ticker": "5110.SR",
+  "year": 2023,
+  "fetch_date": "2026-03-26T08:21:33.886426+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "5110.SR",
+      "title": "KEIR International bags SAR 50.58M contracts in Riyadh, Al Khobar",
+      "description": "Logo ofKeir International Co.\r\n\r\n\r\nKeir International Co. signed two contracts with Saudi Electricity Co. (SEC) and National Grid SA to execute tw",
+      "snippet": "Logo of Keir International Co.\n\nKeir International Co. signed two contracts with Saudi Electricity Co. (SEC) and National Grid SA to execute two projects in Riy...",
+      "published_at": "2023-12-28T18:17:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1694572",
+      "search_term": "5110.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "5110.SR",
+      "title": "Keir International announces signing a contract with the Saudi Electricity Company for Inter-Tie Project in Al Khobar, with a total value of 26,282,343 including of the value-added tax",
+      "description": "plement the high-voltage Inter-tie project in Al Khobar city Date of Announcement of the Award …",
+      "snippet": "Element List Explanation\n\nIntroduction Keir International announces the signing of a contract with the Saudi Electricity Company on 28/12/2023 AD To implement t...",
+      "published_at": "2023-12-28T13:24:07.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4230482/Keir-International-announces-signing-a-contract-with-the-Saudi-Electricity-Company-for-Inter-Tie-Project-in-Al-Khobar-with-a-total-value-of-26-282-343-including-of-the-value-added-tax",
+      "search_term": "5110.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "5110.SR",
+      "title": "MEDGULF inks contract to provide medical coverage for Saudi Electricity’s employees",
+      "description": "Logo ofMediterranean and Gulf Cooperative Insurance and Reinsurance Co. (MEDGULF)\r\n\r\n\r\nThe Mediterranean and Gulf Cooperative Insurance and Reinsu",
+      "snippet": "Logo of Mediterranean and Gulf Cooperative Insurance and Reinsurance Co. (MEDGULF)\n\nThe Mediterranean and Gulf Cooperative Insurance and Reinsurance Co. (MEDGUL...",
+      "published_at": "2023-12-14T09:35:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1691589",
+      "search_term": "5110.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

@@ -1,17 +1,17 @@
 {
-  "generation_timestamp": "2026-02-26T12:12:02.531455",
-  "total_verdicts": 75,
+  "generation_timestamp": "2026-03-26T12:45:03.029780",
+  "total_verdicts": 46,
   "generation_method": "template",
   "quality_metrics": {
-    "avg_overall_score": 1.0,
-    "avg_citation_rate": 0.89,
-    "avg_number_accuracy": 0.9391111111111111,
-    "min_score": 1.0,
+    "avg_overall_score": 0.9945652173913043,
+    "avg_citation_rate": 0.9728260869565217,
+    "avg_number_accuracy": 0.9228260869565218,
+    "min_score": 0.875,
     "max_score": 1.0
   },
   "ml_performance": {
-    "correct_predictions": 51,
-    "total": 75,
-    "accuracy": 0.68
+    "category_correct": 33,
+    "total": 46,
+    "category_accuracy": 0.717391304347826
   }
 }

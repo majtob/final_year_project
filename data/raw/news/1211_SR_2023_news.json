@@ -1,0 +1,50 @@
+{
+  "ticker": "1211.SR",
+  "year": 2023,
+  "fetch_date": "2026-03-26T08:20:37.369192+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "1211.SR",
+      "title": "Saudi Arabia has ample opportunities with African states: Minister",
+      "description": "Bandar Alkhorayef Minister of Industry and Mineral Resources\r\n\r\n\r\nSaudi Arabia has ample opportunities for cooperation with Arab and African state",
+      "snippet": "Bandar Alkhorayef Minister of Industry and Mineral Resources\n\nSaudi Arabia has ample opportunities for cooperation with Arab and African states, especially in t...",
+      "published_at": "2023-11-10T11:01:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1683926",
+      "search_term": "1211.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "1211.SR",
+      "title": "Ivanhoe Mines and Ivanhoe Electric Congratulate Robert Friedland for Receiving Mongolia's Order of the Polar Star, the Highest State Honour for a Foreign Citizen",
+      "description": "Ivanhoe Mines   and Ivanhoe Electric   congratulate Founder and Executive Co-Chairman of Ivanhoe Mines, and Founder and Executive Chairman of Ivanhoe Electric, Robert Friedland on receiving Mongolia's...",
+      "snippet": "Ceremony held in Ulaanbaatar celebrating Mr. Friedland's valuable contributions to Mongolia's mining industry\n\nUlaanbaatar, Mongolia--(Newsfile Corp. - October ...",
+      "published_at": "2023-10-16T11:35:01.000000Z",
+      "source_name": "marketscreener.com",
+      "url": "https://www.marketscreener.com/quote/stock/IVANHOE-ELECTRIC-INC-139917630/news/Ivanhoe-Mines-and-Ivanhoe-Electric-Congratulate-Robert-Friedland-for-Receiving-Mongolia-s-Order-of-t-45069874/",
+      "search_term": "1211.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "1211.SR",
+      "title": "Saudi Arabian Mining Company (Ma'aden) announces the Deposit of Sums Resulting from Selling Fractional Stocks Following Increase of the Company’s Capital in the Accounts of Eligible Shareholders",
+      "description": "ctional Shares Sales Revenue 225484 Average Selling Price per share 42.45 Date of Depositing …",
+      "snippet": "Name of /Method of Contacting the Entity in Charge of Distributing the Fractional Shares Sales Revenue\n\nThe proceeds from the sale of the fractional shares will...",
+      "published_at": "2023-07-09T12:39:59.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4151121/Saudi-Arabian-Mining-Company-Ma-aden-announces-the-Deposit-of-Sums-Resulting-from-Selling-Fractional-Stocks-Following-Increase-of-the-Company-s-Capital-in-the-Accounts-of-Eligible-Shareholders",
+      "search_term": "1211.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

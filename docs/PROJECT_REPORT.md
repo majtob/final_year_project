@@ -170,7 +170,7 @@ Their methodology (5-fold CV, grid search, train/test split) mirrors our approac
 
 **Source:** https://tassnief.com (Saudi national credit rating agency)
 
-**Collection Method:** Selenium web scraping (`scripts/scrape_tassnief_selenium.py`)
+**Collection Method:** Selenium web scraping was used to build `data/templates/ratings_scraped.csv`; the one-off scraper was removed from the repository in favour of the consolidated `scripts/rebuild_processed_datasets.py` pipeline (re-scraping would require restoring the scraper from project history or manual export from tassnief.com).
 
 **Results:**
 - 50 rating observations scraped
@@ -196,7 +196,7 @@ Their methodology (5-fold CV, grid search, train/test split) mirrors our approac
 
 **Source:** yfinance API
 
-**Collection Script:** `scripts/collect_financials.py`
+**Collection / refresh:** Financial ratios for the KAM template rows can be rebuilt with `python scripts/rebuild_processed_datasets.py` (add `--yfinance` to pull annual statements from yfinance into `ratings_with_financials.csv` and recompute ratios). Legacy one-off collection scripts were removed in favour of this single entrypoint.
 
 **Data Retrieved:**
 - Balance Sheet (annual)
@@ -374,7 +374,7 @@ Actual A  [5   0   0   0]
 | Model | Our Result | Paper Result |
 |-------|------------|--------------|
 | Financials only | 61.54% | 71.55% |
-| KAMs only | Not yet tested | **74.14%** |
+| KAMs only | **69.09%** (5-fold CV; `kams_processed.csv` only, 55 rows — see §6.5) | **74.14%** |
 | Combined | Not yet tested | **84.04%** |
 
 **Gap Analysis:**
@@ -407,8 +407,11 @@ KAMs were manually extracted from 25 annual reports (Tadawul issuer reports).
 | Model | Features | CV Accuracy | Paper Reference |
 |-------|----------|-------------|-----------------|
 | Financials Only | 4 ratios | **65.15%** | 71.55% |
-| KAMs Only | 6 KAM features | 47.73% | 74.14% |
+| KAMs Only (merged financials∩KAM rows; KAM columns as inputs) | 6 KAM features | 47.73% | 74.14% |
+| KAMs Only (**`kams_processed.csv` only**, no financials) | 13 audit/KAM fields | **69.09%** (±8.91%) | 74.14% |
 | Combined | 10 features | **65.15%** | 84.04% |
+
+The **69.09%** row is produced by `models/xgboost_kams_only.py` (March 2026): all rows in `kams_processed.csv`, four-class rating target, stratified 5-fold CV. Full metrics and importances: `results/kams_only_model_results.json`. It is **not** the same experiment as the **47.73%** row (which used only the subset of rows that also had complete financial ratios).
 
 ### 6.3 Combined Model Feature Importance
 
@@ -439,6 +442,23 @@ KAMs were manually extracted from 25 annual reports (Tadawul issuer reports).
 
 **What DID Help:** `kam_count` (27% importance) is the most predictive feature in the combined model - companies with more KAMs tend to have lower ratings, consistent with the paper's finding that audit complexity signals credit risk.
 
+### 6.5 Standalone KAM-only XGBoost (`kams_processed.csv`)
+
+To test whether audit-report features alone predict rating **without** merging to financial ratios, we added `models/xgboost_kams_only.py`. It loads **only** `data/processed/kams_processed.csv`. **Inputs:** twelve integer fields (`AUSIZE`, `AUOP`, `EMP`, `GCUP`, `GCKAM`, `REVKAM`, `ASSETKAM`, `LIABKAM`, `OTHERKAM`, `FIRMAGE`, `FIRMSIZE`, `INDUSTRY`). **Target:** four-way `rating_category` (AA / A / BBB / BB), aligned with `xgboost_with_kams.py`.
+
+| Metric | Value |
+|--------|-------|
+| Samples | 47 (KAM panel) |
+| 5-fold stratified CV accuracy | **62.00%** (±26.23% on a small sample; high variance) |
+| In-sample train accuracy | 76.60% |
+| Artifacts | `results/kams_only_model_results.json` |
+
+**Features:** 12 modeling columns from `kams_processed.csv` (audit + firm controls + five paper KAM dummies). There is **no** aggregate `KAM_COUNT` column.
+
+**XGBoost feature importance (gain-based, in-sample fit):** in the latest run, top contributors included `AUSIZE`, `REVKAM`, `INDUSTRY`, and `OTHERKAM` (ranking varies with the panel).
+
+**Interpretation:** CV accuracy is the primary guide; training accuracy is optimistic. The benchmark is **not** directly comparable to the paper’s **74.14%** KAM-only result (different market, sample, labels, and learner).
+
 ---
 
 ## 7. Current Progress
@@ -454,18 +474,19 @@ KAMs were manually extracted from 25 annual reports (Tadawul issuer reports).
 | Train baseline XGBoost | ✅ Done | 65.15% accuracy |
 | Extract KAMs (23 companies) | ✅ Done | `kams_priority.csv` |
 | Train combined model | ✅ Done | 65.15% accuracy |
-| News sentiment collection | ✅ Done | 49/50 records |
-| Train full model (4 variants) | ✅ Done | 65.15% best accuracy |
+| KAM-only XGBoost (`kams_processed` only) | ✅ Done | ~62% 5-fold CV (47 rows); `results/kams_only_model_results.json` |
+| News sentiment collection | ✅ Done | FinBERT on cached JSON; panel aligned to KAM rows |
+| Train full XGBoost (4 variants: fin / +KAM / +sentiment / full) | ✅ Done | See `results/full_model_comparison.json` (e.g. **~71.8%** CV full model, 46 rows) |
 | Multi-agency expansion | ✅ Done | 80 ratings, 5 agencies |
 | Train expanded models | ✅ Done | 69.6% best (Fitch) |
 | Multi-model comparison | ✅ Done | 78.3% best (Decision Tree) |
 | Paper-aligned model (4 ratios, binary) | ✅ Done | 71.2% (Gradient Boosting) |
 | Historical Fitch data (2019-2024) | ✅ Done | 66.7% best (SVM) |
 | Agency handling comparison | ✅ Done | Fitch-only vs All+Agency |
-| SHAP explainability analysis | ✅ Done | Global + per-company SHAP |
+| SHAP explainability (14-feature full XGBoost) | ✅ Done | `models/shap_explainability.py` → `figures/shap_*.png`, `results/shap_report.json` |
 | Systematic error analysis | ✅ Done | 45% errors explainable |
 | KAM homogeneity analysis | ✅ Done | 65% identical profiles |
-| LLM verdict generator | ✅ Done | 75 verdicts, 94% accuracy |
+| LLM verdict generator | ✅ Done | Multisource rows + multicategory XGB; `results/verdicts/` |
 | Publication-quality visualizations | ✅ Done | 17 figures in `figures/` |
 | Streamlit demo application | ✅ Done | `app.py` |
 | Feature ablation study | ✅ Done | KAMs add -1.3% to +5.3% |
@@ -477,64 +498,51 @@ KAMs were manually extracted from 25 annual reports (Tadawul issuer reports).
 mxa1438/
 ├── README.md
 ├── requirements.txt
+├── app.py                                  # Streamlit demo (reads merged_multisource_training.csv)
 │
 ├── data/
 │   ├── templates/                          # Input templates & scraped data
 │   │   ├── ratings_scraped.csv             # Tassnief ratings (scraped)
-│   │   ├── kams_priority.csv               # KAM extraction template (148 rows)
+│   │   ├── kams_priority.csv               # KAM extraction template
 │   │   ├── kams_to_extract.csv             # Full extraction list
-│   │   ├── multi_agency_ratings.csv        # 47 companies, 5 agencies
+│   │   ├── multi_agency_ratings.csv        # Multi-agency ratings (legacy / reference)
 │   │   └── ticker_mapping.csv              # Company name → ticker mapping
 │   ├── processed/                          # ML-ready datasets
-│   │   ├── model_training_data.csv         # V1 training set (60 records)
-│   │   ├── model_training_data_v2.csv      # V2 training set (75 records)
-│   │   ├── model_fitch_only_data.csv       # Fitch-only subset
-│   │   ├── ratings_with_financials.csv     # Tassnief + financials
-│   │   ├── expanded_ratings_financials.csv # Multi-agency + financials
-│   │   ├── historical_fitch_ratings.csv    # Historical Fitch (72 records)
-│   │   ├── tadawul_ratings_clean.csv       # Tadawul disclosures + financials
-│   │   ├── tadawul_ratings_financials.csv  # Full Tadawul dataset
-│   │   └── ratings_financials_sentiment.csv
-│   └── raw/                                # Cached API responses
-│       ├── financials/                     # yfinance JSON per company
-│       └── news/                           # MarketAux news per company-year
+│   │   ├── kams_processed.csv              # Paper-style KAM dummies + metadata
+│   │   ├── financial_ratios_processed.csv  # Altman-style ratios per ticker × fiscal year
+│   │   ├── news_features_processed.csv     # News / sentiment aggregates
+│   │   ├── merged_multisource_training.csv # Inner join of the three above (+ sector, agency)
+│   │   ├── ratings_with_financials.csv     # Tassnief + financials (source for ratios slice)
+│   │   ├── ratings_financials_sentiment.csv# Optional input for news_features_processed
+│   │   └── ... (other legacy CSVs may remain for the written report)
+│   └── raw/
+│       ├── financials/                     # Cached yfinance JSON per company
+│       └── news/                           # Cached news per company-year
 │
-├── scripts/                                # Data collection & processing
-│   ├── scrape_tassnief_selenium.py          # Tassnief ratings scraper
-│   ├── scrape_tadawul_ratings.py            # Tadawul disclosure collector
-│   ├── collect_financials.py                # yfinance financial data
-│   ├── collect_news_sentiment.py            # News sentiment (MarketAux + VADER)
-│   ├── expand_dataset.py                    # Multi-agency expansion
-│   ├── build_historical_fitch.py            # Historical Fitch data
-│   ├── export_training_data.py              # Consolidate final dataset
-│   ├── merge_all_data.py                    # Merge all sources into V2
-│   ├── update_kams_template.py              # Add new companies to KAMs
-│   └── add_tickers.py                       # Ticker mapping utility
+├── scripts/
+│   ├── rebuild_processed_datasets.py       # Builds processed tables + merged training CSV (when ratings source exists)
+│   ├── align_processed_to_kams.py          # Align news/financials to `kams_processed` panel
+│   └── collect_news_sentiment_finbert.py   # FinBERT → `ratings_financials_sentiment.csv`
 │
-├── models/                                 # ML model training & comparison
-│   ├── baseline_xgboost.py                  # Initial XGBoost model
-│   ├── xgboost_with_kams.py                 # Financials + KAMs
-│   ├── xgboost_full.py                      # Financials + KAMs + sentiment
-│   ├── xgboost_expanded.py                  # Multi-agency XGBoost
-│   ├── xgboost_expanded_v2.py               # Per-agency & consensus models
-│   ├── model_comparison.py                  # 8 ML models comparison
-│   ├── model_comparison_historical.py       # Historical data comparison
-│   ├── model_paper_ratios.py                # Paper-aligned methodology
-│   ├── model_agency_comparison.py           # Fitch-only vs All+Agency
-│   └── model_v2_comparison.py               # V1 vs V2 dataset comparison
+├── models/
+│   ├── xgboost_with_kams.py                # XGBoost: financials + KAMs
+│   ├── xgboost_kams_only.py                # XGBoost: kams_processed.csv only
+│   ├── xgboost_full.py                     # XGBoost: financials + KAMs + news (4 model variants)
+│   ├── shap_explainability.py              # SHAP plots + `shap_report.json` for full multisource XGBoost
+│   ├── multisource_data.py                 # Load/build `merged_multisource_training.csv`
+│   ├── llm_verdict.py                      # Verdicts (multicategory XGB + KAM + FinBERT context)
+│   ├── prepare_finetune_data.py            # Instruction data for QLoRA
+│   ├── finetune_qwen.py / evaluate_finetune.py / improve_verdicts.py
+│   └── lora_adapter/                       # PEFT adapter weights (if trained)
 │
-├── results/                                # Model output (JSON)
-│   ├── model_v2_comparison.json             # Latest: V1 vs V2
-│   ├── agency_comparison_results.json
-│   ├── paper_methodology_results.json
-│   ├── model_comparison_results.json
-│   └── ... (other experiment results)
+├── results/                                # Model output, verdicts JSON
+├── figures/                                # Plots (some from earlier experiments)
 │
-└── docs/                                   # Documentation
-    ├── PROJECT_REPORT.md                    # This document
-    ├── FYP_layers.md                        # Project specification
-    ├── kam_extraction.md                    # KAM extraction guide
-    └── annual_report_checklist.md           # Annual report checklist
+└── docs/
+    ├── PROJECT_REPORT.md
+    ├── DOCKER.md
+    ├── FINBERT_NEWS_SENTIMENT.md
+    └── ...
 ```
 
 ---
@@ -546,24 +554,23 @@ mxa1438/
 **Source:** MarketAux API  
 **Method:** Fetched English-language news articles for each company in each fiscal year
 
-**Coverage:**
-- 49/50 records have news articles
-- Average 4.3 articles per company-year
-- Mean sentiment: +0.332 (generally positive, expected for established firms)
+**Coverage (aligned KAM panel):**
+- 47 `(ticker, fiscal_year)` rows in `kams_processed.csv`; `news_features_processed.csv` is aligned to the same keys (neutral zeros when no cached JSON).
+- Mean aggregate FinBERT score varies by row; see `data/processed/news_features_processed.csv`.
 
 **Sentiment Features:**
 
 | Feature | Description |
 |---------|-------------|
-| `sentiment_mean` | Average VADER compound score (-1 to +1) |
+| `sentiment_mean` | Mean per-article FinBERT score, roughly in −1…1 |
 | `sentiment_std` | Standard deviation (sentiment volatility) |
-| `sentiment_pos_pct` | Proportion of positive articles |
-| `sentiment_neg_pct` | Proportion of negative articles |
+| `sentiment_pos_pct` | Proportion of articles with positive FinBERT score |
+| `sentiment_neg_pct` | Proportion of articles with negative FinBERT score |
 | `news_count` | Number of articles found |
 
 ### 8.2 Sentiment Scoring
 
-Used VADER (Valence Aware Dictionary and sEntiment Reasoner) for sentiment scoring - a rule-based model specifically tuned for financial/social media text.
+Articles are scored with **FinBERT** (`ProsusAI/finbert`): a BERT model fine-tuned on financial text for three-way positive / negative / neutral classification. Cached MarketAux JSON under `data/raw/news/` is rescored with `scripts/collect_news_sentiment_finbert.py`; see `docs/FINBERT_NEWS_SENTIMENT.md` for the exact aggregation. The earlier **VADER**-based collector is legacy only.
 
 ---
 
@@ -856,7 +863,7 @@ Filters applied:
 - All 4 Altman ratios available
 - Duplicates removed (same ticker + fiscal year)
 
-**Output file:** `data/processed/model_training_data.csv`
+**Output file (historical V1 pipeline):** `data/processed/model_training_data.csv`. The **current** training table for the demo and LLM prep is `data/processed/merged_multisource_training.csv` (see `scripts/rebuild_processed_datasets.py`).
 
 ### 12.3 Results (Binary Classification)
 
@@ -982,39 +989,41 @@ Basic tree-based feature importance tells us *which* features matter, but not *h
 
 This rigorously answers RQ2 using game-theoretic methodology rather than ad hoc importance scores.
 
-### 15.2 Global Feature Importance (SHAP)
+### 15.2 Global Feature Importance (SHAP) — full multisource XGBoost
 
-| Rank | Feature | Mean |SHAP| | Role |
-|------|---------|--------------|------|
-| 1 | **Leverage** (Equity/Liabilities) | 2.1881 | Most influential ratio |
-| 2 | **Liquidity** (WC/Total Assets) | 1.5370 | Second most important |
-| 3 | **Cumulative Profitability** (RE/TA) | 1.3456 | Track record indicator |
-| 4 | **Profitability** (EBIT/TA) | 0.8896 | Least influential |
+SHAP is computed for the **14-input** model trained in-sample: four financial ratios, five paper-style KAM dummies (`GCKAM` … `OTHERKAM`), and five FinBERT news aggregates (`sentiment_mean`, `sentiment_std`, `sentiment_pos_pct`, `sentiment_neg_pct`, `news_count`). Mean |SHAP| is averaged across the four rating-category outputs (see `results/shap_report.json` for the exact run).
 
-**Key Insight:** Leverage (financial structure) is the single most important predictor, contributing 37% of the total SHAP impact. Companies with higher equity-to-liability ratios are more likely to receive investment-grade ratings.
+**Latest run (46 usable rows after dropping missing `profitab`):**
+
+| Rank | Feature | Mean |SHAP| (approx.) | Notes |
+|------|---------|---------------------|--------|
+| 1 | `news_count` | 0.54 | Article volume is highly influential on this small panel |
+| 2 | `cumprof` | 0.48 | Retained earnings / assets |
+| 3 | `leverage` | 0.45 | Equity / liabilities |
+| 4 | `liquid` | 0.41 | Working capital / assets |
+| 5 | `profitab` | 0.29 | EBIT / assets |
+| 6–11 | Sentiment + `REVKAM`, `ASSETKAM`, … | 0.03–0.17 | FinBERT dispersion/mean; selected KAM dummies |
+| 12–14 | Other KAM dummies | ≈0 | Near-zero variance in-sample |
+
+**Key insight:** On the current aligned panel, **news coverage (`news_count`)** and **core ratios** dominate mean |SHAP|; this is dataset-specific and should not be over-interpreted causally (article counts correlate with firm size, visibility, and data collection).
 
 ### 15.3 Feature Interaction Effects
 
-SHAP dependence plots reveal non-linear interactions:
+Regenerated dependence plots (see `figures/`):
 
-- **Leverage × Profitability**: High leverage combined with low profitability strongly pushes predictions toward speculative grade. The interaction is super-additive -- the combined effect is larger than the sum of individual effects.
-- **Liquidity × Cumulative Profitability**: Companies with negative liquidity but high cumulative profits (e.g., Saudi Electricity) are misclassified because the model weighs current liquidity heavily despite strong long-term performance.
+- **`shap_dependence_leverage_profitab.png`** — leverage vs profitability colouring.
+- **`shap_dependence_liquid_cumprof.png`** — liquidity vs cumulative profitability.
+- **`shap_dependence_news_sentiment.png`** — news volume vs FinBERT mean score.
 
 ### 15.4 Per-Company Explanations
 
-SHAP waterfall plots for individual companies show exactly how each ratio pushes the prediction:
-
-| Company | Top Factor | Direction | Rating |
-|---------|-----------|-----------|--------|
-| MEPCO (1202.SR) | Leverage = 1.67 | → Investment Grade | A- |
-| Maaden (1211.SR) | Leverage = 1.03 | → Speculative Grade | BBB+ |
-| SABIC (2010.SR) | Cumprof = 0.09 | → Investment Grade | A |
-| ACWA Power (2082.SR) | Leverage = 0.46 | → Speculative Grade | BBB- |
-| Alkhorayef (2081.SR) | Cumprof = 0.15 | → Investment Grade | A- |
+Waterfalls are saved as `figures/shap_waterfall_<TICKER>_<YEAR>.png` for a stratified sample of rows (multicategory model: explanation is for the **predicted** class).
 
 **Output files:** `figures/shap_beeswarm.png`, `figures/shap_bar_importance.png`, `figures/shap_waterfall_*.png`, `figures/shap_dependence_*.png`, `results/shap_report.json`
 
-**Script:** `models/shap_explainability.py`
+**Script:** `PYTHONPATH=. python models/shap_explainability.py`
+
+The Streamlit app (`app.py`) uses the same 14 features for on-the-fly SHAP waterfalls on the trained full XGBoost model.
 
 ---
 
@@ -1056,7 +1065,7 @@ Using Gradient Boosting with GroupKFold CV on the V2 dataset (75 records, 23 com
 
 **Output files:** `figures/error_scatter.png`, `figures/confidence_dist.png`, `figures/error_patterns.png`, `results/error_analysis.json`
 
-**Script:** `models/error_analysis.py`
+**Script:** Historical analysis used `models/error_analysis.py` (removed); figures and `results/error_analysis.json` remain as report artifacts.
 
 ---
 
@@ -1109,7 +1118,7 @@ Only 6 unique KAM profiles exist across 23 companies. By contrast, the Spanish m
 
 **Output files:** `figures/kam_ablation.png`, `figures/kam_profiles.png`, `results/kam_analysis.json`
 
-**Script:** `models/model_with_kams.py`
+**Scripts:** `models/xgboost_with_kams.py`, `models/xgboost_full.py` (financials + KAMs ± news on merged processed tables), and `models/xgboost_kams_only.py` (KAM/audit features only from `kams_processed.csv`).
 
 ### 17.6 Implemented KAM Extraction vs Reference Protocol
 
@@ -1268,7 +1277,7 @@ The LoRA adapter adds ~20-50MB of trainable parameters on top of the frozen, qua
 
 #### 18.7.4 Training Data Preparation
 
-Each of the 75 records from `model_training_data_v2.csv` was converted into an instruction-tuning example with three fields:
+Each row with complete financial ratios from `merged_multisource_training.csv` (inner join of `kams_processed.csv`, `financial_ratios_processed.csv`, and `news_features_processed.csv`, produced by `scripts/rebuild_processed_datasets.py`) was converted into an instruction-tuning example with three fields:
 
 **Instruction** (system prompt, same for all examples):
 > "You are a credit analyst specializing in Saudi Exchange (Tadawul) listed companies. Given a company's financial ratios and ML model prediction, generate a structured credit verdict as a JSON object. Every claim must cite specific ratio values."
@@ -1435,21 +1444,15 @@ Financial ratios alone achieve 68-71% accuracy using Gradient Boosting and Group
 
 ### RQ2: Which feature categories contribute most to rating prediction accuracy?
 
-**Answer: Financial ratios, specifically Leverage and Liquidity.**
+**Answer: On the latest multisource XGBoost + SHAP run, ratios and news volume dominate mean |SHAP|.**
 
-SHAP analysis reveals the importance hierarchy:
-1. Leverage (Equity/Liabilities): 37% of total SHAP impact
-2. Liquidity (WC/Total Assets): 26%
-3. Cumulative Profitability (RE/TA): 22%
-4. Profitability (EBIT/TA): 15%
-
-KAM features carry near-zero discriminative power (feature ablation: -1.3% to +5.3% delta). News sentiment hurts accuracy due to noise and small sample size.
+For the **14-feature** full model (`models/shap_explainability.py`), global SHAP ranks **`news_count`**, **`cumprof`**, **`leverage`**, **`liquid`**, and **`profitab`** highest (see `results/shap_report.json`). KAM dummies contribute modestly (`REVKAM`, `ASSETKAM`); others are near zero in this sample. Interpret cautiously: `news_count` is a weak proxy for “sentiment” and may reflect visibility and data availability.
 
 ### RQ3: Can open-source LLMs generate coherent, factually accurate credit verdicts?
 
-**Answer: Yes.**
+**Answer: Yes, with template / Ollama / fine-tuned modes.**
 
-The LLM verdict generator (supporting both Ollama/Mistral and template-based generation) produces structured credit verdicts with 94% numerical accuracy and 89% ratio citation rate. Verdicts consistently identify relevant strengths, weaknesses, and risk factors tied to specific financial data points.
+`models/llm_verdict.py` now conditions verdicts on **ratios + KAM dummies + FinBERT aggregates**, alongside a **multicategory XGBoost** prediction (AA / A / BBB / BB). Regenerated template verdicts land in `results/verdicts/`; quality metrics are printed when you run the script (citation checks include the expanded context).
 
 ### RQ4: How does prediction accuracy compare across rating categories?
 
@@ -1463,92 +1466,51 @@ The model correctly classifies 68% of all samples. Errors concentrate at the A-/
 
 ```
 mxa1438/
-├── app.py                                     # Streamlit demo application
+├── app.py                                     # Streamlit demo (merged_multisource_training.csv)
 ├── README.md
 ├── requirements.txt
 │
 ├── data/
 │   ├── templates/
-│   │   ├── ratings_scraped.csv                # Tassnief ratings (scraped)
-│   │   ├── kams_priority.csv                  # KAM extraction template (148 rows)
-│   │   ├── kams_template.csv                  # KAM template format
-│   │   ├── multi_agency_ratings.csv           # 47 companies, 5 agencies
-│   │   └── ticker_mapping.csv                 # Company name → ticker mapping
+│   │   ├── ratings_scraped.csv
+│   │   ├── kams_priority.csv
+│   │   ├── kams_template.csv
+│   │   ├── multi_agency_ratings.csv
+│   │   └── ticker_mapping.csv
 │   ├── processed/
-│   │   ├── model_training_data.csv            # V1 training set (60 records)
-│   │   ├── model_training_data_v2.csv         # V2 training set (75 records)
-│   │   ├── model_fitch_only_data.csv          # Fitch-only subset
-│   │   ├── ratings_with_financials.csv        # Tassnief + financials
-│   │   ├── expanded_ratings_financials.csv    # Multi-agency + financials
-│   │   ├── historical_fitch_ratings.csv       # Historical Fitch (72 records)
-│   │   ├── tadawul_ratings_clean.csv          # Tadawul disclosures + financials
-│   │   └── tadawul_ratings_financials.csv     # Full Tadawul dataset
+│   │   ├── kams_processed.csv
+│   │   ├── financial_ratios_processed.csv
+│   │   ├── news_features_processed.csv
+│   │   ├── merged_multisource_training.csv   # Demo + LLM prep + full XGBoost join
+│   │   ├── ratings_with_financials.csv
+│   │   ├── ratings_financials_sentiment.csv
+│   │   └── ... (legacy experiment CSVs as needed for the report)
 │   └── raw/
-│       ├── financials/                        # yfinance JSON per company
-│       └── news/                              # MarketAux news per company-year
+│       ├── financials/
+│       └── news/
 │
-├── scripts/                                   # Data collection & processing
-│   ├── scrape_tassnief_selenium.py             # Tassnief ratings scraper
-│   ├── scrape_tadawul_ratings.py              # Tadawul disclosure collector
-│   ├── collect_financials.py                  # yfinance financial data
-│   ├── collect_news_sentiment.py              # News sentiment (MarketAux + VADER)
-│   ├── expand_dataset.py                      # Multi-agency expansion
-│   ├── build_historical_fitch.py              # Historical Fitch data
-│   ├── export_training_data.py                # Consolidate final dataset
-│   ├── merge_all_data.py                      # Merge all sources into V2
-│   ├── update_kams_template.py                # Add new companies to KAMs
-│   └── add_tickers.py                         # Ticker mapping utility
+├── scripts/
+│   ├── rebuild_processed_datasets.py
+│   └── collect_news_sentiment_finbert.py
 │
-├── models/                                    # ML models & analysis
-│   ├── baseline_xgboost.py                    # Initial XGBoost model
-│   ├── xgboost_with_kams.py                   # Financials + KAMs
-│   ├── xgboost_full.py                        # Financials + KAMs + sentiment
-│   ├── xgboost_expanded.py                    # Multi-agency XGBoost
-│   ├── xgboost_expanded_v2.py                 # Per-agency & consensus models
-│   ├── model_comparison.py                    # 8 ML models comparison
-│   ├── model_comparison_historical.py         # Historical data comparison
-│   ├── model_paper_ratios.py                  # Paper-aligned methodology
-│   ├── model_agency_comparison.py             # Fitch-only vs All+Agency
-│   ├── model_v2_comparison.py                 # V1 vs V2 dataset comparison
-│   ├── model_with_kams.py                     # KAM integration & homogeneity
-│   ├── llm_verdict.py                         # LLM credit verdict generator
-│   ├── shap_explainability.py                 # SHAP feature importance
-│   ├── error_analysis.py                      # Systematic error analysis
-│   └── visualizations.py                      # Publication-quality plots
+├── models/
+│   ├── xgboost_with_kams.py
+│   ├── xgboost_kams_only.py
+│   ├── xgboost_full.py
+│   ├── llm_verdict.py
+│   ├── prepare_finetune_data.py
+│   ├── finetune_qwen.py
+│   ├── evaluate_finetune.py
+│   ├── improve_verdicts.py
+│   └── lora_adapter/
 │
-├── figures/                                   # Generated visualizations
-│   ├── confusion_matrix_gb.png                # Confusion matrix (Gradient Boosting)
-│   ├── model_comparison.png                   # 8-model comparison bar chart
-│   ├── rating_distribution.png                # Rating distribution (multi-class + binary)
-│   ├── feature_distributions.png              # Box plots by rating class
-│   ├── decision_tree.png                      # Decision tree visualization
-│   ├── pca_scatter.png                        # PCA scatter of companies
-│   ├── agency_disagreement.png                # Inter-agency disagreement chart
-│   ├── shap_beeswarm.png                      # SHAP global importance
-│   ├── shap_bar_importance.png                # SHAP mean |SHAP| bar chart
-│   ├── shap_waterfall_*.png                   # Per-company SHAP waterfalls
-│   ├── shap_dependence_*.png                  # Feature interaction plots
-│   ├── error_scatter.png                      # Misclassified companies plot
-│   ├── confidence_dist.png                    # Confidence distribution
-│   ├── error_patterns.png                     # Error pattern summary
-│   ├── kam_ablation.png                       # KAM ablation study
-│   └── kam_profiles.png                       # KAM homogeneity heatmap
+├── figures/                                   # Plots (historical + current)
+├── results/                                   # JSON outputs, verdicts/
 │
-├── results/                                   # Model output (JSON)
-│   ├── model_comparison_final.json            # Final model comparison
-│   ├── shap_report.json                       # SHAP analysis report
-│   ├── error_analysis.json                    # Error analysis report
-│   ├── kam_analysis.json                      # KAM homogeneity report
-│   ├── decision_tree_rules.txt                # Decision tree rules
-│   ├── verdicts/
-│   │   ├── all_verdicts.json                  # 75 credit verdicts
-│   │   └── verdict_summary.json               # Verdict quality summary
-│   └── ... (other experiment results)
-│
-└── docs/                                      # Documentation
-    ├── PROJECT_REPORT.md                      # This document
-    ├── FYP_layers.md                          # Project specification
-    └── kam_extraction.md                      # KAM extraction guide
+└── docs/
+    ├── PROJECT_REPORT.md
+    ├── DOCKER.md
+    └── ...
 ```
 
 ---
@@ -1663,13 +1625,13 @@ mxa1438/
 
 | # | Deliverable | Status | Location |
 |---|-------------|--------|----------|
-| 1 | Data Pipeline | ✅ Complete | `scripts/` -- 10 collection/processing scripts |
-| 2 | Feature Engineering Module | ✅ Complete | 4 Altman ratios + KAM features + sentiment |
-| 3 | ML Rating Predictor | ✅ Complete | 8 models, best 68-78.3% accuracy |
-| 4 | LLM Verdict Generator | ✅ Complete | `models/llm_verdict.py` + Ollama support |
-| 5 | Evaluation Report | ✅ Complete | This document + SHAP/error analysis |
-| 6 | Reproducible Codebase | ✅ Complete | Full Git repo with documentation |
+| 1 | Data Pipeline | ✅ Complete | `scripts/rebuild_processed_datasets.py` builds `kams_processed`, `financial_ratios_processed`, `news_features_processed`, `merged_multisource_training`; news sentiment columns refreshed with `scripts/collect_news_sentiment_finbert.py` before rebuild |
+| 2 | Feature Engineering Module | ✅ Complete | 4 Altman ratios + paper-style KAM dummies + news sentiment features |
+| 3 | ML Rating Predictor | ✅ Complete | `models/xgboost_with_kams.py`, `models/xgboost_full.py`, `models/xgboost_kams_only.py`; key metrics in `results/` (e.g. `kams_only_model_results.json`) |
+| 4 | LLM Verdict Generator | ✅ Complete | `models/llm_verdict.py` + Ollama / QLoRA path |
+| 5 | Evaluation Report | ✅ Complete | This document + stored `results/` JSON from experiments |
+| 6 | Reproducible Codebase | ✅ Complete | Git repo with `docs/` and `README.md` |
 
 ---
 
-*Report last updated: March 16, 2026*
+*Report last updated: March 26, 2026*

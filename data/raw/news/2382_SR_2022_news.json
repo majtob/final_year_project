@@ -1,0 +1,50 @@
+{
+  "ticker": "2382.SR",
+  "year": 2022,
+  "fetch_date": "2026-03-26T08:21:09.752489+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2382.SR",
+      "title": "ADES Buys Seven Jack-Up Rigs From Seadrill",
+      "description": "ADES is continuing with its rig-buying spree with the acquisition of seven jack-up rigs from Seadrill Limited.",
+      "snippet": "ADES is continuing with its rig-buying spree with the acquisition of seven jack-up rigs from Seadrill Limited.\n\nOffshore driller Seadrill Limited has entered in...",
+      "published_at": "2022-09-01T11:51:36.000000Z",
+      "source_name": "rigzone.com",
+      "url": "https://www.rigzone.com/news/ades_buys_seven_jackup_rigs_from_seadrill-01-sep-2022-170196-article/",
+      "search_term": "SDRLF",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2382.SR",
+      "title": "ADES Continues April Shopping With Two Valaris Jack-Up Buys",
+      "description": "UAE-based rig operator ADES is continuing with its April drilling rig shopping, this time with two Valaris jack-ups.",
+      "snippet": "UAE-based rig operator ADES is continuing with its April drilling rig shopping, this time with two Valaris jack-ups.\n\nMiddle East-focused offshore drilling comp...",
+      "published_at": "2022-04-30T13:30:38.000000Z",
+      "source_name": "rigzone.com",
+      "url": "https://www.rigzone.com/news/ades_continues_april_shopping_with_two_valaris_jackup_buys-30-apr-2022-168820-article/",
+      "search_term": "NE",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2382.SR",
+      "title": "ADES International Buys Maersk Convincer Jack-Up Rig",
+      "description": "Maersk Drilling has entered into an agreement with ADES International to sell the jack-up rig Maersk Convincer for $42.5 million.",
+      "snippet": "Maersk Drilling has entered into an agreement with ADES International to sell the jack-up rig Maersk Convincer for $42.5 million.\n\nOffshore driller Maersk Drill...",
+      "published_at": "2022-04-21T19:00:10.000000Z",
+      "source_name": "rigzone.com",
+      "url": "https://www.rigzone.com/news/ades_international_buys_maersk_convincer_jackup_rig-21-apr-2022-168720-article/",
+      "search_term": "NE",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

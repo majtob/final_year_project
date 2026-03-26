@@ -1,0 +1,50 @@
+{
+  "ticker": "1211.SR",
+  "year": 2024,
+  "fetch_date": "2026-03-26T08:20:38.868288+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "1211.SR",
+      "title": "Saudi Arabian Mining Company (Ma'aden) Announces the Completion of the Procedures of the Acquisition and the Effectiveness of the Acquisition of the entire share capital owned by Mosaic Phosphates B.V",
+      "description": "k Exchange (Tadawul) website on 11/06/1446H (corresponding to 12/12/2024G) in respect of the …",
+      "snippet": "Introduction\n\nFurther to the announcement made by Saudi Arabian Mining Company (Ma'aden) (\"Ma'aden Company\") on the Saudi Stock Exchange (Tadawul) website on 11...",
+      "published_at": "2024-12-25T06:24:43.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4384652/Saudi-Arabian-Mining-Company-Ma-aden-Announces-the-Completion-of-the-Procedures-of-the-Acquisition-and-the-Effectiveness-of-the-Acquisition-of-the-entire-share-capital-owned-by-Mosaic-Phosphates-B-V",
+      "search_term": "1211.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "1211.SR",
+      "title": "Saudi Arabian Mining Company (Ma'aden) Announces the publication of the shareholders circular in relation to the Company's capital increase for the purpose of the Acquisition of all shares held by Mos",
+      "description": "ding to 30/4/2024G) in respect of its entry into a Share Purchase and Subscription Agreement with …",
+      "snippet": "Announcement Detail\n\nFurther to the announcement made by Saudi Arabian Mining Company (\"Ma'aden\") dated 21/10/1445H (corresponding to 30/4/2024G) in respect of ...",
+      "published_at": "2024-11-21T06:57:59.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4371711/Saudi-Arabian-Mining-Company-Ma-aden-Announces-the-publication-of-the-shareholders-circular-in-relation-to-the-Company-s-capital-increase-for-the-purpose-of-the-Acquisition-of-all-shares-held-by-Mos",
+      "search_term": "1211.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "1211.SR",
+      "title": "The Board of Directors of Saudi Arabian Mining Company (Ma'aden) Invites its Shareholders to Attend the 11th Extraordinary General Assembly Meeting which includes the Increase of the company’s capital",
+      "description": "rticipate and vote in the 11th Extraordinary General Assembly Meeting which includes the Increase …",
+      "snippet": "Meeting Agenda\n\nFirst: Voting on increasing Ma'aden's share capital from thirty six billion nine hundred seventeen million seven hundred thirty four thousand an...",
+      "published_at": "2024-11-20T14:43:24.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4371545/The-Board-of-Directors-of-Saudi-Arabian-Mining-Company-Ma-aden-Invites-its-Shareholders-to-Attend-the-11th-Extraordinary-General-Assembly-Meeting-which-includes-the-Increase-of-the-company-s-capital",
+      "search_term": "1211.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "ticker": "2082.SR",
+  "year": 2022,
+  "fetch_date": "2026-03-26T08:20:50.542736+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2082.SR",
+      "title": "Saudi Arabia’s ACWA Power to develop 1.5GW wind plant in Uzbekistan",
+      "description": "ACWA Power signed power purchase agreements through three wind power subsidiaries to develop the 1.5 GW Kungrad wind farm",
+      "snippet": "ACWA Power has signed power purchase agreements and investment agreements with Uzbekistan to develop the 1.5 GW Kungrad wind farm in Karakalpakstan, Uzbekistan,...",
+      "published_at": "2022-12-28T04:20:50.000000Z",
+      "source_name": "gulfbusiness.com",
+      "url": "https://gulfbusiness.com/saudi-arabias-acwa-power-to-develop-1-5gw-wind-plant-in-uzbekistan/",
+      "search_term": "ACWA Power",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2082.SR",
+      "title": "ACWA Power, South Korea’s KEPCO to explore industrial-scale green hydrogen/ammonia production",
+      "description": "st electric utilities provider, on a potential partnership in the development of green hydrogen/ …",
+      "snippet": "Riyadh – Mubasher: ACWA Power signed an extensive memorandum of understanding (MoU) with Korea Electric Power Corporation (KEPCO), South Korea’s largest ele...",
+      "published_at": "2022-10-12T13:50:54.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4023567/ACWA-Power-South-Korea-s-KEPCO-to-explore-industrial-scale-green-hydrogen-ammonia-production",
+      "search_term": "KEP",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2082.SR",
+      "title": "ACWA Power : PTT Public Company Limited and Electricity Generating Authority of Thailand set to support Thailand's decarbonisation aspiration in green hydrogen and derivatives development Project",
+      "description": "27\n      \n      \n        November\n      \n      \n        2022\n      \n      \n        \n          |\n        \n        \n          08:22\n        \n        \n          Europe/Amsterdam\n        \n... | November 28,  2022",
+      "snippet": "ACWA Power, PTT Public Company Limited and Electricity Generating Authority of Thailand set to support Thailand's decarbonisation aspiration in green hydrogen a...",
+      "published_at": "2022-11-28T07:35:12.000000Z",
+      "source_name": "marketscreener.com",
+      "url": "https://www.marketscreener.com/quote/stock/ACWA-POWER-COMPANY-128645070/news/ACWA-Power-PTT-Public-Company-Limited-and-Electricity-Generating-Authority-of-Thailand-set-to-supp-42416457/",
+      "search_term": "PUTRF",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "ticker": "2222.SR",
+  "year": 2022,
+  "fetch_date": "2026-03-26T08:21:02.986784+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2222.SR",
+      "title": "The Biggest Winners In 2022’s Energy Rollercoaster",
+      "description": "Saudis, Texans, even coal miners had an exceptional year amid the global energy crisis.",
+      "snippet": "On trip to the Kingdom, Biden greets Saudi Crown Prince Mohammed bin Salman with a fist bump. Anadolu Agency via Getty Images\n\nW\n\n\n\n\n\nhen U.S. President Joe...",
+      "published_at": "2022-12-29T11:30:00.000000Z",
+      "source_name": "forbes.com",
+      "url": "https://www.forbes.com/sites/christopherhelman/2022/12/29/the-biggest-winners-in-2022s-energy-rollercoaster/",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2222.SR",
+      "title": "20 Biggest Oil Companies in the World",
+      "description": "While as a whole, 2022 has been a difficult year for business, as firms have struggled with high costs and rising interest rates, some industries have fared much better than others due to to the tumultuous...",
+      "snippet": "In this piece, we will take a look at the 20 biggest oil companies in the world. For more companies, head on over to 5 Biggest Oil Companies in the World.\n\nWhil...",
+      "published_at": "2022-12-27T22:54:38.000000Z",
+      "source_name": "insidermonkey.com",
+      "url": "https://www.insidermonkey.com/blog/20-biggest-oil-companies-in-the-world-1102232/",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2222.SR",
+      "title": "20 Countries that Have the Largest Oil Reserves in the World Heading into 2023",
+      "description": "In this piece, we will take a look at the 20 countries that have the largest oil reserves in the world heading into 2023.",
+      "snippet": "In this piece, we will take a look at the 20 countries that have the largest oil reserves in the world heading into 2023. For more countries, head on over to 5 ...",
+      "published_at": "2022-12-27T20:00:39.000000Z",
+      "source_name": "insidermonkey.com",
+      "url": "https://www.insidermonkey.com/blog/20-countries-that-have-the-largest-oil-reserves-in-the-world-heading-into-2023-1102558/",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

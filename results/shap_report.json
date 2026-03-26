@@ -1,233 +1,367 @@
 {
+  "model": "XGBClassifier full (financials + KAM + FinBERT aggregates)",
+  "n_samples": 46,
+  "features": [
+    "liquid",
+    "cumprof",
+    "profitab",
+    "leverage",
+    "GCKAM",
+    "REVKAM",
+    "ASSETKAM",
+    "LIABKAM",
+    "OTHERKAM",
+    "sentiment_mean",
+    "sentiment_std",
+    "sentiment_pos_pct",
+    "sentiment_neg_pct",
+    "news_count"
+  ],
+  "classes": [
+    "A",
+    "AA",
+    "BB",
+    "BBB"
+  ],
   "global_importance": {
-    "leverage": {
+    "news_count": {
       "rank": 1,
-      "mean_abs_shap": 2.1881039577493757,
-      "description": "Leverage (Equity/Liabilities)"
-    },
-    "liquid": {
-      "rank": 2,
-      "mean_abs_shap": 1.5369887269633622,
-      "description": "Liquidity (WC/TA)"
+      "mean_abs_shap": 0.5374917387962341,
+      "description": "Number of news articles in fiscal year"
     },
     "cumprof": {
+      "rank": 2,
+      "mean_abs_shap": 0.48166659474372864,
+      "description": "Cumulative profitability (retained earnings / total assets)"
+    },
+    "leverage": {
       "rank": 3,
-      "mean_abs_shap": 1.3455786984232179,
-      "description": "Cumulative Profit (RE/TA)"
+      "mean_abs_shap": 0.4531787037849426,
+      "description": "Leverage (book equity / total liabilities)"
+    },
+    "liquid": {
+      "rank": 4,
+      "mean_abs_shap": 0.4145511984825134,
+      "description": "Liquidity (working capital / total assets)"
     },
     "profitab": {
-      "rank": 4,
-      "mean_abs_shap": 0.8895816578768774,
-      "description": "Profitability (EBIT/TA)"
+      "rank": 5,
+      "mean_abs_shap": 0.2937987446784973,
+      "description": "Profitability (EBIT / total assets)"
+    },
+    "sentiment_std": {
+      "rank": 6,
+      "mean_abs_shap": 0.1730402410030365,
+      "description": "FinBERT sentiment dispersion"
+    },
+    "sentiment_mean": {
+      "rank": 7,
+      "mean_abs_shap": 0.1444959193468094,
+      "description": "FinBERT mean article score (P(pos)\u2212P(neg))"
+    },
+    "REVKAM": {
+      "rank": 8,
+      "mean_abs_shap": 0.1067064106464386,
+      "description": "KAM: revenue recognition (0/1)"
+    },
+    "ASSETKAM": {
+      "rank": 9,
+      "mean_abs_shap": 0.03365275263786316,
+      "description": "KAM: impairment / assets (0/1)"
+    },
+    "sentiment_pos_pct": {
+      "rank": 10,
+      "mean_abs_shap": 0.032437797635793686,
+      "description": "Share of articles with positive FinBERT score"
+    },
+    "sentiment_neg_pct": {
+      "rank": 11,
+      "mean_abs_shap": 0.004370072390884161,
+      "description": "Share of articles with negative FinBERT score"
+    },
+    "GCKAM": {
+      "rank": 12,
+      "mean_abs_shap": 0.0,
+      "description": "KAM: going concern (0/1)"
+    },
+    "LIABKAM": {
+      "rank": 13,
+      "mean_abs_shap": 0.0,
+      "description": "KAM: liabilities (0/1)"
+    },
+    "OTHERKAM": {
+      "rank": 14,
+      "mean_abs_shap": 0.0,
+      "description": "KAM: other topics (0/1)"
     }
   },
+  "pct_total_abs_shap": {
+    "liquid": 15.494980974674869,
+    "cumprof": 18.003601844623123,
+    "profitab": 10.981528881935446,
+    "leverage": 16.938789271337026,
+    "GCKAM": 0.0,
+    "REVKAM": 3.9884429447914242,
+    "ASSETKAM": 1.2578633562703954,
+    "LIABKAM": 0.0,
+    "OTHERKAM": 0.0,
+    "sentiment_mean": 5.400928834346162,
+    "sentiment_std": 6.467850658760803,
+    "sentiment_pos_pct": 1.2124511014968835,
+    "sentiment_neg_pct": 0.16334336700164748,
+    "news_count": 20.09021876472484
+  },
+  "top_feature_share_pct": 20.09021876472484,
   "per_company_top_factors": [
     {
-      "ticker": "1202.SR",
-      "company": "MEPCO",
-      "rating": "A-",
-      "top_feature": "leverage",
-      "shap_value": -3.694334472608117,
-      "feature_value": 1.6691931851363335,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "1211.SR",
-      "company": "Maaden",
-      "rating": "BBB+",
-      "top_feature": "liquid",
-      "shap_value": 1.6102761274616355,
-      "feature_value": 0.1295003753540811,
-      "effect": "increases speculative-grade probability"
-    },
-    {
-      "ticker": "2010.SR",
-      "company": "SABIC",
-      "rating": "A",
-      "top_feature": "leverage",
-      "shap_value": -3.4518405272244967,
-      "feature_value": 1.9701385660222368,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "2070.SR",
-      "company": "Perfect Presentation (2P)",
-      "rating": "BBB+",
-      "top_feature": "cumprof",
-      "shap_value": 3.0391735898659396,
-      "feature_value": -0.0278451747810086,
-      "effect": "increases speculative-grade probability"
-    },
-    {
-      "ticker": "2081.SR",
-      "company": "Alkhorayef Water & Power",
-      "rating": "A-",
-      "top_feature": "profitab",
-      "shap_value": -2.652610263710183,
-      "feature_value": 0.1237813191337475,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "2082.SR",
-      "company": "ACWA Power",
-      "rating": "BBB-",
-      "top_feature": "cumprof",
-      "shap_value": 3.181618289013611,
-      "feature_value": 0.0286121910538777,
-      "effect": "increases speculative-grade probability"
-    },
-    {
-      "ticker": "2120.SR",
-      "company": "Middle East Paper Company",
-      "rating": "A",
-      "top_feature": "leverage",
-      "shap_value": -2.353998299498745,
-      "feature_value": 9.758068734776357,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "2210.SR",
-      "company": "Napco National",
-      "rating": "BBB+",
-      "top_feature": "leverage",
-      "shap_value": 4.188161115772138,
-      "feature_value": 0.2855216390041251,
-      "effect": "increases speculative-grade probability"
-    },
-    {
-      "ticker": "2222.SR",
-      "company": "Saudi Aramco",
-      "rating": "A",
-      "top_feature": "leverage",
-      "shap_value": -2.4207188057810005,
-      "feature_value": 1.4519683182505652,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "2280.SR",
-      "company": "Almarai",
-      "rating": "BBB-",
-      "top_feature": "leverage",
-      "shap_value": 2.9974474531997357,
-      "feature_value": 1.1200646510770689,
-      "effect": "increases speculative-grade probability"
-    },
-    {
-      "ticker": "2382.SR",
-      "company": "ADES",
-      "rating": "B+",
-      "top_feature": "leverage",
-      "shap_value": 4.625814174030535,
-      "feature_value": 0.4233548018785618,
-      "effect": "increases speculative-grade probability"
-    },
-    {
       "ticker": "3008.SR",
-      "company": "Al Kathiri Holding",
+      "company": "Al Kathiri (AKHC)",
+      "fiscal_year": 2023,
       "rating": "BBB-",
+      "predicted_category": "BBB",
       "top_feature": "cumprof",
-      "shap_value": 3.389783135010187,
-      "feature_value": -0.046543240807603,
-      "effect": "increases speculative-grade probability"
-    },
-    {
-      "ticker": "4290.SR",
-      "company": "Alkhaleej Training",
-      "rating": "A-",
-      "top_feature": "profitab",
-      "shap_value": -2.6764067982133395,
-      "feature_value": 0.0860367617468628,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "4321.SR",
-      "company": "Cenomi Centers",
-      "rating": "BB",
-      "top_feature": "leverage",
-      "shap_value": 2.583934143880442,
-      "feature_value": 1.167074825100584,
-      "effect": "increases speculative-grade probability"
-    },
-    {
-      "ticker": "5110.SR",
-      "company": "Saudi Electricity",
-      "rating": "A",
-      "top_feature": "liquid",
-      "shap_value": -3.1987635960371374,
-      "feature_value": -0.0655995936378185,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "7010.SR",
-      "company": "Saudi Telecom (STC)",
-      "rating": "A+",
-      "top_feature": "leverage",
-      "shap_value": -3.6134153609541038,
-      "feature_value": 1.3570190120196448,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "7020.SR",
-      "company": "Mobily",
-      "rating": "AA",
-      "top_feature": "profitab",
-      "shap_value": -2.251072037692125,
-      "feature_value": 0.0983919835135521,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "7030.SR",
-      "company": "Zain KSA",
-      "rating": "A",
-      "top_feature": "liquid",
-      "shap_value": -3.2912563701935187,
-      "feature_value": -0.1943878936264808,
-      "effect": "decreases speculative-grade probability"
-    },
-    {
-      "ticker": "9535.SR",
-      "company": "Ladun Investment Company",
-      "rating": "BBB+",
-      "top_feature": "leverage",
-      "shap_value": 3.3014411567139414,
-      "feature_value": 0.2670089151055785,
-      "effect": "increases speculative-grade probability"
+      "shap_value": 1.7373052835464478,
+      "feature_value": 0.018350902
     },
     {
       "ticker": "9568.SR",
       "company": "Mayar Holding",
-      "rating": "BBB",
+      "fiscal_year": 2024,
+      "rating": "BB",
+      "predicted_category": "BB",
       "top_feature": "leverage",
-      "shap_value": 4.222417143952305,
-      "feature_value": 0.0680592432727204,
-      "effect": "increases speculative-grade probability"
+      "shap_value": 1.0984781980514526,
+      "feature_value": 0.068059243
     },
     {
-      "ticker": "9596.SR",
-      "company": "Quara Finance Company",
-      "rating": "BBB",
-      "top_feature": "liquid",
-      "shap_value": 4.842022011558435,
-      "feature_value": 0.8077898269634161,
-      "effect": "increases speculative-grade probability"
+      "ticker": "9535.SR",
+      "company": "Ladun Investment",
+      "fiscal_year": 2024,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "cumprof",
+      "shap_value": 2.0552308559417725,
+      "feature_value": 0.051157433
+    },
+    {
+      "ticker": "7030.SR",
+      "company": "Zain Saudi Arabia",
+      "fiscal_year": 2023,
+      "rating": "A",
+      "predicted_category": "A",
+      "top_feature": "profitab",
+      "shap_value": -0.8145869374275208,
+      "feature_value": 0.075357897
+    },
+    {
+      "ticker": "7030.SR",
+      "company": "Zain Saudi Arabia",
+      "fiscal_year": 2024,
+      "rating": "A",
+      "predicted_category": "A",
+      "top_feature": "profitab",
+      "shap_value": 0.6228179335594177,
+      "feature_value": 0.044824323
+    },
+    {
+      "ticker": "7020.SR",
+      "company": "Mobily",
+      "fiscal_year": 2023,
+      "rating": "AA-",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.3153281211853027,
+      "feature_value": 6.0
+    },
+    {
+      "ticker": "7020.SR",
+      "company": "Mobily",
+      "fiscal_year": 2024,
+      "rating": "AA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.398777723312378,
+      "feature_value": 6.0
+    },
+    {
+      "ticker": "7010.SR",
+      "company": "Saudi Telecom (STC)",
+      "fiscal_year": 2021,
+      "rating": "AAA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.380305767059326,
+      "feature_value": 9.0
+    },
+    {
+      "ticker": "7010.SR",
+      "company": "Saudi Telecom (STC)",
+      "fiscal_year": 2022,
+      "rating": "AAA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.5166127681732178,
+      "feature_value": 8.0
+    },
+    {
+      "ticker": "7010.SR",
+      "company": "Saudi Telecom (STC)",
+      "fiscal_year": 2023,
+      "rating": "AAA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.5726494789123535,
+      "feature_value": 7.0
+    },
+    {
+      "ticker": "7010.SR",
+      "company": "Saudi Telecom (STC)",
+      "fiscal_year": 2024,
+      "rating": "AAA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.306241035461426,
+      "feature_value": 7.0
+    },
+    {
+      "ticker": "4290.SR",
+      "company": "Alkhaleej Training",
+      "fiscal_year": 2023,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "cumprof",
+      "shap_value": 1.9110701084136963,
+      "feature_value": -0.092741207
+    },
+    {
+      "ticker": "4290.SR",
+      "company": "Alkhaleej Training",
+      "fiscal_year": 2024,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "cumprof",
+      "shap_value": 1.3112355470657349,
+      "feature_value": -0.012894618
+    },
+    {
+      "ticker": "3008.SR",
+      "company": "Al Kathiri (AKHC)",
+      "fiscal_year": 2021,
+      "rating": "BBB-",
+      "predicted_category": "BBB",
+      "top_feature": "cumprof",
+      "shap_value": 1.823468565940857,
+      "feature_value": 0.046490075
+    },
+    {
+      "ticker": "3008.SR",
+      "company": "Al Kathiri (AKHC)",
+      "fiscal_year": 2022,
+      "rating": "BBB-",
+      "predicted_category": "BBB",
+      "top_feature": "cumprof",
+      "shap_value": 2.1044464111328125,
+      "feature_value": 0.048077623
     },
     {
       "ticker": "9619.SR",
       "company": "Multi Business Group",
+      "fiscal_year": 2024,
       "rating": "BB+",
-      "top_feature": "liquid",
-      "shap_value": 7.851247504922644,
-      "feature_value": 0.7788510408510891,
-      "effect": "increases speculative-grade probability"
+      "predicted_category": "BB",
+      "top_feature": "cumprof",
+      "shap_value": 1.4316282272338867,
+      "feature_value": 0.292012684
     },
     {
-      "ticker": "4300.SR",
-      "company": "Dar Al Arkan Real Estate",
-      "rating": "A-",
+      "ticker": "7204.SR",
+      "company": "Perfect Presentation (2P)",
+      "fiscal_year": 2024,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "liquid",
+      "shap_value": 0.7024219036102295,
+      "feature_value": 0.293666515
+    },
+    {
+      "ticker": "7204.SR",
+      "company": "Perfect Presentation (2P)",
+      "fiscal_year": 2023,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
       "top_feature": "leverage",
-      "shap_value": -3.468589299959308,
-      "feature_value": 1.332157160437054,
-      "effect": "decreases speculative-grade probability"
+      "shap_value": 0.765901505947113,
+      "feature_value": 0.479716636
+    },
+    {
+      "ticker": "7204.SR",
+      "company": "Perfect Presentation (2P)",
+      "fiscal_year": 2022,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "leverage",
+      "shap_value": 0.8196687698364258,
+      "feature_value": 0.458093919
+    },
+    {
+      "ticker": "2081.SR",
+      "company": "Alkhorayef Water & Power",
+      "fiscal_year": 2024,
+      "rating": "A",
+      "predicted_category": "A",
+      "top_feature": "profitab",
+      "shap_value": 0.5998167991638184,
+      "feature_value": 0.123781319
+    },
+    {
+      "ticker": "2081.SR",
+      "company": "Alkhorayef Water & Power",
+      "fiscal_year": 2023,
+      "rating": "A-",
+      "predicted_category": "A",
+      "top_feature": "profitab",
+      "shap_value": 0.6924687623977661,
+      "feature_value": 0.115475563
+    },
+    {
+      "ticker": "2222.SR",
+      "company": "Saudi Aramco",
+      "fiscal_year": 2023,
+      "rating": "A+",
+      "predicted_category": "A",
+      "top_feature": "leverage",
+      "shap_value": 0.8037768006324768,
+      "feature_value": 2.344734682
+    },
+    {
+      "ticker": "2222.SR",
+      "company": "Saudi Aramco",
+      "fiscal_year": 2022,
+      "rating": "A",
+      "predicted_category": "A",
+      "top_feature": "leverage",
+      "shap_value": 0.7988499999046326,
+      "feature_value": 2.015231435
+    },
+    {
+      "ticker": "1211.SR",
+      "company": "Maaden",
+      "fiscal_year": 2023,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "liquid",
+      "shap_value": 0.7988972067832947,
+      "feature_value": 0.129500375
+    },
+    {
+      "ticker": "2010.SR",
+      "company": "SABIC",
+      "fiscal_year": 2024,
+      "rating": "A+",
+      "predicted_category": "A",
+      "top_feature": "leverage",
+      "shap_value": 0.8702662587165833,
+      "feature_value": 1.954483739
     }
   ]
 }

@@ -39,6 +39,7 @@ yfinance>=0.2.28
 # LLM Integration (open-source)
 transformers>=4.35.0
 torch>=2.1.0
+safetensors>=0.4.0
 accelerate>=0.25.0
 ollama>=0.1.0
 huggingface_hub>=0.19.0

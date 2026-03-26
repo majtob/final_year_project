@@ -1,0 +1,50 @@
+{
+  "ticker": "2222.SR",
+  "year": 2024,
+  "fetch_date": "2026-03-26T08:21:06.012516+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2222.SR",
+      "title": "Bawan rolls out SAR 832m supply deal with Aramco",
+      "description": "with  Saudi Arabian Oil Company (Aramco) to supply special gas well products. Bawan …",
+      "snippet": "Riyadh – Mubasher: Petronash Arabia Company Limited, a subsidiary of Petronash Holding Company, has received a purchase order for an existing contract with Sa...",
+      "published_at": "2024-12-19T17:33:55.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4382909/Bawan-rolls-out-SAR-832m-supply-deal-with-Aramco",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2222.SR",
+      "title": "Bawan Company announces that Petronash Arabia Company Limited (a subsidiary of Petronash Holding Co.) has received a purchase order for an existing contract with Saudi Arabian Oil Company (“Saudi Aram",
+      "description": "chase order for an existing contract with Saudi Aramco to supply special gas well products. Date …",
+      "snippet": "Element List Explanation\n\nIntroduction Bawan announces that Petronash Arabia Company Limited (a subsidiary of Petronash Holding Co.) has received a purchase ord...",
+      "published_at": "2024-12-19T06:57:55.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4382612/Bawan-Company-announces-that-Petronash-Arabia-Company-Limited-a-subsidiary-of-Petronash-Holding-Co-has-received-a-purchase-order-for-an-existing-contract-with-Saudi-Arabian-Oil-Company-Saudi-Aram",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2222.SR",
+      "title": "No official denial on donation from Saudi Royals",
+      "description": "Najib told the High Court here today that the Saudi govt has ever issued an official statement to refute that the funds he received were a donation.",
+      "snippet": "KUALA LUMPUR: Datuk Seri Najib Tun Razak told the High Court here today that neither the Saudi Arabian Royal Household nor its government has ever issued an off...",
+      "published_at": "2024-12-13T08:34:59.000000Z",
+      "source_name": "thesundaily.my",
+      "url": "https://thesun.my/malaysia-news/no-official-denial-on-donation-from-saudi-royals-says-najib-JH13418463",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

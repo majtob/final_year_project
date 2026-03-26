@@ -1,0 +1,50 @@
+{
+  "ticker": "2382.SR",
+  "year": 2023,
+  "fetch_date": "2026-03-26T08:21:12.314482+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2382.SR",
+      "title": "Arabian Pipes, ADES scale 52-week highs",
+      "description": "Tadawul trading screen\r\n\r\n\r\nShares of Arabian Pipes Co. (Arabian Pipes) and ADES International Holding Plc. (ADES) hit their highest levels in 52",
+      "snippet": "Tadawul trading screen\n\nShares of Arabian Pipes Co. (Arabian Pipes) and ADES International Holding Plc. (ADES) hit their highest levels in 52 weeks today, Nov.6...",
+      "published_at": "2023-11-06T13:48:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1682372",
+      "search_term": "2200.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2382.SR",
+      "title": "PIF-backed ADES gets $76.5bn in orders for Riyadh IPO",
+      "description": "ADES set the final offer price for the offering at SAR13.50 per share, implying a market capitalisation of SAR15.2bn at listing",
+      "snippet": "Image: ADES Holding\n\nSaudi Arabia’s ADES Holding Company (ADES) has attracted $76.5bn (SAR286.9bn) in orders for its $1.2bn initial public offering (IPO) on t...",
+      "published_at": "2023-09-21T10:16:22.000000Z",
+      "source_name": "gulfbusiness.com",
+      "url": "https://gulfbusiness.com/saudi-ades-holding-sets-share-price-for-ipo/",
+      "search_term": "ADES",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2382.SR",
+      "title": "Retail subscription begins today to 33.87 mln ADES shares on TASI",
+      "description": "Logo ofADES International Holding Co.\r\n\r\n\r\nIndividual investors will start today, Sept. 26, subscribing to 33.87 million shares ofADES Internation",
+      "snippet": "Logo of ADES International Holding Co.\n\nIndividual investors will start today, Sept. 26, subscribing to 33.87 million shares of ADES International Holding Co. a...",
+      "published_at": "2023-09-26T11:19:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1672682",
+      "search_term": "1010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

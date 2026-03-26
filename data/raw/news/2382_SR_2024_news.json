@@ -1,0 +1,50 @@
+{
+  "ticker": "2382.SR",
+  "year": 2024,
+  "fetch_date": "2026-03-26T08:21:14.523276+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2382.SR",
+      "title": "ADES Holding, Aramco extend rig agreements at SAR 946m",
+      "description": "R 946 million. ADES Holding and Saudi Arabian Oil Company (Aramco) inked the deal for onshore …",
+      "snippet": "Riyadh – Mubasher: ADES Holding Company has secured contract renewals for its ADES 13 and ADES 14 onshore rigs operating in Saudi Arabia for nearly SAR 946 mi...",
+      "published_at": "2024-10-14T07:28:28.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4353251/ADES-Holding-Aramco-extend-rig-agreements-at-SAR-946m/?currentUserCountryCode=US",
+      "search_term": "VTDRF",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2382.SR",
+      "title": "ADES Holding, Aramco extend rig agreements at SAR 946m",
+      "description": "R 946 million. ADES Holding and Saudi Arabian Oil Company (Aramco) inked the deal for onshore …",
+      "snippet": "Riyadh – Mubasher: ADES Holding Company has secured contract renewals for its ADES 13 and ADES 14 onshore rigs operating in Saudi Arabia for nearly SAR 946 mi...",
+      "published_at": "2024-10-14T07:28:28.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4353251/ADES-Holding-Aramco-extend-rig-agreements-at-SAR-946m",
+      "search_term": "VTDRF",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2382.SR",
+      "title": "ADES, Mobily scale 52-week highs",
+      "description": "Tadawul trading screen\r\n\r\n\r\nShares ofADES Holding Co. and Etihad Etisalat Co. (Mobily) hit their highest levels in 52 weeks today, Jan. 24, data compi",
+      "snippet": "Tadawul trading screen\n\nShares of ADES Holding Co. and Etihad Etisalat Co. (Mobily) hit their highest levels in 52 weeks today, Jan. 24, data compiled by Argaam...",
+      "published_at": "2024-01-24T13:28:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1700069",
+      "search_term": "7020.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

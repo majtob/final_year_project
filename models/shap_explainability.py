@@ -1,293 +1,243 @@
+#!/usr/bin/env python3
 """
-SHAP Explainability for Credit Rating Predictions.
+SHAP explainability for the full multisource XGBoost model (14 features:
+financials + paper KAM dummies + FinBERT news aggregates).
 
-Generates per-prediction waterfall plots, global feature importance,
-and interaction effects using SHapley Additive exPlanations.
+Writes:
+  figures/shap_beeswarm.png
+  figures/shap_bar_importance.png
+  figures/shap_dependence_*.png (two interaction pairs)
+  figures/shap_waterfall_<ticker>_<year>.png (sample of companies)
+  results/shap_report.json
+
+Run from repo root:
+  PYTHONPATH=. python models/shap_explainability.py
 """
 
-import pandas as pd
-import numpy as np
-import shap
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.model_selection import GroupKFold
-from pathlib import Path
+from __future__ import annotations
+
 import json
-import warnings
-warnings.filterwarnings('ignore')
+import sys
+from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).parent.parent
-DATA_FILE = PROJECT_ROOT / "data" / "processed" / "model_training_data_v2.csv"
-FIGURES_DIR = PROJECT_ROOT / "figures"
-RESULTS_DIR = PROJECT_ROOT / "results"
+import matplotlib
 
-FEATURES = ['liquid', 'cumprof', 'profitab', 'leverage']
-FEATURE_LABELS = {
-    'liquid': 'Liquidity\n(WC/TA)',
-    'cumprof': 'Cumulative Profit\n(RE/TA)',
-    'profitab': 'Profitability\n(EBIT/TA)',
-    'leverage': 'Leverage\n(Equity/Liabilities)',
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import shap
+from sklearn.preprocessing import LabelEncoder
+from xgboost import XGBClassifier
+
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from models.multisource_data import (  # noqa: E402
+    FULL_FEATURE_COLS,
+    load_or_build_merged_training,
+)
+from models.xgboost_full import prepare_target  # noqa: E402
+
+FIGURES_DIR = ROOT / "figures"
+RESULTS_DIR = ROOT / "results"
+
+FEATURE_DESCRIPTIONS: dict[str, str] = {
+    "liquid": "Liquidity (working capital / total assets)",
+    "cumprof": "Cumulative profitability (retained earnings / total assets)",
+    "profitab": "Profitability (EBIT / total assets)",
+    "leverage": "Leverage (book equity / total liabilities)",
+    "GCKAM": "KAM: going concern (0/1)",
+    "REVKAM": "KAM: revenue recognition (0/1)",
+    "ASSETKAM": "KAM: impairment / assets (0/1)",
+    "LIABKAM": "KAM: liabilities (0/1)",
+    "OTHERKAM": "KAM: other topics (0/1)",
+    "sentiment_mean": "FinBERT mean article score (P(pos)−P(neg))",
+    "sentiment_std": "FinBERT sentiment dispersion",
+    "sentiment_pos_pct": "Share of articles with positive FinBERT score",
+    "sentiment_neg_pct": "Share of articles with negative FinBERT score",
+    "news_count": "Number of news articles in fiscal year",
 }
 
-RATING_TO_NUMERIC = {
-    'AAA': 21, 'AA+': 20, 'AA': 19, 'AA-': 18,
-    'A+': 17, 'A': 16, 'A-': 15,
-    'BBB+': 14, 'BBB': 13, 'BBB-': 12,
-    'BB+': 11, 'BB': 10, 'BB-': 9,
-    'B+': 8, 'B': 7, 'B-': 6,
-}
 
-
-def to_binary(rating):
-    return 0 if RATING_TO_NUMERIC.get(rating, 0) >= 15 else 1
-
-
-def load_and_train():
-    """Load data and train the Gradient Boosting model on full dataset."""
-    df = pd.read_csv(DATA_FILE)
-    df['target'] = df['rating'].apply(to_binary)
-
-    X = df[FEATURES]
-    y = df['target'].values
-
-    model = GradientBoostingClassifier(
-        n_estimators=100, max_depth=3,
-        learning_rate=0.1, random_state=42
+def _train_full_xgb(X: np.ndarray, y: np.ndarray, le: LabelEncoder):
+    model = XGBClassifier(
+        n_estimators=100,
+        max_depth=3,
+        learning_rate=0.1,
+        random_state=42,
+        use_label_encoder=False,
+        eval_metric="mlogloss",
     )
     model.fit(X, y)
-
-    return model, X, y, df
-
-
-def compute_shap_values(model, X):
-    """Compute SHAP values using TreeExplainer."""
-    explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(X)
-    return explainer, shap_values
+    return model
 
 
-def plot_global_importance(shap_values, X, save_path=None):
-    """SHAP beeswarm plot showing global feature importance."""
-    fig, ax = plt.subplots(figsize=(10, 6))
-
-    X_display = X.rename(columns=FEATURE_LABELS)
-    shap.summary_plot(shap_values, X_display, show=False, plot_size=None)
-
-    plt.title("SHAP Feature Importance: Impact on Credit Rating Prediction",
-              fontsize=13, fontweight='bold', pad=15)
-    plt.xlabel("SHAP Value (impact on model output)\n← Investment Grade | Speculative Grade →",
-               fontsize=11)
-    plt.tight_layout()
-
-    if save_path:
-        plt.savefig(save_path, dpi=150, bbox_inches='tight')
-        print(f"  Saved: {save_path}")
-    plt.close()
-
-
-def plot_bar_importance(shap_values, X, save_path=None):
-    """SHAP bar plot of mean absolute feature importance."""
-    fig, ax = plt.subplots(figsize=(8, 5))
-
-    mean_abs = np.abs(shap_values).mean(axis=0)
-    feature_names = [FEATURE_LABELS.get(f, f) for f in FEATURES]
-    sorted_idx = np.argsort(mean_abs)
-
-    colors = plt.cm.RdYlGn_r(np.linspace(0.2, 0.8, len(sorted_idx)))
-
-    ax.barh(range(len(sorted_idx)),
-            mean_abs[sorted_idx],
-            color=colors, edgecolor='gray', linewidth=0.5)
-    ax.set_yticks(range(len(sorted_idx)))
-    ax.set_yticklabels([feature_names[i] for i in sorted_idx], fontsize=11)
-    ax.set_xlabel("Mean |SHAP Value|", fontsize=11)
-    ax.set_title("Global Feature Importance (SHAP)",
-                 fontsize=13, fontweight='bold')
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-    plt.tight_layout()
-
-    if save_path:
-        plt.savefig(save_path, dpi=150, bbox_inches='tight')
-        print(f"  Saved: {save_path}")
-    plt.close()
-
-
-def plot_waterfall(explainer, shap_values, X, idx, company_info, save_path=None):
-    """SHAP waterfall plot for a single prediction."""
-    fig, ax = plt.subplots(figsize=(10, 5))
-
-    feature_names = [FEATURE_LABELS.get(f, f) for f in FEATURES]
-
-    ev = explainer.expected_value
-    if hasattr(ev, '__len__'):
-        ev = float(ev[0]) if len(ev) == 1 else float(ev[1])
-
-    explanation = shap.Explanation(
-        values=shap_values[idx],
-        base_values=ev,
-        data=X.iloc[idx].values,
-        feature_names=feature_names,
-    )
-
-    shap.plots.waterfall(explanation, show=False)
-
-    company = company_info.get('company_name', 'Unknown')[:30]
-    ticker = company_info.get('ticker', '')
-    rating = company_info.get('rating', '')
-    year = company_info.get('fiscal_year', '')
-    plt.title(f"SHAP Waterfall: {company} ({ticker}) -- {rating}, FY{year}",
-              fontsize=12, fontweight='bold')
-    plt.tight_layout()
-
-    if save_path:
-        plt.savefig(save_path, dpi=150, bbox_inches='tight')
-        print(f"  Saved: {save_path}")
-    plt.close()
-
-
-def plot_dependence(shap_values, X, feature_idx, interaction_idx, save_path=None):
-    """SHAP dependence plot showing feature interactions."""
-    fig, ax = plt.subplots(figsize=(8, 6))
-
-    feature_name = FEATURE_LABELS.get(FEATURES[feature_idx], FEATURES[feature_idx])
-    interact_name = FEATURE_LABELS.get(FEATURES[interaction_idx], FEATURES[interaction_idx])
-
-    X_display = X.rename(columns=FEATURE_LABELS)
-    shap.dependence_plot(
-        feature_name, shap_values, X_display,
-        interaction_index=interact_name,
-        show=False, ax=ax
-    )
-    ax.set_title(f"SHAP Dependence: {feature_name.replace(chr(10), ' ')} "
-                 f"(colored by {interact_name.replace(chr(10), ' ')})",
-                 fontsize=12, fontweight='bold')
-    plt.tight_layout()
-
-    if save_path:
-        plt.savefig(save_path, dpi=150, bbox_inches='tight')
-        print(f"  Saved: {save_path}")
-    plt.close()
-
-
-def generate_shap_report(shap_values, X, df):
-    """Generate a structured report of SHAP analysis."""
-    mean_abs = np.abs(shap_values).mean(axis=0)
-    importance_order = np.argsort(mean_abs)[::-1]
-
-    report = {
-        'global_importance': {},
-        'per_company_top_factors': [],
-    }
-
-    for rank, idx in enumerate(importance_order):
-        report['global_importance'][FEATURES[idx]] = {
-            'rank': rank + 1,
-            'mean_abs_shap': float(mean_abs[idx]),
-            'description': FEATURE_LABELS[FEATURES[idx]].replace('\n', ' '),
-        }
-
-    seen_tickers = set()
-    for i in range(len(df)):
-        ticker = df.iloc[i]['ticker']
-        if ticker in seen_tickers:
-            continue
-        seen_tickers.add(ticker)
-
-        top_feature_idx = np.argmax(np.abs(shap_values[i]))
-        direction = "increases" if shap_values[i][top_feature_idx] > 0 else "decreases"
-
-        report['per_company_top_factors'].append({
-            'ticker': ticker,
-            'company': df.iloc[i]['company_name'],
-            'rating': df.iloc[i]['rating'],
-            'top_feature': FEATURES[top_feature_idx],
-            'shap_value': float(shap_values[i][top_feature_idx]),
-            'feature_value': float(X.iloc[i].values[top_feature_idx]),
-            'effect': f"{direction} speculative-grade probability",
-        })
-
-    return report
-
-
-def main():
-    print("=" * 70)
-    print("SHAP EXPLAINABILITY ANALYSIS")
-    print("=" * 70)
-
+def main() -> None:
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    print("\n1. Loading data and training model...")
-    model, X, y, df = load_and_train()
-    print(f"   Samples: {len(X)}, Features: {len(FEATURES)}")
+    df = load_or_build_merged_training(save=True)
+    if "rating_category" not in df.columns:
+        df = prepare_target(df)
+    feat_names = FULL_FEATURE_COLS
+    X = df[feat_names].values.astype(np.float64)
+    le = LabelEncoder()
+    y = le.fit_transform(df["rating_category"].values)
 
-    print("\n2. Computing SHAP values...")
-    explainer, shap_values = compute_shap_values(model, X)
-    print(f"   SHAP values shape: {shap_values.shape}")
+    model = _train_full_xgb(X, y, le)
+    explainer = shap.TreeExplainer(model)
+    shap_raw = explainer.shap_values(X)
+
+    if isinstance(shap_raw, list):
+        global_mean_abs = np.mean(
+            [np.abs(s).mean(axis=0) for s in shap_raw],
+            axis=0,
+        )
+        global_mean_abs = np.asarray(global_mean_abs).ravel()
+        majority_class = int(np.argmax(np.bincount(y)))
+        sv_for_summary = np.asarray(shap_raw[majority_class])
+    elif isinstance(shap_raw, np.ndarray) and shap_raw.ndim == 3:
+        global_mean_abs = np.abs(shap_raw).mean(axis=(0, 2))
+        global_mean_abs = np.asarray(global_mean_abs).ravel()
+        sv_for_summary = shap_raw[:, :, int(np.argmax(np.bincount(y)))]
+    else:
+        shap_arr = np.asarray(shap_raw)
+        global_mean_abs = np.abs(shap_arr).mean(axis=0)
+        global_mean_abs = np.asarray(global_mean_abs).ravel()
+        sv_for_summary = shap_arr
+
+    order = np.argsort(-global_mean_abs)
+    ranked = [(feat_names[i], float(global_mean_abs[i])) for i in order]
+    global_importance = {}
+    for rank, (name, mabs) in enumerate(ranked, start=1):
+        global_importance[name] = {
+            "rank": rank,
+            "mean_abs_shap": mabs,
+            "description": FEATURE_DESCRIPTIONS.get(name, name),
+        }
+
+    total_mabs = sum(global_mean_abs) + 1e-12
+    pct = {feat_names[i]: 100.0 * global_mean_abs[i] / total_mabs for i in range(len(feat_names))}
+
+    plt.figure(figsize=(10, 8))
+    shap.summary_plot(
+        sv_for_summary,
+        X,
+        feature_names=feat_names,
+        show=False,
+        plot_size=(10, 8),
+    )
+    plt.tight_layout()
+    plt.savefig(FIGURES_DIR / "shap_beeswarm.png", dpi=150, bbox_inches="tight")
+    plt.close()
+
+    plt.figure(figsize=(8, 6))
+    shap.summary_plot(
+        sv_for_summary,
+        X,
+        feature_names=feat_names,
+        plot_type="bar",
+        show=False,
+    )
+    plt.tight_layout()
+    plt.savefig(FIGURES_DIR / "shap_bar_importance.png", dpi=150, bbox_inches="tight")
+    plt.close()
+
+    def dependence_pair(x_col: str, color_col: str, fname: str) -> None:
+        if x_col not in feat_names or color_col not in feat_names:
+            return
+        xi = feat_names.index(x_col)
+        ci = feat_names.index(color_col)
+        plt.figure(figsize=(7, 5))
+        shap.dependence_plot(
+            xi,
+            sv_for_summary,
+            X,
+            feature_names=feat_names,
+            interaction_index=ci,
+            show=False,
+        )
+        plt.tight_layout()
+        plt.savefig(FIGURES_DIR / fname, dpi=150, bbox_inches="tight")
+        plt.close()
+
+    dependence_pair("leverage", "profitab", "shap_dependence_leverage_profitab.png")
+    dependence_pair("liquid", "cumprof", "shap_dependence_liquid_cumprof.png")
+    dependence_pair("news_count", "sentiment_mean", "shap_dependence_news_sentiment.png")
+
+    def _per_class_shap_rows(shap_vals):
+        if isinstance(shap_vals, list):
+            return [np.asarray(s) for s in shap_vals]
+        arr = np.asarray(shap_vals)
+        if arr.ndim == 3:
+            return [arr[:, :, c] for c in range(arr.shape[2])]
+        return [arr]
+
+    y_hat = model.predict(X)
     ev = explainer.expected_value
-    if hasattr(ev, '__len__'):
-        ev = ev[0] if len(ev) == 1 else ev
-    print(f"   Base value (expected value): {ev}")
+    class_rows = _per_class_shap_rows(shap_raw)
 
-    print("\n3. Generating plots...")
+    for old in FIGURES_DIR.glob("shap_waterfall_*.png"):
+        old.unlink(missing_ok=True)
+    sample_idx = np.linspace(0, len(df) - 1, num=min(8, len(df)), dtype=int)
+    for i in sample_idx:
+        row = df.iloc[i]
+        cls = int(y_hat[i])
+        sv_row = np.asarray(class_rows[cls][i]).ravel()
+        if hasattr(ev, "__len__") and not isinstance(ev, (str, bytes)):
+            base = float(ev[cls])
+        else:
+            base = float(ev)
+        exp = shap.Explanation(
+            values=sv_row,
+            base_values=base,
+            data=X[i],
+            feature_names=[FEATURE_DESCRIPTIONS.get(f, f) for f in feat_names],
+        )
+        fig, _ax = plt.subplots(figsize=(10, 4))
+        shap.plots.waterfall(exp, show=False)
+        plt.tight_layout()
+        t = str(row["ticker"]).replace(".", "_")
+        fy = int(row["fiscal_year"])
+        plt.savefig(FIGURES_DIR / f"shap_waterfall_{t}_{fy}.png", dpi=150, bbox_inches="tight")
+        plt.close(fig)
 
-    plot_global_importance(
-        shap_values, X,
-        save_path=FIGURES_DIR / "shap_beeswarm.png"
-    )
-
-    plot_bar_importance(
-        shap_values, X,
-        save_path=FIGURES_DIR / "shap_bar_importance.png"
-    )
-
-    interesting_companies = []
-    seen = set()
+    per_company = []
     for i in range(len(df)):
-        ticker = df.iloc[i]['ticker']
-        if ticker not in seen:
-            seen.add(ticker)
-            interesting_companies.append(i)
-        if len(interesting_companies) >= 5:
-            break
-
-    for idx in interesting_companies:
-        row = df.iloc[idx]
-        safe_name = row['ticker'].replace('.', '_')
-        plot_waterfall(
-            explainer, shap_values, X, idx,
-            row.to_dict(),
-            save_path=FIGURES_DIR / f"shap_waterfall_{safe_name}.png"
+        row = df.iloc[i]
+        cls = int(y_hat[i])
+        sv_row = np.asarray(class_rows[cls][i]).ravel()
+        j = int(np.argmax(np.abs(sv_row)))
+        per_company.append(
+            {
+                "ticker": row["ticker"],
+                "company": str(row.get("company_name", ""))[:60],
+                "fiscal_year": int(row["fiscal_year"]),
+                "rating": row["rating"],
+                "predicted_category": le.inverse_transform([cls])[0],
+                "top_feature": feat_names[j],
+                "shap_value": float(sv_row[j]),
+                "feature_value": float(X[i, j]),
+            }
         )
 
-    plot_dependence(
-        shap_values, X, 3, 2,
-        save_path=FIGURES_DIR / "shap_dependence_leverage_profitab.png"
-    )
-    plot_dependence(
-        shap_values, X, 0, 1,
-        save_path=FIGURES_DIR / "shap_dependence_liquid_cumprof.png"
-    )
+    report = {
+        "model": "XGBClassifier full (financials + KAM + FinBERT aggregates)",
+        "n_samples": int(len(df)),
+        "features": feat_names,
+        "classes": list(le.classes_),
+        "global_importance": global_importance,
+        "pct_total_abs_shap": {k: float(pct[k]) for k in feat_names},
+        "top_feature_share_pct": float(max(pct.values())),
+        "per_company_top_factors": per_company[:25],
+    }
+    with open(RESULTS_DIR / "shap_report.json", "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2)
 
-    print("\n4. Generating SHAP report...")
-    report = generate_shap_report(shap_values, X, df)
-
-    report_file = RESULTS_DIR / "shap_report.json"
-    with open(report_file, 'w') as f:
-        json.dump(report, f, indent=2, default=str)
-    print(f"   Saved: {report_file}")
-
-    print("\n" + "=" * 70)
-    print("GLOBAL FEATURE IMPORTANCE (by mean |SHAP|):")
-    print("=" * 70)
-    for feat, info in sorted(report['global_importance'].items(),
-                              key=lambda x: x[1]['rank']):
-        print(f"  #{info['rank']}: {feat:<12} mean|SHAP|={info['mean_abs_shap']:.4f}")
-
-    print(f"\nAll figures saved to {FIGURES_DIR}/")
+    print(f"Wrote SHAP figures under {FIGURES_DIR}")
+    print(f"Wrote {RESULTS_DIR / 'shap_report.json'}")
 
 
 if __name__ == "__main__":

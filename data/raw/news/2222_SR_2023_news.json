@@ -1,0 +1,50 @@
+{
+  "ticker": "2222.SR",
+  "year": 2023,
+  "fetch_date": "2026-03-26T08:21:04.504759+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2222.SR",
+      "title": "Tadawul closes last session in 2023 with positive performance",
+      "description": "r at 11,967,39 points. The turnover reached SAR 5.27 billion through the exchange of 205.20 …",
+      "snippet": "Riyadh – Mubasher: The benchmark All Share Index (TASI) of the Saudi Exchange (Tadawul) went up by 0.30% on Sunday and ended the trading session higher at 11,...",
+      "published_at": "2023-12-31T12:58:41.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4231012/Tadawul-closes-last-session-in-2023-with-positive-performance",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2222.SR",
+      "title": "Saudi Arabia is the new China for investors hunting down growth",
+      "description": "Fund managers are keen to get an early foothold in the next big emerging-market growth story: Saudi Arabia. Find out more.",
+      "snippet": "This advertisement has not loaded yet, but your article continues below.\n\nSaudi Arabia is the new China for investors hunting down growth 'Saudi Arabia now feel...",
+      "published_at": "2023-12-26T11:00:56.000000Z",
+      "source_name": "financialpost.com",
+      "url": "https://financialpost.com/investing/saudi-arabia-china-investors-hunting-down-growth",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2222.SR",
+      "title": "Tadawul closes Monday with positive note",
+      "description": ",09 points. The turnover reached SAR 6.02 billion through the exchange of 199.21 million shares. …",
+      "snippet": "Riyadh – Mubasher: The benchmark All Share Index (TASI) of the Saudi Exchange (Tadawul) went up by 1.05% and closed Monday’s trading session at 11,813,09 po...",
+      "published_at": "2023-12-25T13:45:46.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4229213/Tadawul-closes-Monday-with-positive-note",
+      "search_term": "2222.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

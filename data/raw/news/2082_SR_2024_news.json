@@ -1,0 +1,50 @@
+{
+  "ticker": "2082.SR",
+  "year": 2024,
+  "fetch_date": "2026-03-26T08:20:55.017019+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "2082.SR",
+      "title": "ACWA Power fulfills terms to secure 3 PV solar plant facilities at SAR8.6B",
+      "description": "ACWA Power Co. announced fulfilling the terms related to securing the credit facilities to fund Ar Raas 2, Saad 2 and Al Kahfah solar PV projects in c",
+      "snippet": "ACWA Power Co. headquarters\n\nACWA Power Co. announced fulfilling the terms related to securing the credit facilities to fund Ar Raas 2, Saad 2 and Al Kahfah sol...",
+      "published_at": "2024-02-15T10:34:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1705543",
+      "search_term": "1010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2082.SR",
+      "title": "Saudi’s ACWA Power sees net profit surge 36% in H1 2024",
+      "description": "Saudi Arabia-based ACWA Power continued its expansion, adding a record 10.5GW of renewable power generation capacity to its portfolio",
+      "snippet": "Image: ACWA Power\n\nSaudi-listed ACWA Power reported its financial results for H1 2024. The clean energy company’s net profit attributable to equity holders su...",
+      "published_at": "2024-08-07T07:24:27.000000Z",
+      "source_name": "gulfbusiness.com",
+      "url": "https://gulfbusiness.com/saudis-acwa-power-sees-net-profit-surge-36-in-h1/",
+      "search_term": "ACWA Power",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "2082.SR",
+      "title": "ACWA Power closes $533m financing for Tashkent energy plant",
+      "description": "Saudi Arabia-based ACWA Power's current portfolio in Uzbekistan includes 11.6GW of power, of which 10.1GW is renewable",
+      "snippet": "Image: ACWA Power\n\nACWA Power announced the financial close for the $533m Tashkent Riverside project in Uzbekistan.\n\nThe project includes a 200MW solar plant an...",
+      "published_at": "2024-07-02T07:00:24.000000Z",
+      "source_name": "gulfbusiness.com",
+      "url": "https://gulfbusiness.com/acwa-power-closes-financing-for-uzbeki-project/",
+      "search_term": "ACWA Power",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

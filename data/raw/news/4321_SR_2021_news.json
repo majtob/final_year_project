@@ -1,0 +1,50 @@
+{
+  "ticker": "4321.SR",
+  "year": 2021,
+  "fetch_date": "2026-03-26T08:21:20.484880+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "4321.SR",
+      "title": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.81% By Investing.com",
+      "description": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.81%",
+      "snippet": "© Reuters. Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.81%\n\nInvesting.com – Saudi Arabia stocks were higher after the close on Tuesd...",
+      "published_at": "2021-12-21T14:15:01.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-higher-at-close-of-trade-tadawul-all-share-up-081-2719489",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.28% By Investing.com",
+      "description": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.28%",
+      "snippet": "© Reuters. Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.28%\n\nInvesting.com – Saudi Arabia stocks were higher after the close on Sunda...",
+      "published_at": "2021-12-12T14:55:02.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-higher-at-close-of-trade-tadawul-all-share-up-028-2708737",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "4321.SR",
+      "title": "Saudi Stocks Lead Mideast Gains as Oil Surpasses $85: Inside EM",
+      "description": "By Farah Elbahrawy",
+      "snippet": "“GCC markets are taking cues from the positive performance in global equity markets on Friday,” said Junaid Ansari, head of investment strategy and research...",
+      "published_at": "2021-10-17T08:30:45.000000Z",
+      "source_name": "financialpost.com",
+      "url": "https://financialpost.com/pmn/business-pmn/saudi-stocks-lead-mideast-gains-as-oil-surpasses-85-inside-em",
+      "search_term": "4321.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

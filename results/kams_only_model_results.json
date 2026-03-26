@@ -1,0 +1,39 @@
+{
+  "model": "xgboost_kams_only",
+  "data_file": "data/processed/kams_processed.csv",
+  "n_samples": 47,
+  "features": [
+    "AUSIZE",
+    "AUOP",
+    "EMP",
+    "GCUP",
+    "GCKAM",
+    "REVKAM",
+    "ASSETKAM",
+    "LIABKAM",
+    "OTHERKAM",
+    "FIRMAGE",
+    "FIRMSIZE",
+    "INDUSTRY"
+  ],
+  "target": "rating_category (AA / A / BBB / BB)",
+  "cv_folds": 5,
+  "cv_accuracy_mean": 0.6199999999999999,
+  "cv_accuracy_std": 0.13116759611887738,
+  "train_accuracy": 0.7659574468085106,
+  "feature_importance": {
+    "AUSIZE": 0.3164063096046448,
+    "REVKAM": 0.28265488147735596,
+    "INDUSTRY": 0.1414836347103119,
+    "OTHERKAM": 0.10721071809530258,
+    "FIRMAGE": 0.08201741427183151,
+    "ASSETKAM": 0.06435386836528778,
+    "FIRMSIZE": 0.005873214453458786,
+    "AUOP": 0.0,
+    "EMP": 0.0,
+    "GCUP": 0.0,
+    "GCKAM": 0.0,
+    "LIABKAM": 0.0
+  },
+  "generated_at": "2026-03-26T12:35:24"
+}

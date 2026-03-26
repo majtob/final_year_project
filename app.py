@@ -1,101 +1,106 @@
 """
 Streamlit Demo: Credit Rating Prediction System
-Classical ML + LLM Verdict Generation for Saudi Exchange Companies
+Multisource XGBoost (financials + KAMs + FinBERT news) + SHAP + LLM-style verdicts
 """
 
-import streamlit as st
-import pandas as pd
-import numpy as np
 import json
-import shap
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.model_selection import GroupKFold, cross_val_predict
-from pathlib import Path
+import sys
 import warnings
-warnings.filterwarnings('ignore')
+from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).parent
-DATA_FILE = PROJECT_ROOT / "data" / "processed" / "model_training_data_v2.csv"
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import shap
+import streamlit as st
+from sklearn.preprocessing import LabelEncoder
+from xgboost import XGBClassifier
+
+warnings.filterwarnings("ignore")
+
+PROJECT_ROOT = Path(__file__).resolve()
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from models.llm_verdict import generate_template_verdict  # noqa: E402
+from models.multisource_data import FULL_FEATURE_COLS, load_or_build_merged_training  # noqa: E402
+from models.xgboost_full import prepare_target  # noqa: E402
+
+DATA_FILE = PROJECT_ROOT / "data" / "processed" / "merged_multisource_training.csv"
 FIGURES_DIR = PROJECT_ROOT / "figures"
 RESULTS_DIR = PROJECT_ROOT / "results"
 VERDICTS_DIR = RESULTS_DIR / "verdicts"
 
-FEATURES = ['liquid', 'cumprof', 'profitab', 'leverage']
 FEATURE_LABELS = {
-    'liquid': 'Liquidity (WC / Total Assets)',
-    'cumprof': 'Cumulative Profitability (RE / Total Assets)',
-    'profitab': 'Profitability (EBIT / Total Assets)',
-    'leverage': 'Leverage (Book Equity / Total Liabilities)',
+    "liquid": "Liquidity (WC / Total Assets)",
+    "cumprof": "Cumulative profitability (RE / Total Assets)",
+    "profitab": "Profitability (EBIT / Total Assets)",
+    "leverage": "Leverage (Equity / Liabilities)",
+    "GCKAM": "KAM: Going concern (0/1)",
+    "REVKAM": "KAM: Revenue recognition (0/1)",
+    "ASSETKAM": "KAM: Assets / impairment (0/1)",
+    "LIABKAM": "KAM: Liabilities (0/1)",
+    "OTHERKAM": "KAM: Other (0/1)",
+    "sentiment_mean": "FinBERT mean score",
+    "sentiment_std": "FinBERT sentiment std",
+    "sentiment_pos_pct": "Share positive (FinBERT)",
+    "sentiment_neg_pct": "Share negative (FinBERT)",
+    "news_count": "News article count",
 }
-
-RATING_TO_NUMERIC = {
-    'AAA': 21, 'AA+': 20, 'AA': 19, 'AA-': 18,
-    'A+': 17, 'A': 16, 'A-': 15,
-    'BBB+': 14, 'BBB': 13, 'BBB-': 12,
-    'BB+': 11, 'BB': 10, 'BB-': 9,
-    'B+': 8, 'B': 7, 'B-': 6,
-}
-
-
-def to_binary(rating):
-    return 0 if RATING_TO_NUMERIC.get(rating, 0) >= 15 else 1
 
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(DATA_FILE)
-    df['target'] = df['rating'].apply(to_binary)
-    return df
+    df = load_or_build_merged_training(save=True)
+    df = df.dropna(subset=["liquid", "cumprof", "profitab", "leverage"], how="any")
+    if "rating_category" not in df.columns:
+        df = prepare_target(df)
+    return df.reset_index(drop=True)
 
 
 @st.cache_resource
-def train_model(df):
-    X = df[FEATURES].values
-    y = df['target'].values
-    model = GradientBoostingClassifier(
-        n_estimators=100, max_depth=3,
-        learning_rate=0.1, random_state=42
+def train_model_bundle(df):
+    X = df[FULL_FEATURE_COLS].values.astype(np.float64)
+    le = LabelEncoder()
+    y = le.fit_transform(df["rating_category"].values)
+    model = XGBClassifier(
+        n_estimators=100,
+        max_depth=3,
+        learning_rate=0.1,
+        random_state=42,
+        use_label_encoder=False,
+        eval_metric="mlogloss",
     )
     model.fit(X, y)
     explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(X)
-    return model, explainer, shap_values
+    shap_raw = explainer.shap_values(X)
+    return model, explainer, shap_raw, le
 
 
-@st.cache_data
-def get_cv_predictions(df):
-    X = df[FEATURES].values
-    y = df['target'].values
-    groups = df['ticker'].values
-    n_splits = min(5, len(set(groups)))
-    cv = GroupKFold(n_splits=n_splits)
-    model = GradientBoostingClassifier(
-        n_estimators=100, max_depth=3,
-        learning_rate=0.1, random_state=42
-    )
-    y_pred = cross_val_predict(model, X, y, cv=cv, groups=groups)
-    y_proba = cross_val_predict(model, X, y, cv=cv, groups=groups, method='predict_proba')
-    return y_pred, y_proba
+def _class_shap_rows(shap_raw, n_classes: int):
+    if isinstance(shap_raw, list):
+        return [np.asarray(s) for s in shap_raw]
+    arr = np.asarray(shap_raw)
+    if arr.ndim == 3:
+        return [arr[:, :, c] for c in range(arr.shape[2])]
+    return [arr]
 
 
 @st.cache_data
 def load_verdicts():
     path = VERDICTS_DIR / "all_verdicts.json"
     if path.exists():
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             return json.load(f)
     return None
 
 
-def generate_verdict_for_row(row, pred_class, confidence):
-    """Generate a template verdict for display."""
-    from models.llm_verdict import generate_template_verdict
-    pred_rating = "A" if pred_class == 0 else "BBB"
+def generate_verdict_for_row(row, pred_category: str, confidence: float):
     return generate_template_verdict(
-        row.to_dict(), pred_rating, confidence, row.get('rating')
+        row.to_dict(), pred_category, confidence, row.get("rating")
     )
 
 
@@ -107,293 +112,239 @@ def main():
     )
 
     st.title("Credit Rating Prediction System")
-    st.markdown("**Classical ML + LLM Verdict Generation** for Saudi Exchange Companies (2021-2024)")
+    st.markdown(
+        "**Multisource XGBoost** (financial ratios + KAM dummies + FinBERT news) "
+        "with **SHAP** and **template verdicts** — Saudi Tadawul panel"
+    )
     st.markdown("---")
 
     df = load_data()
-    model, explainer, shap_values_all = train_model(df)
-    y_pred, y_proba = get_cv_predictions(df)
+    model, explainer, shap_raw, le_ml = train_model_bundle(df)
+    class_rows = _class_shap_rows(shap_raw, len(le_ml.classes_))
+    X_all = df[FULL_FEATURE_COLS].values.astype(np.float64)
 
-    tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "Company Predictor",
-        "Model Performance",
-        "SHAP Explainability",
-        "Error Analysis",
-        "Dataset Explorer",
-    ])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(
+        [
+            "Company Predictor",
+            "Model Performance",
+            "SHAP Explainability",
+            "Error Analysis",
+            "Dataset Explorer",
+        ]
+    )
 
-    # ─── TAB 1: Company Predictor ───
     with tab1:
-        st.header("Company Credit Rating Prediction")
+        st.header("Company credit rating (multicategory)")
 
         col1, col2 = st.columns([1, 2])
 
         with col1:
-            unique_companies = df.drop_duplicates(subset=['ticker']).sort_values('company_name')
+            unique_companies = df.drop_duplicates(subset=["ticker"]).sort_values(
+                "company_name"
+            )
             company_options = [
                 f"{row['company_name']} ({row['ticker']})"
                 for _, row in unique_companies.iterrows()
             ]
-            selected = st.selectbox("Select a Company", company_options)
+            selected = st.selectbox("Select a company", company_options)
 
             if selected:
-                ticker = selected.split('(')[-1].rstrip(')')
-                company_rows = df[df['ticker'] == ticker].sort_values('fiscal_year', ascending=False)
+                ticker = selected.split("(")[-1].rstrip(")")
+                company_rows = df[df["ticker"] == ticker].sort_values(
+                    "fiscal_year", ascending=False
+                )
 
                 if len(company_rows) > 1:
-                    years = sorted(company_rows['fiscal_year'].unique(), reverse=True)
-                    selected_year = st.selectbox("Fiscal Year", years)
-                    company_row = company_rows[company_rows['fiscal_year'] == selected_year].iloc[0]
+                    years = sorted(company_rows["fiscal_year"].unique(), reverse=True)
+                    selected_year = st.selectbox("Fiscal year", years)
+                    company_row = company_rows[
+                        company_rows["fiscal_year"] == selected_year
+                    ].iloc[0]
                 else:
                     company_row = company_rows.iloc[0]
 
-                st.markdown("#### Financial Ratios (Altman Z''-Score)")
-                for feat in FEATURES:
+                row_pos = int(company_row.name)
+
+                st.markdown("#### Financial ratios")
+                for feat in ["liquid", "cumprof", "profitab", "leverage"]:
                     val = company_row[feat]
                     label = FEATURE_LABELS[feat]
                     color = "green" if val > 0.1 else ("orange" if val > 0 else "red")
                     st.metric(label, f"{val:.4f}")
 
+                st.markdown("#### KAM dummies (audit topics)")
+                for feat in ["GCKAM", "REVKAM", "ASSETKAM", "LIABKAM", "OTHERKAM"]:
+                    st.metric(FEATURE_LABELS[feat], int(company_row[feat]))
+
+                st.markdown("#### News / FinBERT")
+                st.metric(FEATURE_LABELS["sentiment_mean"], f"{company_row['sentiment_mean']:.4f}")
+                st.metric(FEATURE_LABELS["news_count"], int(company_row["news_count"]))
+
         with col2:
             if selected:
-                row_idx = company_row.name
-                X_single = df.loc[[row_idx], FEATURES].values
-
-                pred = model.predict(X_single)[0]
+                X_single = X_all[row_pos : row_pos + 1]
+                pred_enc = int(model.predict(X_single)[0])
                 proba = model.predict_proba(X_single)[0]
-                confidence = float(max(proba))
-                pred_label = "Investment Grade (A- and above)" if pred == 0 else "Speculative Grade (BBB+ and below)"
-                actual_label = "Investment Grade" if company_row['target'] == 0 else "Speculative Grade"
+                confidence = float(np.max(proba))
+                pred_cat = le_ml.inverse_transform([pred_enc])[0]
+                labels_order = list(le_ml.classes_)
+                actual_cat = company_row["rating_category"]
 
-                st.markdown("#### ML Prediction")
-                pred_col, actual_col = st.columns(2)
-                with pred_col:
-                    st.metric("Predicted Class", pred_label.split(' (')[0],
-                              delta=f"Confidence: {confidence:.0%}")
-                with actual_col:
-                    match = "Correct" if pred == company_row['target'] else "Incorrect"
-                    st.metric("Actual Rating",
-                              f"{company_row['rating']} ({actual_label})",
-                              delta=match,
-                              delta_color="normal" if match == "Correct" else "inverse")
+                st.markdown("#### ML prediction (XGBoost)")
+                st.metric("Predicted category", pred_cat, delta=f"{confidence:.0%} confidence")
+                st.caption("Class probabilities")
+                st.json({labels_order[i]: float(proba[i]) for i in range(len(proba))})
+                match = "Yes" if pred_cat == actual_cat else "No"
+                st.metric("Actual category", actual_cat, delta=f"Match: {match}")
 
-                st.markdown("#### SHAP Explanation")
-                sv = shap_values_all[row_idx]
+                st.markdown("#### SHAP (waterfall for predicted class)")
+                sv_mats = class_rows
+                sv_row = np.asarray(sv_mats[pred_enc][row_pos]).ravel()
                 ev = explainer.expected_value
-                if hasattr(ev, '__len__'):
-                    ev = float(ev[0]) if len(ev) == 1 else float(ev[1])
-
-                feature_names = [FEATURE_LABELS[f] for f in FEATURES]
+                base = float(ev[pred_enc]) if hasattr(ev, "__len__") else float(ev)
+                fnames = [FEATURE_LABELS.get(f, f) for f in FULL_FEATURE_COLS]
                 explanation = shap.Explanation(
-                    values=sv,
-                    base_values=ev,
+                    values=sv_row,
+                    base_values=base,
                     data=X_single[0],
-                    feature_names=feature_names,
+                    feature_names=fnames,
                 )
-
-                fig_w, ax_w = plt.subplots(figsize=(10, 4))
+                fig_w, _ = plt.subplots(figsize=(10, 4))
                 shap.plots.waterfall(explanation, show=False)
+                plt.tight_layout()
                 st.pyplot(fig_w)
                 plt.close(fig_w)
 
-                st.markdown("#### LLM Credit Verdict")
-                verdict = generate_verdict_for_row(company_row, pred, confidence)
-
-                st.markdown(f"**Overall Assessment:** {verdict['overall_assessment']}")
-
-                str_col, weak_col = st.columns(2)
-                with str_col:
-                    st.markdown("**Strengths:**")
-                    for s in verdict['strengths']:
+                st.markdown("#### Credit verdict (template, same inputs as `llm_verdict.py`)")
+                verdict = generate_verdict_for_row(company_row, pred_cat, confidence)
+                st.markdown(f"**Overall:** {verdict['overall_assessment']}")
+                c1, c2 = st.columns(2)
+                with c1:
+                    st.markdown("**Strengths**")
+                    for s in verdict["strengths"]:
                         st.markdown(f"- {s}")
-                with weak_col:
-                    st.markdown("**Weaknesses:**")
-                    for w in verdict['weaknesses']:
+                with c2:
+                    st.markdown("**Weaknesses**")
+                    for w in verdict["weaknesses"]:
                         st.markdown(f"- {w}")
-
-                st.markdown("**Key Risks:**")
-                for r in verdict['key_risks']:
+                st.markdown("**Key risks**")
+                for r in verdict["key_risks"]:
                     st.markdown(f"- {r}")
+                with st.expander("Prediction analysis"):
+                    st.write(verdict["prediction_analysis"])
 
-                with st.expander("Prediction Analysis"):
-                    st.write(verdict['prediction_analysis'])
-
-    # ─── TAB 2: Model Performance ───
     with tab2:
-        st.header("Model Performance Comparison")
-
+        st.header("Model performance (reference figures)")
         fig_path = FIGURES_DIR / "model_comparison.png"
         if fig_path.exists():
-            st.image(str(fig_path), caption="8-Model Comparison (GroupKFold CV)")
+            st.image(str(fig_path), caption="Historical multi-model comparison (GroupKFold)")
 
-        col1, col2 = st.columns(2)
-        with col1:
-            fig_path = FIGURES_DIR / "confusion_matrix_gb.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="Confusion Matrix (Gradient Boosting)")
-        with col2:
-            fig_path = FIGURES_DIR / "rating_distribution.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="Rating Distribution")
+        st.markdown(
+            "Current pipeline metrics are in **`results/full_model_comparison.json`** "
+            "(XGBoost: financials only → +KAMs → +sentiment → full)."
+        )
+        full_path = RESULTS_DIR / "full_model_comparison.json"
+        if full_path.exists():
+            with open(full_path, encoding="utf-8") as f:
+                st.json(json.load(f))
 
-        col3, col4 = st.columns(2)
-        with col3:
-            fig_path = FIGURES_DIR / "decision_tree.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="Decision Tree Visualization")
-        with col4:
-            fig_path = FIGURES_DIR / "feature_distributions.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="Feature Distributions by Class")
-
-        results_path = RESULTS_DIR / "model_comparison_final.json"
-        if results_path.exists():
-            with open(results_path) as f:
-                results = json.load(f)
-            st.markdown("#### Detailed Results")
-            results_df = pd.DataFrame([
-                {"Model": k, "Accuracy": f"{v:.1%}"}
-                for k, v in sorted(results.items(), key=lambda x: x[1], reverse=True)
-            ])
-            st.dataframe(results_df, use_container_width=True, hide_index=True)
-
-    # ─── TAB 3: SHAP Explainability ───
     with tab3:
-        st.header("SHAP Feature Importance Analysis")
+        st.header("SHAP (full multisource XGBoost)")
+        st.caption("Regenerate with: `PYTHONPATH=. python models/shap_explainability.py`")
 
-        col1, col2 = st.columns(2)
-        with col1:
-            fig_path = FIGURES_DIR / "shap_beeswarm.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="SHAP Beeswarm (Global Feature Impact)")
-        with col2:
-            fig_path = FIGURES_DIR / "shap_bar_importance.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="Mean |SHAP| Feature Importance")
+        c1, c2 = st.columns(2)
+        with c1:
+            p = FIGURES_DIR / "shap_beeswarm.png"
+            if p.exists():
+                st.image(str(p), caption="SHAP beeswarm (majority-class projection)")
+        with c2:
+            p = FIGURES_DIR / "shap_bar_importance.png"
+            if p.exists():
+                st.image(str(p), caption="Mean |SHAP| (14 features)")
 
-        st.markdown("#### Feature Interactions")
-        col3, col4 = st.columns(2)
-        with col3:
-            fig_path = FIGURES_DIR / "shap_dependence_leverage_profitab.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="Leverage vs Profitability Interaction")
-        with col4:
-            fig_path = FIGURES_DIR / "shap_dependence_liquid_cumprof.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="Liquidity vs Cumulative Profit Interaction")
+        st.markdown("#### Feature interactions")
+        c3, c4, c5 = st.columns(3)
+        with c3:
+            p = FIGURES_DIR / "shap_dependence_leverage_profitab.png"
+            if p.exists():
+                st.image(str(p), caption="Leverage × profitability")
+        with c4:
+            p = FIGURES_DIR / "shap_dependence_liquid_cumprof.png"
+            if p.exists():
+                st.image(str(p), caption="Liquidity × cumulative profit")
+        with c5:
+            p = FIGURES_DIR / "shap_dependence_news_sentiment.png"
+            if p.exists():
+                st.image(str(p), caption="News count × FinBERT mean")
 
-        st.markdown("#### Per-Company SHAP Waterfall Plots")
-        waterfall_files = sorted(FIGURES_DIR.glob("shap_waterfall_*.png"))
-        if waterfall_files:
-            cols = st.columns(min(3, len(waterfall_files)))
-            for i, wf in enumerate(waterfall_files):
-                with cols[i % len(cols)]:
-                    st.image(str(wf), caption=wf.stem.replace('shap_waterfall_', '').replace('_', '.'))
+        st.markdown("#### Per-company waterfalls (sample)")
+        wfs = sorted(FIGURES_DIR.glob("shap_waterfall_*.png"))
+        if wfs:
+            cols = st.columns(2)
+            for i, wf in enumerate(wfs):
+                with cols[i % 2]:
+                    st.image(str(wf), caption=wf.stem.replace("_", " "))
 
-        report_path = RESULTS_DIR / "shap_report.json"
-        if report_path.exists():
-            with open(report_path) as f:
+        rp = RESULTS_DIR / "shap_report.json"
+        if rp.exists():
+            with open(rp, encoding="utf-8") as f:
                 shap_report = json.load(f)
-            st.markdown("#### Global Feature Ranking")
-            ranking = pd.DataFrame([
-                {
-                    "Rank": info['rank'],
-                    "Feature": feat,
-                    "Mean |SHAP|": f"{info['mean_abs_shap']:.4f}",
-                    "Description": info['description'],
-                }
-                for feat, info in sorted(
-                    shap_report['global_importance'].items(),
-                    key=lambda x: x[1]['rank']
-                )
-            ])
+            st.markdown("#### Global ranking (`results/shap_report.json`)")
+            ranking = pd.DataFrame(
+                [
+                    {
+                        "Rank": info["rank"],
+                        "Feature": feat,
+                        "Mean |SHAP|": f"{info['mean_abs_shap']:.4f}",
+                        "Description": info["description"],
+                    }
+                    for feat, info in sorted(
+                        shap_report["global_importance"].items(),
+                        key=lambda x: x[1]["rank"],
+                    )
+                ]
+            )
             st.dataframe(ranking, use_container_width=True, hide_index=True)
 
-    # ─── TAB 4: Error Analysis ───
     with tab4:
-        st.header("Error Analysis")
+        st.header("Error analysis (legacy figures)")
+        for name, cap in [
+            ("error_scatter.png", "Misclassified companies (historical binary GB)"),
+            ("error_patterns.png", "Error patterns"),
+            ("confidence_dist.png", "Confidence distribution"),
+        ]:
+            p = FIGURES_DIR / name
+            if p.exists():
+                st.image(str(p), caption=cap)
+        ep = RESULTS_DIR / "error_analysis.json"
+        if ep.exists():
+            with open(ep, encoding="utf-8") as f:
+                st.json(json.load(f))
 
-        col1, col2 = st.columns(2)
-        with col1:
-            fig_path = FIGURES_DIR / "error_scatter.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="Misclassified Companies in Feature Space")
-        with col2:
-            fig_path = FIGURES_DIR / "error_patterns.png"
-            if fig_path.exists():
-                st.image(str(fig_path), caption="Error Pattern Categories")
-
-        fig_path = FIGURES_DIR / "confidence_dist.png"
-        if fig_path.exists():
-            st.image(str(fig_path), caption="Model Confidence Distribution")
-
-        error_path = RESULTS_DIR / "error_analysis.json"
-        if error_path.exists():
-            with open(error_path) as f:
-                error_data = json.load(f)
-
-            st.markdown("#### Summary")
-            summary = error_data['summary']
-            m1, m2, m3, m4 = st.columns(4)
-            m1.metric("Total Samples", summary['total_samples'])
-            m2.metric("Accuracy", f"{summary['accuracy']:.1%}")
-            m3.metric("False Positives", summary['false_positives'])
-            m4.metric("False Negatives", summary['false_negatives'])
-
-            st.markdown("#### Error Patterns")
-            for pattern, info in error_data['error_patterns'].items():
-                st.markdown(f"- **{pattern.replace('_', ' ').title()}**: "
-                           f"{info['count']} errors ({info['pct']:.0%}) -- {info['explanation']}")
-
-            st.markdown("#### Misclassified Companies")
-            for m in error_data['misclassified_companies']:
-                with st.expander(f"{m['ticker']} ({m['company'][:40]}) -- "
-                                f"Actual: {m['actual_rating']}, Predicted: {m['predicted_class']}"):
-                    st.write(f"**Error Type:** {m['error_type']}")
-                    st.write(f"**Confidence:** {m['confidence']:.1%}")
-                    st.write(f"**Boundary Rating:** {'Yes' if m['is_boundary_rating'] else 'No'}")
-                    st.write(f"**Agency Disagreement:** {'Yes' if m['has_agency_disagreement'] else 'No'}")
-                    st.write("**Likely Reasons:**")
-                    for reason in m['likely_reasons']:
-                        st.write(f"  - {reason}")
-
-        fig_path = FIGURES_DIR / "agency_disagreement.png"
-        if fig_path.exists():
-            st.markdown("#### Inter-Agency Rating Disagreement")
-            st.image(str(fig_path))
-
-    # ─── TAB 5: Dataset Explorer ───
     with tab5:
-        st.header("Dataset Explorer")
+        st.header("Dataset explorer")
+        p = FIGURES_DIR / "pca_scatter.png"
+        if p.exists():
+            st.image(str(p), caption="PCA on ratios (historical)")
 
-        fig_path = FIGURES_DIR / "pca_scatter.png"
-        if fig_path.exists():
-            st.image(str(fig_path), caption="Companies in Financial Ratio Space (PCA)")
-
-        st.markdown("#### Full Dataset")
+        show_cols = (
+            ["ticker", "company_name", "rating_agency", "rating", "fiscal_year", "rating_category"]
+            + FULL_FEATURE_COLS
+        )
+        show_cols = [c for c in show_cols if c in df.columns]
         st.dataframe(
-            df[['ticker', 'company_name', 'rating_agency', 'rating',
-                'fiscal_year'] + FEATURES + ['target']].sort_values(
-                ['ticker', 'fiscal_year']),
+            df[show_cols].sort_values(["ticker", "fiscal_year"]),
             use_container_width=True,
             hide_index=True,
         )
-
-        st.markdown("#### Dataset Statistics")
-        col1, col2, col3 = st.columns(3)
-        col1.metric("Total Records", len(df))
-        col2.metric("Unique Companies", df['ticker'].nunique())
-        col3.metric("Rating Agencies", df['rating_agency'].nunique())
-
-        st.markdown("#### Feature Statistics")
-        stats = df[FEATURES].describe().T
-        stats.index = [FEATURE_LABELS.get(f, f) for f in stats.index]
-        st.dataframe(stats.round(4), use_container_width=True)
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Rows", len(df))
+        c2.metric("Companies", df["ticker"].nunique())
+        c3.metric("Categories", df["rating_category"].nunique())
 
     st.markdown("---")
     st.markdown(
-        "*Built for FYP: Credit Rating Prediction for Saudi Exchange Companies "
-        "using Classical ML + LLM Verdict Generation*"
+        "*FYP: multisource ML + FinBERT news + KAM features + SHAP + verdicts*"
     )
 
 
