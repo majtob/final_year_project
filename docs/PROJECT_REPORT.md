@@ -479,7 +479,8 @@ To test whether audit-report features alone predict rating **without** merging t
 | Train full XGBoost (4 variants: fin / +KAM / +sentiment / full) | ✅ Done | See `results/full_model_comparison.json` (e.g. **~71.8%** CV full model, 46 rows) |
 | Multi-agency expansion | ✅ Done | 80 ratings, 5 agencies |
 | Train expanded models | ✅ Done | 69.6% best (Fitch) |
-| Multi-model comparison | ✅ Done | 78.3% best (Decision Tree) |
+| Multisource CV benchmark (10 learners) | ✅ Done | `evaluate_multisource_models.py` → `results/multisource_model_comparison.json` |
+| Legacy multi-model comparison (older sample) | ✅ Reference | 78.3% best DT in historical `figures/model_comparison.png` |
 | Paper-aligned model (4 ratios, binary) | ✅ Done | 71.2% (Gradient Boosting) |
 | Historical Fitch data (2019-2024) | ✅ Done | 66.7% best (SVM) |
 | Agency handling comparison | ✅ Done | Fitch-only vs All+Agency |
@@ -529,6 +530,7 @@ mxa1438/
 │   ├── xgboost_kams_only.py                # XGBoost: kams_processed.csv only
 │   ├── xgboost_full.py                     # XGBoost: financials + KAMs + news (4 model variants)
 │   ├── shap_explainability.py              # SHAP plots + `shap_report.json` for full multisource XGBoost
+│   ├── evaluate_multisource_models.py      # XGBoost vs RF, GBDT, linear, kNN, MLP, … (StratifiedKFold)
 │   ├── multisource_data.py                 # Load/build `merged_multisource_training.csv`
 │   ├── llm_verdict.py                      # Verdicts (multicategory XGB + KAM + FinBERT context)
 │   ├── prepare_finetune_data.py            # Instruction data for QLoRA
@@ -1025,6 +1027,33 @@ Waterfalls are saved as `figures/shap_waterfall_<TICKER>_<YEAR>.png` for a strat
 
 The Streamlit app (`app.py`) uses the same 14 features for on-the-fly SHAP waterfalls on the trained full XGBoost model.
 
+### 15.5 Multisource algorithm comparison (XGBoost vs other learners)
+
+To test whether **XGBoost** is still the best choice on the *current* aligned panel, we benchmarked several scikit-learn models (plus XGBoost) on the **same 46-row** multisource matrix as §15: **14 features**, **four classes** (A / AA / BB / BBB), **5-fold stratified CV** (`random_state=42`). Script: `models/evaluate_multisource_models.py`. Outputs: `results/multisource_model_comparison.json`, `figures/multisource_model_comparison.png`.
+
+**CV accuracy (mean) and macro-F1 (mean)** — values from the JSON (rounded):
+
+| Rank | Model | Accuracy | F1 (macro) | Notes |
+|------|--------|----------|------------|--------|
+| 1 | **XGBoost** | **71.8%** | 0.66 | Best accuracy on this panel |
+| 2 | Random Forest | 66.9% | 0.53 | Strong second |
+| 3 | Extra Trees | 65.1% | 0.55 | Similar to RF |
+| 4 | sklearn `GradientBoostingClassifier` | 58.4% | 0.52 | Gradient boosting, not XGB |
+| 5 | Linear SVC (+ scaler) | 56.7% | **0.59** | Competitive macro-F1 |
+| 6 | kNN *k*=5 (+ scaler) | 54.7% | 0.43 | High variance across folds |
+| 7 | Decision Tree | 54.2% | 0.47 | Shallow tree baseline |
+| 8 | Logistic regression (+ scaler) | 52.0% | 0.49 | Linear separability limited |
+| 9 | MLP (+ scaler) | 41.3% | 0.18 | Small *n*, default architecture |
+| 10 | HistGradientBoosting (sklearn) | 39.3% | 0.14 | Default hyperparameters weak here |
+
+**Takeaway:** On this **small** multisource sample, **XGBoost remains the top model by accuracy**; **sklearn’s classic gradient boosting** sits mid-pack (not superior to XGBoost here). **HistGradientBoosting** underperforms badly without tuning. **Linear SVC** achieves the **second-best macro-F1**, suggesting some linear structure, but at lower accuracy than XGBoost. Results are **high-variance** (wide fold-to-fold std); interpret as indicative, not definitive.
+
+### 15.6 App, SHAP figures, and Streamlit — current state
+
+**SHAP (explanation layer):** Yes — updated for the **14-feature multicategory XGBoost**. Global and dependence plots plus per-row waterfalls are produced by `models/shap_explainability.py` and stored under `figures/shap_*.png` with `results/shap_report.json`. The written explanation in §15.2–15.4 matches that pipeline.
+
+**Streamlit app:** Yes — `app.py` was updated to use **`merged_multisource_training.csv`**, **14-input XGBoost**, **multiclass probabilities**, **SHAP waterfall for the predicted class**, **KAM + FinBERT fields** in the UI, and **template verdicts** aligned with `llm_verdict.py`. The **Model performance** tab also shows the **multisource benchmark** figure and table (`multisource_model_comparison.json` / `.png`) alongside `full_model_comparison.json`.
+
 ---
 
 ## 16. Error Analysis
@@ -1385,8 +1414,8 @@ A Streamlit web application provides an interactive demonstration of the complet
 | Tab | Content |
 |-----|---------|
 | **Company Predictor** | Interactive prediction with SHAP explanation and LLM verdict |
-| **Model Performance** | Confusion matrix, model comparison chart, rating distribution |
-| **SHAP Explainability** | Beeswarm plots, feature interactions, per-company waterfalls |
+| **Model Performance** | Multisource benchmark chart + table (`multisource_model_comparison.*`), `full_model_comparison.json`, legacy figure |
+| **SHAP Explainability** | 14-feature XGBoost: beeswarm, bar, dependence plots, per-company waterfalls, `shap_report.json` |
 | **Error Analysis** | Misclassified companies, error patterns, confidence distribution |
 | **Dataset Explorer** | PCA scatter plot, full dataset table, feature statistics |
 

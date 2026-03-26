@@ -234,19 +234,51 @@ def main():
                     st.write(verdict["prediction_analysis"])
 
     with tab2:
-        st.header("Model performance (reference figures)")
-        fig_path = FIGURES_DIR / "model_comparison.png"
-        if fig_path.exists():
-            st.image(str(fig_path), caption="Historical multi-model comparison (GroupKFold)")
+        st.header("Model performance")
 
         st.markdown(
-            "Current pipeline metrics are in **`results/full_model_comparison.json`** "
-            "(XGBoost: financials only → +KAMs → +sentiment → full)."
+            "**Current multisource panel (14 features, 4-class `rating_category`):** "
+            "Stratified 5-fold CV comparing XGBoost to Random Forest, Extra Trees, "
+            "sklearn Gradient Boosting, HistGradientBoosting, trees, linear models, kNN, MLP."
+        )
+        bench_png = FIGURES_DIR / "multisource_model_comparison.png"
+        if bench_png.exists():
+            st.image(str(bench_png), caption="CV accuracy — multisource benchmark")
+        bench_json = RESULTS_DIR / "multisource_model_comparison.json"
+        if bench_json.exists():
+            with open(bench_json, encoding="utf-8") as f:
+                bench = json.load(f)
+            st.markdown("#### Ranking by CV accuracy")
+            rows = []
+            for name in bench.get("ranking_by_accuracy", []):
+                m = bench["models"].get(name, {})
+                rows.append(
+                    {
+                        "Model": name,
+                        "Accuracy (mean)": f"{m.get('accuracy_mean', 0):.1%}",
+                        "Accuracy (std)": f"{m.get('accuracy_std', 0):.3f}",
+                        "F1 macro (mean)": f"{m.get('f1_macro_mean', 0):.3f}",
+                    }
+                )
+            st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+            with st.expander("Full benchmark JSON"):
+                st.json(bench)
+
+        st.markdown("---")
+        st.markdown(
+            "**XGBoost feature ablation (same data pipeline):** "
+            "`results/full_model_comparison.json` (financials only → +KAMs → +sentiment → full)."
         )
         full_path = RESULTS_DIR / "full_model_comparison.json"
         if full_path.exists():
             with open(full_path, encoding="utf-8") as f:
                 st.json(json.load(f))
+
+        st.markdown("---")
+        st.markdown("**Legacy figure (older binary / larger-sample experiments):**")
+        fig_path = FIGURES_DIR / "model_comparison.png"
+        if fig_path.exists():
+            st.image(str(fig_path), caption="Historical multi-model comparison (GroupKFold)")
 
     with tab3:
         st.header("SHAP (full multisource XGBoost)")
@@ -307,11 +339,11 @@ def main():
             st.dataframe(ranking, use_container_width=True, hide_index=True)
 
     with tab4:
-        st.header("Error analysis (legacy figures)")
+        st.header("Error analysis (multisource XGBoost CV)")
         for name, cap in [
-            ("error_scatter.png", "Misclassified companies (historical binary GB)"),
-            ("error_patterns.png", "Error patterns"),
-            ("confidence_dist.png", "Confidence distribution"),
+            ("error_scatter.png", "Misclassified vs correct (PCA space, CV)"),
+            ("error_patterns.png", "Actual → predicted confusion pairs"),
+            ("confidence_dist.png", "Max class probability (CV)"),
         ]:
             p = FIGURES_DIR / name
             if p.exists():
@@ -325,7 +357,7 @@ def main():
         st.header("Dataset explorer")
         p = FIGURES_DIR / "pca_scatter.png"
         if p.exists():
-            st.image(str(p), caption="PCA on ratios (historical)")
+            st.image(str(p), caption="PCA on 14 multisource features (standardized)")
 
         show_cols = (
             ["ticker", "company_name", "rating_agency", "rating", "fiscal_year", "rating_category"]

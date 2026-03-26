@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-03-26T10:08:50.609126+00:00",
+  "n_rows": 46,
+  "figures_written": [
+    "rating_distribution.png",
+    "confusion_matrix_multisource.png",
+    "confusion_matrix_gb.png",
+    "pca_multisource.png",
+    "pca_scatter.png",
+    "feature_distributions_multisource.png",
+    "feature_distributions.png",
+    "confidence_distribution_multisource.png",
+    "confidence_dist.png",
+    "error_scatter_multisource.png",
+    "error_scatter.png",
+    "error_patterns_multisource.png",
+    "error_patterns.png",
+    "model_comparison.png (from multisource benchmark if present)"
+  ],
+  "results_written": [
+    "error_analysis_multisource.json",
+    "error_analysis.json"
+  ]
+}
