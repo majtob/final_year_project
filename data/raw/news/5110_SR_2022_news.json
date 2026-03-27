@@ -1,7 +1,50 @@
 {
   "ticker": "5110.SR",
   "year": 2022,
-  "fetch_date": "2026-03-26T08:24:05.606100+00:00",
-  "article_count": 0,
-  "articles": []
+  "fetch_date": "2026-03-27T18:34:14.635262+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "5110.SR",
+      "title": "Al Moammar Information Systems Company (MIS) announces that it has signed a contract for the supply and installation of the server’s infrastructure with (Saudi Electricity Company) at a value of 40,02",
+      "description": "of the server’s infrastructure with (Saudi Electricity Company) at a value of 40,020,000.00 …",
+      "snippet": "Element List Explanation\n\nIntroduction Al Moammar Information Systems Company (MIS) announces the signing of a contract for the supply and installation of the s...",
+      "published_at": "2022-12-13T05:13:50.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4051240/Al-Moammar-Information-Systems-Company-MIS-announces-that-it-has-signed-a-contract-for-the-supply-and-installation-of-the-server-s-infrastructure-with-Saudi-Electricity-Company-at-a-value-of-40-02",
+      "search_term": "7200.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "5110.SR",
+      "title": "Saudi Electricity Company announces the Appointment of a Board Member",
+      "description": "ointment of Mr. Scott Mathew Prochazka as a member of the Board of Directors, in the vacant …",
+      "snippet": "Additional Information\n\nOn this occasion, the Board of Directors of the Saudi Electricity Company extends its thanks and appreciation to Mr. David Crane for his...",
+      "published_at": "2022-12-06T12:27:53.000000Z",
+      "source_name": "english.mubasher.info",
+      "url": "https://english.mubasher.info/news/4049123/Saudi-Electricity-Company-announces-the-Appointment-of-a-Board-Member",
+      "search_term": "5110.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "5110.SR",
+      "title": "Saudi Arabia stocks lower at close of trade; Tadawul All Share down 0.46% By Investing.com",
+      "description": "Saudi Arabia stocks lower at close of trade; Tadawul All Share down 0.46%",
+      "snippet": "© Reuters. Saudi Arabia stocks lower at close of trade; Tadawul All Share down 0.46%\n\nInvesting.com – Saudi Arabia stocks were lower after the close on Monda...",
+      "published_at": "2022-11-28T14:15:03.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-lower-at-close-of-trade-tadawul-all-share-down-046-2952864",
+      "search_term": "7010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
 }

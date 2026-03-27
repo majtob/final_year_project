@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-27T17:51:57.928139",
-  "n_samples": 46,
+  "generated_at": "2026-03-27T21:54:08.391415",
+  "n_samples": 45,
   "n_features": 14,
   "feature_names": [
     "liquid",
@@ -28,101 +28,101 @@
     "A": 18,
     "AA": 6,
     "BB": 6,
-    "BBB": 16
+    "BBB": 15
   },
   "cv_folds": 5,
   "cv_random_state": 42,
   "models": {
     "xgboost": {
-      "accuracy_mean": 0.7177777777777777,
-      "accuracy_std": 0.08652409926191904,
-      "f1_macro_mean": 0.6606349206349206,
-      "f1_macro_std": 0.11235672268169461,
-      "f1_weighted_mean": 0.6885361552028219,
-      "f1_weighted_std": 0.09577890412088609
+      "accuracy_mean": 0.6222222222222221,
+      "accuracy_std": 0.15071844406945042,
+      "f1_macro_mean": 0.6194047619047619,
+      "f1_macro_std": 0.16299684206002868,
+      "f1_weighted_mean": 0.6033862433862434,
+      "f1_weighted_std": 0.13881468413281137
     },
     "random_forest": {
-      "accuracy_mean": 0.6688888888888889,
-      "accuracy_std": 0.12578641509408806,
-      "f1_macro_mean": 0.5326587301587302,
-      "f1_macro_std": 0.1261980630643324,
-      "f1_weighted_mean": 0.6194708994708995,
-      "f1_weighted_std": 0.12879111155557993
+      "accuracy_mean": 0.6444444444444445,
+      "accuracy_std": 0.08314794192830981,
+      "f1_macro_mean": 0.5430952380952381,
+      "f1_macro_std": 0.07189589191585578,
+      "f1_weighted_mean": 0.6015343915343916,
+      "f1_weighted_std": 0.09629053997563472
     },
     "extra_trees": {
-      "accuracy_mean": 0.651111111111111,
-      "accuracy_std": 0.11102218663819376,
-      "f1_macro_mean": 0.5527380952380951,
-      "f1_macro_std": 0.06899382140663211,
-      "f1_weighted_mean": 0.604021164021164,
-      "f1_weighted_std": 0.1165696725746021
+      "accuracy_mean": 0.6666666666666667,
+      "accuracy_std": 0.12171612389003689,
+      "f1_macro_mean": 0.5902922077922078,
+      "f1_macro_std": 0.08561084645747338,
+      "f1_weighted_mean": 0.6161808561808562,
+      "f1_weighted_std": 0.1268174405575226
     },
     "sklearn_gradient_boosting": {
-      "accuracy_mean": 0.5844444444444445,
-      "accuracy_std": 0.09097550884648319,
-      "f1_macro_mean": 0.5154761904761904,
-      "f1_macro_std": 0.129213564012129,
-      "f1_weighted_mean": 0.5731851851851852,
-      "f1_weighted_std": 0.10418344062475342
+      "accuracy_mean": 0.48888888888888893,
+      "accuracy_std": 0.15071844406945042,
+      "f1_macro_mean": 0.40809523809523807,
+      "f1_macro_std": 0.16221460198609022,
+      "f1_weighted_mean": 0.4548677248677249,
+      "f1_weighted_std": 0.15583457681117494
     },
     "hist_gradient_boosting": {
-      "accuracy_mean": 0.3933333333333333,
-      "accuracy_std": 0.06347936380926977,
-      "f1_macro_mean": 0.14038461538461539,
-      "f1_macro_std": 0.0167649959366949,
-      "f1_weighted_mean": 0.22512820512820514,
-      "f1_weighted_std": 0.059915932046458543
+      "accuracy_mean": 0.39999999999999997,
+      "accuracy_std": 0.05443310539518174,
+      "f1_macro_mean": 0.1423076923076923,
+      "f1_macro_std": 0.014131671592979877,
+      "f1_weighted_mean": 0.23076923076923078,
+      "f1_weighted_std": 0.05233952441844399
     },
     "decision_tree": {
-      "accuracy_mean": 0.5422222222222223,
-      "accuracy_std": 0.08731947868617111,
-      "f1_macro_mean": 0.46833333333333327,
-      "f1_macro_std": 0.15613602419008438,
-      "f1_weighted_mean": 0.5108359788359789,
-      "f1_weighted_std": 0.098742976535154
+      "accuracy_mean": 0.6,
+      "accuracy_std": 0.11331154474650633,
+      "f1_macro_mean": 0.47337301587301595,
+      "f1_macro_std": 0.09894858576728842,
+      "f1_weighted_mean": 0.537689594356261,
+      "f1_weighted_std": 0.11879465710367552
     },
     "logistic_regression": {
-      "accuracy_mean": 0.52,
-      "accuracy_std": 0.11809182449410152,
-      "f1_macro_mean": 0.490079365079365,
-      "f1_macro_std": 0.17640663131435994,
-      "f1_weighted_mean": 0.4868359788359789,
-      "f1_weighted_std": 0.1394097641218917
+      "accuracy_mean": 0.6222222222222222,
+      "accuracy_std": 0.11331154474650633,
+      "f1_macro_mean": 0.5243398268398268,
+      "f1_macro_std": 0.19768684974574244,
+      "f1_weighted_mean": 0.5708369408369408,
+      "f1_weighted_std": 0.1398971137612742
     },
     "linear_svc": {
-      "accuracy_mean": 0.5666666666666667,
-      "accuracy_std": 0.08888888888888888,
-      "f1_macro_mean": 0.5865079365079364,
-      "f1_macro_std": 0.1417872191711304,
-      "f1_weighted_mean": 0.5435978835978836,
-      "f1_weighted_std": 0.11123580808291918
+      "accuracy_mean": 0.6666666666666666,
+      "accuracy_std": 0.07027283689263066,
+      "f1_macro_mean": 0.6332539682539682,
+      "f1_macro_std": 0.09304050204838739,
+      "f1_weighted_mean": 0.6416049382716049,
+      "f1_weighted_std": 0.06261923079093397
     },
     "knn_k5": {
-      "accuracy_mean": 0.5466666666666666,
-      "accuracy_std": 0.16426416544512293,
-      "f1_macro_mean": 0.4276190476190476,
-      "f1_macro_std": 0.14857046406212496,
-      "f1_weighted_mean": 0.5041534391534392,
-      "f1_weighted_std": 0.15275043185282558
+      "accuracy_mean": 0.5555555555555556,
+      "accuracy_std": 0.15713484026367724,
+      "f1_macro_mean": 0.4789430014430014,
+      "f1_macro_std": 0.09441579062143429,
+      "f1_weighted_mean": 0.5251226551226551,
+      "f1_weighted_std": 0.15861154896258142
     },
     "mlp": {
-      "accuracy_mean": 0.4133333333333333,
-      "accuracy_std": 0.043546484316145384,
-      "f1_macro_mean": 0.18064102564102563,
-      "f1_macro_std": 0.05553280270434644,
-      "f1_weighted_mean": 0.26076923076923075,
-      "f1_weighted_std": 0.030622155617126175
+      "accuracy_mean": 0.4666666666666667,
+      "accuracy_std": 0.08314794192830983,
+      "f1_macro_mean": 0.27698135198135193,
+      "f1_macro_std": 0.12182241688944268,
+      "f1_weighted_mean": 0.3237244237244238,
+      "f1_weighted_std": 0.08634605622792157
     }
   },
   "ranking_by_accuracy": [
-    "xgboost",
-    "random_forest",
     "extra_trees",
-    "sklearn_gradient_boosting",
     "linear_svc",
-    "knn_k5",
-    "decision_tree",
+    "random_forest",
     "logistic_regression",
+    "xgboost",
+    "decision_tree",
+    "knn_k5",
+    "sklearn_gradient_boosting",
     "mlp",
     "hist_gradient_boosting"
   ]

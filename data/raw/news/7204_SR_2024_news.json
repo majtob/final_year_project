@@ -1,0 +1,50 @@
+{
+  "ticker": "7204.SR",
+  "year": 2024,
+  "fetch_date": "2026-03-27T18:34:21.454342+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "7204.SR",
+      "title": "2P seals SAR 149M credit facility with BSF",
+      "description": "Perfect Presentation for Commercial Services Co. (2P) signed today, May 2, a new Sharia-compliant credit facility agreement worth SAR 149 million with",
+      "snippet": "Logo of Perfect Presentation for Commercial Services Co. (2P)\n\nPerfect Presentation for Commercial Services Co. (2P) signed today, May 2, a new Sharia-compliant...",
+      "published_at": "2024-05-02T17:38:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1724187",
+      "search_term": "1050.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7204.SR",
+      "title": "2P increases Riyad Bank facilities by SAR 121M",
+      "description": "Perfect Presentation for Commercial Services Co. (2P) increased its Shariah-compliant facilities agreement with Riyad Bank by SAR 121 million, bringin",
+      "snippet": "Logo of Perfect Presentation for Commercial Services Co. (2P)\n\nPerfect Presentation for Commercial Services Co. (2P) increased its Shariah-compliant facilities ...",
+      "published_at": "2024-07-10T18:01:00.000000Z",
+      "source_name": "argaam.com",
+      "url": "https://www.argaam.com/en/article/articledetail/id/1739901",
+      "search_term": "1010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "7204.SR",
+      "title": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.39% By Investing.com",
+      "description": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.39%",
+      "snippet": "Published Feb 06, 2024 07:45AM ET\n\n© Reuters. Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.39%\n\nInvesting.com – Saudi Arabia stocks w...",
+      "published_at": "2024-02-06T12:45:03.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-higher-at-close-of-trade-tadawul-all-share-up-039-3293906",
+      "search_term": "USDSAR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
+}

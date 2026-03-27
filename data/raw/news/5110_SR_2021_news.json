@@ -1,7 +1,50 @@
 {
   "ticker": "5110.SR",
   "year": 2021,
-  "fetch_date": "2026-03-26T08:24:00.358628+00:00",
-  "article_count": 0,
-  "articles": []
+  "fetch_date": "2026-03-27T18:34:11.784835+00:00",
+  "article_count": 3,
+  "articles": [
+    {
+      "ticker": "5110.SR",
+      "title": "SUKNA VENTURES AND UNIFONIC CLOSE THEIR SUCCESSFUL ENTREPRENEURIAL PROGRAM WITH DEMO DAY PRESENTATIONS",
+      "description": "The first cohort of companies showcased their validated early-stage ventures in the technology space to investors and representatives of the entrepreneurial",
+      "snippet": "The first cohort of companies showcased their validated early-stage ventures in the technology space to investors and representatives of the entrepreneurial eco...",
+      "published_at": "2021-12-19T09:00:00.000000Z",
+      "source_name": "thestreet.com",
+      "url": "https://www.thestreet.com/press-releases/sukna-ventures-and-unifonic-close-their-successful-entrepreneurial-program-with-demo-day-presentations-15865975",
+      "search_term": "1010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "5110.SR",
+      "title": "SUKNA VENTURES AND UNIFONIC CLOSE THEIR SUCCESSFUL ENTREPRENEURIAL PROGRAM WITH DEMO DAY PRESENTATIONS",
+      "description": "/PRNewswire/ -- Sukna Ventures and Unifonic have marked the successful completion of their inaugural entrepreneurial program 'Unifonic X' with a Demo Day...",
+      "snippet": "Supported by exclusive banking partner Riyad Bank, the Demo Day took place at the Riyadh Bank SME Center based on a hybrid format, allowing the start-ups to pre...",
+      "published_at": "2021-12-19T09:00:00.000000Z",
+      "source_name": "prnewswire.com",
+      "url": "https://www.prnewswire.com:443/news-releases/sukna-ventures-and-unifonic-close-their-successful-entrepreneurial-program-with-demo-day-presentations-301447799.html",
+      "search_term": "1010.SR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    },
+    {
+      "ticker": "5110.SR",
+      "title": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.35% By Investing.com",
+      "description": "Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.35%",
+      "snippet": "© Reuters. Saudi Arabia stocks higher at close of trade; Tadawul All Share up 0.35%\n\nInvesting.com – Saudi Arabia stocks were higher after the close on Monda...",
+      "published_at": "2021-10-25T14:15:02.000000Z",
+      "source_name": "investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/saudi-arabia-stocks-higher-at-close-of-trade-tadawul-all-share-up-035-2654174",
+      "search_term": "USDSAR",
+      "sentiment_compound": 0.0,
+      "sentiment_pos": 0.0,
+      "sentiment_neg": 0.0,
+      "sentiment_neu": 1.0
+    }
+  ]
 }

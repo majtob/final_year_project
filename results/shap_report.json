@@ -1,6 +1,6 @@
 {
   "model": "XGBClassifier full (financials + KAM + FinBERT aggregates)",
-  "n_samples": 46,
+  "n_samples": 45,
   "features": [
     "liquid",
     "cumprof",
@@ -26,92 +26,92 @@
   "global_importance": {
     "news_count": {
       "rank": 1,
-      "mean_abs_shap": 0.5374917387962341,
+      "mean_abs_shap": 0.5349295139312744,
       "description": "Number of news articles in fiscal year"
     },
-    "cumprof": {
-      "rank": 2,
-      "mean_abs_shap": 0.48166659474372864,
-      "description": "Cumulative profitability (retained earnings / total assets)"
-    },
     "leverage": {
-      "rank": 3,
-      "mean_abs_shap": 0.4531787037849426,
+      "rank": 2,
+      "mean_abs_shap": 0.5108351111412048,
       "description": "Leverage (book equity / total liabilities)"
+    },
+    "cumprof": {
+      "rank": 3,
+      "mean_abs_shap": 0.45273667573928833,
+      "description": "Cumulative profitability (retained earnings / total assets)"
     },
     "liquid": {
       "rank": 4,
-      "mean_abs_shap": 0.4145511984825134,
+      "mean_abs_shap": 0.4387992024421692,
       "description": "Liquidity (working capital / total assets)"
     },
-    "profitab": {
-      "rank": 5,
-      "mean_abs_shap": 0.2937987446784973,
-      "description": "Profitability (EBIT / total assets)"
-    },
     "sentiment_std": {
-      "rank": 6,
-      "mean_abs_shap": 0.1730402410030365,
+      "rank": 5,
+      "mean_abs_shap": 0.21269099414348602,
       "description": "FinBERT sentiment dispersion"
     },
-    "sentiment_mean": {
-      "rank": 7,
-      "mean_abs_shap": 0.1444959193468094,
-      "description": "FinBERT mean article score (P(pos)\u2212P(neg))"
+    "profitab": {
+      "rank": 6,
+      "mean_abs_shap": 0.19276316463947296,
+      "description": "Profitability (EBIT / total assets)"
     },
     "REVKAM": {
-      "rank": 8,
-      "mean_abs_shap": 0.1067064106464386,
+      "rank": 7,
+      "mean_abs_shap": 0.11421117931604385,
       "description": "KAM: revenue recognition (0/1)"
+    },
+    "sentiment_mean": {
+      "rank": 8,
+      "mean_abs_shap": 0.08342526853084564,
+      "description": "FinBERT mean article score (P(pos)\u2212P(neg))"
     },
     "ASSETKAM": {
       "rank": 9,
-      "mean_abs_shap": 0.03365275263786316,
+      "mean_abs_shap": 0.02992994710803032,
       "description": "KAM: impairment / assets (0/1)"
     },
     "sentiment_pos_pct": {
       "rank": 10,
-      "mean_abs_shap": 0.032437797635793686,
+      "mean_abs_shap": 0.02468699961900711,
       "description": "Share of articles with positive FinBERT score"
     },
-    "sentiment_neg_pct": {
-      "rank": 11,
-      "mean_abs_shap": 0.004370072390884161,
-      "description": "Share of articles with negative FinBERT score"
-    },
     "GCKAM": {
-      "rank": 12,
+      "rank": 11,
       "mean_abs_shap": 0.0,
       "description": "KAM: going concern (0/1)"
     },
     "LIABKAM": {
-      "rank": 13,
+      "rank": 12,
       "mean_abs_shap": 0.0,
       "description": "KAM: liabilities (0/1)"
     },
     "OTHERKAM": {
-      "rank": 14,
+      "rank": 13,
       "mean_abs_shap": 0.0,
       "description": "KAM: other topics (0/1)"
+    },
+    "sentiment_neg_pct": {
+      "rank": 14,
+      "mean_abs_shap": 0.0,
+      "description": "Share of articles with negative FinBERT score"
     }
   },
   "pct_total_abs_shap": {
-    "liquid": 15.494980974674869,
-    "cumprof": 18.003601844623123,
-    "profitab": 10.981528881935446,
-    "leverage": 16.938789271337026,
+    "liquid": 16.909358000802825,
+    "cumprof": 17.446445863077777,
+    "profitab": 7.428229910436369,
+    "leverage": 19.685299621311298,
     "GCKAM": 0.0,
-    "REVKAM": 3.9884429447914242,
-    "ASSETKAM": 1.2578633562703954,
+    "REVKAM": 4.4011878508448214,
+    "ASSETKAM": 1.1533662499340527,
     "LIABKAM": 0.0,
     "OTHERKAM": 0.0,
-    "sentiment_mean": 5.400928834346162,
-    "sentiment_std": 6.467850658760803,
-    "sentiment_pos_pct": 1.2124511014968835,
-    "sentiment_neg_pct": 0.16334336700164748,
-    "news_count": 20.09021876472484
+    "sentiment_mean": 3.21483659051795,
+    "sentiment_std": 8.196159299065393,
+    "sentiment_pos_pct": 0.9513265115346015,
+    "sentiment_neg_pct": 0.0,
+    "news_count": 20.613790102436372
   },
-  "top_feature_share_pct": 20.09021876472484,
+  "top_feature_share_pct": 20.613790102436372,
   "per_company_top_factors": [
     {
       "ticker": "3008.SR",
@@ -120,7 +120,7 @@
       "rating": "BBB-",
       "predicted_category": "BBB",
       "top_feature": "cumprof",
-      "shap_value": 1.7373052835464478,
+      "shap_value": 1.5402268171310425,
       "feature_value": 0.018350902
     },
     {
@@ -130,7 +130,7 @@
       "rating": "BB",
       "predicted_category": "BB",
       "top_feature": "leverage",
-      "shap_value": 1.0984781980514526,
+      "shap_value": 0.9711248278617859,
       "feature_value": 0.068059243
     },
     {
@@ -140,7 +140,7 @@
       "rating": "BBB+",
       "predicted_category": "BBB",
       "top_feature": "cumprof",
-      "shap_value": 2.0552308559417725,
+      "shap_value": 1.7034788131713867,
       "feature_value": 0.051157433
     },
     {
@@ -149,9 +149,9 @@
       "fiscal_year": 2023,
       "rating": "A",
       "predicted_category": "A",
-      "top_feature": "profitab",
-      "shap_value": -0.8145869374275208,
-      "feature_value": 0.075357897
+      "top_feature": "liquid",
+      "shap_value": 0.7859264016151428,
+      "feature_value": -0.045748097
     },
     {
       "ticker": "7030.SR",
@@ -159,9 +159,9 @@
       "fiscal_year": 2024,
       "rating": "A",
       "predicted_category": "A",
-      "top_feature": "profitab",
-      "shap_value": 0.6228179335594177,
-      "feature_value": 0.044824323
+      "top_feature": "liquid",
+      "shap_value": 0.5404766201972961,
+      "feature_value": -0.194387894
     },
     {
       "ticker": "7020.SR",
@@ -170,7 +170,7 @@
       "rating": "AA-",
       "predicted_category": "AA",
       "top_feature": "news_count",
-      "shap_value": 2.3153281211853027,
+      "shap_value": 2.223461866378784,
       "feature_value": 6.0
     },
     {
@@ -180,7 +180,7 @@
       "rating": "AA",
       "predicted_category": "AA",
       "top_feature": "news_count",
-      "shap_value": 2.398777723312378,
+      "shap_value": 2.3050458431243896,
       "feature_value": 6.0
     },
     {
@@ -190,7 +190,7 @@
       "rating": "AAA",
       "predicted_category": "AA",
       "top_feature": "news_count",
-      "shap_value": 2.380305767059326,
+      "shap_value": 2.3930442333221436,
       "feature_value": 9.0
     },
     {
@@ -200,7 +200,7 @@
       "rating": "AAA",
       "predicted_category": "AA",
       "top_feature": "news_count",
-      "shap_value": 2.5166127681732178,
+      "shap_value": 2.57608962059021,
       "feature_value": 8.0
     },
     {
@@ -210,7 +210,7 @@
       "rating": "AAA",
       "predicted_category": "AA",
       "top_feature": "news_count",
-      "shap_value": 2.5726494789123535,
+      "shap_value": 2.610255718231201,
       "feature_value": 7.0
     },
     {
@@ -220,7 +220,7 @@
       "rating": "AAA",
       "predicted_category": "AA",
       "top_feature": "news_count",
-      "shap_value": 2.306241035461426,
+      "shap_value": 2.3472630977630615,
       "feature_value": 7.0
     },
     {
@@ -230,7 +230,7 @@
       "rating": "BBB+",
       "predicted_category": "BBB",
       "top_feature": "cumprof",
-      "shap_value": 1.9110701084136963,
+      "shap_value": 1.7765408754348755,
       "feature_value": -0.092741207
     },
     {
@@ -240,18 +240,8 @@
       "rating": "BBB+",
       "predicted_category": "BBB",
       "top_feature": "cumprof",
-      "shap_value": 1.3112355470657349,
+      "shap_value": 1.5332551002502441,
       "feature_value": -0.012894618
-    },
-    {
-      "ticker": "3008.SR",
-      "company": "Al Kathiri (AKHC)",
-      "fiscal_year": 2021,
-      "rating": "BBB-",
-      "predicted_category": "BBB",
-      "top_feature": "cumprof",
-      "shap_value": 1.823468565940857,
-      "feature_value": 0.046490075
     },
     {
       "ticker": "3008.SR",
@@ -260,7 +250,7 @@
       "rating": "BBB-",
       "predicted_category": "BBB",
       "top_feature": "cumprof",
-      "shap_value": 2.1044464111328125,
+      "shap_value": 1.860527515411377,
       "feature_value": 0.048077623
     },
     {
@@ -270,7 +260,7 @@
       "rating": "BB+",
       "predicted_category": "BB",
       "top_feature": "cumprof",
-      "shap_value": 1.4316282272338867,
+      "shap_value": 1.5434997081756592,
       "feature_value": 0.292012684
     },
     {
@@ -279,9 +269,9 @@
       "fiscal_year": 2024,
       "rating": "BBB+",
       "predicted_category": "BBB",
-      "top_feature": "liquid",
-      "shap_value": 0.7024219036102295,
-      "feature_value": 0.293666515
+      "top_feature": "profitab",
+      "shap_value": 0.7660966515541077,
+      "feature_value": 0.148406483
     },
     {
       "ticker": "7204.SR",
@@ -289,9 +279,9 @@
       "fiscal_year": 2023,
       "rating": "BBB+",
       "predicted_category": "BBB",
-      "top_feature": "leverage",
-      "shap_value": 0.765901505947113,
-      "feature_value": 0.479716636
+      "top_feature": "profitab",
+      "shap_value": 0.7245178818702698,
+      "feature_value": 0.147429696
     },
     {
       "ticker": "7204.SR",
@@ -300,7 +290,7 @@
       "rating": "BBB+",
       "predicted_category": "BBB",
       "top_feature": "leverage",
-      "shap_value": 0.8196687698364258,
+      "shap_value": 0.7846231460571289,
       "feature_value": 0.458093919
     },
     {
@@ -310,7 +300,7 @@
       "rating": "A",
       "predicted_category": "A",
       "top_feature": "profitab",
-      "shap_value": 0.5998167991638184,
+      "shap_value": 0.3966841697692871,
       "feature_value": 0.123781319
     },
     {
@@ -320,7 +310,7 @@
       "rating": "A-",
       "predicted_category": "A",
       "top_feature": "profitab",
-      "shap_value": 0.6924687623977661,
+      "shap_value": 0.4091023802757263,
       "feature_value": 0.115475563
     },
     {
@@ -330,7 +320,7 @@
       "rating": "A+",
       "predicted_category": "A",
       "top_feature": "leverage",
-      "shap_value": 0.8037768006324768,
+      "shap_value": 1.4149073362350464,
       "feature_value": 2.344734682
     },
     {
@@ -340,7 +330,7 @@
       "rating": "A",
       "predicted_category": "A",
       "top_feature": "leverage",
-      "shap_value": 0.7988499999046326,
+      "shap_value": 1.3624364137649536,
       "feature_value": 2.015231435
     },
     {
@@ -350,7 +340,7 @@
       "rating": "BBB+",
       "predicted_category": "BBB",
       "top_feature": "liquid",
-      "shap_value": 0.7988972067832947,
+      "shap_value": 1.029398798942566,
       "feature_value": 0.129500375
     },
     {
@@ -360,8 +350,18 @@
       "rating": "A+",
       "predicted_category": "A",
       "top_feature": "leverage",
-      "shap_value": 0.8702662587165833,
+      "shap_value": 1.4705336093902588,
       "feature_value": 1.954483739
+    },
+    {
+      "ticker": "2010.SR",
+      "company": "SABIC",
+      "fiscal_year": 2023,
+      "rating": "A",
+      "predicted_category": "A",
+      "top_feature": "leverage",
+      "shap_value": 1.4775575399398804,
+      "feature_value": 1.970601984
     }
   ]
 }

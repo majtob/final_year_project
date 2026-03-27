@@ -12,6 +12,13 @@ mxa1438/.env file with either variable (python-dotenv optional).
 After fetching, re-run FinBERT + rebuild:
   python scripts/collect_news_sentiment_finbert.py
   python scripts/rebuild_processed_datasets.py
+
+Minimal API usage (only rows with no file or empty articles), from repo root:
+  python scripts/fetch_kams_news_marketaux.py --dry-run --refetch-empty   # preview
+  python scripts/fetch_kams_news_marketaux.py --refetch-empty             # fetch those only
+
+Surgical rerun (subset), e.g. one company-year:
+  python scripts/fetch_kams_news_marketaux.py --refetch-empty --only-pairs 7204.SR:2024
 """
 
 from __future__ import annotations
@@ -291,6 +298,15 @@ def main() -> None:
         action="store_true",
         help="Re-fetch files that exist but have zero articles (e.g. after rate limits)",
     )
+    ap.add_argument(
+        "--only-pairs",
+        nargs="*",
+        metavar="TICKER:YEAR",
+        help=(
+            "After computing missing/empty pairs, keep only these (e.g. 7204.SR:2024 "
+            "5110.SR:2021). Useful to stay under API quota."
+        ),
+    )
     ap.add_argument("--limit", type=int, default=12, help="Articles per API page")
     ap.add_argument("--max-pages", type=int, default=3, help="Max pages per query strategy")
     ap.add_argument("--sleep", type=float, default=2.5, help="Seconds between API calls")
@@ -305,6 +321,31 @@ def main() -> None:
 
     pairs = load_kams_pairs()
     need = sorted({(t, y, n) for t, y, n in pairs if (t, y) not in have})
+
+    if args.only_pairs:
+        allowed: set[tuple[str, int]] = set()
+        for s in args.only_pairs:
+            if ":" not in s:
+                raise SystemExit(
+                    f"Bad --only-pairs entry {s!r}: use TICKER:YEAR (e.g. 7204.SR:2024)"
+                )
+            t_part, y_part = s.rsplit(":", 1)
+            allowed.add((t_part.strip(), int(y_part.strip())))
+        before = len(need)
+        need = [row for row in need if (row[0], row[1]) in allowed]
+        if before and not need:
+            raise SystemExit(
+                "--only-pairs did not match any of the computed missing/empty rows. "
+                "Check ticker spelling and fiscal year."
+            )
+        fetched_keys = {(t, y) for t, y, _ in need}
+        not_in_gap_set = allowed - fetched_keys
+        if not_in_gap_set:
+            print(
+                "Note: these --only-pairs are not in the current missing/empty set "
+                "(skip fetching; already have articles or not in kams_processed): "
+                f"{sorted(not_in_gap_set)}"
+            )
 
     if not need:
         print("No missing (ticker, fiscal_year) relative to kams_processed.csv.")

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-27T14:52:14.045970+00:00",
-  "n_rows": 46,
+  "generated_at": "2026-03-27T18:54:26.486894+00:00",
+  "n_rows": 45,
   "figures_written": [
     "rating_distribution.png",
     "confusion_matrix_multisource.png",

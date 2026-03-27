@@ -1,8 +1,8 @@
 {
   "generated_for": "multisource XGBoost 14 features, 4-class rating_category",
-  "n_samples": 46,
+  "n_samples": 45,
   "cv_folds": 5,
-  "cv_accuracy": 0.717391304347826,
+  "cv_accuracy": 0.6222222222222222,
   "classes": [
     "A",
     "AA",
@@ -10,19 +10,27 @@
     "BBB"
   ],
   "summary": {
-    "total_samples": 46,
-    "correct": 33,
-    "incorrect": 13,
-    "accuracy": 0.717391304347826
+    "total_samples": 45,
+    "correct": 28,
+    "incorrect": 17,
+    "accuracy": 0.6222222222222222
   },
   "misclassified": [
+    {
+      "ticker": "3008.SR",
+      "company_name": "Al Kathiri (AKHC)",
+      "fiscal_year": 2023,
+      "actual_category": "BBB",
+      "predicted_category": "A",
+      "confidence": 0.6241647601127625
+    },
     {
       "ticker": "9568.SR",
       "company_name": "Mayar Holding",
       "fiscal_year": 2024,
       "actual_category": "BB",
-      "predicted_category": "BBB",
-      "confidence": 0.8774656653404236
+      "predicted_category": "A",
+      "confidence": 0.527668833732605
     },
     {
       "ticker": "9535.SR",
@@ -30,7 +38,7 @@
       "fiscal_year": 2024,
       "actual_category": "BBB",
       "predicted_category": "A",
-      "confidence": 0.604344367980957
+      "confidence": 0.8367577791213989
     },
     {
       "ticker": "7030.SR",
@@ -38,15 +46,15 @@
       "fiscal_year": 2023,
       "actual_category": "A",
       "predicted_category": "BBB",
-      "confidence": 0.6712054014205933
+      "confidence": 0.7667292356491089
     },
     {
       "ticker": "3008.SR",
       "company_name": "Al Kathiri (AKHC)",
-      "fiscal_year": 2021,
+      "fiscal_year": 2022,
       "actual_category": "BBB",
       "predicted_category": "A",
-      "confidence": 0.37383410334587097
+      "confidence": 0.9421021938323975
     },
     {
       "ticker": "9619.SR",
@@ -54,7 +62,7 @@
       "fiscal_year": 2024,
       "actual_category": "BB",
       "predicted_category": "A",
-      "confidence": 0.7282965779304504
+      "confidence": 0.9467060565948486
     },
     {
       "ticker": "7204.SR",
@@ -62,7 +70,7 @@
       "fiscal_year": 2024,
       "actual_category": "BBB",
       "predicted_category": "A",
-      "confidence": 0.7741144895553589
+      "confidence": 0.7471666932106018
     },
     {
       "ticker": "7204.SR",
@@ -70,7 +78,23 @@
       "fiscal_year": 2023,
       "actual_category": "BBB",
       "predicted_category": "AA",
-      "confidence": 0.5355964303016663
+      "confidence": 0.4896460771560669
+    },
+    {
+      "ticker": "7204.SR",
+      "company_name": "Perfect Presentation (2P)",
+      "fiscal_year": 2022,
+      "actual_category": "BBB",
+      "predicted_category": "AA",
+      "confidence": 0.5038440227508545
+    },
+    {
+      "ticker": "2081.SR",
+      "company_name": "Alkhorayef Water & Power",
+      "fiscal_year": 2024,
+      "actual_category": "A",
+      "predicted_category": "BBB",
+      "confidence": 0.8828296065330505
     },
     {
       "ticker": "2081.SR",
@@ -78,31 +102,39 @@
       "fiscal_year": 2023,
       "actual_category": "A",
       "predicted_category": "BBB",
-      "confidence": 0.7995355725288391
-    },
-    {
-      "ticker": "1211.SR",
-      "company_name": "Maaden",
-      "fiscal_year": 2023,
-      "actual_category": "BBB",
-      "predicted_category": "A",
-      "confidence": 0.7803770899772644
+      "confidence": 0.701537549495697
     },
     {
       "ticker": "2010.SR",
       "company_name": "SABIC",
       "fiscal_year": 2022,
       "actual_category": "A",
-      "predicted_category": "BBB",
-      "confidence": 0.3372597396373749
+      "predicted_category": "BB",
+      "confidence": 0.5504250526428223
     },
     {
       "ticker": "4321.SR",
       "company_name": "Cenomi Centers",
-      "fiscal_year": 2022,
+      "fiscal_year": 2023,
       "actual_category": "BB",
       "predicted_category": "A",
-      "confidence": 0.7421748638153076
+      "confidence": 0.8610457181930542
+    },
+    {
+      "ticker": "4321.SR",
+      "company_name": "Cenomi Centers",
+      "fiscal_year": 2024,
+      "actual_category": "A",
+      "predicted_category": "BBB",
+      "confidence": 0.8076407313346863
+    },
+    {
+      "ticker": "2222.SR",
+      "company_name": "Saudi Aramco",
+      "fiscal_year": 2024,
+      "actual_category": "A",
+      "predicted_category": "BBB",
+      "confidence": 0.6408416032791138
     },
     {
       "ticker": "2382.SR",
@@ -110,15 +142,15 @@
       "fiscal_year": 2024,
       "actual_category": "BB",
       "predicted_category": "BBB",
-      "confidence": 0.5485773682594299
+      "confidence": 0.7521434426307678
     },
     {
-      "ticker": "2280.SR",
-      "company_name": "Almarai",
+      "ticker": "1202.SR",
+      "company_name": "MEPCO (Middle East Paper)",
       "fiscal_year": 2024,
-      "actual_category": "BBB",
-      "predicted_category": "A",
-      "confidence": 0.5134614109992981
+      "actual_category": "A",
+      "predicted_category": "BB",
+      "confidence": 0.34853410720825195
     }
   ],
   "confusion_matrix": {
@@ -130,10 +162,10 @@
     ],
     "matrix": [
       [
-        15,
+        11,
         0,
-        0,
-        3
+        2,
+        5
       ],
       [
         0,
@@ -142,16 +174,16 @@
         0
       ],
       [
-        2,
+        3,
         0,
         2,
-        2
+        1
       ],
       [
-        5,
-        1,
+        4,
+        2,
         0,
-        10
+        9
       ]
     ]
   }

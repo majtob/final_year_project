@@ -1,7 +1,7 @@
 {
   "model": "xgboost_kams_only",
   "data_file": "data/processed/kams_processed.csv",
-  "n_samples": 47,
+  "n_samples": 46,
   "features": [
     "AUSIZE",
     "AUOP",
@@ -18,22 +18,22 @@
   ],
   "target": "rating_category (AA / A / BBB / BB)",
   "cv_folds": 5,
-  "cv_accuracy_mean": 0.6199999999999999,
-  "cv_accuracy_std": 0.13116759611887738,
-  "train_accuracy": 0.7659574468085106,
+  "cv_accuracy_mean": 0.6511111111111111,
+  "cv_accuracy_std": 0.04949123878071128,
+  "train_accuracy": 0.7608695652173914,
   "feature_importance": {
-    "AUSIZE": 0.3164063096046448,
-    "REVKAM": 0.28265488147735596,
-    "INDUSTRY": 0.1414836347103119,
-    "OTHERKAM": 0.10721071809530258,
-    "FIRMAGE": 0.08201741427183151,
-    "ASSETKAM": 0.06435386836528778,
-    "FIRMSIZE": 0.005873214453458786,
+    "REVKAM": 0.30289700627326965,
+    "AUSIZE": 0.26106971502304077,
+    "INDUSTRY": 0.14301030337810516,
+    "OTHERKAM": 0.11462315917015076,
+    "FIRMAGE": 0.10408832877874374,
+    "ASSETKAM": 0.07431147992610931,
     "AUOP": 0.0,
     "EMP": 0.0,
     "GCUP": 0.0,
     "GCKAM": 0.0,
-    "LIABKAM": 0.0
+    "LIABKAM": 0.0,
+    "FIRMSIZE": 0.0
   },
-  "generated_at": "2026-03-27T17:51:39"
+  "generated_at": "2026-03-27T21:53:49"
 }

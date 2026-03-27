@@ -478,7 +478,7 @@ To test whether audit-report features alone predict rating **without** merging t
 | Train combined model | ✅ Done | 65.15% accuracy |
 | KAM-only XGBoost (`kams_processed` only) | ✅ Done | ~62% 5-fold CV (47 rows); `results/kams_only_model_results.json` |
 | News sentiment collection | ✅ Done | FinBERT on cached JSON; panel aligned to KAM rows |
-| Train full XGBoost (4 variants: fin / +KAM / +sentiment / full) | ✅ Done | See `results/full_model_comparison.json` (e.g. **~71.8%** CV full model, 46 rows) |
+| Train full XGBoost (4 variants: fin / +KAM / +sentiment / full) | ✅ Done | See `results/full_model_comparison.json` (**45** rows after excluding 3008.SR/2021; latest run: **~60%** full 14-feature, **~51%** fin-only, **~47%** fin+KAM 9-feats, **~60%** fin+sentiment—high variance; regenerate JSON after CSV edits) |
 | Multi-agency expansion | ✅ Done | 80 ratings, 5 agencies |
 | Train expanded models | ✅ Done | 69.6% best (Fitch) |
 | Multisource CV benchmark (10 learners) | ✅ Done | `evaluate_multisource_models.py` → `results/multisource_model_comparison.json` |
@@ -997,17 +997,21 @@ This rigorously answers RQ2 using game-theoretic methodology rather than ad hoc 
 
 SHAP is computed for the **14-input** model trained in-sample: four financial ratios, five paper-style KAM dummies (`GCKAM` … `OTHERKAM`), and five FinBERT news aggregates (`sentiment_mean`, `sentiment_std`, `sentiment_pos_pct`, `sentiment_neg_pct`, `news_count`). Mean |SHAP| is averaged across the four rating-category outputs (see `results/shap_report.json` for the exact run).
 
-**Latest run (46 usable rows after dropping missing `profitab`):**
+**Latest run (45 usable rows after dropping missing `profitab` and excluding 3008.SR/2021—no articles / zero sentiment aggregates for that firm-year):**
 
 | Rank | Feature | Mean |SHAP| (approx.) | Notes |
 |------|---------|---------------------|--------|
-| 1 | `news_count` | 0.54 | Article volume is highly influential on this small panel |
-| 2 | `cumprof` | 0.48 | Retained earnings / assets |
-| 3 | `leverage` | 0.45 | Equity / liabilities |
-| 4 | `liquid` | 0.41 | Working capital / assets |
-| 5 | `profitab` | 0.29 | EBIT / assets |
-| 6–11 | Sentiment + `REVKAM`, `ASSETKAM`, … | 0.03–0.17 | FinBERT dispersion/mean; selected KAM dummies |
-| 12–14 | Other KAM dummies | ≈0 | Near-zero variance in-sample |
+| 1 | `news_count` | 0.53 | Article volume is highly influential on this small panel |
+| 2 | `leverage` | 0.51 | Equity / liabilities |
+| 3 | `cumprof` | 0.45 | Retained earnings / assets |
+| 4 | `liquid` | 0.44 | Working capital / assets |
+| 5 | `sentiment_std` | 0.21 | FinBERT dispersion across articles |
+| 6 | `profitab` | 0.19 | EBIT / assets |
+| 7 | `REVKAM` | 0.11 | Revenue-recognition KAM dummy |
+| 8 | `sentiment_mean` | 0.08 | FinBERT mean score |
+| 9 | `ASSETKAM` | 0.03 | Asset / impairment KAM |
+| 10 | `sentiment_pos_pct` | 0.02 | Share of positive articles |
+| 11–14 | `GCKAM`, `LIABKAM`, `OTHERKAM`, `sentiment_neg_pct` | 0 | Zero mean \|SHAP\| in latest `shap_report.json` |
 
 **Key insight:** On the current aligned panel, **news coverage (`news_count`)** and **core ratios** dominate mean |SHAP|; this is dataset-specific and should not be over-interpreted causally (article counts correlate with firm size, visibility, and data collection).
 
@@ -1031,24 +1035,24 @@ The Streamlit app (`app.py`) uses the same 14 features for on-the-fly SHAP water
 
 ### 15.5 Multisource algorithm comparison (XGBoost vs other learners)
 
-To test whether **XGBoost** is still the best choice on the *current* aligned panel, we benchmarked several scikit-learn models (plus XGBoost) on the **same 46-row** multisource matrix as §15: **14 features**, **four classes** (A / AA / BB / BBB), **5-fold stratified CV** (`random_state=42`). Script: `models/evaluate_multisource_models.py`. Outputs: `results/multisource_model_comparison.json`, `figures/multisource_model_comparison.png`.
+To test whether **XGBoost** is still the best choice on the *current* aligned panel, we benchmarked several scikit-learn models (plus XGBoost) on the **same 45-row** multisource matrix as §15 (**3008.SR/2021 excluded**): **14 features**, **four classes** (A / AA / BB / BBB), **5-fold stratified CV** (`random_state=42`). Script: `models/evaluate_multisource_models.py`. Outputs: `results/multisource_model_comparison.json`, `figures/multisource_model_comparison.png`.
 
 **CV accuracy (mean) and macro-F1 (mean)** — values from the JSON (rounded):
 
 | Rank | Model | Accuracy | F1 (macro) | Notes |
 |------|--------|----------|------------|--------|
-| 1 | **XGBoost** | **71.8%** | 0.66 | Best accuracy on this panel |
-| 2 | Random Forest | 66.9% | 0.53 | Strong second |
-| 3 | Extra Trees | 65.1% | 0.55 | Similar to RF |
-| 4 | sklearn `GradientBoostingClassifier` | 58.4% | 0.52 | Gradient boosting, not XGB |
-| 5 | Linear SVC (+ scaler) | 56.7% | **0.59** | Competitive macro-F1 |
-| 6 | kNN *k*=5 (+ scaler) | 54.7% | 0.43 | High variance across folds |
-| 7 | Decision Tree | 54.2% | 0.47 | Shallow tree baseline |
-| 8 | Logistic regression (+ scaler) | 52.0% | 0.49 | Linear separability limited |
-| 9 | MLP (+ scaler) | 41.3% | 0.18 | Small *n*, default architecture |
-| 10 | HistGradientBoosting (sklearn) | 39.3% | 0.14 | Default hyperparameters weak here |
+| 1 | **Extra Trees** | **66.7%** | 0.59 | Joint best mean CV accuracy (latest panel) |
+| 2 | **Linear SVC (+ scaler)** | **66.7%** | **0.63** | Joint best accuracy; strong macro-F1 |
+| 3 | Random Forest | 64.4% | 0.54 | Close third |
+| 4 | Logistic regression (+ scaler) | 62.2% | 0.52 | — |
+| 5 | **XGBoost** | **62.2%** | **0.62** | Slightly below ET/SVC on accuracy here |
+| 6 | Decision Tree | 60.0% | 0.47 | — |
+| 7 | kNN *k*=5 (+ scaler) | 55.6% | 0.48 | High variance across folds |
+| 8 | sklearn `GradientBoostingClassifier` | 48.9% | 0.41 | — |
+| 9 | MLP (+ scaler) | 46.7% | 0.28 | Small *n*, default architecture |
+| 10 | HistGradientBoosting (sklearn) | 40.0% | 0.14 | Default hyperparameters weak here |
 
-**Takeaway:** On this **small** multisource sample, **XGBoost remains the top model by accuracy**; **sklearn’s classic gradient boosting** sits mid-pack (not superior to XGBoost here). **HistGradientBoosting** underperforms badly without tuning. **Linear SVC** achieves the **second-best macro-F1**, suggesting some linear structure, but at lower accuracy than XGBoost. Results are **high-variance** (wide fold-to-fold std); interpret as indicative, not definitive.
+**Takeaway:** On this **45-row** panel, **Extra Trees** and **Linear SVC** tie for the **highest mean CV accuracy**; **XGBoost** remains competitive on **macro-F1** but is not top-ranked on raw accuracy in this run. **HistGradientBoosting** underperforms badly without tuning. If you edit `merged_multisource_training.csv` but skip `scripts/regenerate_artifacts.py`, **`results/*.json` and figures stay out of sync** with the app (which always trains on the CSV). Results are **high-variance**; interpret as indicative, not definitive.
 
 ### 15.6 App, SHAP figures, and Streamlit — current state
 
@@ -1477,7 +1481,7 @@ Financial ratios alone achieve 68-71% accuracy using Gradient Boosting and Group
 
 **Answer: On the latest multisource XGBoost + SHAP run, ratios and news volume dominate mean |SHAP|.**
 
-For the **14-feature** full model (`models/shap_explainability.py`), global SHAP ranks **`news_count`**, **`cumprof`**, **`leverage`**, **`liquid`**, and **`profitab`** highest (see `results/shap_report.json`). KAM dummies contribute modestly (`REVKAM`, `ASSETKAM`); others are near zero in this sample. Interpret cautiously: `news_count` is a weak proxy for “sentiment” and may reflect visibility and data availability.
+For the **14-feature** full model (`models/shap_explainability.py`), global SHAP ranks **`news_count`**, **`leverage`**, **`cumprof`**, **`liquid`**, then **`sentiment_std`** and **`profitab`**, followed by **`REVKAM`** and FinBERT means (see `results/shap_report.json`, **n = 45**). Several KAM dummies and **`sentiment_neg_pct`** show **zero** mean |SHAP| in the latest run. Interpret cautiously: `news_count` is a weak proxy for “sentiment” and may reflect visibility and data availability.
 
 ### RQ3: Can open-source LLMs generate coherent, factually accurate credit verdicts?
 
