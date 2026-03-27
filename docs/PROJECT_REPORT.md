@@ -40,10 +40,15 @@
 
 ### 1.1 Objective
 
-Develop a machine learning system to predict credit ratings for Saudi Exchange (Tadawul) listed companies using:
-- Financial statement data
-- Key Audit Matters (KAMs) from annual reports
-- News sentiment analysis (future work)
+**System aim.** Develop a **reproducible** machine-learning pipeline for **coarse multiclass credit rating categories** (AA, A, BBB, BB) on Saudi Tadawul firm-years, combining:
+
+- Four Altman-style **financial ratios** (from yfinance-derived financials)
+- **Key Audit Matter (KAM)** dummies aligned with Muñoz-Izquierdo et al. (2022)
+- **FinBERT-based news aggregates** (English articles via MarketAux, then `collect_news_sentiment_finbert.py`)
+
+The pipeline includes **stratified cross-validation**, **model benchmarks**, **SHAP explainability**, **template / LLM verdict generation**, and a **Streamlit demo** (`app.py`).
+
+**Primary evaluation objective.** **Quantify whether KAM and news feature blocks improve cross-validated performance relative to financial ratios alone** on the **constructed merged panel**, **acknowledging small-sample variance** (the latest multisource training matrix is **45** `(ticker, fiscal_year)` rows; ablations are reported in `results/full_model_comparison.json` and summarised in the current pipeline doc `docs/PROJECT_REPORT_CURRENT.md`).
 
 ### 1.2 Architecture
 
@@ -72,7 +77,7 @@ Develop a machine learning system to predict credit ratings for Saudi Exchange (
 │  GroupKFold CV, binary classification                           │
 │                                                                 │
 │  → SHAP Explainability (per-prediction + global)               │
-│  → Error Analysis (boundary, agency, outlier patterns)          │
+│  → Error Analysis (multisource CV confusion + case-level JSON)  │
 └────────────────────────┬───────────────────────────────────────┘
                          │
                          ▼
@@ -487,7 +492,7 @@ To test whether audit-report features alone predict rating **without** merging t
 | Historical Fitch data (2019-2024) | ✅ Done | 66.7% best (SVM) |
 | Agency handling comparison | ✅ Done | Fitch-only vs All+Agency |
 | SHAP explainability (14-feature full XGBoost) | ✅ Done | `models/shap_explainability.py` → `figures/shap_*.png`, `results/shap_report.json` |
-| Systematic error analysis | ✅ Done | 45% errors explainable |
+| Systematic error analysis | ✅ Done | `results/error_analysis.json`: OOF confusion + 17 misclassified rows (*n*=45 multisource) |
 | KAM homogeneity analysis | ✅ Done | 65% identical profiles |
 | LLM verdict generator | ✅ Done | Multisource rows + multicategory XGB; `results/verdicts/` |
 | Publication-quality visualizations | ✅ Done | 17 figures in `figures/` |
@@ -1064,43 +1069,52 @@ To test whether **XGBoost** is still the best choice on the *current* aligned pa
 
 ## 16. Error Analysis
 
-### 16.1 Summary
+**Canonical source:** `results/error_analysis.json`, produced with the multisource panel by `models/generate_pipeline_figures.py` (invoked from `scripts/regenerate_artifacts.py`). It describes **14-feature multiclass XGBoost**, **stratified 5-fold CV**, **out-of-fold** pooled predictions, and matches the **45** rows in `merged_multisource_training.csv`.
 
-Using Gradient Boosting with GroupKFold CV on the V2 dataset (75 records, 23 companies):
+### 16.1 Summary (multisource)
 
 | Metric | Value |
 |--------|-------|
-| Total Samples | 75 |
-| Accuracy | 68.0% |
-| Correct Predictions | 51 |
-| Misclassifications | 24 |
-| False Positives (IG predicted as SG) | 12 |
-| False Negatives (SG predicted as IG) | 12 |
+| Panel | 45 `(ticker, fiscal_year)` rows |
+| Target | Four buckets: A, AA, BB, BBB |
+| CV folds | 5 (stratified) |
+| Pooled OOF accuracy (JSON `summary`) | **62.2%** (28 correct / 45) |
+| Misclassified rows listed | **17** |
 
-### 16.2 Error Pattern Categorization
+*Note:* **Mean** fold accuracy for the **same** 14-feature model in **`full_model_comparison.json`** is **60.0% ± 11.3%**—slightly different aggregation than pooling all OOF predictions into one confusion matrix. Cite **ablations** from `full_model_comparison.json` for the stated objective; use **this section** for **per-class** and **case** behaviour.
 
-| Error Pattern | Count | % of Errors | Description |
-|---------------|-------|-------------|-------------|
-| **Agency Disagreement** | 5 | 21% | Different agencies assign conflicting binary classifications |
-| **Boundary Ratings** | 3 | 12% | Companies rated A- or BBB+, right at the IG/SG boundary |
-| **Outlier Ratios** | 3 | 12% | Financial ratios >2 std from dataset mean |
-| **Low Confidence** | 1 | 4% | Model confidence below 60% |
+### 16.2 Confusion matrix (out-of-fold, pooled)
 
-### 16.3 Notable Misclassifications
+Rows = **actual** category, columns = **predicted** (same ordering: A, AA, BB, BBB):
 
-**Saudi Electricity (5110.SR):** Misclassified in all 6 records. Rated A/A+/AA- (Investment Grade) but predicted as Speculative Grade. Reason: negative liquidity ratio (LIQUID = -0.05 to -0.07) triggers the model's speculative-grade rule, even though Saudi Electricity is a government-backed utility with strong implicit support that financial ratios alone cannot capture.
+| Actual \\ Pred | A | AA | BB | BBB |
+|----------------|---|----|----|-----|
+| **A** | 11 | 0 | 2 | 5 |
+| **AA** | 0 | 6 | 0 | 0 |
+| **BB** | 3 | 0 | 2 | 1 |
+| **BBB** | 4 | 2 | 0 | 9 |
 
-**Cenomi Centers (4321.SR):** 5 of 6 records misclassified. Severe agency disagreement -- Fitch rates it BB (Speculative), Financial Analytics rates it A- (Investment Grade), and S&P rates it BB-. The model cannot resolve this fundamental disagreement from financial ratios alone.
+**Patterns:** **AA** (6 samples) has **no** off-diagonal mass—all errors involving other classes. **A** (18) is often confused with **BBB** (5) and to a lesser extent **BB** (2). **BBB** (15) is pulled toward **A** (4) and **AA** (2). **BB** (6) is the **smallest** class: half the BB rows stay on the diagonal (2/6), with the rest scattered toward **A** or **BBB**. This is consistent with **coarse bucketing** of underlying notches, **imbalance**, and **high fold variance** on a small panel—not with a single “random noise” story.
 
-**Multi Business Group (9619.SR):** Predicted Investment Grade but rated BB+. Has an outlier liquidity ratio (0.78, >2 std above mean) that misleads the model, despite the company's speculative rating.
+### 16.3 Notable misclassifications (from JSON)
 
-### 16.4 Key Finding
+Examples below are **verbatim** cases in `results/error_analysis.json` (multisource run); they illustrate **confidence**, **bucket** jumps, and **repeat** offenders.
 
-**Many errors are explainable, not random.** The three main causes -- rating boundary effects (12%), inter-agency disagreement (21%), and outlier financial profiles (12%) -- account for 45% of all errors. This suggests the model's failures reflect genuine ambiguity in credit assessment rather than poor learning.
+- **Zain Saudi Arabia (7030.SR), FY2023:** actual **A**, predicted **BBB** (high confidence ~0.77)—adjacent investment-grade confusion.
+- **SABIC (2010.SR), FY2022:** actual **A**, predicted **BB**—large cross-bucket error for a flagship name; highlights label vs feature tension on a coarse map.
+- **Saudi Aramco (2222.SR), FY2024:** actual **A**, predicted **BBB**—similar theme: strong credit name, model uses ratio/news surface only.
+- **Cenomi Centers (4321.SR):** multiple years appear (e.g. **BB** → **A**, **A** → **BBB**)—consistent with **volatile** fundamentals and **multi-agency** dispersion in underlying ratings.
+- **Al Kathiri / AKHC (3008.SR):** **BBB** predicted as **A** on FY2022–2023; FY2022 shows **very high** model confidence (~0.94)—a **stress case** for overconfidence when signals are weak or misaligned with the coarse label.
+- **Mayar Holding (9568.SR)** and **Multi Business Group (9619.SR):** actual **BB**, predicted **A**—**small-class** rows pulled toward the modal **A** bucket.
+- **Ladun Investment (9535.SR)** and **Perfect Presentation / 2P (7204.SR):** actual **BBB** but predicted **A** or **AA** on some years—large cross-bucket errors, several with moderate–high confidence.
 
-**Output files:** `figures/error_scatter.png`, `figures/confidence_dist.png`, `figures/error_patterns.png`, `results/error_analysis.json`
+### 16.4 Key finding
 
-**Script:** Historical analysis used `models/error_analysis.py` (removed); figures and `results/error_analysis.json` remain as report artifacts.
+**Errors are structured, not i.i.d. noise.** The **confusion matrix** shows **systematic** swaps between **neighbouring** and **modal** categories; the **misclassified** list supports **case-by-case** narratives (boundary mapping, agency disagreement in the label construction, outlier ratios, sparse news). The older **binary V2** exercise (75 rows, **68%** accuracy) manually tagged **45%** of errors into agency / boundary / outlier buckets; that **percentage breakdown is not recomputed** for the **four-class multisource** JSON—here, the **evidence** is the **matrix + row list**.
+
+**Output files:** `results/error_analysis.json` (and mirror `error_analysis_multisource.json`), plus pipeline figures such as `figures/error_scatter.png`, `figures/confidence_dist.png`, `figures/error_patterns.png` when regenerated.
+
+**Script:** `models/generate_pipeline_figures.py` (via `scripts/regenerate_artifacts.py`).
 
 ---
 
@@ -1463,19 +1477,32 @@ streamlit run app.py
 
 ### 20.5 Contribution 5: Error Explainability
 
-**Finding:** 45% of prediction errors are attributable to three explainable causes: rating boundary effects (12%), inter-agency disagreement (21%), and outlier financial profiles (12%). The model's failures largely reflect genuine ambiguity in credit assessment, not poor learning.
+**Finding (canonical multisource panel):** For the **45-row**, **four-class** XGBoost run documented in `results/error_analysis.json`, **out-of-fold** predictions yield a **confusion matrix** where **AA** is perfectly stable on the diagonal while **A**, **BBB**, and especially **BB** show **adjacent-bucket** and **cross-grade** confusion—consistent with **coarse labels**, **class imbalance**, and **noisy** harmonised ratings. The JSON lists **17** misclassified `(ticker, year)` rows with predicted vs actual category and confidence; many cases (e.g. **strong actual A predicted BBB**, **BB predicted A**) plausibly reflect **boundary** ambiguity, **multi-agency** disagreement in the underlying notch map, or **ratio** profiles that sit far from class centroids—without claiming a fixed percentage split of *all* errors (that precision belonged to an older **binary / 75-row** study, not recomputed here).
 
-**Significance:** Demonstrates that model accuracy alone is an insufficient evaluation metric; understanding *why* models fail is essential for practical deployment.
+**Significance:** Accuracy alone is insufficient: the **same artefact** supports both **aggregate** diagnostics (confusion structure) and **case-level** review for the **current** pipeline—essential before any deployment narrative, and honest about **small *n***.
 
 ---
 
 ## 21. Answering the Research Questions
 
+The **primary evaluation objective** (Section 1.1) is to **quantify**—under stratified cross-validation on the merged panel—whether **KAM** and **news** blocks change performance **relative to financial ratios alone**, with conclusions tempered by **small-sample variance**. The ablation metrics in `results/full_model_comparison.json` and the narrative in `docs/PROJECT_REPORT_CURRENT.md` (Sections 6–9) are the direct evidence for that objective; the research questions below structure additional interpretation (SHAP, LLM verdicts, error patterns).
+
 ### RQ1: Can classical ML predict credit ratings from public financial ratios, KAM features, and news sentiment?
 
-**Answer: Yes, with caveats.**
+**Answer: Yes in the weak sense that models learn above-chance structure on the panel; incremental value of KAM vs news blocks is not the same.**
 
-Financial ratios alone achieve 68-71% accuracy using Gradient Boosting and GroupKFold CV on 75 samples from 23 Saudi non-financial companies. This closely matches the reference paper's 71.55% for financial-only models on 116 Spanish companies. KAM features and news sentiment do not improve accuracy in the Saudi market due to KAM homogeneity and insufficient news data.
+On the **45-row** multisource panel (`data/processed/merged_multisource_training.csv`), **stratified 5-fold CV** with **XGBoost** reports the following **mean CV accuracy ± std** in `results/full_model_comparison.json` (run **2026-03-27**):
+
+| Feature set | Mean accuracy | Std |
+|-------------|---------------|-----|
+| Financials only (4 ratios) | **51.1%** | ±18.1% |
+| Financials + KAM dummies (9 features) | **46.7%** | ±8.3% |
+| Financials + FinBERT / news aggregates (9 features) | **60.0%** | ±8.9% |
+| Full model (14 features) | **60.0%** | ±11.3% |
+
+**Relative to financials alone:** the **news / sentiment block** improves mean CV accuracy by about **nine percentage points** here; the **KAM dummy block** in this ablation **reduces** mean accuracy vs financials-only. The **full** model matches **financials + sentiment** within rounding (it does not beat that row on mean accuracy in this run). **Fold-to-fold variance** is large—especially for financials-only (std ≈18%)—so conclusions must stay tied to **this constructed panel** and sample size.
+
+*Context:* Earlier narrative in this document refers to a **different** setup (e.g. binary / V2 panel, ~75 rows, other CV grouping) where tree models reached **~68–71%**; that is **not** the same target or matrix as the current **four-class** multisource ablation. For the **stated evaluation objective** (Section 1.1), treat **`full_model_comparison.json`** and **`docs/PROJECT_REPORT_CURRENT.md`** as canonical.
 
 ### RQ2: Which feature categories contribute most to rating prediction accuracy?
 
@@ -1491,9 +1518,9 @@ For the **14-feature** full model (`models/shap_explainability.py`), global SHAP
 
 ### RQ4: How does prediction accuracy compare across rating categories?
 
-**Answer: Investment-grade ratings are easier to predict; boundary cases are hardest.**
+**Answer: With *n* = 45, read per-class behaviour from the pooled CV confusion matrix, not a single headline “accuracy per notch.”**
 
-The model correctly classifies 68% of all samples. Errors concentrate at the A-/BBB+ boundary (12% of errors) and on companies with inter-agency disagreement (21% of errors). Investment-grade companies with strong financial profiles (e.g., SABIC, Saudi Aramco) are classified correctly with high confidence, while borderline cases and companies with unusual financial structures (e.g., Saudi Electricity's negative liquidity) are systematically misclassified.
+`results/error_analysis.json` (multisource **14-feature** XGBoost, **four** categories A / AA / BB / BBB) includes a **confusion matrix** built from **out-of-fold** predictions. In that snapshot, **AA** (6 samples) is **stable** on the diagonal (no off-diagonal mass for that class). **A** (18) and **BBB** (15) show **substantial cross-bucket** error (e.g. A ↔ BBB). **BB** (6) is the **smallest** class and is often confused with **A** or **BBB**, which is expected under **imbalance** and **coarse bucketing**. Qualitative themes elsewhere in this report—**boundary** effects, **agency** disagreement, **outlier** financial profiles—still help interpret **individual** misclassifications listed in the same JSON, but **aggregate** accuracy for the stated objective is summarised by the **ablation means** in `full_model_comparison.json` (~**51–60%** depending on feature set), not by legacy **68%** figures from older experiments.
 
 ---
 

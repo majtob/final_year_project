@@ -25,6 +25,7 @@
 ## Table of contents
 
 1. [Summary](#1-summary)  
+   - [1.1 Project objective](#11-project-objective)  
 2. [Literature review and cited foundations](#2-literature-review-and-cited-foundations)  
 3. [Data in this repository](#3-data-in-this-repository)  
 4. [Target and features](#4-target-and-features)  
@@ -44,6 +45,14 @@
 ---
 
 ## 1. Summary
+
+### 1.1 Project objective
+
+**Primary evaluation objective.** Quantify whether **KAM** and **news** feature blocks improve **cross-validated** performance relative to **financial ratios alone** on the **constructed merged panel**, explicitly **acknowledging small-sample variance** (*n* = 45 rows in the latest `merged_multisource_training.csv`).
+
+**Supporting aims.** Deliver a **reproducible** multisource pipeline—data merge, XGBoost **feature ablations** (`results/full_model_comparison.json`), broader learner benchmark (`results/multisource_model_comparison.json`), **SHAP** (`results/shap_report.json`), **template LLM verdicts** (`results/verdicts/`), and the **Streamlit** app—so the comparison is traceable from processed CSVs and `scripts/regenerate_artifacts.py`.
+
+---
 
 The project predicts **four-way rating categories** (AA, A, BBB, BB) for Tadawul-listed firms using a **merged multisource table**: four Altman-style financial ratios, five Key Audit Matter (KAM) dummies aligned with Muñoz-Izquierdo et al. (2022), and five FinBERT-based news aggregates. The **main modelling sample** contains **45** `(ticker, fiscal_year)` rows after (1) dropping rows with missing `profitab` and (2) **excluding** **3008.SR / fiscal year 2021** (Al Kathiri): that row had **no retrieved English articles** and **all-zero** FinBERT aggregates, so it was removed for a cleaner panel (`merged_multisource_training.csv` and `results/full_model_comparison.json`). **Stratified 5-fold CV** on this panel is **high-variance** because *n* is small; latest `full_model_comparison.json` reports about **51.1%** (financials-only), **46.7%** (financials + KAM dummies in the 9-feature ablation), **60.0%** (financials + sentiment-only), and **60.0%** (full 14-feature XGBoost)—see the JSON for exact means and stds. A **broader algorithm comparison** (`results/multisource_model_comparison.json`) ranks **Extra Trees** and **Linear SVC** highest by mean CV accuracy (**~66.7%** each on the latest run), with **XGBoost** at **~62.2%**. **SHAP** and **template LLM verdicts** use the same 45-row panel. **Important:** if you change only the CSVs and do **not** re-run `scripts/regenerate_artifacts.py`, the **Streamlit** app still trains on whatever is in `merged_multisource_training.csv`, but **`results/*.json` and `figures/*.png` stay stale** and will not match the app or this report until regenerated.
 
