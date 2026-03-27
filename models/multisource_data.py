@@ -32,6 +32,7 @@ _MERGED_REQUIRED = set(
         "fiscal_year",
         "rating_category",
         "company_name",
+        "rating_agency",
     ]
 )
 

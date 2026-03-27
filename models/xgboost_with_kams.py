@@ -106,7 +106,8 @@ def load_and_merge_data():
         missing = [c for c in ratio_cols if c not in fin_df.columns]
         if missing:
             raise ValueError(f"financials_processed.csv missing columns: {missing}")
-        fin_df = fin_df[ratio_cols]
+        keep_extra = [c for c in ("company_name", "rating_agency") if c in fin_df.columns]
+        fin_df = fin_df[ratio_cols + keep_extra].copy()
         print(f"Financials after dedupe: {len(fin_df)} records")
         merge_kam = ["ticker", "fiscal_year_kam", "rating"] + FULL_KAM_FEATURE_COLS
         merge_kam = list(dict.fromkeys(merge_kam))

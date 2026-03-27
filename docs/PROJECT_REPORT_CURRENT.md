@@ -91,6 +91,16 @@ Following Muñoz-Izquierdo et al. (2022), we map categories to binary indicators
 | Liabilities | `LIABKAM` | Provisions, contingencies, debt issues |
 | Other | `OTHERKAM` | IT systems, acquisitions, regulatory compliance |
 
+### 2.3.1 Discrete and coarse-grained rating targets in credit-rating ML
+
+Mapping many agency notches (e.g. AAA, AA+, AA, AA−) into **fewer ordered classes** (our four buckets) is a standard way to obtain **multiclass** targets with usable support per class. It is conceptually aligned with work that treats ratings as **categorical** outcomes in classifiers rather than a continuous line.
+
+**Huang, Z., Chen, H., Hsu, C.-J., Chen, W.-H., & Wu, S. (2004).** *Credit rating analysis with support vector machines and neural networks: A market comparative study.* *Decision Support Systems*, 37(4), 543–558. https://doi.org/10.1016/S0167-9236(03)00086-1 — multiclass **rating-category** prediction with SVMs and neural networks (early, widely cited baseline for ML on discrete rating labels).
+
+**Golbayani, P., Florescu, I., & Chatterjee, R. (2020).** *A comparative study of forecasting corporate credit ratings using neural networks, support vector machines, and decision trees.* *The North American Journal of Economics and Finance*, 54, 101251. https://doi.org/10.1016/j.najef.2020.101251 — compares ML methods on **corporate credit rating** prediction and proposes **notch-distance** accuracy, underscoring that ratings are **ordered discrete** labels (a natural complement to coarse bucketing when full notch-level multiclass is too sparse).
+
+Neither paper uses our **exact** four-bucket map (that remains our design, alongside Muñoz-Izquierdo et al., 2022); they support the **principle** of predicting **coarse or discrete** rating classes with ML.
+
 ### 2.4 Credit scoring and algorithm comparisons: Bao et al. (2019)
 
 **Bao, W., Lianju, N., & Yue, K. (2019).** *Integration of unsupervised and supervised machine learning algorithms for credit risk assessment.* *Expert Systems with Applications*, 128, 301–315. https://doi.org/10.1016/j.eswa.2019.02.033
@@ -387,6 +397,10 @@ The following numbered list matches `docs/PROJECT_REPORT.md` (Section 24). **Sec
 9. Bao, W., Lianju, N., & Yue, K. (2019). Integration of unsupervised and supervised machine learning algorithms for credit risk assessment. *Expert Systems with Applications*, 128, 301–315. https://doi.org/10.1016/j.eswa.2019.02.033
 
 10. Lei, Y., Wang, J., Chen, Z., Li, X., Chen, J., & Chen, C. (2025). ZiGong 1.0: A Large Language Model for Financial Credit. *arXiv preprint* arXiv:2502.16159.
+
+11. Huang, Z., Chen, H., Hsu, C.-J., Chen, W.-H., & Wu, S. (2004). Credit rating analysis with support vector machines and neural networks: A market comparative study. *Decision Support Systems*, 37(4), 543–558. https://doi.org/10.1016/S0167-9236(03)00086-1
+
+12. Golbayani, P., Florescu, I., & Chatterjee, R. (2020). A comparative study of forecasting corporate credit ratings using neural networks, support vector machines, and decision trees. *The North American Journal of Economics and Finance*, 54, 101251. https://doi.org/10.1016/j.najef.2020.101251
 
 ---
 

@@ -68,7 +68,9 @@ def _load_financials() -> pd.DataFrame:
     missing = [c for c in need if c not in fin.columns]
     if missing:
         raise ValueError(f"financials_processed.csv missing columns: {missing}")
-    fin = fin[need].copy()
+    # Keep agency + name for reporting / Streamlit; do not default everyone to Tassnief downstream
+    extra = [c for c in ("company_name", "rating_agency") if c in fin.columns]
+    fin = fin[need + extra].copy()
     print(f"Financial ratios after dedupe: {len(fin)} records")
     return fin
 
@@ -88,10 +90,13 @@ def load_data():
     print(f"KAMs: {len(kams)} records")
 
     df = fin.merge(news, on=["ticker", "fiscal_year"], how="left")
-    kam_merge = ["ticker", "fiscal_year", "company_name"] + [
-        c for c in KAM_COLS if c in kams.columns
-    ]
-    kam_merge = list(dict.fromkeys([c for c in kam_merge if c in kams.columns]))
+    kam_feat = [c for c in KAM_COLS if c in kams.columns]
+    # Avoid duplicate company_name columns (fin may now carry company_name + rating_agency)
+    if "company_name" in df.columns:
+        kam_merge = ["ticker", "fiscal_year"] + kam_feat
+    else:
+        kam_merge = ["ticker", "fiscal_year", "company_name"] + kam_feat
+        kam_merge = [c for c in kam_merge if c in kams.columns]
     merged = df.merge(kams[kam_merge], on=["ticker", "fiscal_year"], how="inner")
     print(f"Merged (all three sources): {len(merged)} records")
 

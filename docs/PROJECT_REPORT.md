@@ -284,6 +284,8 @@ Many Fitch-rated Saudi companies are banks (Riyad Bank, Al Rajhi, SNB, etc.). Af
 - BBB: BBB+, BBB, BBB-
 - BB: BB+ and below
 
+**Related literature (discrete / coarse rating targets):** Empirical credit-rating ML typically predicts **a finite set of ordered rating labels** (multiclass classification) rather than a continuous score or every agency notch as its own class—both for comparability across agencies and for stable class frequencies. **Huang et al. (2004)** compare support vector machines and neural networks on **corporate credit rating categories** in a multiclass setup. **Golbayani et al. (2020)** benchmark several ML methods for **forecasting corporate credit ratings** and introduce **notch-distance** accuracy to reflect that ratings are **discrete ordered** outcomes; that framing aligns with mapping fine notches into broader buckets when sample size is limited. Our four-way mapping follows the same **coarse multiclass** logic alongside Muñoz-Izquierdo et al. (2022).
+
 ### 4.3 Model Selection
 
 **Algorithm:** XGBoost (Extreme Gradient Boosting)
@@ -1594,6 +1596,10 @@ mxa1438/
 9. Bao, W., Lianju, N., & Yue, K. (2019). Integration of unsupervised and supervised machine learning algorithms for credit risk assessment. *Expert Systems with Applications*, 128, 301–315. https://doi.org/10.1016/j.eswa.2019.02.033
 
 10. Lei, Y., Wang, J., Chen, Z., Li, X., Chen, J., & Chen, C. (2025). ZiGong 1.0: A Large Language Model for Financial Credit. *arXiv preprint arXiv:2502.16159*.
+
+11. Huang, Z., Chen, H., Hsu, C.-J., Chen, W.-H., & Wu, S. (2004). Credit rating analysis with support vector machines and neural networks: A market comparative study. *Decision Support Systems*, 37(4), 543–558. https://doi.org/10.1016/S0167-9236(03)00086-1
+
+12. Golbayani, P., Florescu, I., & Chatterjee, R. (2020). A comparative study of forecasting corporate credit ratings using neural networks, support vector machines, and decision trees. *The North American Journal of Economics and Finance*, 54, 101251. https://doi.org/10.1016/j.najef.2020.101251
 
 ---
 

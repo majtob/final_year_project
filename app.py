@@ -16,12 +16,15 @@ import numpy as np
 import pandas as pd
 import shap
 import streamlit as st
-from sklearn.preprocessing import LabelEncoder
+from sklearn.decomposition import PCA
+from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 from xgboost import XGBClassifier
 
 warnings.filterwarnings("ignore")
 
-PROJECT_ROOT = Path(__file__).resolve()
+PROJECT_ROOT = Path(__file__).resolve().parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
@@ -89,6 +92,54 @@ def _class_shap_rows(shap_raw, n_classes: int):
     return [arr]
 
 
+def _plot_multisource_benchmark_bars(bench: dict) -> plt.Figure:
+    names = list(bench.get("ranking_by_accuracy") or [])
+    models = bench.get("models") or {}
+    if not names and models:
+        names = sorted(
+            models.keys(),
+            key=lambda n: float(models[n].get("accuracy_mean", 0)),
+            reverse=True,
+        )
+    means = [float(models[n].get("accuracy_mean", 0)) for n in names]
+    fig, ax = plt.subplots(figsize=(8, max(3.0, 0.35 * max(len(names), 1) + 1)))
+    y = np.arange(len(names))
+    ax.barh(y, means, color="steelblue", edgecolor="white")
+    ax.set_yticks(y)
+    ax.set_yticklabels(names, fontsize=9)
+    ax.set_xlabel("CV accuracy (mean)")
+    ax.set_xlim(0, min(1.05, max(means + [0.1]) * 1.15))
+    ax.set_title("Multisource benchmark (from results JSON)")
+    fig.tight_layout()
+    return fig
+
+
+def _plot_feature_ablation_bars(doc: dict) -> plt.Figure | None:
+    order = ["financials_only", "financials_kams", "financials_sentiment", "full_model"]
+    labels = {
+        "financials_only": "Financials only",
+        "financials_kams": "+ KAMs",
+        "financials_sentiment": "+ Sentiment / news",
+        "full_model": "Full (14 features)",
+    }
+    models = doc.get("models") or {}
+    keys = [k for k in order if k in models]
+    if not keys:
+        return None
+    means = [float(models[k].get("accuracy", 0)) for k in keys]
+    labs = [labels.get(k, k) for k in keys]
+    fig, ax = plt.subplots(figsize=(7, 3.2))
+    x = np.arange(len(keys))
+    ax.bar(x, means, color="seagreen", edgecolor="white")
+    ax.set_xticks(x)
+    ax.set_xticklabels(labs, rotation=15, ha="right")
+    ax.set_ylabel("CV accuracy (mean)")
+    ax.set_ylim(0, min(1.05, max(means + [0.1]) * 1.12))
+    ax.set_title("XGBoost feature ablation (from results JSON)")
+    fig.tight_layout()
+    return fig
+
+
 @st.cache_data
 def load_verdicts():
     path = VERDICTS_DIR / "all_verdicts.json"
@@ -96,6 +147,83 @@ def load_verdicts():
         with open(path, encoding="utf-8") as f:
             return json.load(f)
     return None
+
+
+@st.cache_data
+def compute_cv_error_bundle(df: pd.DataFrame):
+    """
+    Stratified CV predictions matching models/generate_pipeline_figures.py so the
+    Error Analysis tab works without pre-generated PNG/JSON (e.g. minimal Docker image).
+    """
+    X = df[FULL_FEATURE_COLS].values.astype(np.float64)
+    le = LabelEncoder()
+    y = le.fit_transform(df["rating_category"].values)
+    classes = list(le.classes_)
+    counts = np.bincount(y)
+    n_splits = int(min(5, counts.min()))
+    if n_splits < 2:
+        n_splits = 2
+    cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
+    cv_model = XGBClassifier(
+        n_estimators=100,
+        max_depth=3,
+        learning_rate=0.1,
+        random_state=42,
+        use_label_encoder=False,
+        eval_metric="mlogloss",
+        n_jobs=1,
+    )
+    y_pred = cross_val_predict(cv_model, X, y, cv=cv)
+    y_proba = cross_val_predict(cv_model, X, y, cv=cv, method="predict_proba")
+    max_proba = np.max(y_proba, axis=1)
+    acc = accuracy_score(y, y_pred)
+    Xs = StandardScaler().fit_transform(X)
+    Z = PCA(n_components=2, random_state=42).fit_transform(Xs)
+    correct = y_pred == y
+    pairs: dict[str, int] = {}
+    for actual, pred_i in zip(df["rating_category"].values, y_pred):
+        pred = le.inverse_transform([int(pred_i)])[0]
+        if actual != pred:
+            key = f"{actual} → {pred}"
+            pairs[key] = pairs.get(key, 0) + 1
+    mis_rows = []
+    for i in range(len(df)):
+        if y_pred[i] == y[i]:
+            continue
+        row = df.iloc[i]
+        mis_rows.append(
+            {
+                "ticker": row["ticker"],
+                "company_name": str(row.get("company_name", "")),
+                "fiscal_year": int(row["fiscal_year"]),
+                "actual_category": row["rating_category"],
+                "predicted_category": le.inverse_transform([int(y_pred[i])])[0],
+                "confidence": float(max_proba[i]),
+            }
+        )
+    cm = confusion_matrix(y, y_pred, labels=np.arange(len(classes)))
+    payload = {
+        "generated_for": "multisource XGBoost 14 features, 4-class rating_category (in-app CV)",
+        "n_samples": int(len(df)),
+        "cv_folds": n_splits,
+        "cv_accuracy": float(acc),
+        "classes": classes,
+        "summary": {
+            "total_samples": int(len(df)),
+            "correct": int(np.sum(correct)),
+            "incorrect": int(np.sum(~correct)),
+            "accuracy": float(acc),
+        },
+        "misclassified": mis_rows,
+        "confusion_matrix": {"labels": classes, "matrix": cm.tolist()},
+    }
+    return {
+        "Z": Z,
+        "correct": correct,
+        "max_proba": max_proba,
+        "pairs": pairs,
+        "payload": payload,
+    }
 
 
 def generate_verdict_for_row(row, pred_category: str, confidence: float):
@@ -123,13 +251,14 @@ def main():
     class_rows = _class_shap_rows(shap_raw, len(le_ml.classes_))
     X_all = df[FULL_FEATURE_COLS].values.astype(np.float64)
 
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
         [
             "Company Predictor",
             "Model Performance",
             "SHAP Explainability",
             "Error Analysis",
             "Dataset Explorer",
+            "Pipeline outputs",
         ]
     )
 
@@ -241,13 +370,30 @@ def main():
             "Stratified 5-fold CV comparing XGBoost to Random Forest, Extra Trees, "
             "sklearn Gradient Boosting, HistGradientBoosting, trees, linear models, kNN, MLP."
         )
-        bench_png = FIGURES_DIR / "multisource_model_comparison.png"
-        if bench_png.exists():
-            st.image(str(bench_png), caption="CV accuracy — multisource benchmark")
         bench_json = RESULTS_DIR / "multisource_model_comparison.json"
+        bench = None
         if bench_json.exists():
             with open(bench_json, encoding="utf-8") as f:
                 bench = json.load(f)
+
+        bench_png = FIGURES_DIR / "multisource_model_comparison.png"
+        if bench_png.exists():
+            st.image(str(bench_png), caption="CV accuracy — multisource benchmark")
+        elif bench is not None:
+            st.caption(
+                "`figures/multisource_model_comparison.png` not found — bar chart rebuilt from JSON."
+            )
+            fig_b = _plot_multisource_benchmark_bars(bench)
+            st.pyplot(fig_b, clear_figure=True)
+            plt.close(fig_b)
+        else:
+            st.warning(
+                "No multisource benchmark on disk. Regenerate with: "
+                "`PYTHONPATH=. python models/evaluate_multisource_models.py` "
+                "(writes `results/multisource_model_comparison.json` and the PNG)."
+            )
+
+        if bench is not None:
             st.markdown("#### Ranking by CV accuracy")
             rows = []
             for name in bench.get("ranking_by_accuracy", []):
@@ -272,18 +418,62 @@ def main():
         full_path = RESULTS_DIR / "full_model_comparison.json"
         if full_path.exists():
             with open(full_path, encoding="utf-8") as f:
-                st.json(json.load(f))
+                full_doc = json.load(f)
+            fig_a = _plot_feature_ablation_bars(full_doc)
+            if fig_a is not None:
+                st.pyplot(fig_a, clear_figure=True)
+                plt.close(fig_a)
+            with st.expander("Full ablation JSON"):
+                st.json(full_doc)
+        else:
+            st.caption("`results/full_model_comparison.json` not found — run the multisource / full-model training pipeline to refresh.")
 
-        st.markdown("---")
-        st.markdown("**Legacy figure (older binary / larger-sample experiments):**")
-        fig_path = FIGURES_DIR / "model_comparison.png"
-        if fig_path.exists():
-            st.image(str(fig_path), caption="Historical multi-model comparison (GroupKFold)")
+        alt_png = FIGURES_DIR / "model_comparison.png"
+        if alt_png.exists() and alt_png.resolve() != bench_png.resolve():
+            st.markdown("---")
+            with st.expander("Additional on-disk benchmark image (`model_comparison.png`)"):
+                st.image(str(alt_png))
 
     with tab3:
         st.header("SHAP (full multisource XGBoost)")
-        st.caption("Regenerate with: `PYTHONPATH=. python models/shap_explainability.py`")
+        st.caption(
+            "Live plots use the XGBoost trained in this session. "
+            "Pre-rendered PNGs + `shap_report.json` come from "
+            "`PYTHONPATH=. python models/shap_explainability.py`."
+        )
 
+        fnames = [FEATURE_LABELS.get(f, f) for f in FULL_FEATURE_COLS]
+        imp = np.mean([np.abs(r).mean(axis=0) for r in class_rows], axis=0)
+        ord_idx = np.argsort(imp)
+        fig_imp, ax_imp = plt.subplots(figsize=(8, max(3.5, 0.32 * len(imp) + 1)))
+        ax_imp.barh(
+            np.arange(len(imp)),
+            imp[ord_idx],
+            color="darkslategray",
+            edgecolor="white",
+        )
+        ax_imp.set_yticks(np.arange(len(imp)))
+        ax_imp.set_yticklabels([fnames[i] for i in ord_idx], fontsize=9)
+        ax_imp.set_xlabel("Mean |SHAP| (average over classes and samples)")
+        ax_imp.set_title("Global importance (in-app model)")
+        fig_imp.tight_layout()
+        st.pyplot(fig_imp, clear_figure=True)
+        plt.close(fig_imp)
+
+        st.markdown("#### SHAP summary (first outcome class)")
+        fig_sum = plt.figure(figsize=(10, 6))
+        shap.summary_plot(
+            class_rows[0],
+            X_all,
+            feature_names=fnames,
+            max_display=len(FULL_FEATURE_COLS),
+            show=False,
+        )
+        plt.tight_layout()
+        st.pyplot(fig_sum, clear_figure=True)
+        plt.close(fig_sum)
+
+        st.markdown("### Pre-rendered figures (repository)")
         c1, c2 = st.columns(2)
         with c1:
             p = FIGURES_DIR / "shap_beeswarm.png"
@@ -340,18 +530,63 @@ def main():
 
     with tab4:
         st.header("Error analysis (multisource XGBoost CV)")
-        for name, cap in [
-            ("error_scatter.png", "Misclassified vs correct (PCA space, CV)"),
-            ("error_patterns.png", "Actual → predicted confusion pairs"),
-            ("confidence_dist.png", "Max class probability (CV)"),
-        ]:
-            p = FIGURES_DIR / name
-            if p.exists():
-                st.image(str(p), caption=cap)
-        ep = RESULTS_DIR / "error_analysis.json"
-        if ep.exists():
-            with open(ep, encoding="utf-8") as f:
-                st.json(json.load(f))
+        st.caption(
+            "Computed live with stratified CV (same setup as `generate_pipeline_figures.py`) "
+            "so this tab works in Docker even when `figures/*.png` are not baked into the image."
+        )
+        eb = compute_cv_error_bundle(df)
+        Z, correct, max_proba, pairs = eb["Z"], eb["correct"], eb["max_proba"], eb["pairs"]
+
+        fig1, ax1 = plt.subplots(figsize=(7, 5))
+        ax1.scatter(
+            Z[~correct, 0],
+            Z[~correct, 1],
+            c="crimson",
+            s=55,
+            label="Misclassified",
+            alpha=0.9,
+        )
+        ax1.scatter(
+            Z[correct, 0],
+            Z[correct, 1],
+            c="0.75",
+            s=35,
+            label="Correct",
+            alpha=0.6,
+        )
+        ax1.set_xlabel("PC1")
+        ax1.set_ylabel("PC2")
+        ax1.legend()
+        ax1.set_title("Misclassifications in PCA space (CV out-of-fold)")
+        fig1.tight_layout()
+        st.pyplot(fig1, clear_figure=True)
+        plt.close(fig1)
+
+        fig2, ax2 = plt.subplots(figsize=(8, max(3, 0.35 * max(len(pairs), 1) + 1)))
+        if pairs:
+            items = sorted(pairs.items(), key=lambda x: -x[1])
+            labs = [k for k, _ in items]
+            vals = [v for _, v in items]
+            ax2.barh(labs[::-1], vals[::-1], color="coral")
+            ax2.set_xlabel("Count")
+        else:
+            ax2.text(0.5, 0.5, "No CV errors", ha="center", va="center")
+        ax2.set_title("Misclassification patterns (actual → predicted)")
+        fig2.tight_layout()
+        st.pyplot(fig2, clear_figure=True)
+        plt.close(fig2)
+
+        fig3, ax3 = plt.subplots(figsize=(6, 4))
+        ax3.hist(max_proba, bins=12, color="teal", edgecolor="white", alpha=0.85)
+        ax3.set_xlabel("Max predicted class probability (CV)")
+        ax3.set_ylabel("Count")
+        ax3.set_title("Model confidence (CV folds)")
+        fig3.tight_layout()
+        st.pyplot(fig3, clear_figure=True)
+        plt.close(fig3)
+
+        st.markdown("#### `error_analysis` summary (JSON)")
+        st.json(eb["payload"])
 
     with tab5:
         st.header("Dataset explorer")
@@ -373,6 +608,137 @@ def main():
         c1.metric("Rows", len(df))
         c2.metric("Companies", df["ticker"].nunique())
         c3.metric("Categories", df["rating_category"].nunique())
+
+    with tab6:
+        st.header("Pipeline outputs (saved figures & JSON)")
+        st.caption(
+            "Files written by `scripts/regenerate_artifacts.py` and the underlying model scripts. "
+            "Full descriptions: **`docs/FIGURES_AND_RESULTS.md`**."
+        )
+
+        st.subheader("Diagnostic figures (`figures/`)")
+        st.markdown(
+            "These come from `models/generate_pipeline_figures.py` (multisource XGBoost, stratified CV)."
+        )
+        _diag_pairs = [
+            (
+                FIGURES_DIR / "rating_distribution.png",
+                "`figures/rating_distribution.png` — row counts per `rating_category`.",
+            ),
+            (
+                FIGURES_DIR / "confusion_matrix_multisource.png",
+                "`figures/confusion_matrix_multisource.png` — CV confusion matrix (same as `confusion_matrix_gb.png`).",
+            ),
+            (
+                FIGURES_DIR / "pca_multisource.png",
+                "`figures/pca_multisource.png` — PCA of standardized 14 features (same plot as `pca_scatter.png`).",
+            ),
+            (
+                FIGURES_DIR / "feature_distributions_multisource.png",
+                "`figures/feature_distributions_multisource.png` — four financial ratios by category.",
+            ),
+            (
+                FIGURES_DIR / "confidence_distribution_multisource.png",
+                "`figures/confidence_distribution_multisource.png` — histogram of max CV predicted probability.",
+            ),
+            (
+                FIGURES_DIR / "error_scatter_multisource.png",
+                "`figures/error_scatter_multisource.png` — correct vs misclassified rows in PCA space.",
+            ),
+            (
+                FIGURES_DIR / "error_patterns_multisource.png",
+                "`figures/error_patterns_multisource.png` — bar chart of actual→predicted error pairs.",
+            ),
+        ]
+        for i in range(0, len(_diag_pairs), 2):
+            dc1, dc2 = st.columns(2)
+            with dc1:
+                pp, cap = _diag_pairs[i]
+                if pp.exists():
+                    st.image(str(pp), caption=cap)
+                else:
+                    st.caption(f"Missing: `{pp.name}`")
+            with dc2:
+                if i + 1 < len(_diag_pairs):
+                    pp2, cap2 = _diag_pairs[i + 1]
+                    if pp2.exists():
+                        st.image(str(pp2), caption=cap2)
+                    else:
+                        st.caption(f"Missing: `{pp2.name}`")
+
+        st.subheader("Benchmark & SHAP PNGs")
+        st.markdown(
+            "Benchmark: `models/evaluate_multisource_models.py`. SHAP static plots: `models/shap_explainability.py`."
+        )
+        bc1, bc2 = st.columns(2)
+        with bc1:
+            bp = FIGURES_DIR / "multisource_model_comparison.png"
+            if bp.exists():
+                st.image(str(bp), caption="`figures/multisource_model_comparison.png` (also copied to `model_comparison.png`).")
+            else:
+                st.caption("Missing: `multisource_model_comparison.png`")
+        with bc2:
+            st.markdown("**SHAP (pre-rendered)**")
+            for stem, txt in [
+                ("shap_beeswarm.png", "`figures/shap_beeswarm.png`"),
+                ("shap_bar_importance.png", "`figures/shap_bar_importance.png`"),
+            ]:
+                sp = FIGURES_DIR / stem
+                if sp.exists():
+                    st.image(str(sp), caption=txt)
+            st.caption("Dependence plots: `shap_dependence_*.png`. Waterfalls: `shap_waterfall_<ticker>_<year>.png` — see SHAP tab.")
+
+        st.subheader("Result files (`results/`)")
+        _json_files = [
+            (
+                "Multisource benchmark",
+                RESULTS_DIR / "multisource_model_comparison.json",
+                "Ten learners, same 14×N panel as `evaluate_multisource_models.py`.",
+            ),
+            (
+                "XGBoost feature ablation",
+                RESULTS_DIR / "full_model_comparison.json",
+                "Financials only → +KAMs → +sentiment → full 14-feature model (`xgboost_full.py`).",
+            ),
+            (
+                "Financials vs combined (extended KAM study)",
+                RESULTS_DIR / "combined_model_results.json",
+                "`xgboost_with_kams.py` style comparison on the merged financial sample.",
+            ),
+            (
+                "KAM-only panel (full `kams_processed.csv`)",
+                RESULTS_DIR / "kams_only_model_results.json",
+                "`xgboost_kams_only.py` — 12 KAM / firm-structure features.",
+            ),
+            (
+                "Pipeline CV error snapshot",
+                RESULTS_DIR / "error_analysis_multisource.json",
+                "Static snapshot from `generate_pipeline_figures.py` (Error Analysis tab is computed live).",
+            ),
+            (
+                "Pipeline run metadata",
+                RESULTS_DIR / "pipeline_figures_meta.json",
+                "Timestamp, row count, list of figures/JSON written last run.",
+            ),
+            (
+                "SHAP global ranking",
+                RESULTS_DIR / "shap_report.json",
+                "Mean |SHAP| ranks and feature descriptions (`shap_explainability.py`).",
+            ),
+            (
+                "Verdict quality summary",
+                RESULTS_DIR / "verdicts" / "verdict_summary.json",
+                "Template verdict QA metrics vs ML labels (`llm_verdict.py`).",
+            ),
+        ]
+        for title, jpath, blurb in _json_files:
+            with st.expander(f"{title} — `{jpath.relative_to(PROJECT_ROOT)}`"):
+                st.caption(blurb)
+                if jpath.exists():
+                    with open(jpath, encoding="utf-8") as jf:
+                        st.json(json.load(jf))
+                else:
+                    st.warning("File not found — run `scripts/regenerate_artifacts.py`.")
 
     st.markdown("---")
     st.markdown(
