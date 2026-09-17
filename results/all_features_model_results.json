@@ -1,0 +1,306 @@
+{
+  "generated_at": "2026-04-29T09:12:11.596974",
+  "n_samples": 45,
+  "total_features": 21,
+  "feature_groups": {
+    "financial": [
+      "liquid",
+      "cumprof",
+      "profitab",
+      "leverage"
+    ],
+    "kam_full": [
+      "AUSIZE",
+      "AUOP",
+      "EMP",
+      "GCUP",
+      "GCKAM",
+      "REVKAM",
+      "ASSETKAM",
+      "LIABKAM",
+      "OTHERKAM",
+      "FIRMAGE",
+      "FIRMSIZE",
+      "INDUSTRY"
+    ],
+    "news": [
+      "sentiment_mean",
+      "sentiment_std",
+      "sentiment_pos_pct",
+      "sentiment_neg_pct",
+      "news_count"
+    ]
+  },
+  "classes": [
+    "A",
+    "AA",
+    "BB",
+    "BBB"
+  ],
+  "class_counts": {
+    "A": 18,
+    "AA": 6,
+    "BB": 6,
+    "BBB": 15
+  },
+  "ablations": {
+    "financials_only": {
+      "n_features": 4,
+      "features": [
+        "liquid",
+        "cumprof",
+        "profitab",
+        "leverage"
+      ],
+      "accuracy_mean": 0.5111111111111112,
+      "accuracy_std": 0.19372884193514103,
+      "top_3_features": [
+        [
+          "cumprof",
+          0.2794143557548523
+        ],
+        [
+          "liquid",
+          0.2754073739051819
+        ],
+        [
+          "profitab",
+          0.22319412231445312
+        ]
+      ]
+    },
+    "financials_plus_full_kams": {
+      "n_features": 16,
+      "features": [
+        "liquid",
+        "cumprof",
+        "profitab",
+        "leverage",
+        "AUSIZE",
+        "AUOP",
+        "EMP",
+        "GCUP",
+        "GCKAM",
+        "REVKAM",
+        "ASSETKAM",
+        "LIABKAM",
+        "OTHERKAM",
+        "FIRMAGE",
+        "FIRMSIZE",
+        "INDUSTRY"
+      ],
+      "accuracy_mean": 0.711111111111111,
+      "accuracy_std": 0.11331154474650632,
+      "top_3_features": [
+        [
+          "AUSIZE",
+          0.167781800031662
+        ],
+        [
+          "REVKAM",
+          0.1634380966424942
+        ],
+        [
+          "OTHERKAM",
+          0.14468131959438324
+        ]
+      ]
+    },
+    "financials_plus_news": {
+      "n_features": 9,
+      "features": [
+        "liquid",
+        "cumprof",
+        "profitab",
+        "leverage",
+        "sentiment_mean",
+        "sentiment_std",
+        "sentiment_pos_pct",
+        "sentiment_neg_pct",
+        "news_count"
+      ],
+      "accuracy_mean": 0.5111111111111111,
+      "accuracy_std": 0.11331154474650633,
+      "top_3_features": [
+        [
+          "news_count",
+          0.3983514606952667
+        ],
+        [
+          "cumprof",
+          0.1442614197731018
+        ],
+        [
+          "liquid",
+          0.14245586097240448
+        ]
+      ]
+    },
+    "full_kams_plus_news": {
+      "n_features": 17,
+      "features": [
+        "AUSIZE",
+        "AUOP",
+        "EMP",
+        "GCUP",
+        "GCKAM",
+        "REVKAM",
+        "ASSETKAM",
+        "LIABKAM",
+        "OTHERKAM",
+        "FIRMAGE",
+        "FIRMSIZE",
+        "INDUSTRY",
+        "sentiment_mean",
+        "sentiment_std",
+        "sentiment_pos_pct",
+        "sentiment_neg_pct",
+        "news_count"
+      ],
+      "accuracy_mean": 0.5777777777777778,
+      "accuracy_std": 0.0831479419283098,
+      "top_3_features": [
+        [
+          "news_count",
+          0.2581063210964203
+        ],
+        [
+          "REVKAM",
+          0.1849866658449173
+        ],
+        [
+          "AUSIZE",
+          0.1718740314245224
+        ]
+      ]
+    },
+    "all_features": {
+      "n_features": 21,
+      "features": [
+        "liquid",
+        "cumprof",
+        "profitab",
+        "leverage",
+        "AUSIZE",
+        "AUOP",
+        "EMP",
+        "GCUP",
+        "GCKAM",
+        "REVKAM",
+        "ASSETKAM",
+        "LIABKAM",
+        "OTHERKAM",
+        "FIRMAGE",
+        "FIRMSIZE",
+        "INDUSTRY",
+        "sentiment_mean",
+        "sentiment_std",
+        "sentiment_pos_pct",
+        "sentiment_neg_pct",
+        "news_count"
+      ],
+      "accuracy_mean": 0.6666666666666667,
+      "accuracy_std": 0.09938079899999065,
+      "top_3_features": [
+        [
+          "news_count",
+          0.28883302211761475
+        ],
+        [
+          "AUSIZE",
+          0.12703530490398407
+        ],
+        [
+          "REVKAM",
+          0.11591446399688721
+        ]
+      ]
+    }
+  },
+  "best_ablation": "financials_plus_full_kams",
+  "benchmark_21_features": {
+    "XGBoost": {
+      "accuracy_mean": 0.6666666666666667,
+      "accuracy_std": 0.09938079899999065,
+      "f1_macro_mean": 0.5443253968253969,
+      "f1_macro_std": 0.11378331481885444,
+      "f1_weighted_mean": 0.6288536155202822,
+      "f1_weighted_std": 0.08815954526855531
+    },
+    "Random Forest": {
+      "accuracy_mean": 0.6444444444444444,
+      "accuracy_std": 0.0831479419283098,
+      "f1_macro_mean": 0.5325396825396825,
+      "f1_macro_std": 0.10196976614348499,
+      "f1_weighted_mean": 0.6083245149911817,
+      "f1_weighted_std": 0.0735192457081846
+    },
+    "Extra Trees": {
+      "accuracy_mean": 0.8222222222222222,
+      "accuracy_std": 0.08888888888888888,
+      "f1_macro_mean": 0.6784920634920634,
+      "f1_macro_std": 0.048330759438334085,
+      "f1_weighted_mean": 0.7688536155202822,
+      "f1_weighted_std": 0.10079252284191291
+    },
+    "Gradient Boosting": {
+      "accuracy_mean": 0.6666666666666666,
+      "accuracy_std": 0.1405456737852613,
+      "f1_macro_mean": 0.5109920634920635,
+      "f1_macro_std": 0.14294087052559978,
+      "f1_weighted_mean": 0.6344091710758377,
+      "f1_weighted_std": 0.13649618276966782
+    },
+    "Decision Tree": {
+      "accuracy_mean": 0.5777777777777777,
+      "accuracy_std": 0.10886621079036347,
+      "f1_macro_mean": 0.48937950937950936,
+      "f1_macro_std": 0.11127567553233007,
+      "f1_weighted_mean": 0.5529709796376463,
+      "f1_weighted_std": 0.11534305300770085
+    },
+    "Logistic Regression": {
+      "accuracy_mean": 0.711111111111111,
+      "accuracy_std": 0.15071844406945042,
+      "f1_macro_mean": 0.6200396825396826,
+      "f1_macro_std": 0.08465040076818398,
+      "f1_weighted_mean": 0.6779541446208113,
+      "f1_weighted_std": 0.14958403838250192
+    },
+    "Linear SVC": {
+      "accuracy_mean": 0.7333333333333332,
+      "accuracy_std": 0.180534186769688,
+      "f1_macro_mean": 0.6844444444444445,
+      "f1_macro_std": 0.17129356088600592,
+      "f1_weighted_mean": 0.7180599647266315,
+      "f1_weighted_std": 0.1807631810302804
+    },
+    "KNN (k=5)": {
+      "accuracy_mean": 0.711111111111111,
+      "accuracy_std": 0.11331154474650632,
+      "f1_macro_mean": 0.5581349206349207,
+      "f1_macro_std": 0.1335173286398254,
+      "f1_weighted_mean": 0.6428218694885361,
+      "f1_weighted_std": 0.13945228916327845
+    },
+    "MLP": {
+      "accuracy_mean": 0.3777777777777778,
+      "accuracy_std": 0.26851213274654606,
+      "f1_macro_mean": 0.2725,
+      "f1_macro_std": 0.20240910168380385,
+      "f1_weighted_mean": 0.3296296296296296,
+      "f1_weighted_std": 0.2484299118963506
+    }
+  },
+  "benchmark_ranking": [
+    "Extra Trees",
+    "Linear SVC",
+    "Logistic Regression",
+    "KNN (k=5)",
+    "XGBoost",
+    "Gradient Boosting",
+    "Random Forest",
+    "Decision Tree",
+    "MLP"
+  ]
+}
