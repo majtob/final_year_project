@@ -1057,7 +1057,45 @@ To test whether **XGBoost** is still the best choice on the *current* aligned pa
 | 9 | MLP (+ scaler) | 46.7% | 0.28 | Small *n*, default architecture |
 | 10 | HistGradientBoosting (sklearn) | 40.0% | 0.14 | Default hyperparameters weak here |
 
-**Takeaway:** On this **45-row** panel, **Extra Trees** and **Linear SVC** tie for the **highest mean CV accuracy**; **XGBoost** remains competitive on **macro-F1** but is not top-ranked on raw accuracy in this run. **HistGradientBoosting** underperforms badly without tuning. If you edit `merged_multisource_training.csv` but skip `scripts/regenerate_artifacts.py`, **`results/*.json` and figures stay out of sync** with the app (which always trains on the CSV). Results are **high-variance**; interpret as indicative, not definitive.
+**Takeaway:** On this **45-row, 14-feature** matrix, **Extra Trees** and **Linear SVC** tie for the **highest mean CV accuracy**; **XGBoost** remains competitive on **macro-F1** but is not top-ranked on raw accuracy in this run. **HistGradientBoosting** underperforms badly without tuning. If you edit `merged_multisource_training.csv` but skip `scripts/regenerate_artifacts.py`, **`results/*.json` and figures stay out of sync** with the app (which always trains on the CSV). Results are **high-variance**; interpret as indicative, not definitive. **§15.5.1 supersedes this table** for the widest feature set.
+
+### 15.5.1 Superset benchmark: 21 features (full KAM block)
+
+§15.5 uses the **five KAM dummies**. This run widens the matrix to the **full 12-column KAM/firm block** (`AUSIZE`, `AUOP`, `EMP`, `GCUP`, the five KAM category dummies, `FIRMAGE`, `FIRMSIZE`, `INDUSTRY`) alongside the four financial ratios and five news aggregates — **21 features**, same **45 rows**, same **four classes**, same **5-fold stratified CV**. Script: `models/xgboost_all_features.py`. Outputs: `results/all_features_model_results.json`, `figures/all_features_model_comparison.png`.
+
+**XGBoost ablation across feature blocks:**
+
+| Feature set | *n* features | CV accuracy |
+|-------------|--------------|-------------|
+| Financials only | 4 | 51.1% ± 0.194 |
+| **Financials + full KAMs** | **16** | **71.1% ± 0.113** |
+| Financials + news | 9 | 51.1% ± 0.113 |
+| Full KAMs + news | 17 | 57.8% ± 0.083 |
+| All features | 21 | 66.7% ± 0.099 |
+
+The best XGBoost ablation is **financials + full KAMs (16 features)**; adding the news block *reduces* XGBoost accuracy, consistent with the sentiment aggregates carrying little signal at this sample size.
+
+**Nine-learner benchmark on the full 21-feature matrix:**
+
+| Rank | Model | Accuracy | F1 (macro) | Notes |
+|------|--------|----------|------------|--------|
+| 1 | **Extra Trees** | **82.2% ± 8.9%** | **0.68** | Highest figure in this repository |
+| 2 | Linear SVC (+ scaler) | 73.3% ± 18.1% | 0.68 | Equal macro-F1, far wider spread |
+| 3 | Logistic regression (+ scaler) | 71.1% ± 15.1% | 0.62 | — |
+| 4 | kNN *k*=5 (+ scaler) | 71.1% ± 11.3% | 0.56 | — |
+| 5 | **XGBoost** | 66.7% ± 9.9% | 0.54 | Same features as row 1 |
+| 6 | Gradient Boosting | 66.7% ± 14.1% | 0.51 | — |
+| 7 | Random Forest | 64.4% ± 8.3% | 0.53 | — |
+| 8 | Decision Tree | 57.8% ± 10.9% | 0.49 | — |
+| 9 | MLP (+ scaler) | 37.8% ± 26.9% | 0.27 | Small *n*, default architecture |
+
+**Three caveats that must travel with the 82.2% figure:**
+
+1. **Accuracy overstates minority-class performance.** Extra Trees scores **0.822 accuracy but 0.678 macro-F1**. Class counts are A = 18, BBB = 15, AA = 6, BB = 6; the two majority classes hold 33 of 45 rows, so each fold contains roughly one AA and one BB row. Macro-F1 is the fairer headline for a four-class ordinal task.
+2. **The Extra Trees / XGBoost gap is a variance signal.** Two closely related tree ensembles differ by **15.5 points on identical features**. On 45 rows that is far more plausibly fold noise than a genuine capability difference.
+3. **Fold granularity.** Five folds of nine rows means one row flipping moves the mean by roughly two points; ±8.9% std is consistent with that.
+
+**Takeaway:** the widest feature set produces the best headline accuracy, but the ranking is **not stable** at this sample size. Report **82.2% as a mean CV accuracy for Extra Trees on 21 features, paired with its 0.678 macro-F1**, and treat the algorithm ordering as indicative only.
 
 ### 15.6 App, SHAP figures, and Streamlit — current state
 

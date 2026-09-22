@@ -52,6 +52,7 @@ def main() -> None:
         ("XGBoost with KAMs", ["models/xgboost_with_kams.py"]),
         ("XGBoost full (14 features)", ["models/xgboost_full.py"]),
         ("Multisource model benchmark", ["models/evaluate_multisource_models.py"]),
+        ("All-features benchmark (21 features)", ["models/xgboost_all_features.py"]),
         ("SHAP explainability", ["models/shap_explainability.py"]),
         ("Pipeline figures + error_analysis.json", ["models/generate_pipeline_figures.py"]),
     ]

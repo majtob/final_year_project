@@ -41,6 +41,12 @@ All of these use the **merged multisource training table** (14 features), **4-cl
 | [`figures/multisource_model_comparison.png`](../figures/multisource_model_comparison.png) | **Horizontal bar chart**: **mean CV accuracy** for each of **ten** models (XGBoost, Random Forest, Extra Trees, gradient boosting variants, tree, linear, kNN, MLP) on the **same** 14-feature matrix. Numeric details: [`results/multisource_model_comparison.json`](../results/multisource_model_comparison.json). |
 | [`figures/model_comparison.png`](../figures/model_comparison.png) | **Copy** of `multisource_model_comparison.png` when the benchmark PNG exists (written by `generate_pipeline_figures.py` after the benchmark is generated). |
 
+### All-features benchmark (`models/xgboost_all_features.py`)
+
+| Reference | What it shows |
+|-----------|----------------|
+| [`figures/all_features_model_comparison.png`](../figures/all_features_model_comparison.png) | **Bar chart**: **mean CV accuracy** for **nine** learners on the **21-feature** superset matrix (4 financial ratios + the full 12-column KAM/firm block + 5 news aggregates), same 45 rows. Extra Trees leads at **82.2%**; read alongside macro-F1, which is **0.68**. Numeric details: [`results/all_features_model_results.json`](../results/all_features_model_results.json). |
+
 ### SHAP explainability (`models/shap_explainability.py`)
 
 Trains **full multisource XGBoost** on all in-sample rows and computes **TreeExplainer** SHAP values (multiclass).
@@ -66,6 +72,7 @@ Trains **full multisource XGBoost** on all in-sample rows and computes **TreeExp
 | [`results/full_model_comparison.json`](../results/full_model_comparison.json) | **XGBoost ablation** on the **multisource merge**: `financials_only` → `financials_kams` → `financials_sentiment` → `full_model` with CV **accuracy** and **std** per stage. **`feature_sets`**: which columns belong to financial / KAM / sentiment blocks. From `xgboost_full.py`. |
 | [`results/combined_model_results.json`](../results/combined_model_results.json) | **Extended KAM / financial comparison** from `xgboost_with_kams.py`: e.g. `financials_only`, `combined` (financials + rich KAM set on merged rows), and **`kams_only_merged_sample`** (KAM-only on the same rows as the financial merge — contrast with full KAM panel in `kams_only_model_results.json`). Includes optional **paper_reference** fields for write-up. |
 | [`results/kams_only_model_results.json`](../results/kams_only_model_results.json) | **`xgboost_kams_only.py`** on **`data/processed/kams_processed.csv`**: 12 KAM/firm features, CV accuracy, train accuracy, **XGBoost feature importance** map. Larger KAM-only sample than the merged multisource table. |
+| [`results/all_features_model_results.json`](../results/all_features_model_results.json) | **`xgboost_all_features.py`** on the **45×21 superset** (financial ratios + full 12-column KAM/firm block + news aggregates). **`ablations`**: five XGBoost feature-subset runs with accuracy, std, and top-3 importances. **`benchmark_21_features`**: nine learners with accuracy and macro/weighted F1. **`benchmark_ranking`**: model names best-first. Highest accuracy in the repo (**Extra Trees, 82.2% ± 8.9%**, macro-F1 **0.68**) — see §15.5.1 of `PROJECT_REPORT.md` for the caveats. |
 
 ### Error analysis and pipeline metadata
 
