@@ -11,7 +11,10 @@ pandas==3.0.6
 numpy==2.5.3
 scipy==1.18.1
 scikit-learn==1.9.1
-xgboost==3.4.1
+# xgboost-cpu, not xgboost: identical version and import name, but without the
+# nvidia-nccl-cu13 dependency (305 MB of CUDA) that the Linux xgboost wheel pulls
+# in. This image is CPU-only, so that payload is dead weight in the layer.
+xgboost-cpu==3.4.1
 matplotlib>=3.8.0
 shap==0.52.0
 pyarrow>=14.0.0
