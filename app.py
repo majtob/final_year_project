@@ -92,54 +92,6 @@ def _class_shap_rows(shap_raw, n_classes: int):
     return [arr]
 
 
-def _plot_multisource_benchmark_bars(bench: dict) -> plt.Figure:
-    names = list(bench.get("ranking_by_accuracy") or [])
-    models = bench.get("models") or {}
-    if not names and models:
-        names = sorted(
-            models.keys(),
-            key=lambda n: float(models[n].get("accuracy_mean", 0)),
-            reverse=True,
-        )
-    means = [float(models[n].get("accuracy_mean", 0)) for n in names]
-    fig, ax = plt.subplots(figsize=(8, max(3.0, 0.35 * max(len(names), 1) + 1)))
-    y = np.arange(len(names))
-    ax.barh(y, means, color="steelblue", edgecolor="white")
-    ax.set_yticks(y)
-    ax.set_yticklabels(names, fontsize=9)
-    ax.set_xlabel("CV accuracy (mean)")
-    ax.set_xlim(0, min(1.05, max(means + [0.1]) * 1.15))
-    ax.set_title("Multisource benchmark (from results JSON)")
-    fig.tight_layout()
-    return fig
-
-
-def _plot_feature_ablation_bars(doc: dict) -> plt.Figure | None:
-    order = ["financials_only", "financials_kams", "financials_sentiment", "full_model"]
-    labels = {
-        "financials_only": "Financials only",
-        "financials_kams": "+ KAMs",
-        "financials_sentiment": "+ Sentiment / news",
-        "full_model": "Full (14 features)",
-    }
-    models = doc.get("models") or {}
-    keys = [k for k in order if k in models]
-    if not keys:
-        return None
-    means = [float(models[k].get("accuracy", 0)) for k in keys]
-    labs = [labels.get(k, k) for k in keys]
-    fig, ax = plt.subplots(figsize=(7, 3.2))
-    x = np.arange(len(keys))
-    ax.bar(x, means, color="seagreen", edgecolor="white")
-    ax.set_xticks(x)
-    ax.set_xticklabels(labs, rotation=15, ha="right")
-    ax.set_ylabel("CV accuracy (mean)")
-    ax.set_ylim(0, min(1.05, max(means + [0.1]) * 1.12))
-    ax.set_title("XGBoost feature ablation (from results JSON)")
-    fig.tight_layout()
-    return fig
-
-
 @st.cache_data
 def load_verdicts():
     path = VERDICTS_DIR / "all_verdicts.json"
@@ -366,73 +318,61 @@ def main():
         st.header("Model performance")
 
         st.markdown(
-            "**Current multisource panel (14 features, 4-class `rating_category`):** "
-            "Stratified 5-fold CV comparing XGBoost to Random Forest, Extra Trees, "
-            "sklearn Gradient Boosting, HistGradientBoosting, trees, linear models, kNN, MLP."
+            "**Superset benchmark (21 features):** the full 12-column KAM/firm block "
+            "instead of the five KAM dummies, same 45 rows — `models/xgboost_all_features.py`. "
+            "This is where the repository's highest accuracy comes from; see §15.5.1 of "
+            "`docs/PROJECT_REPORT.md` for why the ranking should be read with its macro-F1 "
+            "and its pinned library versions."
         )
-        bench_json = RESULTS_DIR / "multisource_model_comparison.json"
-        bench = None
-        if bench_json.exists():
-            with open(bench_json, encoding="utf-8") as f:
-                bench = json.load(f)
+        all_feat_path = RESULTS_DIR / "all_features_model_results.json"
+        if all_feat_path.exists():
+            with open(all_feat_path, encoding="utf-8") as f:
+                all_feat = json.load(f)
 
-        bench_png = FIGURES_DIR / "multisource_model_comparison.png"
-        if bench_png.exists():
-            st.image(str(bench_png), caption="CV accuracy — multisource benchmark")
-        elif bench is not None:
-            st.caption(
-                "`figures/multisource_model_comparison.png` not found — bar chart rebuilt from JSON."
-            )
-            fig_b = _plot_multisource_benchmark_bars(bench)
-            st.pyplot(fig_b, clear_figure=True)
-            plt.close(fig_b)
-        else:
-            st.warning(
-                "No multisource benchmark on disk. Regenerate with: "
-                "`PYTHONPATH=. python models/evaluate_multisource_models.py` "
-                "(writes `results/multisource_model_comparison.json` and the PNG)."
-            )
+            all_feat_png = FIGURES_DIR / "all_features_model_comparison.png"
+            if all_feat_png.exists():
+                st.image(str(all_feat_png), caption="CV accuracy — 21-feature benchmark")
 
-        if bench is not None:
-            st.markdown("#### Ranking by CV accuracy")
-            rows = []
-            for name in bench.get("ranking_by_accuracy", []):
-                m = bench["models"].get(name, {})
-                rows.append(
-                    {
-                        "Model": name,
-                        "Accuracy (mean)": f"{m.get('accuracy_mean', 0):.1%}",
-                        "Accuracy (std)": f"{m.get('accuracy_std', 0):.3f}",
-                        "F1 macro (mean)": f"{m.get('f1_macro_mean', 0):.3f}",
-                    }
+            bench21 = all_feat.get("benchmark_21_features", {})
+            ranking = all_feat.get("benchmark_ranking", list(bench21))
+            rows21 = [
+                {
+                    "Model": name,
+                    "Accuracy (mean)": f"{bench21[name].get('accuracy_mean', 0):.1%}",
+                    "Accuracy (std)": f"{bench21[name].get('accuracy_std', 0):.3f}",
+                    "F1 macro (mean)": f"{bench21[name].get('f1_macro_mean', 0):.3f}",
+                }
+                for name in ranking
+                if name in bench21
+            ]
+            if rows21:
+                st.dataframe(pd.DataFrame(rows21), use_container_width=True, hide_index=True)
+
+            ablations = all_feat.get("ablations", {})
+            if ablations:
+                st.markdown("#### XGBoost ablation across feature blocks (21-feature superset)")
+                st.dataframe(
+                    pd.DataFrame(
+                        [
+                            {
+                                "Feature set": name,
+                                "n features": a.get("n_features"),
+                                "Accuracy (mean)": f"{a.get('accuracy_mean', 0):.1%}",
+                                "Accuracy (std)": f"{a.get('accuracy_std', 0):.3f}",
+                            }
+                            for name, a in ablations.items()
+                        ]
+                    ),
+                    use_container_width=True,
+                    hide_index=True,
                 )
-            st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
-            with st.expander("Full benchmark JSON"):
-                st.json(bench)
-
-        st.markdown("---")
-        st.markdown(
-            "**XGBoost feature ablation (same data pipeline):** "
-            "`results/full_model_comparison.json` (financials only → +KAMs → +sentiment → full)."
-        )
-        full_path = RESULTS_DIR / "full_model_comparison.json"
-        if full_path.exists():
-            with open(full_path, encoding="utf-8") as f:
-                full_doc = json.load(f)
-            fig_a = _plot_feature_ablation_bars(full_doc)
-            if fig_a is not None:
-                st.pyplot(fig_a, clear_figure=True)
-                plt.close(fig_a)
-            with st.expander("Full ablation JSON"):
-                st.json(full_doc)
+            with st.expander("Full 21-feature benchmark JSON"):
+                st.json(all_feat)
         else:
-            st.caption("`results/full_model_comparison.json` not found — run the multisource / full-model training pipeline to refresh.")
-
-        alt_png = FIGURES_DIR / "model_comparison.png"
-        if alt_png.exists() and alt_png.resolve() != bench_png.resolve():
-            st.markdown("---")
-            with st.expander("Additional on-disk benchmark image (`model_comparison.png`)"):
-                st.image(str(alt_png))
+            st.caption(
+                "`results/all_features_model_results.json` not found — regenerate with: "
+                "`PYTHONPATH=. python models/xgboost_all_features.py`."
+            )
 
     with tab3:
         st.header("SHAP (full multisource XGBoost)")
@@ -691,14 +631,9 @@ def main():
         st.subheader("Result files (`results/`)")
         _json_files = [
             (
-                "Multisource benchmark",
-                RESULTS_DIR / "multisource_model_comparison.json",
-                "Ten learners, same 14×N panel as `evaluate_multisource_models.py`.",
-            ),
-            (
-                "XGBoost feature ablation",
-                RESULTS_DIR / "full_model_comparison.json",
-                "Financials only → +KAMs → +sentiment → full 14-feature model (`xgboost_full.py`).",
+                "All-features benchmark (21 features)",
+                RESULTS_DIR / "all_features_model_results.json",
+                "Nine learners + five ablations on the 45×21 superset (`xgboost_all_features.py`).",
             ),
             (
                 "Financials vs combined (extended KAM study)",
