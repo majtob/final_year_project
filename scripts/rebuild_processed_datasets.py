@@ -35,6 +35,7 @@ import time
 from pathlib import Path
 
 import pandas as pd
+import numpy as np
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA = PROJECT_ROOT / "data"
@@ -202,14 +203,29 @@ def align_to_kams_panel(
 
 
 def finalize_news_features_panel(df: pd.DataFrame) -> pd.DataFrame:
-    """Ensure FinBERT-style aggregate columns exist; missing → neutral zeros (no articles)."""
+    """Ensure FinBERT-style aggregate columns exist.
+
+    Missing sentiment aggregates are left as NaN rather than zero-filled: a
+    sentiment_mean of 0.0 is a real, neutral reading, and using the same
+    value to mean "no articles were retrieved" makes the two indistinguishable
+    downstream (see docs/PROJECT_REPORT.md, "silent zero" failure mode).
+    `news_count` is a true count, so an absence of articles is legitimately
+    zero there. `has_news_coverage` makes the distinction explicit for any
+    consumer that doesn't want to reason about NaN directly.
+    """
     out = df.copy()
-    for c in NEWS_COLS:
+    sentiment_cols = [c for c in NEWS_COLS if c != "news_count"]
+    if "news_count" not in out.columns:
+        out["news_count"] = 0
+    else:
+        out["news_count"] = pd.to_numeric(out["news_count"], errors="coerce").fillna(0)
+    for c in sentiment_cols:
         if c not in out.columns:
-            out[c] = 0.0
+            out[c] = np.nan
         else:
-            out[c] = pd.to_numeric(out[c], errors="coerce").fillna(0.0)
-    return out[["ticker", "fiscal_year"] + NEWS_COLS].copy()
+            out[c] = pd.to_numeric(out[c], errors="coerce")
+    out["has_news_coverage"] = (out["news_count"] > 0).astype(int)
+    return out[["ticker", "fiscal_year"] + NEWS_COLS + ["has_news_coverage"]].copy()
 
 
 def _rating_to_binary_target(rating) -> int:
@@ -491,7 +507,7 @@ def build_news_features_processed() -> pd.DataFrame:
     df["fiscal_year"] = df["fiscal_year"].astype(int)
     for c in NEWS_COLS:
         if c not in df.columns:
-            df[c] = 0.0
+            df[c] = 0 if c == "news_count" else np.nan
         else:
             df[c] = pd.to_numeric(df[c], errors="coerce")
     return df[["ticker", "fiscal_year"] + NEWS_COLS].copy()
