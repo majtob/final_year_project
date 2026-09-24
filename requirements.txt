@@ -12,14 +12,18 @@ pymupdf>=1.23.0
 pytesseract>=0.3.10
 
 # Data Processing
-pandas>=2.1.0
-numpy>=1.24.0
+# Exact pins below: these versions produced the committed results/*.json and
+# figures/*.png. A minor bump reorders the 21-feature benchmark on 45 rows even
+# with random_state=42 throughout (see PROJECT_REPORT.md 15.5.1), so
+# reproducing the artifacts needs the versions, not just the floors.
+pandas==2.2.2
+numpy==1.26.4
 pyarrow>=14.0.0
 
 # Machine Learning
-scikit-learn>=1.3.0
-xgboost>=2.0.0
-shap>=0.43.0
+scikit-learn==1.7.2
+xgboost==3.4.1
+shap==0.50.0
 
 # Database
 duckdb>=0.9.0
@@ -73,4 +77,6 @@ seaborn>=0.13.0
 streamlit>=1.28.0
 
 # Statistics
-scipy>=1.11.0
+# Pinned with the ML stack above: scikit-learn's lbfgs / liblinear solvers run
+# through scipy, so it affects the linear models that top the 21-feature table.
+scipy==1.16.3
