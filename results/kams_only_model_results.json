@@ -1,6 +1,6 @@
 {
   "model": "xgboost_kams_only",
-  "data_file": "data\\processed\\kams_processed.csv",
+  "data_file": "data/processed/kams_processed.csv",
   "n_samples": 46,
   "features": [
     "AUSIZE",
@@ -35,5 +35,5 @@
     "LIABKAM": 0.0,
     "FIRMSIZE": 0.0
   },
-  "generated_at": "2026-09-24T19:40:43"
+  "generated_at": "2026-09-24T20:32:51"
 }

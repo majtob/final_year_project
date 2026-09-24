@@ -423,8 +423,8 @@ def main():
         ),
         'dataset_size': len(df),
         'financial_and_combined_only': args.financial_and_combined_only,
-        'kams_only_full_panel_file': str(
-            (RESULTS_DIR / 'kams_only_model_results.json').relative_to(PROJECT_ROOT)
+        'kams_only_full_panel_file': (
+            (RESULTS_DIR / 'kams_only_model_results.json').relative_to(PROJECT_ROOT).as_posix()
         ),
         'features': {
             'financial': financial_cols,

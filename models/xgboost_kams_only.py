@@ -130,7 +130,7 @@ def main() -> None:
 
     out = {
         "model": "xgboost_kams_only",
-        "data_file": str(KAMS_FILE.relative_to(PROJECT_ROOT)),
+        "data_file": KAMS_FILE.relative_to(PROJECT_ROOT).as_posix(),
         "n_samples": int(len(df)),
         "features": FEATURE_COLS,
         "target": "rating_category (AA / A / BBB / BB)",
