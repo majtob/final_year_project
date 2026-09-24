@@ -10,8 +10,6 @@
 |------|------|
 | `results/kams_only_model_results.json` | KAM-only XGBoost, full `kams_processed.csv` panel |
 | `results/combined_model_results.json` | Financials vs 12 KAM cols vs 16-feature combined (`xgboost_with_kams.py`) |
-| `results/full_model_comparison.json` | Four-way ablation: fin / +KAM dummies / +sentiment / full 14 features |
-| `results/multisource_model_comparison.json` | Ten learners, same 45×14 matrix |
 | `results/all_features_model_results.json` | Five-way XGBoost ablation + nine learners on the 45×21 superset matrix (`xgboost_all_features.py`) |
 | `results/shap_report.json` | Global mean \|SHAP\| and metadata for full XGBoost |
 | `results/error_analysis.json` | CV misclassifications + confusion matrix (copy also `error_analysis_multisource.json`) |
@@ -51,11 +49,11 @@
 
 **Primary evaluation objective.** Quantify whether **KAM** and **news** feature blocks improve **cross-validated** performance relative to **financial ratios alone** on the **constructed merged panel**, explicitly **acknowledging small-sample variance** (*n* = 45 rows in the latest `merged_multisource_training.csv`).
 
-**Supporting aims.** Deliver a **reproducible** multisource pipeline—data merge, XGBoost **feature ablations** (`results/full_model_comparison.json`), broader learner benchmark (`results/multisource_model_comparison.json`), **SHAP** (`results/shap_report.json`), **template LLM verdicts** (`results/verdicts/`), and the **Streamlit** app—so the comparison is traceable from processed CSVs and `scripts/regenerate_artifacts.py`.
+**Supporting aims.** Deliver a **reproducible** multisource pipeline—data merge, XGBoost **feature ablations** and the broader learner benchmark (`results/all_features_model_results.json`), **SHAP** (`results/shap_report.json`), **template LLM verdicts** (`results/verdicts/`), and the **Streamlit** app—so the comparison is traceable from processed CSVs and `scripts/regenerate_artifacts.py`.
 
 ---
 
-The project predicts **four-way rating categories** (AA, A, BBB, BB) for Tadawul-listed firms using a **merged multisource table**: four Altman-style financial ratios, five Key Audit Matter (KAM) dummies aligned with Muñoz-Izquierdo et al. (2022), and five FinBERT-based news aggregates. The **main modelling sample** contains **45** `(ticker, fiscal_year)` rows after (1) dropping rows with missing `profitab` and (2) **excluding** **3008.SR / fiscal year 2021** (Al Kathiri): that row had **no retrieved English articles** and **all-zero** FinBERT aggregates, so it was removed for a cleaner panel (`merged_multisource_training.csv` and `results/full_model_comparison.json`). **Stratified 5-fold CV** on this panel is **high-variance** because *n* is small; latest `full_model_comparison.json` reports about **51.1%** (financials-only), **46.7%** (financials + KAM dummies in the 9-feature ablation), **60.0%** (financials + sentiment-only), and **60.0%** (full 14-feature XGBoost)—see the JSON for exact means and stds. A **broader algorithm comparison** on the same 14-feature matrix (`results/multisource_model_comparison.json`) ranks **Extra Trees** and **Linear SVC** highest by mean CV accuracy (**~66.7%** each), with **XGBoost** at **~62.2%**. A later run (`results/all_features_model_results.json`, `models/xgboost_all_features.py`) widens the matrix to **21 features** — four financial ratios, the **full 12-column KAM/firm block** rather than the five KAM dummies, and five news aggregates — on the same 45 rows. On that superset **Extra Trees** reaches **82.2% ± 8.9%** mean CV accuracy, the highest figure recorded in this repository, ahead of **Linear SVC** (73.3%) and **XGBoost** (68.9%). **Read that number with its macro-F1**: Extra Trees scores **0.678 macro-F1** against 0.822 accuracy, and the gap is the class imbalance — A (18) and BBB (15) hold 33 of 45 rows while AA (6) and BB (6) contribute roughly one row per fold each, so accuracy is carried by the two majority classes. On macro-F1 the ordering even flips, with **Linear SVC fractionally ahead at 0.684**. The ranking is also **environment-sensitive**: regenerating under scikit-learn 1.7.2 / numpy 1.26 reorders the table and promotes Linear SVC to 82.2%. These numbers come from the versions now pinned in `requirements.txt` (**numpy 2.5.3, pandas 3.0.6, scipy 1.18.1, scikit-learn 1.9.1, xgboost 3.4.1, shap 0.52.0**, regenerated 2026-09-24); quote the benchmark with its versions and treat the ordering as indicative. §15.5.1 of `PROJECT_REPORT.md` carries the full caveats. **SHAP** and **template LLM verdicts** use the same 45-row panel with the 14-feature matrix. **Important:** if you change only the CSVs and do **not** re-run `scripts/regenerate_artifacts.py`, the **Streamlit** app still trains on whatever is in `merged_multisource_training.csv`, but **`results/*.json` and `figures/*.png` stay stale** and will not match the app or this report until regenerated.
+The project predicts **four-way rating categories** (AA, A, BBB, BB) for Tadawul-listed firms using a **merged multisource table**: four Altman-style financial ratios, the full 12-column Key Audit Matter (KAM) / firm block — the five KAM categories of Muñoz-Izquierdo et al. (2022) plus auditor and firm controls — and five FinBERT-based news aggregates. The **main modelling sample** contains **45** `(ticker, fiscal_year)` rows after (1) dropping rows with missing `profitab` and (2) **excluding** **3008.SR / fiscal year 2021** (Al Kathiri): that row had **no retrieved English articles** and **all-zero** FinBERT aggregates, so it was removed for a cleaner panel. **Stratified 5-fold CV** on this panel is **high-variance** because *n* is small; `results/all_features_model_results.json` reports about **51.1%** (financials-only), **68.9%** (financials + the full KAM/firm block), **53.3%** (financials + news), and **68.9%** (all 21 features)—see the JSON for exact means and stds. On the full 21-feature matrix **Extra Trees** reaches **82.2% ± 8.9%** mean CV accuracy, the highest figure recorded in this repository, ahead of **Linear SVC** (73.3%) and **XGBoost** (68.9%). **Read that number with its macro-F1**: Extra Trees scores **0.678 macro-F1** against 0.822 accuracy, and the gap is the class imbalance — A (18) and BBB (15) hold 33 of 45 rows while AA (6) and BB (6) contribute roughly one row per fold each, so accuracy is carried by the two majority classes. On macro-F1 the ordering even flips, with **Linear SVC fractionally ahead at 0.684**. The ranking is also **environment-sensitive**: regenerating under scikit-learn 1.7.2 / numpy 1.26 reorders the table and promotes Linear SVC to 82.2%. These numbers come from the versions now pinned in `requirements.txt` (**numpy 2.5.3, pandas 3.0.6, scipy 1.18.1, scikit-learn 1.9.1, xgboost 3.4.1, shap 0.52.0**, regenerated 2026-09-24); quote the benchmark with its versions and treat the ordering as indicative. §15.5.1 of `PROJECT_REPORT.md` carries the full caveats. **SHAP** and **template LLM verdicts** use the same 45-row, 21-feature panel. **Important:** if you change only the CSVs and do **not** re-run `scripts/regenerate_artifacts.py`, the **Streamlit** app still rebuilds its matrix from the processed CSVs at startup, but **`results/*.json` and `figures/*.png` stay stale** and will not match the app or this report until regenerated.
 
 ---
 
@@ -121,10 +119,10 @@ Bao et al. compare seven supervised ML algorithms (LR, SVM, DT, RF, GBDT, kNN, A
 |------------------------|----------------|
 | **GBDT best individual model** | Gradient boosting family (we use XGBoost and benchmark sklearn gradient boosting) achieved strong MCC among individual models in their study. |
 | **Ensemble / hybrid designs** | Combining unsupervised structure with supervised learners improved MCC in their setup—motivation for rich feature sets rather than a single raw signal. |
-| **MCC vs accuracy under imbalance** | They stress Matthews Correlation Coefficient where class balance is uneven; we report accuracy and F1 from stratified CV on our small multiclass panel (`results/multisource_model_comparison.json`). |
+| **MCC vs accuracy under imbalance** | They stress Matthews Correlation Coefficient where class balance is uneven; we report accuracy and F1 from stratified CV on our small multiclass panel (`results/all_features_model_results.json`). |
 | **Model ranking (their data)** | GBDT > ANN > SVM > RF > kNN > LR > DT — broadly consistent with tree/boosting methods outperforming naive linear baselines on tabular credit-style data. |
 
-Their use of k-fold CV, search, and hold-out evaluation parallels our use of **stratified k-fold CV** on the merged multisource matrix. The gap between their MCC on large samples and our **mean CV accuracies on only 45 rows** (latest `full_model_comparison.json` / `multisource_model_comparison.json`) is expected from **small-sample variance** and a different task (multiclass rating categories vs default prediction).
+Their use of k-fold CV, search, and hold-out evaluation parallels our use of **stratified k-fold CV** on the merged multisource matrix. The gap between their MCC on large samples and our **mean CV accuracies on only 45 rows** (latest `all_features_model_results.json`) is expected from **small-sample variance** and a different task (multiclass rating categories vs default prediction).
 
 ### 2.5 Financial ratios: Altman Z''-style components (Altman, 1983)
 
@@ -170,7 +168,7 @@ Tree-based **gain importance** shows *which* features are used often in splits; 
 - **Global** attribution (average impact of each feature across observations)  
 - **Interaction** views (e.g. dependence plots coloured by a second feature)  
 
-We implement SHAP for the **14-feature** full XGBoost model in `models/shap_explainability.py`; outputs are summarised in Section 10 and `results/shap_report.json`.
+We implement SHAP for the **21-feature** full XGBoost model in `models/shap_explainability.py`; outputs are summarised in Section 10 and `results/shap_report.json`.
 
 ### 2.9 Financial LLMs and QLoRA: Lei et al. (2025) / ZiGong
 
@@ -204,12 +202,12 @@ We implement SHAP for the **14-feature** full XGBoost model in `models/shap_expl
 
 ## 4. Target and features
 
-- **Target:** `rating_category` with classes **A, AA, BB, BBB** (distribution in `results/full_model_comparison.json`: A 18, AA 6, BB 6, BBB **15** on the **45-row** sample after removing 3008.SR / 2021).  
+- **Target:** `rating_category` with classes **A, AA, BB, BBB** (distribution in `results/all_features_model_results.json`: A 18, AA 6, BB 6, BBB **15** on the **45-row** sample after removing 3008.SR / 2021).  
 - **Financial ratios (4):** `liquid`, `cumprof`, `profitab`, `leverage`.  
-- **KAM dummies (5):** `GCKAM`, `REVKAM`, `ASSETKAM`, `LIABKAM`, `OTHERKAM`.  
+- **KAM / firm block (12):** the five KAM dummies `GCKAM`, `REVKAM`, `ASSETKAM`, `LIABKAM`, `OTHERKAM`, plus `AUSIZE`, `AUOP`, `EMP`, `GCUP`, `FIRMAGE`, `FIRMSIZE`, `INDUSTRY`.  
 - **News / FinBERT aggregates (5):** `sentiment_mean`, `sentiment_std`, `sentiment_pos_pct`, `sentiment_neg_pct`, `news_count`.  
 
-The **full multisource vector** has **14** features (`results/multisource_model_comparison.json`).
+The **full multisource vector** has **21** features (`results/all_features_model_results.json`).
 
 **KAM-only XGBoost** (`results/kams_only_model_results.json`) uses **twelve** columns from `kams_processed.csv`: the five KAM dummies plus `AUSIZE`, `AUOP`, `EMP`, `GCUP`, `FIRMAGE`, `FIRMSIZE`, `INDUSTRY` on **46** rows after the same 3008.SR / 2021 exclusion (no financial merge).
 
@@ -218,9 +216,9 @@ The **full multisource vector** has **14** features (`results/multisource_model_
 ## 5. Methods and code
 
 - **Stratified 5-fold cross-validation**, `random_state=42` where specified in the multisource benchmark JSON.  
-- **XGBoost** multiclass models with `eval_metric` / sampling consistent with `models/xgboost_full.py`, `models/xgboost_with_kams.py`, and `models/xgboost_kams_only.py`.  
+- **XGBoost** multiclass models with `eval_metric` / sampling consistent with `models/xgboost_all_features.py`, `models/xgboost_with_kams.py`, and `models/xgboost_kams_only.py`.  
 - **SHAP:** `models/shap_explainability.py` → `results/shap_report.json` and SHAP PNGs.  
-- **Benchmark:** `models/evaluate_multisource_models.py` → `results/multisource_model_comparison.json`, `figures/multisource_model_comparison.png`.  
+- **Benchmark:** `models/xgboost_all_features.py` → `results/all_features_model_results.json`, `figures/all_features_model_comparison.png`.  
 - **Diagnostic plots:** `models/generate_pipeline_figures.py` → multiple `figures/*.png` and `results/error_analysis.json`.  
 - **One-shot regeneration:** `scripts/regenerate_artifacts.py` — **authoritative** refresh for all canonical `results/*.json`, `results/verdicts/*.json` (template), and the standard `figures/*.png` set; run this after changing processed data.  
 - **Streamlit demo:** `app.py`.  
@@ -230,16 +228,17 @@ The **full multisource vector** has **14** features (`results/multisource_model_
 
 ## 6. Results: XGBoost feature ablations
 
-From `results/full_model_comparison.json` (regenerated with the current panel; `date` field in JSON, **n = 45**):
+From `results/all_features_model_results.json` (**n = 45**, five-fold stratified CV, `random_state=42`):
 
-| Model variant | Mean CV accuracy | Std |
-|---------------|------------------|-----|
-| Financials only (4 ratios) | 51.11% | 0.181 |
-| Financials + KAM dummies (9 features) | 46.67% | 0.083 |
-| Financials + sentiment block (9 features) | 60.00% | 0.089 |
-| **Full (14 features)** | **60.00%** | **0.113** |
+| Feature set | *n* features | Mean CV accuracy | Std |
+|-------------|--------------|------------------|-----|
+| Financials only | 4 | 51.11% | 0.206 |
+| **Financials + full KAM block** | **16** | **68.89%** | 0.191 |
+| Financials + news | 9 | 53.33% | 0.130 |
+| Full KAMs + news | 17 | 57.78% | 0.163 |
+| **All features** | **21** | **68.89%** | **0.083** |
 
-On this **45-row** panel, **financials + sentiment** and the **full 14-feature** model **tie** at **60%** mean CV accuracy; the **9-feature financials + KAM dummies** variant scores lower here (high fold-to-fold variance is typical at this *n*). Numbers follow `results/full_model_comparison.json` (`date` field in file).
+Two ablations tie at **68.89%**, but the 21-feature run gets there with less than half the spread (0.083 against 0.191), which matters more than the mean at *n* = 45. The KAM/firm block carries the gain (+17.8 points over financials alone); the news block adds **+2.2** on its own. Note that `news_count` — a count of retrieved articles rather than a sentiment measure — is a top-three importance in every news-bearing ablation.
 
 ---
 
@@ -269,28 +268,29 @@ The JSON also records **paper reference** accuracies (0.7155 and 0.8404) for sid
 
 ## 9. Results: multisource classifier benchmark
 
-From `results/multisource_model_comparison.json` (**45 × 14**, same classes as above), ranked by mean CV accuracy:
+From `results/all_features_model_results.json` (**45 × 21**, same classes as above), ranked by mean CV accuracy:
 
-| Rank | Model | Accuracy (mean ± std) | F1 macro (mean ± std) |
-|------|--------|------------------------|------------------------|
-| 1 | Extra trees | 66.67% ± 12.17% | 0.590 ± 0.086 |
-| 2 | Linear SVC (scaled pipeline) | 66.67% ± 7.03% | 0.633 ± 0.093 |
-| 3 | Random forest | 64.44% ± 8.31% | 0.543 ± 0.072 |
-| 4 | Logistic regression (scaled) | 62.22% ± 11.33% | 0.524 ± 0.198 |
-| 5 | XGBoost | 62.22% ± 15.07% | 0.619 ± 0.163 |
-| 6 | Decision tree | 60.00% ± 11.33% | 0.473 ± 0.099 |
-| 7 | kNN (k=5, scaled) | 55.56% ± 15.71% | 0.479 ± 0.094 |
-| 8 | sklearn `GradientBoostingClassifier` | 48.89% ± 15.07% | 0.408 ± 0.162 |
-| 9 | MLP (scaled) | 46.67% ± 8.31% | 0.277 ± 0.122 |
-| 10 | `HistGradientBoostingClassifier` | 40.00% ± 5.44% | 0.142 ± 0.014 |
+| Rank | Model | Accuracy (mean ± std) | F1 macro (mean) |
+|------|--------|------------------------|------------------|
+| 1 | Extra Trees | 82.22% ± 8.89% | 0.678 |
+| 2 | Linear SVC (scaled pipeline) | 73.33% ± 18.14% | 0.684 |
+| 3 | Logistic regression (scaled) | 71.11% ± 15.07% | 0.620 |
+| 4 | kNN (k=5, scaled) | 71.11% ± 11.33% | 0.558 |
+| 5 | XGBoost | 68.89% ± 8.31% | 0.594 |
+| 6 | sklearn `GradientBoostingClassifier` | 66.67% ± 14.14% | 0.511 |
+| 7 | Random forest | 64.44% ± 8.31% | 0.533 |
+| 8 | Decision tree | 57.78% ± 10.89% | 0.489 |
+| 9 | MLP (scaled) | 37.78% ± 26.87% | 0.273 |
 
-**Figure:** `figures/multisource_model_comparison.png`.
+Accuracy and macro-F1 disagree at the top: Extra Trees leads on accuracy, Linear SVC on macro-F1 (0.684 vs 0.678). The ranking also reorders under a different library stack, so quote it with the versions pinned in `requirements.txt`. §15.5.1 of `PROJECT_REPORT.md` has the full caveats.
+
+**Figure:** `figures/all_features_model_comparison.png`.
 
 ---
 
 ## 10. SHAP explainability
 
-`results/shap_report.json` summarises **mean |SHAP|** for the **14-input** full XGBoost model (**n = 45**). Global ranking (highest first):
+`results/shap_report.json` summarises **mean |SHAP|** for the **21-input** full XGBoost model (**n = 45**). Global ranking (highest first):
 
 | Rank | Feature | Mean \|SHAP\| |
 |------|---------|----------------|
@@ -316,7 +316,7 @@ Interpretation is **associational**: high `news_count` may proxy for firm size, 
 
 `results/error_analysis.json` is generated for **multisource XGBoost** with **5-fold CV out-of-fold predictions** on the **45-row** sample:
 
-- **CV accuracy (stated in file):** **62.22%** (28 correct, 17 incorrect; aligns with the multisource XGBoost path in `generate_pipeline_figures.py`; `full_model_comparison.json` reports **60.00%** mean CV for the full model from `cross_val_score`—small differences can arise from OOF vs `cross_val_score` aggregation).  
+- **CV accuracy (stated in file):** **68.89%** (31 correct, 14 incorrect), from the out-of-fold multisource XGBoost path in `generate_pipeline_figures.py` on the 21-feature matrix.  
 - **Content:** class list, confusion matrix, and a **misclassified** list with ticker, `company_name`, fiscal year, actual vs predicted category, and max predicted probability.
 
 **Companion figures** (see `results/pipeline_figures_meta.json`): rating distribution, confusion matrix, PCA, ratio boxplots, confidence histogram, error scatter and pattern plots. The script writes `*_multisource.png` and **copies** to the stable names expected by `app.py` (`pca_scatter.png`, `confusion_matrix_gb.png`, etc.).
@@ -346,7 +346,7 @@ Interpretation is **associational**: high `news_count` may proxy for firm size, 
 
 After a full `scripts/regenerate_artifacts.py` run, `figures/` contains **only** plots tied to the current multisource panel (no legacy decision-tree / KAM-ablation / agency-disagreement PNGs unless you add separate scripts):
 
-- **Pipeline diagnostics:** `rating_distribution.png`, `confusion_matrix_multisource.png`, `confusion_matrix_gb.png`, `pca_multisource.png`, `pca_scatter.png`, `feature_distributions_multisource.png`, `feature_distributions.png`, `confidence_distribution_multisource.png`, `confidence_dist.png`, `error_scatter_multisource.png`, `error_scatter.png`, `error_patterns_multisource.png`, `error_patterns.png`, `model_comparison.png` (copy of benchmark bar chart), `multisource_model_comparison.png`  
+- **Pipeline diagnostics:** `rating_distribution.png`, `confusion_matrix_multisource.png`, `confusion_matrix_gb.png`, `pca_multisource.png`, `pca_scatter.png`, `feature_distributions_multisource.png`, `feature_distributions.png`, `confidence_distribution_multisource.png`, `confidence_dist.png`, `error_scatter_multisource.png`, `error_scatter.png`, `error_patterns_multisource.png`, `error_patterns.png`, `all_features_model_comparison.png`  
 - **SHAP:** `shap_beeswarm.png`, `shap_bar_importance.png`, `shap_dependence_leverage_profitab.png`, `shap_dependence_liquid_cumprof.png`, `shap_dependence_news_sentiment.png`, `shap_waterfall_*.png` (sample of firm-years)
 
 ---

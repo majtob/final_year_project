@@ -123,7 +123,7 @@ This writes:
 
 ```bash
 python models/xgboost_with_kams.py    # financial ratios + KAM dummies
-python models/xgboost_full.py         # + news sentiment features
+python models/xgboost_all_features.py # + news + full KAM/firm block (21 features)
 ```
 
 On macOS, XGBoost may require `brew install libomp`.
@@ -161,7 +161,7 @@ mxa1438/
 │   └── fetch_kams_news_marketaux.py
 ├── models/
 │   ├── xgboost_with_kams.py
-│   ├── xgboost_full.py
+│   ├── xgboost_all_features.py
 │   ├── llm_verdict.py
 │   ├── prepare_finetune_data.py
 │   ├── finetune_qwen.py

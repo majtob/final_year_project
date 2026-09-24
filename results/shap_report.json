@@ -6,11 +6,18 @@
     "cumprof",
     "profitab",
     "leverage",
+    "AUSIZE",
+    "AUOP",
+    "EMP",
+    "GCUP",
     "GCKAM",
     "REVKAM",
     "ASSETKAM",
     "LIABKAM",
     "OTHERKAM",
+    "FIRMAGE",
+    "FIRMSIZE",
+    "INDUSTRY",
     "sentiment_mean",
     "sentiment_std",
     "sentiment_pos_pct",
@@ -24,284 +31,146 @@
     "BBB"
   ],
   "global_importance": {
-    "news_count": {
-      "rank": 1,
-      "mean_abs_shap": 0.5349295139312744,
-      "description": "Number of news articles in fiscal year"
-    },
     "leverage": {
-      "rank": 2,
-      "mean_abs_shap": 0.5108351111412048,
+      "rank": 1,
+      "mean_abs_shap": 0.5648629665374756,
       "description": "Leverage (book equity / total liabilities)"
     },
-    "cumprof": {
+    "news_count": {
+      "rank": 2,
+      "mean_abs_shap": 0.5018309950828552,
+      "description": "Number of news articles in fiscal year"
+    },
+    "AUSIZE": {
       "rank": 3,
-      "mean_abs_shap": 0.45273667573928833,
+      "mean_abs_shap": 0.3933137357234955,
+      "description": "Auditor size (Big 4 = 1)"
+    },
+    "cumprof": {
+      "rank": 4,
+      "mean_abs_shap": 0.33205947279930115,
       "description": "Cumulative profitability (retained earnings / total assets)"
     },
     "liquid": {
-      "rank": 4,
-      "mean_abs_shap": 0.4387992024421692,
-      "description": "Liquidity (working capital / total assets)"
-    },
-    "sentiment_std": {
       "rank": 5,
-      "mean_abs_shap": 0.21269099414348602,
-      "description": "FinBERT sentiment dispersion"
+      "mean_abs_shap": 0.31351834535598755,
+      "description": "Liquidity (working capital / total assets)"
     },
     "profitab": {
       "rank": 6,
-      "mean_abs_shap": 0.19276316463947296,
+      "mean_abs_shap": 0.21414722502231598,
       "description": "Profitability (EBIT / total assets)"
     },
     "REVKAM": {
       "rank": 7,
-      "mean_abs_shap": 0.11421117931604385,
+      "mean_abs_shap": 0.2133130431175232,
       "description": "KAM: revenue recognition (0/1)"
     },
-    "sentiment_mean": {
+    "sentiment_std": {
       "rank": 8,
-      "mean_abs_shap": 0.08342525362968445,
+      "mean_abs_shap": 0.19427384436130524,
+      "description": "FinBERT sentiment dispersion"
+    },
+    "sentiment_mean": {
+      "rank": 9,
+      "mean_abs_shap": 0.08295891433954239,
       "description": "FinBERT mean article score (P(pos)\u2212P(neg))"
     },
-    "ASSETKAM": {
-      "rank": 9,
-      "mean_abs_shap": 0.02992994710803032,
-      "description": "KAM: impairment / assets (0/1)"
+    "INDUSTRY": {
+      "rank": 10,
+      "mean_abs_shap": 0.03287484496831894,
+      "description": "Industry classification code"
     },
     "sentiment_pos_pct": {
-      "rank": 10,
-      "mean_abs_shap": 0.02468699961900711,
+      "rank": 11,
+      "mean_abs_shap": 0.02141871117055416,
       "description": "Share of articles with positive FinBERT score"
     },
-    "LIABKAM": {
-      "rank": 11,
+    "OTHERKAM": {
+      "rank": 12,
+      "mean_abs_shap": 0.009165167808532715,
+      "description": "KAM: other topics (0/1)"
+    },
+    "ASSETKAM": {
+      "rank": 13,
+      "mean_abs_shap": 0.0028654104098677635,
+      "description": "KAM: impairment / assets (0/1)"
+    },
+    "GCUP": {
+      "rank": 14,
       "mean_abs_shap": 0.0,
-      "description": "KAM: liabilities (0/1)"
+      "description": "Going-concern uncertainty paragraph (0/1)"
+    },
+    "AUOP": {
+      "rank": 15,
+      "mean_abs_shap": 0.0,
+      "description": "Audit opinion (modified = 1)"
+    },
+    "EMP": {
+      "rank": 16,
+      "mean_abs_shap": 0.0,
+      "description": "Employee count (firm size proxy)"
+    },
+    "FIRMSIZE": {
+      "rank": 17,
+      "mean_abs_shap": 0.0,
+      "description": "Firm size (log total assets)"
+    },
+    "FIRMAGE": {
+      "rank": 18,
+      "mean_abs_shap": 0.0,
+      "description": "Firm age (years since incorporation)"
     },
     "GCKAM": {
-      "rank": 12,
+      "rank": 19,
       "mean_abs_shap": 0.0,
       "description": "KAM: going concern (0/1)"
     },
-    "OTHERKAM": {
-      "rank": 13,
+    "LIABKAM": {
+      "rank": 20,
       "mean_abs_shap": 0.0,
-      "description": "KAM: other topics (0/1)"
+      "description": "KAM: liabilities (0/1)"
     },
     "sentiment_neg_pct": {
-      "rank": 14,
+      "rank": 21,
       "mean_abs_shap": 0.0,
       "description": "Share of articles with negative FinBERT score"
     }
   },
   "pct_total_abs_shap": {
-    "liquid": 16.90935707092285,
-    "cumprof": 17.446443557739258,
-    "profitab": 7.428228855133057,
-    "leverage": 19.6852970123291,
+    "liquid": 10.898909568786621,
+    "cumprof": 11.543458938598633,
+    "profitab": 7.444448471069336,
+    "leverage": 19.636459350585938,
+    "AUSIZE": 13.672855377197266,
+    "AUOP": 0.0,
+    "EMP": 0.0,
+    "GCUP": 0.0,
     "GCKAM": 0.0,
-    "REVKAM": 4.401187419891357,
-    "ASSETKAM": 1.1533660888671875,
+    "REVKAM": 7.415450096130371,
+    "ASSETKAM": 0.09961091727018356,
     "LIABKAM": 0.0,
-    "OTHERKAM": 0.0,
-    "sentiment_mean": 3.2148356437683105,
-    "sentiment_std": 8.196158409118652,
-    "sentiment_pos_pct": 0.9513263702392578,
+    "OTHERKAM": 0.318610817193985,
+    "FIRMAGE": 0.0,
+    "FIRMSIZE": 0.0,
+    "INDUSTRY": 1.1428356170654297,
+    "sentiment_mean": 2.8839197158813477,
+    "sentiment_std": 6.753586292266846,
+    "sentiment_pos_pct": 0.7445835471153259,
     "sentiment_neg_pct": 0.0,
-    "news_count": 20.613786697387695
+    "news_count": 17.44526481628418
   },
-  "top_feature_share_pct": 20.613786697387695,
+  "top_feature_share_pct": 19.636459350585938,
   "per_company_top_factors": [
     {
-      "ticker": "3008.SR",
-      "company": "Al Kathiri (AKHC)",
-      "fiscal_year": 2023,
-      "rating": "BBB-",
-      "predicted_category": "BBB",
-      "top_feature": "cumprof",
-      "shap_value": 1.540226697921753,
-      "feature_value": 0.018350902
-    },
-    {
-      "ticker": "9568.SR",
-      "company": "Mayar Holding",
-      "fiscal_year": 2024,
-      "rating": "BB",
-      "predicted_category": "BB",
-      "top_feature": "leverage",
-      "shap_value": 0.9711248278617859,
-      "feature_value": 0.068059243
-    },
-    {
-      "ticker": "9535.SR",
-      "company": "Ladun Investment",
-      "fiscal_year": 2024,
-      "rating": "BBB+",
-      "predicted_category": "BBB",
-      "top_feature": "cumprof",
-      "shap_value": 1.7034788131713867,
-      "feature_value": 0.051157433
-    },
-    {
-      "ticker": "7030.SR",
-      "company": "Zain Saudi Arabia",
-      "fiscal_year": 2023,
-      "rating": "A",
-      "predicted_category": "A",
-      "top_feature": "liquid",
-      "shap_value": 0.7859264016151428,
-      "feature_value": -0.045748097
-    },
-    {
-      "ticker": "7030.SR",
-      "company": "Zain Saudi Arabia",
-      "fiscal_year": 2024,
-      "rating": "A",
-      "predicted_category": "A",
-      "top_feature": "liquid",
-      "shap_value": 0.5404765605926514,
-      "feature_value": -0.194387894
-    },
-    {
-      "ticker": "7020.SR",
-      "company": "Mobily",
-      "fiscal_year": 2023,
-      "rating": "AA-",
-      "predicted_category": "AA",
-      "top_feature": "news_count",
-      "shap_value": 2.223461866378784,
-      "feature_value": 6.0
-    },
-    {
-      "ticker": "7020.SR",
-      "company": "Mobily",
-      "fiscal_year": 2024,
-      "rating": "AA",
-      "predicted_category": "AA",
-      "top_feature": "news_count",
-      "shap_value": 2.3050458431243896,
-      "feature_value": 6.0
-    },
-    {
-      "ticker": "7010.SR",
-      "company": "Saudi Telecom (STC)",
-      "fiscal_year": 2021,
-      "rating": "AAA",
-      "predicted_category": "AA",
-      "top_feature": "news_count",
-      "shap_value": 2.3930442333221436,
-      "feature_value": 9.0
-    },
-    {
-      "ticker": "7010.SR",
-      "company": "Saudi Telecom (STC)",
-      "fiscal_year": 2022,
-      "rating": "AAA",
-      "predicted_category": "AA",
-      "top_feature": "news_count",
-      "shap_value": 2.57608962059021,
-      "feature_value": 8.0
-    },
-    {
-      "ticker": "7010.SR",
-      "company": "Saudi Telecom (STC)",
-      "fiscal_year": 2023,
-      "rating": "AAA",
-      "predicted_category": "AA",
-      "top_feature": "news_count",
-      "shap_value": 2.610255718231201,
-      "feature_value": 7.0
-    },
-    {
-      "ticker": "7010.SR",
-      "company": "Saudi Telecom (STC)",
-      "fiscal_year": 2024,
-      "rating": "AAA",
-      "predicted_category": "AA",
-      "top_feature": "news_count",
-      "shap_value": 2.3472630977630615,
-      "feature_value": 7.0
-    },
-    {
-      "ticker": "4290.SR",
-      "company": "Alkhaleej Training",
-      "fiscal_year": 2023,
-      "rating": "BBB+",
-      "predicted_category": "BBB",
-      "top_feature": "cumprof",
-      "shap_value": 1.7765406370162964,
-      "feature_value": -0.092741207
-    },
-    {
-      "ticker": "4290.SR",
-      "company": "Alkhaleej Training",
-      "fiscal_year": 2024,
-      "rating": "BBB+",
-      "predicted_category": "BBB",
-      "top_feature": "cumprof",
-      "shap_value": 1.5332551002502441,
-      "feature_value": -0.012894618
-    },
-    {
-      "ticker": "3008.SR",
-      "company": "Al Kathiri (AKHC)",
-      "fiscal_year": 2022,
-      "rating": "BBB-",
-      "predicted_category": "BBB",
-      "top_feature": "cumprof",
-      "shap_value": 1.8605276346206665,
-      "feature_value": 0.048077623
-    },
-    {
-      "ticker": "9619.SR",
-      "company": "Multi Business Group",
-      "fiscal_year": 2024,
-      "rating": "BB+",
-      "predicted_category": "BB",
-      "top_feature": "cumprof",
-      "shap_value": 1.5434998273849487,
-      "feature_value": 0.292012684
-    },
-    {
-      "ticker": "7204.SR",
-      "company": "Perfect Presentation (2P)",
-      "fiscal_year": 2024,
-      "rating": "BBB+",
-      "predicted_category": "BBB",
-      "top_feature": "profitab",
-      "shap_value": 0.7660966515541077,
-      "feature_value": 0.148406483
-    },
-    {
       "ticker": "7204.SR",
       "company": "Perfect Presentation (2P)",
       "fiscal_year": 2023,
       "rating": "BBB+",
       "predicted_category": "BBB",
-      "top_feature": "profitab",
-      "shap_value": 0.7245178818702698,
-      "feature_value": 0.147429696
-    },
-    {
-      "ticker": "7204.SR",
-      "company": "Perfect Presentation (2P)",
-      "fiscal_year": 2022,
-      "rating": "BBB+",
-      "predicted_category": "BBB",
-      "top_feature": "leverage",
-      "shap_value": 0.7846231460571289,
-      "feature_value": 0.458093919
-    },
-    {
-      "ticker": "2081.SR",
-      "company": "Alkhorayef Water & Power",
-      "fiscal_year": 2024,
-      "rating": "A",
-      "predicted_category": "A",
-      "top_feature": "profitab",
-      "shap_value": 0.3966842293739319,
-      "feature_value": 0.123781319
+      "top_feature": "AUSIZE",
+      "shap_value": 1.9606882333755493,
+      "feature_value": 0.0
     },
     {
       "ticker": "2081.SR",
@@ -310,58 +179,238 @@
       "rating": "A-",
       "predicted_category": "A",
       "top_feature": "profitab",
-      "shap_value": 0.4091023802757263,
+      "shap_value": 0.7140267491340637,
       "feature_value": 0.115475563
     },
     {
-      "ticker": "2222.SR",
-      "company": "Saudi Aramco",
-      "fiscal_year": 2023,
-      "rating": "A+",
+      "ticker": "2081.SR",
+      "company": "Alkhorayef Water & Power",
+      "fiscal_year": 2024,
+      "rating": "A",
       "predicted_category": "A",
-      "top_feature": "leverage",
-      "shap_value": 1.414907455444336,
-      "feature_value": 2.344734682
+      "top_feature": "profitab",
+      "shap_value": 0.7140267491340637,
+      "feature_value": 0.123781319
     },
     {
-      "ticker": "2222.SR",
-      "company": "Saudi Aramco",
+      "ticker": "7204.SR",
+      "company": "Perfect Presentation (2P)",
       "fiscal_year": 2022,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "AUSIZE",
+      "shap_value": 1.9606882333755493,
+      "feature_value": 0.0
+    },
+    {
+      "ticker": "7204.SR",
+      "company": "Perfect Presentation (2P)",
+      "fiscal_year": 2024,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "AUSIZE",
+      "shap_value": 1.8317514657974243,
+      "feature_value": 0.0
+    },
+    {
+      "ticker": "7010.SR",
+      "company": "Saudi Telecom (STC)",
+      "fiscal_year": 2021,
+      "rating": "AAA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.3463313579559326,
+      "feature_value": 9.0
+    },
+    {
+      "ticker": "9568.SR",
+      "company": "Mayar Holding",
+      "fiscal_year": 2024,
+      "rating": "BB",
+      "predicted_category": "BB",
+      "top_feature": "leverage",
+      "shap_value": 1.1044518947601318,
+      "feature_value": 0.068059243
+    },
+    {
+      "ticker": "9535.SR",
+      "company": "Ladun Investment",
+      "fiscal_year": 2024,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "AUSIZE",
+      "shap_value": 1.6285821199417114,
+      "feature_value": 0.0
+    },
+    {
+      "ticker": "9619.SR",
+      "company": "Multi Business Group",
+      "fiscal_year": 2024,
+      "rating": "BB+",
+      "predicted_category": "BB",
+      "top_feature": "cumprof",
+      "shap_value": 1.65093994140625,
+      "feature_value": 0.292012684
+    },
+    {
+      "ticker": "4290.SR",
+      "company": "Alkhaleej Training",
+      "fiscal_year": 2023,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "AUSIZE",
+      "shap_value": 0.8436370491981506,
+      "feature_value": 0.0
+    },
+    {
+      "ticker": "3008.SR",
+      "company": "Al Kathiri (AKHC)",
+      "fiscal_year": 2023,
+      "rating": "BBB-",
+      "predicted_category": "BBB",
+      "top_feature": "AUSIZE",
+      "shap_value": 1.4996455907821655,
+      "feature_value": 0.0
+    },
+    {
+      "ticker": "3008.SR",
+      "company": "Al Kathiri (AKHC)",
+      "fiscal_year": 2022,
+      "rating": "BBB-",
+      "predicted_category": "BBB",
+      "top_feature": "AUSIZE",
+      "shap_value": 1.7354344129562378,
+      "feature_value": 0.0
+    },
+    {
+      "ticker": "4290.SR",
+      "company": "Alkhaleej Training",
+      "fiscal_year": 2024,
+      "rating": "BBB+",
+      "predicted_category": "BBB",
+      "top_feature": "AUSIZE",
+      "shap_value": 0.9725735187530518,
+      "feature_value": 0.0
+    },
+    {
+      "ticker": "7030.SR",
+      "company": "Zain Saudi Arabia",
+      "fiscal_year": 2023,
+      "rating": "A",
+      "predicted_category": "A",
+      "top_feature": "profitab",
+      "shap_value": -0.6993160843849182,
+      "feature_value": 0.075357897
+    },
+    {
+      "ticker": "7020.SR",
+      "company": "Mobily",
+      "fiscal_year": 2024,
+      "rating": "AA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.447493076324463,
+      "feature_value": 6.0
+    },
+    {
+      "ticker": "7020.SR",
+      "company": "Mobily",
+      "fiscal_year": 2023,
+      "rating": "AA-",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.353685140609741,
+      "feature_value": 6.0
+    },
+    {
+      "ticker": "7030.SR",
+      "company": "Zain Saudi Arabia",
+      "fiscal_year": 2024,
+      "rating": "A",
+      "predicted_category": "A",
+      "top_feature": "profitab",
+      "shap_value": 0.4210628569126129,
+      "feature_value": 0.044824323
+    },
+    {
+      "ticker": "7010.SR",
+      "company": "Saudi Telecom (STC)",
+      "fiscal_year": 2022,
+      "rating": "AAA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.4275829792022705,
+      "feature_value": 8.0
+    },
+    {
+      "ticker": "7010.SR",
+      "company": "Saudi Telecom (STC)",
+      "fiscal_year": 2024,
+      "rating": "AAA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.2868266105651855,
+      "feature_value": 7.0
+    },
+    {
+      "ticker": "7010.SR",
+      "company": "Saudi Telecom (STC)",
+      "fiscal_year": 2023,
+      "rating": "AAA",
+      "predicted_category": "AA",
+      "top_feature": "news_count",
+      "shap_value": 2.4394407272338867,
+      "feature_value": 7.0
+    },
+    {
+      "ticker": "2082.SR",
+      "company": "ACWA Power",
+      "fiscal_year": 2023,
+      "rating": "BBB-",
+      "predicted_category": "BBB",
+      "top_feature": "REVKAM",
+      "shap_value": 1.1001479625701904,
+      "feature_value": 0.0
+    },
+    {
+      "ticker": "1202.SR",
+      "company": "MEPCO (Middle East Paper)",
+      "fiscal_year": 2024,
+      "rating": "A-",
+      "predicted_category": "A",
+      "top_feature": "leverage",
+      "shap_value": 1.2677799463272095,
+      "feature_value": 1.669193185
+    },
+    {
+      "ticker": "2082.SR",
+      "company": "ACWA Power",
+      "fiscal_year": 2024,
+      "rating": "BBB-",
+      "predicted_category": "BBB",
+      "top_feature": "REVKAM",
+      "shap_value": 1.1173920631408691,
+      "feature_value": 0.0
+    },
+    {
+      "ticker": "2010.SR",
+      "company": "SABIC",
+      "fiscal_year": 2021,
       "rating": "A",
       "predicted_category": "A",
       "top_feature": "leverage",
-      "shap_value": 1.3624365329742432,
-      "feature_value": 2.015231435
+      "shap_value": 1.7455766201019287,
+      "feature_value": 1.970138566
     },
     {
       "ticker": "1211.SR",
       "company": "Maaden",
-      "fiscal_year": 2023,
+      "fiscal_year": 2024,
       "rating": "BBB+",
       "predicted_category": "BBB",
-      "top_feature": "liquid",
-      "shap_value": 1.029398798942566,
-      "feature_value": 0.129500375
-    },
-    {
-      "ticker": "2010.SR",
-      "company": "SABIC",
-      "fiscal_year": 2024,
-      "rating": "A+",
-      "predicted_category": "A",
-      "top_feature": "leverage",
-      "shap_value": 1.4705333709716797,
-      "feature_value": 1.954483739
-    },
-    {
-      "ticker": "2010.SR",
-      "company": "SABIC",
-      "fiscal_year": 2023,
-      "rating": "A",
-      "predicted_category": "A",
-      "top_feature": "leverage",
-      "shap_value": 1.4775574207305908,
-      "feature_value": 1.970601984
+      "top_feature": "REVKAM",
+      "shap_value": 1.1173920631408691,
+      "feature_value": 0.0
     }
   ]
 }

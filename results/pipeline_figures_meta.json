@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T17:48:17.837417+00:00",
+  "generated_at": "2026-09-24T18:53:36.153993+00:00",
   "n_rows": 45,
   "figures_written": [
     "rating_distribution.png",
@@ -14,8 +14,7 @@
     "error_scatter_multisource.png",
     "error_scatter.png",
     "error_patterns_multisource.png",
-    "error_patterns.png",
-    "model_comparison.png (from multisource benchmark if present)"
+    "error_patterns.png"
   ],
   "results_written": [
     "error_analysis_multisource.json",

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-SHAP explainability for the full multisource XGBoost model (14 features:
-financials + paper KAM dummies + FinBERT news aggregates).
+SHAP explainability for the full multisource XGBoost model (21 features:
+financials + the full 12-column KAM/firm block + FinBERT news aggregates).
 
 Writes:
   figures/shap_beeswarm.png
@@ -37,8 +37,8 @@ if str(ROOT) not in sys.path:
 from models.multisource_data import (  # noqa: E402
     FULL_FEATURE_COLS,
     load_or_build_merged_training,
+    prepare_target,
 )
-from models.xgboost_full import prepare_target  # noqa: E402
 
 FIGURES_DIR = ROOT / "figures"
 RESULTS_DIR = ROOT / "results"
@@ -48,11 +48,18 @@ FEATURE_DESCRIPTIONS: dict[str, str] = {
     "cumprof": "Cumulative profitability (retained earnings / total assets)",
     "profitab": "Profitability (EBIT / total assets)",
     "leverage": "Leverage (book equity / total liabilities)",
+    "AUSIZE": "Auditor size (Big 4 = 1)",
+    "AUOP": "Audit opinion (modified = 1)",
+    "EMP": "Employee count (firm size proxy)",
+    "GCUP": "Going-concern uncertainty paragraph (0/1)",
     "GCKAM": "KAM: going concern (0/1)",
     "REVKAM": "KAM: revenue recognition (0/1)",
     "ASSETKAM": "KAM: impairment / assets (0/1)",
     "LIABKAM": "KAM: liabilities (0/1)",
     "OTHERKAM": "KAM: other topics (0/1)",
+    "FIRMAGE": "Firm age (years since incorporation)",
+    "FIRMSIZE": "Firm size (log total assets)",
+    "INDUSTRY": "Industry classification code",
     "sentiment_mean": "FinBERT mean article score (P(pos)−P(neg))",
     "sentiment_std": "FinBERT sentiment dispersion",
     "sentiment_pos_pct": "Share of articles with positive FinBERT score",

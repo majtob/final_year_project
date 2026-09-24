@@ -1,5 +1,5 @@
 """
-Regenerate figures in figures/ from the current merged multisource panel (14 features).
+Regenerate figures in figures/ from the current merged multisource panel (21 features).
 
 Writes / overwrites:
   rating_distribution.png      — counts of rating_category
@@ -8,7 +8,6 @@ Writes / overwrites:
   feature_distributions_multisource.png — four ratios, boxplot by rating_category
   confidence_distribution_multisource.png — max class probability from CV predict_proba
   error_scatter_multisource.png — PCA(2) colored correct vs wrong
-  model_comparison.png         — copy of multisource benchmark bar chart (if benchmark exists)
 
 Also writes results/error_analysis_multisource.json for the current XGBoost multiclass run.
 
@@ -42,8 +41,11 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from models.multisource_data import FULL_FEATURE_COLS, load_or_build_merged_training  # noqa: E402
-from models.xgboost_full import prepare_target  # noqa: E402
+from models.multisource_data import (  # noqa: E402
+    FULL_FEATURE_COLS,
+    load_or_build_merged_training,
+    prepare_target,
+)
 
 FIGURES_DIR = ROOT / "figures"
 RESULTS_DIR = ROOT / "results"
@@ -119,7 +121,7 @@ def main() -> None:
     plt.xlabel(f"PC1 ({pca.explained_variance_ratio_[0]:.0%} var)")
     plt.ylabel(f"PC2 ({pca.explained_variance_ratio_[1]:.0%} var)")
     plt.legend(title="Category", fontsize=8)
-    plt.title("PCA (14 features, standardized) — multisource panel")
+    plt.title("PCA (21 features, standardized) — multisource panel")
     plt.tight_layout()
     plt.savefig(FIGURES_DIR / "pca_multisource.png", dpi=150, bbox_inches="tight")
     plt.close()
@@ -194,11 +196,6 @@ def main() -> None:
     plt.close()
     shutil.copy(FIGURES_DIR / "error_patterns_multisource.png", FIGURES_DIR / "error_patterns.png")
 
-    # --- sync model_comparison.png with benchmark if present ---
-    bench = FIGURES_DIR / "multisource_model_comparison.png"
-    if bench.exists():
-        shutil.copy(bench, FIGURES_DIR / "model_comparison.png")
-
     # --- error_analysis JSON (multiclass) ---
     mis_rows = []
     for i in range(len(df)):
@@ -217,7 +214,7 @@ def main() -> None:
         )
 
     error_payload = {
-        "generated_for": "multisource XGBoost 14 features, 4-class rating_category",
+        "generated_for": "multisource XGBoost 21 features, 4-class rating_category",
         "n_samples": int(len(df)),
         "cv_folds": n_splits,
         "cv_accuracy": float(acc),
@@ -255,7 +252,6 @@ def main() -> None:
             "error_scatter.png",
             "error_patterns_multisource.png",
             "error_patterns.png",
-            "model_comparison.png (from multisource benchmark if present)",
         ],
         "results_written": ["error_analysis_multisource.json", "error_analysis.json"],
     }

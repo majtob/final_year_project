@@ -1,7 +1,14 @@
 """
-Multisource training frame (financials + KAM dummies + FinBERT news aggregates).
+Multisource training frame: 21 features — four financial ratios, the full
+12-column KAM/firm block, and five FinBERT news aggregates.
 
-Used by SHAP script, Streamlit app, and LLM verdict generation.
+Used by the SHAP script, the Streamlit app, pipeline figures and LLM verdicts,
+so the feature set is defined once here and imported everywhere else.
+
+The frame is built by joining the three processed CSVs
+(`financials_processed.csv`, `news_features_processed.csv`,
+`kams_processed.csv`) rather than read from a pre-merged file: the full KAM/firm
+block only exists in `kams_processed.csv`.
 """
 
 from __future__ import annotations
@@ -10,37 +17,38 @@ from pathlib import Path
 
 import pandas as pd
 
-from models.xgboost_full import (
+from models.xgboost_all_features import (
+    ALL_FEATURE_COLS,
     FINANCIAL_COLS,
-    KAM_COLS,
+    FULL_KAM_COLS,
     SENTIMENT_COLS,
-    load_data,
-    prepare_modeling_dataframe,
-    prepare_target,
+    load_and_merge,
+    prepare,
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-MERGED_TRAINING = PROJECT_ROOT / "data" / "processed" / "merged_multisource_training.csv"
 
-FULL_FEATURE_COLS = FINANCIAL_COLS + KAM_COLS + SENTIMENT_COLS
+FULL_FEATURE_COLS = ALL_FEATURE_COLS
 
-_MERGED_REQUIRED = set(
-    FULL_FEATURE_COLS
-    + [
-        "rating",
-        "ticker",
-        "fiscal_year",
-        "rating_category",
-        "company_name",
-        "rating_agency",
-    ]
-)
+__all__ = [
+    "FULL_FEATURE_COLS",
+    "FINANCIAL_COLS",
+    "FULL_KAM_COLS",
+    "SENTIMENT_COLS",
+    "prepare_target",
+    "raw_merged_frame",
+    "load_or_build_merged_training",
+]
+
+
+def prepare_target(df: pd.DataFrame) -> pd.DataFrame:
+    """Add `rating_category`, drop rows with missing ratios, fill KAM/news gaps."""
+    return prepare(df)
 
 
 def raw_merged_frame() -> pd.DataFrame:
-    """Inner-join financials, news, KAMs (same as xgboost_full.load_data) + rating categories."""
-    df = load_data()
-    df = prepare_target(df)
+    """Financials × news × full KAM block, with rating categories attached."""
+    df = prepare_target(load_and_merge())
     if "rating_agency" not in df.columns:
         df["rating_agency"] = "Tassnief"
     if "sector" not in df.columns:
@@ -48,18 +56,12 @@ def raw_merged_frame() -> pd.DataFrame:
     return df
 
 
-def load_or_build_merged_training(save: bool = True) -> pd.DataFrame:
+def load_or_build_merged_training(save: bool = False) -> pd.DataFrame:
     """
-    Load merged_multisource_training.csv if present and schema-complete; otherwise
-    rebuild from processed CSVs and optionally save.
+    Build the 21-feature modelling frame from the processed CSVs.
+
+    `save` is accepted for call-site compatibility and ignored: the frame is
+    derived from files the rebuild script already owns, so writing a fourth copy
+    would just be one more thing to go stale.
     """
-    if MERGED_TRAINING.exists():
-        df = pd.read_csv(MERGED_TRAINING)
-        if _MERGED_REQUIRED.issubset(df.columns):
-            return df
-    df = raw_merged_frame()
-    df_clean = prepare_modeling_dataframe(df)
-    if save:
-        MERGED_TRAINING.parent.mkdir(parents=True, exist_ok=True)
-        df_clean.to_csv(MERGED_TRAINING, index=False)
-    return df_clean
+    return raw_merged_frame()

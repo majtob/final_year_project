@@ -22,10 +22,12 @@ PROJECT_ROOT = Path(__file__).parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from models.multisource_data import FULL_FEATURE_COLS, MERGED_TRAINING
+from models.multisource_data import FULL_FEATURE_COLS
 
 VERDICTS_DIR = PROJECT_ROOT / "results" / "verdicts"
-DATA_FILE = MERGED_TRAINING
+# No pre-merged file for the 21-feature frame: it is built from the processed
+# CSVs by multisource_data. None means "let that module build it".
+DATA_FILE = None
 ADAPTER_DIR = PROJECT_ROOT / "models" / "lora_adapter"
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
@@ -577,7 +579,7 @@ def generate_verdicts(data_path=None, mode="auto", limit=None):
         drop=True
     )
     if "rating_category" not in df.columns:
-        from models.xgboost_full import prepare_target
+        from models.multisource_data import prepare_target
 
         df = prepare_target(df)
 

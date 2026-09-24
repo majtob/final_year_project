@@ -1,17 +1,17 @@
 {
-  "generation_timestamp": "2026-09-24T20:48:36.674825",
+  "generation_timestamp": "2026-09-24T21:53:39.521528",
   "total_verdicts": 45,
   "generation_method": "template",
   "quality_metrics": {
     "avg_overall_score": 0.9972222222222222,
-    "avg_citation_rate": 0.9722222222222222,
-    "avg_number_accuracy": 0.9177777777777777,
+    "avg_citation_rate": 0.9777777777777777,
+    "avg_number_accuracy": 0.9416402116402115,
     "min_score": 0.875,
     "max_score": 1.0
   },
   "ml_performance": {
-    "category_correct": 28,
+    "category_correct": 31,
     "total": 45,
-    "category_accuracy": 0.6222222222222222
+    "category_accuracy": 0.6888888888888889
   }
 }

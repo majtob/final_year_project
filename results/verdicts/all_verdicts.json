@@ -1,25 +1,24 @@
 [
   {
-    "company": "Al Kathiri (AKHC)",
-    "ticker": "3008.SR",
+    "company": "Perfect Presentation (2P)",
+    "ticker": "7204.SR",
     "fiscal_year": 2023,
-    "predicted_rating": "A",
+    "predicted_rating": "AA",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Al Kathiri (AKHC) (3008.SR) shows a solid financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 62% confidence.",
+    "overall_assessment": "Perfect Presentation (2P) (7204.SR) shows a solid financial profile for FY2023, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 86% confidence.",
     "strengths": [
-      "Strong liquidity position (LIQUID=0.3443), indicating adequate working capital relative to total assets",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+      "Strong liquidity position (LIQUID=0.2067), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.1748), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.1474), demonstrating efficient asset utilization for earnings"
     ],
     "weaknesses": [
-      "Modest cumulative profitability (CUMPROF=0.0184), suggesting limited earnings retention over time",
-      "Low operational profitability (PROFITAB=0.0218), suggesting limited earnings generation from assets",
-      "Elevated debt reliance (LEVERAGE=0.7737), with liabilities forming a significant portion of financing"
+      "Elevated debt reliance (LEVERAGE=0.4797), with liabilities forming a significant portion of financing"
     ],
     "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
       "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
     ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.3443, CUMPROF=0.0184, PROFITAB=0.0218, LEVERAGE=0.7737. KAM/news context should be read alongside these figures. Note: actual agency rating is BBB- (category BBB) vs predicted category A.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=0.2067, CUMPROF=0.1748, PROFITAB=0.1474, LEVERAGE=0.4797. KAM/news context should be read alongside these figures. Note: actual agency rating is BBB+ (category BBB) vs predicted category AA.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -30,80 +29,6 @@
       "ratios_cited": 4,
       "citation_rate": 1.0,
       "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BBB-"
-  },
-  {
-    "company": "Mayar Holding",
-    "ticker": "9568.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Mayar Holding (9568.SR) shows a weak financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 53% confidence.",
-    "strengths": [
-      "No strong positive financial indicators identified from the ratios",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Negative liquidity (LIQUID=-0.3496), signaling potential difficulty meeting short-term obligations",
-      "Modest cumulative profitability (CUMPROF=0.0022), suggesting limited earnings retention over time",
-      "High leverage risk (LEVERAGE=0.0681), indicating heavy dependence on debt financing"
-    ],
-    "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=-0.0897), so outcomes are sensitive to KAM and news signals. Note: actual agency rating is BB (category BB) vs predicted category A.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 0.75,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BB"
-  },
-  {
-    "company": "Ladun Investment",
-    "ticker": "9535.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Ladun Investment (9535.SR) shows a moderate financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 84% confidence.",
-    "strengths": [
-      "Positive cumulative profitability (CUMPROF=0.0512), showing consistent earnings retention",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low liquidity (LIQUID=0.0058), indicating limited working capital buffer relative to total assets",
-      "High leverage risk (LEVERAGE=0.2670), indicating heavy dependence on debt financing"
-    ],
-    "key_risks": [
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0304), so outcomes are sensitive to KAM and news signals. Note: actual agency rating is BBB+ (category BBB) vs predicted category A.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 0.75,
       "mentions_risk": true,
       "mentions_strength": true,
       "overall_score": 1.0
@@ -111,26 +36,26 @@
     "_actual_rating": "BBB+"
   },
   {
-    "company": "Zain Saudi Arabia",
-    "ticker": "7030.SR",
+    "company": "Alkhorayef Water & Power",
+    "ticker": "2081.SR",
     "fiscal_year": 2023,
     "predicted_rating": "BBB",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Zain Saudi Arabia (7030.SR) shows a weak financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 77% confidence.",
+    "overall_assessment": "Alkhorayef Water & Power (2081.SR) shows a solid financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 49% confidence.",
     "strengths": [
-      "No strong positive financial indicators identified from the ratios",
+      "Strong liquidity position (LIQUID=0.2866), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.1385), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.1155), demonstrating efficient asset utilization for earnings",
       "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
     ],
     "weaknesses": [
-      "Low liquidity (LIQUID=-0.0457), indicating limited working capital buffer relative to total assets",
-      "Modest cumulative profitability (CUMPROF=0.0485), suggesting limited earnings retention over time",
-      "Elevated debt reliance (LEVERAGE=0.6309), with liabilities forming a significant portion of financing"
+      "Elevated debt reliance (LEVERAGE=0.4617), with liabilities forming a significant portion of financing"
     ],
     "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
       "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
     ],
-    "prediction_analysis": "The model predicts BBB but average ratio strength is modest (avg=0.0260), so outcomes are sensitive to KAM and news signals. Note: actual agency rating is A (category A) vs predicted category BBB.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.2866, CUMPROF=0.1385, PROFITAB=0.1155, LEVERAGE=0.4617. KAM/news context should be read alongside these figures. Note: actual agency rating is A- (category A) vs predicted category BBB.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -140,34 +65,33 @@
       "has_prediction_analysis": true,
       "ratios_cited": 4,
       "citation_rate": 1.0,
-      "numbers_accuracy": 0.75,
+      "numbers_accuracy": 1.0,
       "mentions_risk": true,
       "mentions_strength": true,
       "overall_score": 1.0
     },
-    "_actual_rating": "A"
+    "_actual_rating": "A-"
   },
   {
-    "company": "Zain Saudi Arabia",
-    "ticker": "7030.SR",
+    "company": "Alkhorayef Water & Power",
+    "ticker": "2081.SR",
     "fiscal_year": 2024,
     "predicted_rating": "A",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Zain Saudi Arabia (7030.SR) shows a weak financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 70% confidence.",
+    "overall_assessment": "Alkhorayef Water & Power (2081.SR) shows a solid financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 78% confidence.",
     "strengths": [
-      "Positive cumulative profitability (CUMPROF=0.0596), showing consistent earnings retention",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+      "Strong liquidity position (LIQUID=0.1627), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.1537), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.1238), demonstrating efficient asset utilization for earnings"
     ],
     "weaknesses": [
-      "Negative liquidity (LIQUID=-0.1944), signaling potential difficulty meeting short-term obligations",
-      "Elevated debt reliance (LEVERAGE=0.6143), with liabilities forming a significant portion of financing",
-      "Negative FinBERT news tone (sentiment_mean=-0.955 across 4 articles)"
+      "Elevated debt reliance (LEVERAGE=0.4839), with liabilities forming a significant portion of financing"
     ],
     "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
       "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
     ],
-    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=-0.0300), so outcomes are sensitive to KAM and news signals.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1627, CUMPROF=0.1537, PROFITAB=0.1238, LEVERAGE=0.4839. KAM/news context should be read alongside these figures.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -177,7 +101,7 @@
       "has_prediction_analysis": true,
       "ratios_cited": 4,
       "citation_rate": 1.0,
-      "numbers_accuracy": 0.6,
+      "numbers_accuracy": 1.0,
       "mentions_risk": true,
       "mentions_strength": true,
       "overall_score": 1.0
@@ -185,25 +109,25 @@
     "_actual_rating": "A"
   },
   {
-    "company": "Mobily",
-    "ticker": "7020.SR",
-    "fiscal_year": 2023,
+    "company": "Perfect Presentation (2P)",
+    "ticker": "7204.SR",
+    "fiscal_year": 2022,
     "predicted_rating": "AA",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Mobily (7020.SR) shows a moderate financial profile for FY2023, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 53% confidence.",
+    "overall_assessment": "Perfect Presentation (2P) (7204.SR) shows a solid financial profile for FY2022, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 78% confidence.",
     "strengths": [
-      "Positive cumulative profitability (CUMPROF=0.1863), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.0801), demonstrating efficient asset utilization for earnings",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+      "Strong liquidity position (LIQUID=0.1871), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.1102), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.1999), demonstrating efficient asset utilization for earnings"
     ],
     "weaknesses": [
-      "Low liquidity (LIQUID=-0.0436), indicating limited working capital buffer relative to total assets"
+      "Elevated debt reliance (LEVERAGE=0.4581), with liabilities forming a significant portion of financing"
     ],
     "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
       "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
     ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=-0.0436, CUMPROF=0.1863, PROFITAB=0.0801, LEVERAGE=0.8286. KAM/news context should be read alongside these figures.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=0.1871, CUMPROF=0.1102, PROFITAB=0.1999, LEVERAGE=0.4581. KAM/news context should be read alongside these figures. Note: actual agency rating is BBB+ (category BBB) vs predicted category AA.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -218,28 +142,28 @@
       "mentions_strength": true,
       "overall_score": 1.0
     },
-    "_actual_rating": "AA-"
+    "_actual_rating": "BBB+"
   },
   {
-    "company": "Mobily",
-    "ticker": "7020.SR",
+    "company": "Perfect Presentation (2P)",
+    "ticker": "7204.SR",
     "fiscal_year": 2024,
-    "predicted_rating": "AA",
+    "predicted_rating": "BBB",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Mobily (7020.SR) shows a solid financial profile for FY2024, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 79% confidence.",
+    "overall_assessment": "Perfect Presentation (2P) (7204.SR) shows a solid financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 57% confidence.",
     "strengths": [
-      "Substantial accumulated profitability (CUMPROF=0.2907), reflecting a strong track record of retained earnings",
-      "Strong operational profitability (PROFITAB=0.0984), demonstrating efficient asset utilization for earnings",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+      "Strong liquidity position (LIQUID=0.2937), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.1412), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.1484), demonstrating efficient asset utilization for earnings"
     ],
     "weaknesses": [
-      "Low liquidity (LIQUID=-0.0238), indicating limited working capital buffer relative to total assets"
+      "Elevated debt reliance (LEVERAGE=0.6127), with liabilities forming a significant portion of financing"
     ],
     "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
       "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
     ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=-0.0238, CUMPROF=0.2907, PROFITAB=0.0984, LEVERAGE=0.9611. KAM/news context should be read alongside these figures.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.2937, CUMPROF=0.1412, PROFITAB=0.1484, LEVERAGE=0.6127. KAM/news context should be read alongside these figures.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -254,7 +178,7 @@
       "mentions_strength": true,
       "overall_score": 1.0
     },
-    "_actual_rating": "AA"
+    "_actual_rating": "BBB+"
   },
   {
     "company": "Saudi Telecom (STC)",
@@ -262,7 +186,7 @@
     "fiscal_year": 2021,
     "predicted_rating": "AA",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Telecom (STC) (7010.SR) shows a solid financial profile for FY2021, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 63% confidence.",
+    "overall_assessment": "Saudi Telecom (STC) (7010.SR) shows a solid financial profile for FY2021, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 71% confidence.",
     "strengths": [
       "Adequate liquidity (LIQUID=0.1401), suggesting the company can meet short-term obligations",
       "Substantial accumulated profitability (CUMPROF=0.2973), reflecting a strong track record of retained earnings",
@@ -294,12 +218,415 @@
     "_actual_rating": "AAA"
   },
   {
+    "company": "Mayar Holding",
+    "ticker": "9568.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Mayar Holding (9568.SR) shows a weak financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 73% confidence.",
+    "strengths": [
+      "No strong positive financial indicators identified from the ratios",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Negative liquidity (LIQUID=-0.3496), signaling potential difficulty meeting short-term obligations",
+      "Modest cumulative profitability (CUMPROF=0.0022), suggesting limited earnings retention over time",
+      "High leverage risk (LEVERAGE=0.0681), indicating heavy dependence on debt financing"
+    ],
+    "key_risks": [
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "The model predicts BBB but average ratio strength is modest (avg=-0.0897), so outcomes are sensitive to KAM and news signals. Note: actual agency rating is BB (category BB) vs predicted category BBB.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 0.75,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "BB"
+  },
+  {
+    "company": "Ladun Investment",
+    "ticker": "9535.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Ladun Investment (9535.SR) shows a moderate financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 79% confidence.",
+    "strengths": [
+      "Positive cumulative profitability (CUMPROF=0.0512), showing consistent earnings retention",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=0.0058), indicating limited working capital buffer relative to total assets",
+      "High leverage risk (LEVERAGE=0.2670), indicating heavy dependence on debt financing"
+    ],
+    "key_risks": [
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "The model predicts BBB but average ratio strength is modest (avg=0.0304), so outcomes are sensitive to KAM and news signals.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 0.75,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "BBB+"
+  },
+  {
+    "company": "Multi Business Group",
+    "ticker": "9619.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Multi Business Group (9619.SR) shows a solid financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 77% confidence.",
+    "strengths": [
+      "Strong liquidity position (LIQUID=0.7789), indicating adequate working capital relative to total assets",
+      "Substantial accumulated profitability (CUMPROF=0.2920), reflecting a strong track record of retained earnings",
+      "Strong operational profitability (PROFITAB=0.2090), demonstrating efficient asset utilization for earnings",
+      "Conservative financial structure (LEVERAGE=3.2734), with equity substantially exceeding liabilities"
+    ],
+    "weaknesses": [
+      "No major financial weaknesses identified from the ratios"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.7789, CUMPROF=0.2920, PROFITAB=0.2090, LEVERAGE=3.2734. KAM/news context should be read alongside these figures. Note: actual agency rating is BB+ (category BB) vs predicted category BBB.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "BB+"
+  },
+  {
+    "company": "Alkhaleej Training",
+    "ticker": "4290.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Alkhaleej Training (4290.SR) shows a weak financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 73% confidence.",
+    "strengths": [
+      "No strong positive financial indicators identified from the ratios",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=0.0066), indicating limited working capital buffer relative to total assets",
+      "Negative cumulative profitability (CUMPROF=-0.0927), indicating accumulated losses exceed retained earnings",
+      "Elevated debt reliance (LEVERAGE=0.3228), with liabilities forming a significant portion of financing"
+    ],
+    "key_risks": [
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market"
+    ],
+    "prediction_analysis": "The model predicts BBB but average ratio strength is modest (avg=-0.0173), so outcomes are sensitive to KAM and news signals.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 0.75,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "BBB+"
+  },
+  {
+    "company": "Al Kathiri (AKHC)",
+    "ticker": "3008.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Al Kathiri (AKHC) (3008.SR) shows a solid financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 73% confidence.",
+    "strengths": [
+      "Strong liquidity position (LIQUID=0.3443), indicating adequate working capital relative to total assets",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Modest cumulative profitability (CUMPROF=0.0184), suggesting limited earnings retention over time",
+      "Low operational profitability (PROFITAB=0.0218), suggesting limited earnings generation from assets",
+      "Elevated debt reliance (LEVERAGE=0.7737), with liabilities forming a significant portion of financing"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.3443, CUMPROF=0.0184, PROFITAB=0.0218, LEVERAGE=0.7737. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "BBB-"
+  },
+  {
+    "company": "Al Kathiri (AKHC)",
+    "ticker": "3008.SR",
+    "fiscal_year": 2022,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Al Kathiri (AKHC) (3008.SR) shows a moderate financial profile for FY2022, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 70% confidence.",
+    "strengths": [
+      "Conservative financial structure (LEVERAGE=2.0387), with equity substantially exceeding liabilities",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=0.0198), indicating limited working capital buffer relative to total assets",
+      "Modest cumulative profitability (CUMPROF=0.0481), suggesting limited earnings retention over time",
+      "Low operational profitability (PROFITAB=0.0291), suggesting limited earnings generation from assets"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0323), so outcomes are sensitive to KAM and news signals. Note: actual agency rating is BBB- (category BBB) vs predicted category A.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 0.8,
+      "mentions_risk": true,
+      "mentions_strength": false,
+      "overall_score": 0.875
+    },
+    "_actual_rating": "BBB-"
+  },
+  {
+    "company": "Alkhaleej Training",
+    "ticker": "4290.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Alkhaleej Training (4290.SR) shows a moderate financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 96% confidence.",
+    "strengths": [
+      "Strong operational profitability (PROFITAB=0.0860), demonstrating efficient asset utilization for earnings",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=0.0256), indicating limited working capital buffer relative to total assets",
+      "Negative cumulative profitability (CUMPROF=-0.0129), indicating accumulated losses exceed retained earnings",
+      "Elevated debt reliance (LEVERAGE=0.3610), with liabilities forming a significant portion of financing"
+    ],
+    "key_risks": [
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market"
+    ],
+    "prediction_analysis": "The model predicts BBB but average ratio strength is modest (avg=0.0329), so outcomes are sensitive to KAM and news signals.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 0.8,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "BBB+"
+  },
+  {
+    "company": "Zain Saudi Arabia",
+    "ticker": "7030.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Zain Saudi Arabia (7030.SR) shows a weak financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 55% confidence.",
+    "strengths": [
+      "No strong positive financial indicators identified from the ratios",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=-0.0457), indicating limited working capital buffer relative to total assets",
+      "Modest cumulative profitability (CUMPROF=0.0485), suggesting limited earnings retention over time",
+      "Elevated debt reliance (LEVERAGE=0.6309), with liabilities forming a significant portion of financing"
+    ],
+    "key_risks": [
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "The model predicts BBB but average ratio strength is modest (avg=0.0260), so outcomes are sensitive to KAM and news signals. Note: actual agency rating is A (category A) vs predicted category BBB.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 0.75,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A"
+  },
+  {
+    "company": "Mobily",
+    "ticker": "7020.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "AA",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Mobily (7020.SR) shows a solid financial profile for FY2024, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 90% confidence.",
+    "strengths": [
+      "Substantial accumulated profitability (CUMPROF=0.2907), reflecting a strong track record of retained earnings",
+      "Strong operational profitability (PROFITAB=0.0984), demonstrating efficient asset utilization for earnings",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=-0.0238), indicating limited working capital buffer relative to total assets"
+    ],
+    "key_risks": [
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=-0.0238, CUMPROF=0.2907, PROFITAB=0.0984, LEVERAGE=0.9611. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "AA"
+  },
+  {
+    "company": "Mobily",
+    "ticker": "7020.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "AA",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Mobily (7020.SR) shows a moderate financial profile for FY2023, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 46% confidence.",
+    "strengths": [
+      "Positive cumulative profitability (CUMPROF=0.1863), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.0801), demonstrating efficient asset utilization for earnings",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=-0.0436), indicating limited working capital buffer relative to total assets"
+    ],
+    "key_risks": [
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=-0.0436, CUMPROF=0.1863, PROFITAB=0.0801, LEVERAGE=0.8286. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "AA-"
+  },
+  {
+    "company": "Zain Saudi Arabia",
+    "ticker": "7030.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "BB",
+    "risk_classification": "Speculative (BB bucket)",
+    "overall_assessment": "Zain Saudi Arabia (7030.SR) shows a weak financial profile for FY2024, with the ML model predicting a BB (Speculative (BB bucket)) rating at 80% confidence.",
+    "strengths": [
+      "Positive cumulative profitability (CUMPROF=0.0596), showing consistent earnings retention",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Negative liquidity (LIQUID=-0.1944), signaling potential difficulty meeting short-term obligations",
+      "Elevated debt reliance (LEVERAGE=0.6143), with liabilities forming a significant portion of financing",
+      "Negative FinBERT news tone (sentiment_mean=-0.955 across 4 articles)"
+    ],
+    "key_risks": [
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "Weak liquidity (LIQUID=-0.1944), profitability (PROFITAB=0.0448), and cumulative earnings (CUMPROF=0.0596) support a BB / speculative-bucket view. Note: actual agency rating is A (category A) vs predicted category BB.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 0.8571428571428571,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A"
+  },
+  {
     "company": "Saudi Telecom (STC)",
     "ticker": "7010.SR",
     "fiscal_year": 2022,
     "predicted_rating": "AA",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Telecom (STC) (7010.SR) shows a solid financial profile for FY2022, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 60% confidence.",
+    "overall_assessment": "Saudi Telecom (STC) (7010.SR) shows a solid financial profile for FY2022, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 92% confidence.",
     "strengths": [
       "Strong liquidity position (LIQUID=0.1777), indicating adequate working capital relative to total assets",
       "Positive cumulative profitability (CUMPROF=0.0798), showing consistent earnings retention",
@@ -333,47 +660,10 @@
   {
     "company": "Saudi Telecom (STC)",
     "ticker": "7010.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "AA",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Telecom (STC) (7010.SR) shows a solid financial profile for FY2023, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 91% confidence.",
-    "strengths": [
-      "Adequate liquidity (LIQUID=0.1450), suggesting the company can meet short-term obligations",
-      "Positive cumulative profitability (CUMPROF=0.1721), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.0943), demonstrating efficient asset utilization for earnings",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=0.1450, CUMPROF=0.1721, PROFITAB=0.0943, LEVERAGE=1.0433. KAM/news context should be read alongside these figures.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "AAA"
-  },
-  {
-    "company": "Saudi Telecom (STC)",
-    "ticker": "7010.SR",
     "fiscal_year": 2024,
     "predicted_rating": "AA",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Telecom (STC) (7010.SR) shows a solid financial profile for FY2024, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 91% confidence.",
+    "overall_assessment": "Saudi Telecom (STC) (7010.SR) shows a solid financial profile for FY2024, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 94% confidence.",
     "strengths": [
       "Strong liquidity position (LIQUID=0.2105), indicating adequate working capital relative to total assets",
       "Substantial accumulated profitability (CUMPROF=0.2394), reflecting a strong track record of retained earnings",
@@ -405,98 +695,26 @@
     "_actual_rating": "AAA"
   },
   {
-    "company": "Alkhaleej Training",
-    "ticker": "4290.SR",
+    "company": "Saudi Telecom (STC)",
+    "ticker": "7010.SR",
     "fiscal_year": 2023,
-    "predicted_rating": "BBB",
+    "predicted_rating": "AA",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Alkhaleej Training (4290.SR) shows a weak financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 93% confidence.",
+    "overall_assessment": "Saudi Telecom (STC) (7010.SR) shows a solid financial profile for FY2023, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 82% confidence.",
     "strengths": [
-      "No strong positive financial indicators identified from the ratios",
+      "Adequate liquidity (LIQUID=0.1450), suggesting the company can meet short-term obligations",
+      "Positive cumulative profitability (CUMPROF=0.1721), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.0943), demonstrating efficient asset utilization for earnings",
       "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
     ],
     "weaknesses": [
-      "Low liquidity (LIQUID=0.0066), indicating limited working capital buffer relative to total assets",
-      "Negative cumulative profitability (CUMPROF=-0.0927), indicating accumulated losses exceed retained earnings",
-      "Elevated debt reliance (LEVERAGE=0.3228), with liabilities forming a significant portion of financing"
-    ],
-    "key_risks": [
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market"
-    ],
-    "prediction_analysis": "The model predicts BBB but average ratio strength is modest (avg=-0.0173), so outcomes are sensitive to KAM and news signals.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 0.75,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BBB+"
-  },
-  {
-    "company": "Alkhaleej Training",
-    "ticker": "4290.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "BBB",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Alkhaleej Training (4290.SR) shows a moderate financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 92% confidence.",
-    "strengths": [
-      "Strong operational profitability (PROFITAB=0.0860), demonstrating efficient asset utilization for earnings",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low liquidity (LIQUID=0.0256), indicating limited working capital buffer relative to total assets",
-      "Negative cumulative profitability (CUMPROF=-0.0129), indicating accumulated losses exceed retained earnings",
-      "Elevated debt reliance (LEVERAGE=0.3610), with liabilities forming a significant portion of financing"
-    ],
-    "key_risks": [
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market"
-    ],
-    "prediction_analysis": "The model predicts BBB but average ratio strength is modest (avg=0.0329), so outcomes are sensitive to KAM and news signals.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 0.8,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BBB+"
-  },
-  {
-    "company": "Al Kathiri (AKHC)",
-    "ticker": "3008.SR",
-    "fiscal_year": 2022,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Al Kathiri (AKHC) (3008.SR) shows a moderate financial profile for FY2022, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 94% confidence.",
-    "strengths": [
-      "Conservative financial structure (LEVERAGE=2.0387), with equity substantially exceeding liabilities",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low liquidity (LIQUID=0.0198), indicating limited working capital buffer relative to total assets",
-      "Modest cumulative profitability (CUMPROF=0.0481), suggesting limited earnings retention over time",
-      "Low operational profitability (PROFITAB=0.0291), suggesting limited earnings generation from assets"
+      "No major financial weaknesses identified from the ratios"
     ],
     "key_risks": [
       "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
       "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
     ],
-    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0323), so outcomes are sensitive to KAM and news signals. Note: actual agency rating is BBB- (category BBB) vs predicted category A.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=0.1450, CUMPROF=0.1721, PROFITAB=0.0943, LEVERAGE=1.0433. KAM/news context should be read alongside these figures.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -506,717 +724,68 @@
       "has_prediction_analysis": true,
       "ratios_cited": 4,
       "citation_rate": 1.0,
-      "numbers_accuracy": 0.8,
+      "numbers_accuracy": 1.0,
       "mentions_risk": true,
-      "mentions_strength": false,
-      "overall_score": 0.875
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "AAA"
+  },
+  {
+    "company": "ACWA Power",
+    "ticker": "2082.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "ACWA Power (2082.SR) shows a moderate financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 88% confidence.",
+    "strengths": [
+      "Adequate liquidity (LIQUID=0.1153), suggesting the company can meet short-term obligations",
+      "Positive cumulative profitability (CUMPROF=0.0590), showing consistent earnings retention",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Elevated debt reliance (LEVERAGE=0.6036), with liabilities forming a significant portion of financing"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.1153, CUMPROF=0.0590, PROFITAB=0.0598, LEVERAGE=0.6036. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
     },
     "_actual_rating": "BBB-"
   },
   {
-    "company": "Multi Business Group",
-    "ticker": "9619.SR",
+    "company": "MEPCO (Middle East Paper)",
+    "ticker": "1202.SR",
     "fiscal_year": 2024,
     "predicted_rating": "A",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Multi Business Group (9619.SR) shows a solid financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 95% confidence.",
+    "overall_assessment": "MEPCO (Middle East Paper) (1202.SR) shows a solid financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 90% confidence.",
     "strengths": [
-      "Strong liquidity position (LIQUID=0.7789), indicating adequate working capital relative to total assets",
-      "Substantial accumulated profitability (CUMPROF=0.2920), reflecting a strong track record of retained earnings",
-      "Strong operational profitability (PROFITAB=0.2090), demonstrating efficient asset utilization for earnings",
-      "Conservative financial structure (LEVERAGE=3.2734), with equity substantially exceeding liabilities"
-    ],
-    "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.7789, CUMPROF=0.2920, PROFITAB=0.2090, LEVERAGE=3.2734. KAM/news context should be read alongside these figures. Note: actual agency rating is BB+ (category BB) vs predicted category A.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BB+"
-  },
-  {
-    "company": "Perfect Presentation (2P)",
-    "ticker": "7204.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Perfect Presentation (2P) (7204.SR) shows a solid financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 75% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.2937), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.1412), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.1484), demonstrating efficient asset utilization for earnings"
-    ],
-    "weaknesses": [
-      "Elevated debt reliance (LEVERAGE=0.6127), with liabilities forming a significant portion of financing"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.2937, CUMPROF=0.1412, PROFITAB=0.1484, LEVERAGE=0.6127. KAM/news context should be read alongside these figures. Note: actual agency rating is BBB+ (category BBB) vs predicted category A.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BBB+"
-  },
-  {
-    "company": "Perfect Presentation (2P)",
-    "ticker": "7204.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "AA",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Perfect Presentation (2P) (7204.SR) shows a solid financial profile for FY2023, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 49% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.2067), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.1748), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.1474), demonstrating efficient asset utilization for earnings"
-    ],
-    "weaknesses": [
-      "Elevated debt reliance (LEVERAGE=0.4797), with liabilities forming a significant portion of financing"
-    ],
-    "key_risks": [
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=0.2067, CUMPROF=0.1748, PROFITAB=0.1474, LEVERAGE=0.4797. KAM/news context should be read alongside these figures. Note: actual agency rating is BBB+ (category BBB) vs predicted category AA.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BBB+"
-  },
-  {
-    "company": "Perfect Presentation (2P)",
-    "ticker": "7204.SR",
-    "fiscal_year": 2022,
-    "predicted_rating": "AA",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Perfect Presentation (2P) (7204.SR) shows a solid financial profile for FY2022, with the ML model predicting a AA (Investment-grade (AA / A / BBB buckets)) rating at 50% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.1871), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.1102), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.1999), demonstrating efficient asset utilization for earnings"
-    ],
-    "weaknesses": [
-      "Elevated debt reliance (LEVERAGE=0.4581), with liabilities forming a significant portion of financing"
-    ],
-    "key_risks": [
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (AA): LIQUID=0.1871, CUMPROF=0.1102, PROFITAB=0.1999, LEVERAGE=0.4581. KAM/news context should be read alongside these figures. Note: actual agency rating is BBB+ (category BBB) vs predicted category AA.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BBB+"
-  },
-  {
-    "company": "Alkhorayef Water & Power",
-    "ticker": "2081.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "BBB",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Alkhorayef Water & Power (2081.SR) shows a solid financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 88% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.1627), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.1537), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.1238), demonstrating efficient asset utilization for earnings"
-    ],
-    "weaknesses": [
-      "Elevated debt reliance (LEVERAGE=0.4839), with liabilities forming a significant portion of financing"
-    ],
-    "key_risks": [
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.1627, CUMPROF=0.1537, PROFITAB=0.1238, LEVERAGE=0.4839. KAM/news context should be read alongside these figures. Note: actual agency rating is A (category A) vs predicted category BBB.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A"
-  },
-  {
-    "company": "Alkhorayef Water & Power",
-    "ticker": "2081.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "BBB",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Alkhorayef Water & Power (2081.SR) shows a solid financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 70% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.2866), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.1385), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.1155), demonstrating efficient asset utilization for earnings",
+      "Strong liquidity position (LIQUID=0.2396), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.0720), showing consistent earnings retention",
+      "Conservative financial structure (LEVERAGE=1.6692), with equity substantially exceeding liabilities",
       "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
     ],
     "weaknesses": [
-      "Elevated debt reliance (LEVERAGE=0.4617), with liabilities forming a significant portion of financing"
+      "Negative profitability (PROFITAB=-0.0095), indicating the company is not generating operating income from its assets"
     ],
     "key_risks": [
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+      "Low profitability may limit the company's ability to service debt and fund growth without additional borrowing"
     ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.2866, CUMPROF=0.1385, PROFITAB=0.1155, LEVERAGE=0.4617. KAM/news context should be read alongside these figures. Note: actual agency rating is A- (category A) vs predicted category BBB.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A-"
-  },
-  {
-    "company": "Saudi Aramco",
-    "ticker": "2222.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Aramco (2222.SR) shows a solid financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 85% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.1596), indicating adequate working capital relative to total assets",
-      "Substantial accumulated profitability (CUMPROF=0.5696), reflecting a strong track record of retained earnings",
-      "Strong operational profitability (PROFITAB=0.3617), demonstrating efficient asset utilization for earnings",
-      "Conservative financial structure (LEVERAGE=2.3447), with equity substantially exceeding liabilities",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1596, CUMPROF=0.5696, PROFITAB=0.3617, LEVERAGE=2.3447. KAM/news context should be read alongside these figures.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A+"
-  },
-  {
-    "company": "Saudi Aramco",
-    "ticker": "2222.SR",
-    "fiscal_year": 2022,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Aramco (2222.SR) shows a solid financial profile for FY2022, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 92% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.1974), indicating adequate working capital relative to total assets",
-      "Substantial accumulated profitability (CUMPROF=0.5375), reflecting a strong track record of retained earnings",
-      "Strong operational profitability (PROFITAB=0.4661), demonstrating efficient asset utilization for earnings",
-      "Conservative financial structure (LEVERAGE=2.0152), with equity substantially exceeding liabilities",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1974, CUMPROF=0.5375, PROFITAB=0.4661, LEVERAGE=2.0152. KAM/news context should be read alongside these figures.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A"
-  },
-  {
-    "company": "Maaden",
-    "ticker": "1211.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "BBB",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Maaden (1211.SR) shows a solid financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 58% confidence.",
-    "strengths": [
-      "Adequate liquidity (LIQUID=0.1295), suggesting the company can meet short-term obligations",
-      "Positive cumulative profitability (CUMPROF=0.0864), showing consistent earnings retention",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.1295, CUMPROF=0.0864, PROFITAB=0.0429, LEVERAGE=1.0319. KAM/news context should be read alongside these figures.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BBB+"
-  },
-  {
-    "company": "SABIC",
-    "ticker": "2010.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "SABIC (2010.SR) shows a solid financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 96% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.1655), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.0721), showing consistent earnings retention",
-      "Conservative financial structure (LEVERAGE=1.9545), with equity substantially exceeding liabilities",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low operational profitability (PROFITAB=0.0250), suggesting limited earnings generation from assets"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1655, CUMPROF=0.0721, PROFITAB=0.0250, LEVERAGE=1.9545. KAM/news context should be read alongside these figures.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A+"
-  },
-  {
-    "company": "SABIC",
-    "ticker": "2010.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "SABIC (2010.SR) shows a solid financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 95% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.1624), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.0955), showing consistent earnings retention",
-      "Conservative financial structure (LEVERAGE=1.9706), with equity substantially exceeding liabilities",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low operational profitability (PROFITAB=0.0235), suggesting limited earnings generation from assets"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1624, CUMPROF=0.0955, PROFITAB=0.0235, LEVERAGE=1.9706. KAM/news context should be read alongside these figures.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A"
-  },
-  {
-    "company": "SABIC",
-    "ticker": "2010.SR",
-    "fiscal_year": 2022,
-    "predicted_rating": "BB",
-    "risk_classification": "Speculative (BB bucket)",
-    "overall_assessment": "SABIC (2010.SR) shows a solid financial profile for FY2022, with the ML model predicting a BB (Speculative (BB bucket)) rating at 55% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.1872), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.1025), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.0853), demonstrating efficient asset utilization for earnings",
-      "Conservative financial structure (LEVERAGE=2.2790), with equity substantially exceeding liabilities",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
-    ],
-    "prediction_analysis": "Mixed signals: model predicts BB with avg ratio score 0.1250; review KAM flags and FinBERT aggregates for confirmation. Note: actual agency rating is A (category A) vs predicted category BB.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 0.8,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A"
-  },
-  {
-    "company": "SABIC",
-    "ticker": "2010.SR",
-    "fiscal_year": 2021,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "SABIC (2010.SR) shows a solid financial profile for FY2021, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 94% confidence.",
-    "strengths": [
-      "Strong liquidity position (LIQUID=0.1789), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.0870), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.1122), demonstrating efficient asset utilization for earnings",
-      "Conservative financial structure (LEVERAGE=1.9701), with equity substantially exceeding liabilities",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1789, CUMPROF=0.0870, PROFITAB=0.1122, LEVERAGE=1.9701. KAM/news context should be read alongside these figures.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A"
-  },
-  {
-    "company": "Saudi Energy",
-    "ticker": "5110.SR",
-    "fiscal_year": 2021,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Energy (5110.SR) shows a weak financial profile for FY2021, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 90% confidence.",
-    "strengths": [
-      "Positive cumulative profitability (CUMPROF=0.0748), showing consistent earnings retention",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Negative liquidity (LIQUID=-0.0656), signaling potential difficulty meeting short-term obligations"
-    ],
-    "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0153), so outcomes are sensitive to KAM and news signals.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 3,
-      "citation_rate": 0.75,
-      "numbers_accuracy": 0.6666666666666666,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A"
-  },
-  {
-    "company": "Saudi Energy",
-    "ticker": "5110.SR",
-    "fiscal_year": 2022,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Energy (5110.SR) shows a moderate financial profile for FY2022, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 54% confidence.",
-    "strengths": [
-      "Positive cumulative profitability (CUMPROF=0.0798), showing consistent earnings retention",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low liquidity (LIQUID=-0.0251), indicating limited working capital buffer relative to total assets"
-    ],
-    "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0310), so outcomes are sensitive to KAM and news signals.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 3,
-      "citation_rate": 0.75,
-      "numbers_accuracy": 0.6666666666666666,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A"
-  },
-  {
-    "company": "Saudi Energy",
-    "ticker": "5110.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Energy (5110.SR) shows a weak financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 78% confidence.",
-    "strengths": [
-      "Positive cumulative profitability (CUMPROF=0.0758), showing consistent earnings retention",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low liquidity (LIQUID=-0.0477), indicating limited working capital buffer relative to total assets",
-      "Low operational profitability (PROFITAB=0.0291), suggesting limited earnings generation from assets"
-    ],
-    "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0191), so outcomes are sensitive to KAM and news signals.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 3,
-      "citation_rate": 0.75,
-      "numbers_accuracy": 0.75,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A+"
-  },
-  {
-    "company": "Saudi Energy",
-    "ticker": "5110.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Energy (5110.SR) shows a weak financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 92% confidence.",
-    "strengths": [
-      "Positive cumulative profitability (CUMPROF=0.0748), showing consistent earnings retention",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Negative liquidity (LIQUID=-0.0508), signaling potential difficulty meeting short-term obligations",
-      "Low operational profitability (PROFITAB=0.0221), suggesting limited earnings generation from assets"
-    ],
-    "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0154), so outcomes are sensitive to KAM and news signals.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 3,
-      "citation_rate": 0.75,
-      "numbers_accuracy": 0.75,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "A+"
-  },
-  {
-    "company": "Cenomi Centers",
-    "ticker": "4321.SR",
-    "fiscal_year": 2022,
-    "predicted_rating": "BB",
-    "risk_classification": "Speculative (BB bucket)",
-    "overall_assessment": "Cenomi Centers (4321.SR) shows a solid financial profile for FY2022, with the ML model predicting a BB (Speculative (BB bucket)) rating at 46% confidence.",
-    "strengths": [
-      "Substantial accumulated profitability (CUMPROF=0.2962), reflecting a strong track record of retained earnings",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low liquidity (LIQUID=0.0078), indicating limited working capital buffer relative to total assets"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Mixed signals: model predicts BB with avg ratio score 0.1135; review KAM flags and FinBERT aggregates for confirmation.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 3,
-      "citation_rate": 0.75,
-      "numbers_accuracy": 0.6666666666666666,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BB"
-  },
-  {
-    "company": "Cenomi Centers",
-    "ticker": "4321.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "A",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Cenomi Centers (4321.SR) shows a solid financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 86% confidence.",
-    "strengths": [
-      "Substantial accumulated profitability (CUMPROF=0.2966), reflecting a strong track record of retained earnings",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Negative liquidity (LIQUID=-0.0913), signaling potential difficulty meeting short-term obligations"
-    ],
-    "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=-0.0913, CUMPROF=0.2966, PROFITAB=0.0595, LEVERAGE=1.0649. KAM/news context should be read alongside these figures. Note: actual agency rating is BB (category BB) vs predicted category A.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BB"
-  },
-  {
-    "company": "Cenomi Centers",
-    "ticker": "4321.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "BBB",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Cenomi Centers (4321.SR) shows a solid financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 81% confidence.",
-    "strengths": [
-      "Substantial accumulated profitability (CUMPROF=0.2779), reflecting a strong track record of retained earnings",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low liquidity (LIQUID=0.0405), indicating limited working capital buffer relative to total assets"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.0405, CUMPROF=0.2779, PROFITAB=0.0446, LEVERAGE=0.8919. KAM/news context should be read alongside these figures. Note: actual agency rating is A- (category A) vs predicted category BBB.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.2396, CUMPROF=0.0720, PROFITAB=-0.0095, LEVERAGE=1.6692. KAM/news context should be read alongside these figures.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -1269,24 +838,458 @@
     "_actual_rating": "BBB-"
   },
   {
-    "company": "ACWA Power",
-    "ticker": "2082.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "BBB",
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "fiscal_year": 2021,
+    "predicted_rating": "A",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "ACWA Power (2082.SR) shows a moderate financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 90% confidence.",
+    "overall_assessment": "SABIC (2010.SR) shows a solid financial profile for FY2021, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 93% confidence.",
     "strengths": [
-      "Adequate liquidity (LIQUID=0.1153), suggesting the company can meet short-term obligations",
-      "Positive cumulative profitability (CUMPROF=0.0590), showing consistent earnings retention",
+      "Strong liquidity position (LIQUID=0.1789), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.0870), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.1122), demonstrating efficient asset utilization for earnings",
+      "Conservative financial structure (LEVERAGE=1.9701), with equity substantially exceeding liabilities",
       "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
     ],
     "weaknesses": [
-      "Elevated debt reliance (LEVERAGE=0.6036), with liabilities forming a significant portion of financing"
+      "No major financial weaknesses identified from the ratios"
     ],
     "key_risks": [
       "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
     ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.1153, CUMPROF=0.0590, PROFITAB=0.0598, LEVERAGE=0.6036. KAM/news context should be read alongside these figures.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1789, CUMPROF=0.0870, PROFITAB=0.1122, LEVERAGE=1.9701. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A"
+  },
+  {
+    "company": "Maaden",
+    "ticker": "1211.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Maaden (1211.SR) shows a moderate financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 73% confidence.",
+    "strengths": [
+      "Adequate liquidity (LIQUID=0.0823), suggesting the company can meet short-term obligations",
+      "Positive cumulative profitability (CUMPROF=0.0874), showing consistent earnings retention",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "No major financial weaknesses identified from the ratios"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.0823, CUMPROF=0.0874, PROFITAB=0.0604, LEVERAGE=1.0951. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "BBB+"
+  },
+  {
+    "company": "Maaden",
+    "ticker": "1211.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "BBB",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Maaden (1211.SR) shows a solid financial profile for FY2023, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 66% confidence.",
+    "strengths": [
+      "Adequate liquidity (LIQUID=0.1295), suggesting the company can meet short-term obligations",
+      "Positive cumulative profitability (CUMPROF=0.0864), showing consistent earnings retention",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "No major financial weaknesses identified from the ratios"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.1295, CUMPROF=0.0864, PROFITAB=0.0429, LEVERAGE=1.0319. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "BBB+"
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "SABIC (2010.SR) shows a solid financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 97% confidence.",
+    "strengths": [
+      "Strong liquidity position (LIQUID=0.1655), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.0721), showing consistent earnings retention",
+      "Conservative financial structure (LEVERAGE=1.9545), with equity substantially exceeding liabilities",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low operational profitability (PROFITAB=0.0250), suggesting limited earnings generation from assets"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1655, CUMPROF=0.0721, PROFITAB=0.0250, LEVERAGE=1.9545. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A+"
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "SABIC (2010.SR) shows a solid financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 94% confidence.",
+    "strengths": [
+      "Strong liquidity position (LIQUID=0.1624), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.0955), showing consistent earnings retention",
+      "Conservative financial structure (LEVERAGE=1.9706), with equity substantially exceeding liabilities",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low operational profitability (PROFITAB=0.0235), suggesting limited earnings generation from assets"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1624, CUMPROF=0.0955, PROFITAB=0.0235, LEVERAGE=1.9706. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A"
+  },
+  {
+    "company": "SABIC",
+    "ticker": "2010.SR",
+    "fiscal_year": 2022,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "SABIC (2010.SR) shows a solid financial profile for FY2022, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 57% confidence.",
+    "strengths": [
+      "Strong liquidity position (LIQUID=0.1872), indicating adequate working capital relative to total assets",
+      "Positive cumulative profitability (CUMPROF=0.1025), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.0853), demonstrating efficient asset utilization for earnings",
+      "Conservative financial structure (LEVERAGE=2.2790), with equity substantially exceeding liabilities",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "No major financial weaknesses identified from the ratios"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1872, CUMPROF=0.1025, PROFITAB=0.0853, LEVERAGE=2.2790. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A"
+  },
+  {
+    "company": "Cenomi Centers",
+    "ticker": "4321.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Cenomi Centers (4321.SR) shows a solid financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 80% confidence.",
+    "strengths": [
+      "Substantial accumulated profitability (CUMPROF=0.2966), reflecting a strong track record of retained earnings",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Negative liquidity (LIQUID=-0.0913), signaling potential difficulty meeting short-term obligations"
+    ],
+    "key_risks": [
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=-0.0913, CUMPROF=0.2966, PROFITAB=0.0595, LEVERAGE=1.0649. KAM/news context should be read alongside these figures. Note: actual agency rating is BB (category BB) vs predicted category A.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "BB"
+  },
+  {
+    "company": "Cenomi Centers",
+    "ticker": "4321.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Cenomi Centers (4321.SR) shows a solid financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 79% confidence.",
+    "strengths": [
+      "Substantial accumulated profitability (CUMPROF=0.2779), reflecting a strong track record of retained earnings",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=0.0405), indicating limited working capital buffer relative to total assets"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.0405, CUMPROF=0.2779, PROFITAB=0.0446, LEVERAGE=0.8919. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A-"
+  },
+  {
+    "company": "ADES",
+    "ticker": "2382.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "ADES (2382.SR) shows a moderate financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 67% confidence.",
+    "strengths": [
+      "Positive cumulative profitability (CUMPROF=0.0886), showing consistent earnings retention",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=-0.0408), indicating limited working capital buffer relative to total assets",
+      "Elevated debt reliance (LEVERAGE=0.4234), with liabilities forming a significant portion of financing"
+    ],
+    "key_risks": [
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0380), so outcomes are sensitive to KAM and news signals. Note: actual agency rating is B+ (category BB) vs predicted category A.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 0.75,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "B+"
+  },
+  {
+    "company": "Saudi Aramco",
+    "ticker": "2222.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Saudi Aramco (2222.SR) shows a solid financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 93% confidence.",
+    "strengths": [
+      "Strong liquidity position (LIQUID=0.1596), indicating adequate working capital relative to total assets",
+      "Substantial accumulated profitability (CUMPROF=0.5696), reflecting a strong track record of retained earnings",
+      "Strong operational profitability (PROFITAB=0.3617), demonstrating efficient asset utilization for earnings",
+      "Conservative financial structure (LEVERAGE=2.3447), with equity substantially exceeding liabilities",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "No major financial weaknesses identified from the ratios"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1596, CUMPROF=0.5696, PROFITAB=0.3617, LEVERAGE=2.3447. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A+"
+  },
+  {
+    "company": "Saudi Aramco",
+    "ticker": "2222.SR",
+    "fiscal_year": 2022,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Saudi Aramco (2222.SR) shows a solid financial profile for FY2022, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 93% confidence.",
+    "strengths": [
+      "Strong liquidity position (LIQUID=0.1974), indicating adequate working capital relative to total assets",
+      "Substantial accumulated profitability (CUMPROF=0.5375), reflecting a strong track record of retained earnings",
+      "Strong operational profitability (PROFITAB=0.4661), demonstrating efficient asset utilization for earnings",
+      "Conservative financial structure (LEVERAGE=2.0152), with equity substantially exceeding liabilities",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "No major financial weaknesses identified from the ratios"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1974, CUMPROF=0.5375, PROFITAB=0.4661, LEVERAGE=2.0152. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A"
+  },
+  {
+    "company": "Saudi Aramco",
+    "ticker": "2222.SR",
+    "fiscal_year": 2021,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Saudi Aramco (2222.SR) shows a solid financial profile for FY2021, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 77% confidence.",
+    "strengths": [
+      "Adequate liquidity (LIQUID=0.1421), suggesting the company can meet short-term obligations",
+      "Substantial accumulated profitability (CUMPROF=0.4709), reflecting a strong track record of retained earnings",
+      "Strong operational profitability (PROFITAB=0.3614), demonstrating efficient asset utilization for earnings",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "No major financial weaknesses identified from the ratios"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1421, CUMPROF=0.4709, PROFITAB=0.3614, LEVERAGE=1.4520. KAM/news context should be read alongside these figures.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 4,
+      "citation_rate": 1.0,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A"
+  },
+  {
+    "company": "Almarai",
+    "ticker": "2280.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Almarai (2280.SR) shows a solid financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 66% confidence.",
+    "strengths": [
+      "Adequate liquidity (LIQUID=0.0828), suggesting the company can meet short-term obligations",
+      "Substantial accumulated profitability (CUMPROF=0.2158), reflecting a strong track record of retained earnings",
+      "Strong operational profitability (PROFITAB=0.0855), demonstrating efficient asset utilization for earnings",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "No major financial weaknesses identified from the ratios"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.0828, CUMPROF=0.2158, PROFITAB=0.0855, LEVERAGE=1.1201. KAM/news context should be read alongside these figures. Note: actual agency rating is BBB- (category BBB) vs predicted category A.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -1304,24 +1307,25 @@
     "_actual_rating": "BBB-"
   },
   {
-    "company": "ACWA Power",
-    "ticker": "2082.SR",
-    "fiscal_year": 2022,
-    "predicted_rating": "BBB",
+    "company": "ADES",
+    "ticker": "2382.SR",
+    "fiscal_year": 2024,
+    "predicted_rating": "A",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "ACWA Power (2082.SR) shows a moderate financial profile for FY2022, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 87% confidence.",
+    "overall_assessment": "ADES (2382.SR) shows a moderate financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 55% confidence.",
     "strengths": [
-      "Adequate liquidity (LIQUID=0.1414), suggesting the company can meet short-term obligations",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+      "Positive cumulative profitability (CUMPROF=0.1131), showing consistent earnings retention",
+      "Strong operational profitability (PROFITAB=0.0825), demonstrating efficient asset utilization for earnings"
     ],
     "weaknesses": [
-      "Modest cumulative profitability (CUMPROF=0.0426), suggesting limited earnings retention over time",
-      "Elevated debt reliance (LEVERAGE=0.6950), with liabilities forming a significant portion of financing"
+      "Low liquidity (LIQUID=0.0097), indicating limited working capital buffer relative to total assets",
+      "Elevated debt reliance (LEVERAGE=0.4332), with liabilities forming a significant portion of financing"
     ],
     "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
     ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.1414, CUMPROF=0.0426, PROFITAB=0.0547, LEVERAGE=0.6950. KAM/news context should be read alongside these figures.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.0097, CUMPROF=0.1131, PROFITAB=0.0825, LEVERAGE=0.4332. KAM/news context should be read alongside these figures. Note: actual agency rating is B+ (category BB) vs predicted category A.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -1336,7 +1340,7 @@
       "mentions_strength": true,
       "overall_score": 1.0
     },
-    "_actual_rating": "BBB-"
+    "_actual_rating": "B+"
   },
   {
     "company": "ACWA Power",
@@ -1344,7 +1348,7 @@
     "fiscal_year": 2021,
     "predicted_rating": "BBB",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "ACWA Power (2082.SR) shows a moderate financial profile for FY2021, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 94% confidence.",
+    "overall_assessment": "ACWA Power (2082.SR) shows a moderate financial profile for FY2021, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 90% confidence.",
     "strengths": [
       "Adequate liquidity (LIQUID=0.1003), suggesting the company can meet short-term obligations",
       "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
@@ -1377,9 +1381,9 @@
     "company": "Saudi Aramco",
     "ticker": "2222.SR",
     "fiscal_year": 2024,
-    "predicted_rating": "BBB",
+    "predicted_rating": "A",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Aramco (2222.SR) shows a solid financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 64% confidence.",
+    "overall_assessment": "Saudi Aramco (2222.SR) shows a solid financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 87% confidence.",
     "strengths": [
       "Adequate liquidity (LIQUID=0.0974), suggesting the company can meet short-term obligations",
       "Substantial accumulated profitability (CUMPROF=0.5539), reflecting a strong track record of retained earnings",
@@ -1393,7 +1397,7 @@
     "key_risks": [
       "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
     ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.0974, CUMPROF=0.5539, PROFITAB=0.3270, LEVERAGE=2.1383. KAM/news context should be read alongside these figures. Note: actual agency rating is A+ (category A) vs predicted category BBB.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.0974, CUMPROF=0.5539, PROFITAB=0.3270, LEVERAGE=2.1383. KAM/news context should be read alongside these figures.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -1411,133 +1415,24 @@
     "_actual_rating": "A+"
   },
   {
-    "company": "Maaden",
-    "ticker": "1211.SR",
-    "fiscal_year": 2024,
+    "company": "ACWA Power",
+    "ticker": "2082.SR",
+    "fiscal_year": 2022,
     "predicted_rating": "BBB",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Maaden (1211.SR) shows a moderate financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 85% confidence.",
+    "overall_assessment": "ACWA Power (2082.SR) shows a moderate financial profile for FY2022, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 93% confidence.",
     "strengths": [
-      "Adequate liquidity (LIQUID=0.0823), suggesting the company can meet short-term obligations",
-      "Positive cumulative profitability (CUMPROF=0.0874), showing consistent earnings retention",
+      "Adequate liquidity (LIQUID=0.1414), suggesting the company can meet short-term obligations",
       "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
     ],
     "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
+      "Modest cumulative profitability (CUMPROF=0.0426), suggesting limited earnings retention over time",
+      "Elevated debt reliance (LEVERAGE=0.6950), with liabilities forming a significant portion of financing"
     ],
     "key_risks": [
       "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
     ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.0823, CUMPROF=0.0874, PROFITAB=0.0604, LEVERAGE=1.0951. KAM/news context should be read alongside these figures.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "BBB+"
-  },
-  {
-    "company": "ADES",
-    "ticker": "2382.SR",
-    "fiscal_year": 2023,
-    "predicted_rating": "BB",
-    "risk_classification": "Speculative (BB bucket)",
-    "overall_assessment": "ADES (2382.SR) shows a moderate financial profile for FY2023, with the ML model predicting a BB (Speculative (BB bucket)) rating at 40% confidence.",
-    "strengths": [
-      "Positive cumulative profitability (CUMPROF=0.0886), showing consistent earnings retention",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "Low liquidity (LIQUID=-0.0408), indicating limited working capital buffer relative to total assets",
-      "Elevated debt reliance (LEVERAGE=0.4234), with liabilities forming a significant portion of financing"
-    ],
-    "key_risks": [
-      "Negative working capital may constrain operational flexibility and increase refinancing risk",
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Weak liquidity (LIQUID=-0.0408), profitability (PROFITAB=0.0662), and cumulative earnings (CUMPROF=0.0886) support a BB / speculative-bucket view.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "B+"
-  },
-  {
-    "company": "ADES",
-    "ticker": "2382.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "BBB",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "ADES (2382.SR) shows a moderate financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 75% confidence.",
-    "strengths": [
-      "Positive cumulative profitability (CUMPROF=0.1131), showing consistent earnings retention",
-      "Strong operational profitability (PROFITAB=0.0825), demonstrating efficient asset utilization for earnings"
-    ],
-    "weaknesses": [
-      "Low liquidity (LIQUID=0.0097), indicating limited working capital buffer relative to total assets",
-      "Elevated debt reliance (LEVERAGE=0.4332), with liabilities forming a significant portion of financing"
-    ],
-    "key_risks": [
-      "High leverage creates vulnerability to interest rate increases and credit tightening in the Saudi market",
-      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.0097, CUMPROF=0.1131, PROFITAB=0.0825, LEVERAGE=0.4332. KAM/news context should be read alongside these figures. Note: actual agency rating is B+ (category BB) vs predicted category BBB.",
-    "generation_method": "template",
-    "_evaluation": {
-      "has_company_name": true,
-      "has_overall_assessment": true,
-      "has_strengths": true,
-      "has_weaknesses": true,
-      "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 1.0,
-      "mentions_risk": true,
-      "mentions_strength": true,
-      "overall_score": 1.0
-    },
-    "_actual_rating": "B+"
-  },
-  {
-    "company": "Almarai",
-    "ticker": "2280.SR",
-    "fiscal_year": 2024,
-    "predicted_rating": "BBB",
-    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Almarai (2280.SR) shows a solid financial profile for FY2024, with the ML model predicting a BBB (Investment-grade (AA / A / BBB buckets)) rating at 51% confidence.",
-    "strengths": [
-      "Adequate liquidity (LIQUID=0.0828), suggesting the company can meet short-term obligations",
-      "Substantial accumulated profitability (CUMPROF=0.2158), reflecting a strong track record of retained earnings",
-      "Strong operational profitability (PROFITAB=0.0855), demonstrating efficient asset utilization for earnings",
-      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
-    ],
-    "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
-    ],
-    "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
-    ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.0828, CUMPROF=0.2158, PROFITAB=0.0855, LEVERAGE=1.1201. KAM/news context should be read alongside these figures.",
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (BBB): LIQUID=0.1414, CUMPROF=0.0426, PROFITAB=0.0547, LEVERAGE=0.6950. KAM/news context should be read alongside these figures.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -1555,25 +1450,59 @@
     "_actual_rating": "BBB-"
   },
   {
-    "company": "Saudi Aramco",
-    "ticker": "2222.SR",
+    "company": "Saudi Energy",
+    "ticker": "5110.SR",
     "fiscal_year": 2021,
     "predicted_rating": "A",
     "risk_classification": "Investment-grade (AA / A / BBB buckets)",
-    "overall_assessment": "Saudi Aramco (2222.SR) shows a solid financial profile for FY2021, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 94% confidence.",
+    "overall_assessment": "Saudi Energy (5110.SR) shows a weak financial profile for FY2021, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 86% confidence.",
     "strengths": [
-      "Adequate liquidity (LIQUID=0.1421), suggesting the company can meet short-term obligations",
-      "Substantial accumulated profitability (CUMPROF=0.4709), reflecting a strong track record of retained earnings",
-      "Strong operational profitability (PROFITAB=0.3614), demonstrating efficient asset utilization for earnings",
+      "Positive cumulative profitability (CUMPROF=0.0748), showing consistent earnings retention",
       "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
     ],
     "weaknesses": [
-      "No major financial weaknesses identified from the ratios"
+      "Negative liquidity (LIQUID=-0.0656), signaling potential difficulty meeting short-term obligations"
     ],
     "key_risks": [
-      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness"
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
     ],
-    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.1421, CUMPROF=0.4709, PROFITAB=0.3614, LEVERAGE=1.4520. KAM/news context should be read alongside these figures.",
+    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0153), so outcomes are sensitive to KAM and news signals.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 3,
+      "citation_rate": 0.75,
+      "numbers_accuracy": 0.6666666666666666,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A"
+  },
+  {
+    "company": "Cenomi Centers",
+    "ticker": "4321.SR",
+    "fiscal_year": 2022,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Cenomi Centers (4321.SR) shows a solid financial profile for FY2022, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 78% confidence.",
+    "strengths": [
+      "Substantial accumulated profitability (CUMPROF=0.2962), reflecting a strong track record of retained earnings",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=0.0078), indicating limited working capital buffer relative to total assets"
+    ],
+    "key_risks": [
+      "Monitor macroeconomic conditions in Saudi Arabia and sector-specific regulatory changes that could affect creditworthiness",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "Ratios align with an investment-grade-style bucket (A): LIQUID=0.0078, CUMPROF=0.2962, PROFITAB=0.0365, LEVERAGE=1.0868. KAM/news context should be read alongside these figures. Note: actual agency rating is BB (category BB) vs predicted category A.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -1588,28 +1517,28 @@
       "mentions_strength": true,
       "overall_score": 1.0
     },
-    "_actual_rating": "A"
+    "_actual_rating": "BB"
   },
   {
-    "company": "MEPCO (Middle East Paper)",
-    "ticker": "1202.SR",
+    "company": "Saudi Energy",
+    "ticker": "5110.SR",
     "fiscal_year": 2024,
-    "predicted_rating": "BB",
-    "risk_classification": "Speculative (BB bucket)",
-    "overall_assessment": "MEPCO (Middle East Paper) (1202.SR) shows a solid financial profile for FY2024, with the ML model predicting a BB (Speculative (BB bucket)) rating at 35% confidence.",
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Saudi Energy (5110.SR) shows a weak financial profile for FY2024, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 89% confidence.",
     "strengths": [
-      "Strong liquidity position (LIQUID=0.2396), indicating adequate working capital relative to total assets",
-      "Positive cumulative profitability (CUMPROF=0.0720), showing consistent earnings retention",
-      "Conservative financial structure (LEVERAGE=1.6692), with equity substantially exceeding liabilities",
+      "Positive cumulative profitability (CUMPROF=0.0748), showing consistent earnings retention",
       "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
     ],
     "weaknesses": [
-      "Negative profitability (PROFITAB=-0.0095), indicating the company is not generating operating income from its assets"
+      "Negative liquidity (LIQUID=-0.0508), signaling potential difficulty meeting short-term obligations",
+      "Low operational profitability (PROFITAB=0.0221), suggesting limited earnings generation from assets"
     ],
     "key_risks": [
-      "Low profitability may limit the company's ability to service debt and fund growth without additional borrowing"
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
     ],
-    "prediction_analysis": "Mixed signals: model predicts BB with avg ratio score 0.1007; review KAM flags and FinBERT aggregates for confirmation. Note: actual agency rating is A- (category A) vs predicted category BB.",
+    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0154), so outcomes are sensitive to KAM and news signals.",
     "generation_method": "template",
     "_evaluation": {
       "has_company_name": true,
@@ -1617,13 +1546,84 @@
       "has_strengths": true,
       "has_weaknesses": true,
       "has_prediction_analysis": true,
-      "ratios_cited": 4,
-      "citation_rate": 1.0,
-      "numbers_accuracy": 0.8,
+      "ratios_cited": 3,
+      "citation_rate": 0.75,
+      "numbers_accuracy": 0.75,
       "mentions_risk": true,
       "mentions_strength": true,
       "overall_score": 1.0
     },
-    "_actual_rating": "A-"
+    "_actual_rating": "A+"
+  },
+  {
+    "company": "Saudi Energy",
+    "ticker": "5110.SR",
+    "fiscal_year": 2023,
+    "predicted_rating": "A",
+    "risk_classification": "Investment-grade (AA / A / BBB buckets)",
+    "overall_assessment": "Saudi Energy (5110.SR) shows a weak financial profile for FY2023, with the ML model predicting a A (Investment-grade (AA / A / BBB buckets)) rating at 93% confidence.",
+    "strengths": [
+      "Positive cumulative profitability (CUMPROF=0.0758), showing consistent earnings retention",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=-0.0477), indicating limited working capital buffer relative to total assets",
+      "Low operational profitability (PROFITAB=0.0291), suggesting limited earnings generation from assets"
+    ],
+    "key_risks": [
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "The model predicts A but average ratio strength is modest (avg=0.0191), so outcomes are sensitive to KAM and news signals.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 3,
+      "citation_rate": 0.75,
+      "numbers_accuracy": 0.75,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A+"
+  },
+  {
+    "company": "Saudi Energy",
+    "ticker": "5110.SR",
+    "fiscal_year": 2022,
+    "predicted_rating": "BB",
+    "risk_classification": "Speculative (BB bucket)",
+    "overall_assessment": "Saudi Energy (5110.SR) shows a moderate financial profile for FY2022, with the ML model predicting a BB (Speculative (BB bucket)) rating at 85% confidence.",
+    "strengths": [
+      "Positive cumulative profitability (CUMPROF=0.0798), showing consistent earnings retention",
+      "Asset / impairment KAM present \u2014 auditor focused on balance-sheet carrying values"
+    ],
+    "weaknesses": [
+      "Low liquidity (LIQUID=-0.0251), indicating limited working capital buffer relative to total assets"
+    ],
+    "key_risks": [
+      "Negative working capital may constrain operational flexibility and increase refinancing risk",
+      "Revenue-recognition KAM flagged \u2014 review accounting judgments and disclosures"
+    ],
+    "prediction_analysis": "Weak liquidity (LIQUID=-0.0251), profitability (PROFITAB=0.0383), and cumulative earnings (CUMPROF=0.0798) support a BB / speculative-bucket view. Note: actual agency rating is A (category A) vs predicted category BB.",
+    "generation_method": "template",
+    "_evaluation": {
+      "has_company_name": true,
+      "has_overall_assessment": true,
+      "has_strengths": true,
+      "has_weaknesses": true,
+      "has_prediction_analysis": true,
+      "ratios_cited": 3,
+      "citation_rate": 0.75,
+      "numbers_accuracy": 1.0,
+      "mentions_risk": true,
+      "mentions_strength": true,
+      "overall_score": 1.0
+    },
+    "_actual_rating": "A"
   }
 ]

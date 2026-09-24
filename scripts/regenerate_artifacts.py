@@ -3,8 +3,8 @@
 Regenerate results/*.json and figures/*.png from the current processed data and models.
 
 Runs (from repo root, with PYTHONPATH=.):
-  1. XGBoost ablations → full_model_comparison.json, combined_model_results.json, kams_only_model_results.json
-  2. Multisource model benchmark → multisource_model_comparison.json + PNG
+  1. KAM / financial ablations → kams_only_model_results.json, combined_model_results.json
+  2. All-features benchmark (21 features) → all_features_model_results.json + PNG
   3. SHAP → shap_*.png, shap_report.json
   4. Pipeline figures + multiclass error_analysis.json (confusion, PCA, confidence, etc.)
   5. LLM verdicts (template mode; no GPU/Ollama required) → results/verdicts/*
@@ -50,8 +50,6 @@ def main() -> None:
     steps = [
         ("XGBoost KAMs only", ["models/xgboost_kams_only.py"]),
         ("XGBoost with KAMs", ["models/xgboost_with_kams.py"]),
-        ("XGBoost full (14 features)", ["models/xgboost_full.py"]),
-        ("Multisource model benchmark", ["models/evaluate_multisource_models.py"]),
         ("All-features benchmark (21 features)", ["models/xgboost_all_features.py"]),
         ("SHAP explainability", ["models/shap_explainability.py"]),
         ("Pipeline figures + error_analysis.json", ["models/generate_pipeline_figures.py"]),

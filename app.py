@@ -1,6 +1,6 @@
 """
 Streamlit Demo: Credit Rating Prediction System
-Multisource XGBoost (financials + KAMs + FinBERT news) + SHAP + LLM-style verdicts
+Multisource XGBoost (financials + full KAM/firm block + FinBERT news, 21 features) + SHAP + verdicts
 """
 
 import json
@@ -29,10 +29,12 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from models.llm_verdict import generate_template_verdict  # noqa: E402
-from models.multisource_data import FULL_FEATURE_COLS, load_or_build_merged_training  # noqa: E402
-from models.xgboost_full import prepare_target  # noqa: E402
+from models.multisource_data import (  # noqa: E402
+    FULL_FEATURE_COLS,
+    load_or_build_merged_training,
+    prepare_target,
+)
 
-DATA_FILE = PROJECT_ROOT / "data" / "processed" / "merged_multisource_training.csv"
 FIGURES_DIR = PROJECT_ROOT / "figures"
 RESULTS_DIR = PROJECT_ROOT / "results"
 VERDICTS_DIR = RESULTS_DIR / "verdicts"
@@ -42,11 +44,18 @@ FEATURE_LABELS = {
     "cumprof": "Cumulative profitability (RE / Total Assets)",
     "profitab": "Profitability (EBIT / Total Assets)",
     "leverage": "Leverage (Equity / Liabilities)",
+    "AUSIZE": "Auditor size (Big 4 = 1)",
+    "AUOP": "Audit opinion (modified = 1)",
+    "EMP": "Employees (firm size proxy)",
+    "GCUP": "Going-concern uncertainty paragraph",
     "GCKAM": "KAM: Going concern (0/1)",
     "REVKAM": "KAM: Revenue recognition (0/1)",
     "ASSETKAM": "KAM: Assets / impairment (0/1)",
     "LIABKAM": "KAM: Liabilities (0/1)",
     "OTHERKAM": "KAM: Other (0/1)",
+    "FIRMAGE": "Firm age (years)",
+    "FIRMSIZE": "Firm size (log assets)",
+    "INDUSTRY": "Industry code",
     "sentiment_mean": "FinBERT mean score",
     "sentiment_std": "FinBERT sentiment std",
     "sentiment_pos_pct": "Share positive (FinBERT)",
@@ -155,7 +164,7 @@ def compute_cv_error_bundle(df: pd.DataFrame):
         )
     cm = confusion_matrix(y, y_pred, labels=np.arange(len(classes)))
     payload = {
-        "generated_for": "multisource XGBoost 14 features, 4-class rating_category (in-app CV)",
+        "generated_for": "multisource XGBoost 21 features, 4-class rating_category (in-app CV)",
         "n_samples": int(len(df)),
         "cv_folds": n_splits,
         "cv_accuracy": float(acc),
@@ -193,7 +202,7 @@ def main():
 
     st.title("Credit Rating Prediction System")
     st.markdown(
-        "**Multisource XGBoost** (financial ratios + KAM dummies + FinBERT news) "
+        "**Multisource XGBoost** (financial ratios + the full KAM/firm block + FinBERT news, 21 features) "
         "with **SHAP** and **template verdicts** — Saudi Tadawul panel"
     )
     st.markdown("---")
@@ -256,6 +265,14 @@ def main():
                 st.markdown("#### KAM dummies (audit topics)")
                 for feat in ["GCKAM", "REVKAM", "ASSETKAM", "LIABKAM", "OTHERKAM"]:
                     st.metric(FEATURE_LABELS[feat], int(company_row[feat]))
+
+                st.markdown("#### Audit & firm characteristics")
+                for feat in ["AUSIZE", "AUOP", "GCUP", "EMP", "FIRMAGE", "FIRMSIZE", "INDUSTRY"]:
+                    val = company_row[feat]
+                    st.metric(
+                        FEATURE_LABELS[feat],
+                        f"{val:,.2f}" if float(val) % 1 else int(val),
+                    )
 
                 st.markdown("#### News / FinBERT")
                 st.metric(FEATURE_LABELS["sentiment_mean"], f"{company_row['sentiment_mean']:.4f}")
@@ -422,7 +439,7 @@ def main():
         with c2:
             p = FIGURES_DIR / "shap_bar_importance.png"
             if p.exists():
-                st.image(str(p), caption="Mean |SHAP| (14 features)")
+                st.image(str(p), caption="Mean |SHAP| (21 features)")
 
         st.markdown("#### Feature interactions")
         c3, c4, c5 = st.columns(3)
@@ -532,7 +549,7 @@ def main():
         st.header("Dataset explorer")
         p = FIGURES_DIR / "pca_scatter.png"
         if p.exists():
-            st.image(str(p), caption="PCA on 14 multisource features (standardized)")
+            st.image(str(p), caption="PCA on 21 multisource features (standardized)")
 
         show_cols = (
             ["ticker", "company_name", "rating_agency", "rating", "fiscal_year", "rating_category"]
@@ -571,7 +588,7 @@ def main():
             ),
             (
                 FIGURES_DIR / "pca_multisource.png",
-                "`figures/pca_multisource.png` — PCA of standardized 14 features (same plot as `pca_scatter.png`).",
+                "`figures/pca_multisource.png` — PCA of standardized 21 features (same plot as `pca_scatter.png`).",
             ),
             (
                 FIGURES_DIR / "feature_distributions_multisource.png",
@@ -608,15 +625,15 @@ def main():
 
         st.subheader("Benchmark & SHAP PNGs")
         st.markdown(
-            "Benchmark: `models/evaluate_multisource_models.py`. SHAP static plots: `models/shap_explainability.py`."
+            "Benchmark: `models/xgboost_all_features.py`. SHAP static plots: `models/shap_explainability.py`."
         )
         bc1, bc2 = st.columns(2)
         with bc1:
-            bp = FIGURES_DIR / "multisource_model_comparison.png"
+            bp = FIGURES_DIR / "all_features_model_comparison.png"
             if bp.exists():
-                st.image(str(bp), caption="`figures/multisource_model_comparison.png` (also copied to `model_comparison.png`).")
+                st.image(str(bp), caption="`figures/all_features_model_comparison.png` — 21-feature benchmark.")
             else:
-                st.caption("Missing: `multisource_model_comparison.png`")
+                st.caption("Missing: `all_features_model_comparison.png`")
         with bc2:
             st.markdown("**SHAP (pre-rendered)**")
             for stem, txt in [
