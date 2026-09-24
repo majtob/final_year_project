@@ -1,7 +1,9 @@
 # CPU-only image for the Streamlit credit-rating demo (examiner-friendly).
 # For GPU / fine-tuned Qwen development, use a local venv — see docs/DOCKER.md
 
-FROM python:3.11-slim-bookworm
+# 3.12, not 3.11: xgboost 3.4.1 (pinned in requirements-docker.txt to match the
+# committed results) declares requires_python >= 3.12.
+FROM python:3.12-slim-bookworm
 
 ENV PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \

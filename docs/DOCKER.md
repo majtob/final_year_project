@@ -4,7 +4,7 @@ This project supports a **small CPU-only Docker image** that runs the **Streamli
 
 ## What the Docker image includes
 
-- Python 3.11 + `requirements-docker.txt` (Streamlit, scikit-learn, SHAP, matplotlib, pandas, …)
+- Python 3.12 + `requirements-docker.txt` (Streamlit, scikit-learn, SHAP, matplotlib, pandas, …), with the numeric stack pinned to the versions that produced `results/*.json` — 3.12 because `xgboost==3.4.1` requires it
 - **No** PyTorch / `transformers` / bitsandbytes — keeps the image fast to build and suitable for laptops without a GPU
 - The demo uses **template-based** verdict text in the UI (same as current `app.py`); it does **not** load Qwen inside the container
 

@@ -74,15 +74,15 @@
       "mean_abs_shap": 0.02468699961900711,
       "description": "Share of articles with positive FinBERT score"
     },
-    "GCKAM": {
+    "LIABKAM": {
       "rank": 11,
       "mean_abs_shap": 0.0,
-      "description": "KAM: going concern (0/1)"
+      "description": "KAM: liabilities (0/1)"
     },
-    "LIABKAM": {
+    "GCKAM": {
       "rank": 12,
       "mean_abs_shap": 0.0,
-      "description": "KAM: liabilities (0/1)"
+      "description": "KAM: going concern (0/1)"
     },
     "OTHERKAM": {
       "rank": 13,
@@ -96,22 +96,22 @@
     }
   },
   "pct_total_abs_shap": {
-    "liquid": 16.909358097900434,
-    "cumprof": 17.44644596325947,
-    "profitab": 7.428229953091054,
-    "leverage": 19.68529973434903,
+    "liquid": 16.90935707092285,
+    "cumprof": 17.446443557739258,
+    "profitab": 7.428228855133057,
+    "leverage": 19.6852970123291,
     "GCKAM": 0.0,
-    "REVKAM": 4.401187876117502,
-    "ASSETKAM": 1.1533662565569596,
+    "REVKAM": 4.401187419891357,
+    "ASSETKAM": 1.1533660888671875,
     "LIABKAM": 0.0,
     "OTHERKAM": 0.0,
-    "sentiment_mean": 3.2148360347542306,
-    "sentiment_std": 8.196159346129713,
-    "sentiment_pos_pct": 0.9513265169973475,
+    "sentiment_mean": 3.2148356437683105,
+    "sentiment_std": 8.196158409118652,
+    "sentiment_pos_pct": 0.9513263702392578,
     "sentiment_neg_pct": 0.0,
-    "news_count": 20.613790220805722
+    "news_count": 20.613786697387695
   },
-  "top_feature_share_pct": 20.613790220805722,
+  "top_feature_share_pct": 20.613786697387695,
   "per_company_top_factors": [
     {
       "ticker": "3008.SR",

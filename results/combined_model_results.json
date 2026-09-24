@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-24T20:32:53.232358",
+  "date": "2026-09-24T20:47:33.503501",
   "financials_source": "financials_processed.csv",
   "dataset_size": 45,
   "financial_and_combined_only": false,
@@ -30,21 +30,21 @@
   },
   "models": {
     "financials_only": {
-      "accuracy": 0.6,
-      "std": 0.11331154474650633,
+      "accuracy": 0.5777777777777778,
+      "std": 0.22662308949301266,
       "paper_reference": 0.7155
     },
     "combined": {
-      "accuracy": 0.711111111111111,
-      "std": 0.054433105395181765,
+      "accuracy": 0.8222222222222222,
+      "std": 0.13333333333333336,
       "paper_reference": 0.8404
     },
     "kams_only_merged_sample": {
-      "accuracy": 0.6666666666666666,
-      "std": 0.07027283689263066,
+      "accuracy": 0.711111111111111,
+      "std": 0.11331154474650632,
       "paper_reference": 0.7414,
       "note": "Same rows as financial/combined; for full KAM panel use xgboost_kams_only.py"
     }
   },
-  "improvement": 0.11111111111111105
+  "improvement": 0.24444444444444435
 }
