@@ -1,6 +1,6 @@
 {
   "model": "xgboost_kams_only",
-  "data_file": "data/processed/kams_processed.csv",
+  "data_file": "data\\processed\\kams_processed.csv",
   "n_samples": 46,
   "features": [
     "AUSIZE",
@@ -22,8 +22,8 @@
   "cv_accuracy_std": 0.04949123878071128,
   "train_accuracy": 0.7608695652173914,
   "feature_importance": {
-    "REVKAM": 0.30289700627326965,
-    "AUSIZE": 0.26106971502304077,
+    "REVKAM": 0.3028969466686249,
+    "AUSIZE": 0.2610696852207184,
     "INDUSTRY": 0.14301030337810516,
     "OTHERKAM": 0.11462315917015076,
     "FIRMAGE": 0.10408832877874374,
@@ -35,5 +35,5 @@
     "LIABKAM": 0.0,
     "FIRMSIZE": 0.0
   },
-  "generated_at": "2026-03-27T21:53:49"
+  "generated_at": "2026-09-24T19:40:43"
 }

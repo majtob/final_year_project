@@ -1067,35 +1067,35 @@ To test whether **XGBoost** is still the best choice on the *current* aligned pa
 
 | Feature set | *n* features | CV accuracy |
 |-------------|--------------|-------------|
-| Financials only | 4 | 51.1% ± 0.194 |
-| **Financials + full KAMs** | **16** | **71.1% ± 0.113** |
-| Financials + news | 9 | 51.1% ± 0.113 |
-| Full KAMs + news | 17 | 57.8% ± 0.083 |
-| All features | 21 | 66.7% ± 0.099 |
+| Financials only | 4 | 51.1% ± 0.181 |
+| Financials + full KAMs | 16 | 64.4% ± 0.147 |
+| Financials + news | 9 | 60.0% ± 0.089 |
+| Full KAMs + news | 17 | 53.3% ± 0.163 |
+| **All features** | **21** | **73.3% ± 0.166** |
 
-The best XGBoost ablation is **financials + full KAMs (16 features)**; adding the news block *reduces* XGBoost accuracy, consistent with the sentiment aggregates carrying little signal at this sample size.
+The best XGBoost ablation is the **full 21-feature matrix**, and each block earns its place: financials alone reach 51.1%, adding the KAM/firm block is worth +13.3 points, adding the news block +8.9, and the two together +22.2. One caution about *which* news column does the work — `news_count` is a top-three importance in all three news-bearing ablations, ahead of every sentiment aggregate. That is a count of retrieved English articles, so it plausibly proxies media coverage and firm size rather than sentiment; the FinBERT aggregates themselves rank lower.
 
 **Nine-learner benchmark on the full 21-feature matrix:**
 
 | Rank | Model | Accuracy | F1 (macro) | Notes |
 |------|--------|----------|------------|--------|
-| 1 | **Extra Trees** | **82.2% ± 8.9%** | **0.68** | Highest figure in this repository |
-| 2 | Linear SVC (+ scaler) | 73.3% ± 18.1% | 0.68 | Equal macro-F1, far wider spread |
-| 3 | Logistic regression (+ scaler) | 71.1% ± 15.1% | 0.62 | — |
-| 4 | kNN *k*=5 (+ scaler) | 71.1% ± 11.3% | 0.56 | — |
-| 5 | **XGBoost** | 66.7% ± 9.9% | 0.54 | Same features as row 1 |
-| 6 | Gradient Boosting | 66.7% ± 14.1% | 0.51 | — |
-| 7 | Random Forest | 64.4% ± 8.3% | 0.53 | — |
-| 8 | Decision Tree | 57.8% ± 10.9% | 0.49 | — |
-| 9 | MLP (+ scaler) | 37.8% ± 26.9% | 0.27 | Small *n*, default architecture |
+| 1 | **Linear SVC (+ scaler)** | **82.2% ± 5.4%** | **0.76** | Highest figure in this repository, and the tightest spread |
+| 2 | Extra Trees | 80.0% ± 4.4% | 0.66 | Within one fold-row of row 1 |
+| 3 | Logistic regression (+ scaler) | 75.6% ± 13.0% | 0.71 | — |
+| 4 | **XGBoost** | 73.3% ± 16.6% | 0.70 | Same features as row 1 |
+| 5 | Random Forest | 73.3% ± 11.3% | 0.60 | Ties XGBoost on accuracy, well below it on macro-F1 |
+| 6 | Gradient Boosting | 71.1% ± 15.1% | 0.56 | — |
+| 7 | Decision Tree | 68.9% ± 17.8% | 0.59 | — |
+| 8 | kNN *k*=5 (+ scaler) | 68.9% ± 14.7% | 0.52 | — |
+| 9 | MLP (+ scaler) | 51.1% ± 38.2% | 0.46 | Small *n*, default architecture; std is over two thirds of the mean |
 
 **Three caveats that must travel with the 82.2% figure:**
 
-1. **Accuracy overstates minority-class performance.** Extra Trees scores **0.822 accuracy but 0.678 macro-F1**. Class counts are A = 18, BBB = 15, AA = 6, BB = 6; the two majority classes hold 33 of 45 rows, so each fold contains roughly one AA and one BB row. Macro-F1 is the fairer headline for a four-class ordinal task.
-2. **The Extra Trees / XGBoost gap is a variance signal.** Two closely related tree ensembles differ by **15.5 points on identical features**. On 45 rows that is far more plausibly fold noise than a genuine capability difference.
-3. **Fold granularity.** Five folds of nine rows means one row flipping moves the mean by roughly two points; ±8.9% std is consistent with that.
+1. **Accuracy overstates minority-class performance.** Linear SVC scores **0.822 accuracy but 0.764 macro-F1**, and Extra Trees **0.800 against 0.664**. Class counts are A = 18, BBB = 15, AA = 6, BB = 6; the two majority classes hold 33 of 45 rows, so each fold contains roughly one AA and one BB row. Macro-F1 is the fairer headline for a four-class ordinal task.
+2. **The ranking moves with the library version, which is the clearest evidence that it is noise.** An earlier run of *this same script, on this same data, with `random_state=42` throughout* put Extra Trees first at 82.2% and Linear SVC fourth at 73.3%. Regenerating under **xgboost 3.4.1 / scikit-learn 1.7.2** swaps those two and moves every model in the table — XGBoost by +6.7 points, MLP by +13.3. Neither the data nor the seeds changed, so a ranking that reorders on a dependency bump reflects fold assignment, not capability.
+3. **Fold granularity.** Five folds of nine rows means one row flipping moves the mean by roughly two points — most of the gap between rows 1 and 2.
 
-**Takeaway:** the widest feature set produces the best headline accuracy, but the ranking is **not stable** at this sample size. Report **82.2% as a mean CV accuracy for Extra Trees on 21 features, paired with its 0.678 macro-F1**, and treat the algorithm ordering as indicative only.
+**Takeaway:** the widest feature set produces the best headline accuracy, but the ranking is **not stable** at this sample size. Report **82.2% ± 5.4% as a mean CV accuracy for Linear SVC on 21 features, paired with its 0.764 macro-F1**, name the library versions alongside it, and treat the algorithm ordering as indicative only. The numbers in this section were regenerated on **2026-09-24** under **xgboost 3.4.1 / scikit-learn 1.7.2**; `requirements.txt` pins floors rather than exact versions, so another environment reproduces the shape of these results but not the decimals.
 
 ### 15.6 App, SHAP figures, and Streamlit — current state
 
